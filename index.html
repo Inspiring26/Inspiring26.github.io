@@ -266,7 +266,7 @@
                 
               
 
-              <time title="创建时间：2020-05-12 11:14:00 / 修改时间：11:16:33" itemprop="dateCreated datePublished" datetime="2020-05-12T11:14:00+08:00">2020-05-12</time>
+              <time title="创建时间：2020-05-12 11:14:00 / 修改时间：13:46:45" itemprop="dateCreated datePublished" datetime="2020-05-12T11:14:00+08:00">2020-05-12</time>
             </span>
           
             
@@ -283,7 +283,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>88</span>
+              <span>322</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -306,9 +306,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>unity中修改脚本数据后经常会发现运行时并没有使用修改后的数据，<br>尤其是数组数据等。</p>
-<p>这时需要在脚本对应的inspector里点击齿轮，选择reset，此后就会使用脚本里的数据。</p>
-
+          <p>unity中修改脚本数据后经常会发现运行时并没有使用修改后的数据，<br>尤其是数组数据等。</p><p>这时需要在脚本对应的inspector里点击齿轮，选择reset，此后就会使用脚本里的数据。</p><p>需要经常对比二者数据是否一致，所以较好的方法是将数据初始化在Start()函数里。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public int[] arrSong &#x3D; new int[115];</span><br><span class="line"></span><br><span class="line">Start()&#123;</span><br><span class="line">	arrSong &#x3D; new int[115]&#123;,,,,&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2020/05/12/unity%E8%84%9A%E6%9C%AC%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E6%97%A0%E6%95%88%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
