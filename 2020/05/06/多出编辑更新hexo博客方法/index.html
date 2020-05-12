@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="你说你要一场革命" type="application/atom+xml">
+  <meta name="google-site-verification" content="3btHXsQj_M5W1Rgun6MBaehMbzJ_IRyj7QdtQZ92XnI">
+  <meta name="msvalidate.01" content="true">
+  <meta name="baidu-site-verification" content="z4EbW7GYj6">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="首先在原博客处建立分支，将hexo后端文件同步到github如source分支hexo建立的blog，一开始是没有git init的，这一点记不清了也没验证。要把源文件更新到github的话，先git init，然后建立、切换分支，提交，添加远程git仓库地址，推送本地到远程。代码如下：1234567git initgit checkout -b sourcegit add -Agit commi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多出编辑更新hexo博客方法">
+<meta property="og:url" content="https://inspiring26.github.io/2020/05/06/%E5%A4%9A%E5%87%BA%E7%BC%96%E8%BE%91%E6%9B%B4%E6%96%B0hexo%E5%8D%9A%E5%AE%A2%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="你说你要一场革命">
+<meta property="og:description" content="首先在原博客处建立分支，将hexo后端文件同步到github如source分支hexo建立的blog，一开始是没有git init的，这一点记不清了也没验证。要把源文件更新到github的话，先git init，然后建立、切换分支，提交，添加远程git仓库地址，推送本地到远程。代码如下：1234567git initgit checkout -b sourcegit add -Agit commi">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-06T06:20:18.000Z">
+<meta property="article:modified_time" content="2020-05-07T05:27:53.741Z">
+<meta property="article:author" content="huang yong">
+<meta property="article:tag" content="方法">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://inspiring26.github.io/2020/05/06/%E5%A4%9A%E5%87%BA%E7%BC%96%E8%BE%91%E6%9B%B4%E6%96%B0hexo%E5%8D%9A%E5%AE%A2%E6%96%B9%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>多出编辑更新hexo博客方法 | 你说你要一场革命</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">你说你要一场革命</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/inspiring26" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2020/05/06/%E5%A4%9A%E5%87%BA%E7%BC%96%E8%BE%91%E6%9B%B4%E6%96%B0hexo%E5%8D%9A%E5%AE%A2%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huang yong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你说你要一场革命">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">多出编辑更新hexo博客方法
+
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-05-06 14:20:18" itemprop="dateCreated datePublished" datetime="2020-05-06T14:20:18+08:00">2020-05-06</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-07 13:27:53" itemprop="dateModified" datetime="2020-05-07T13:27:53+08:00">2020-05-07</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.5k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="首先在原博客处建立分支，将hexo后端文件同步到github"><a href="#首先在原博客处建立分支，将hexo后端文件同步到github" class="headerlink" title="首先在原博客处建立分支，将hexo后端文件同步到github"></a>首先在原博客处建立分支，将hexo后端文件同步到github</h3><p>如source分支<br>hexo建立的blog，一开始是没有git init的，这一点记不清了也没验证。<br>要把源文件更新到github的话，先git init，然后建立、切换分支，提交，添加远程git仓库地址，推送本地到远程。<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git init</span><br><span class="line">git checkout -b source</span><br><span class="line">git add -A</span><br><span class="line">git commit -m &quot;init blog&quot;</span><br><span class="line">git remote add origin git@github.com:&#123;username&#125;&#x2F;&#123;username&#125;.github.io.git</span><br><span class="line">git push origin source</span><br></pre></td></tr></table></figure><br>在这以后是可以切换master和source分支的。</p><a id="more"></a>
+<h3 id="在树莓派上配置环境"><a href="#在树莓派上配置环境" class="headerlink" title="在树莓派上配置环境"></a>在树莓派上配置环境</h3><h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><p>使用二进制代码安装比较好，也不需要编译.<br>先去node.js官方网站下载：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a><br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget -c https:&#x2F;&#x2F;nodejs.org&#x2F;dist&#x2F;v12.16.3&#x2F;node-v12.16.3-linux-armv7l.tar.xz</span><br><span class="line">sudo mkdir -p &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs</span><br><span class="line">sudo tar -xJvf node-v12.16.3-linux-armv7l.tar.xz -C &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs</span><br><span class="line">cd ~</span><br><span class="line">sudo echo &quot;export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs&#x2F;node-v12.16.3-linux-armv7l&#x2F;bin:$PATH&quot; &gt;&gt; .bashrc</span><br><span class="line">source .bashrc</span><br></pre></td></tr></table></figure><br>然后，用hexo -v ;npm -v 验证版本。</p>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>以管理员权限安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<h4 id="git-clone-远程仓库"><a href="#git-clone-远程仓库" class="headerlink" title="git clone 远程仓库"></a>git clone 远程仓库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone git@XXX</span><br><span class="line"># 切换到新分支</span><br><span class="line"># 这里需要新建并切换</span><br><span class="line">git checkout -b source origin&#x2F;source</span><br></pre></td></tr></table></figure>
+<h4 id="切换到blog文件夹运行hexo"><a href="#切换到blog文件夹运行hexo" class="headerlink" title="切换到blog文件夹运行hexo"></a>切换到blog文件夹运行hexo</h4><p>运行hexo，这时回报错，根据提示再次安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo --save</span><br><span class="line">npm audit fix</span><br></pre></td></tr></table></figure></p>
+<h4 id="去专门的仓库拉去主题（这一步也可以改成将主题下的-git文件删除，一次拉去源文件和主题的）"><a href="#去专门的仓库拉去主题（这一步也可以改成将主题下的-git文件删除，一次拉去源文件和主题的）" class="headerlink" title="去专门的仓库拉去主题（这一步也可以改成将主题下的.git文件删除，一次拉去源文件和主题的）"></a>去专门的仓库拉去主题（这一步也可以改成将主题下的.git文件删除，一次拉去源文件和主题的）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd theme</span><br><span class="line">rm -r next</span><br><span class="line">git clone git@XXX</span><br><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><h4 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;测试文章&quot;</span><br><span class="line">vim source&#x2F;_posts&#x2F;测试文章.md</span><br></pre></td></tr></table></figure>
+<h4 id="将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）"><a href="#将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）" class="headerlink" title="将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）"></a>将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat links.txt &gt;&gt; source&#x2F;_posts&#x2F;多出编辑更新hexo博客方法.md</span><br></pre></td></tr></table></figure>
+<h4 id="验证本地运行"><a href="#验证本地运行" class="headerlink" title="验证本地运行"></a>验证本地运行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h4 id="验证远程推送到github-page"><a href="#验证远程推送到github-page" class="headerlink" title="验证远程推送到github page"></a>验证远程推送到github page</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+<h3 id="验证成功后可以推送源文件的更新到github的source分支"><a href="#验证成功后可以推送源文件的更新到github的source分支" class="headerlink" title="验证成功后可以推送源文件的更新到github的source分支"></a>验证成功后可以推送源文件的更新到github的source分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E6%96%B9%E6%B3%95/" rel="tag"># 方法</a>
+            
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+            
+              <a href="/tags/git/" rel="tag"># git</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2020/05/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E7%BC%96%E8%BE%91%E6%9B%B4%E6%96%B0%E6%B5%8B%E8%AF%95/" rel="next" title="树莓派上编辑更新测试">
+                  <i class="fa fa-chevron-left"></i> 树莓派上编辑更新测试
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2020/05/12/unity%E8%84%9A%E6%9C%AC%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E6%97%A0%E6%95%88%E9%97%AE%E9%A2%98/" rel="prev" title="unity脚本修改数据无效问题">
+                  unity脚本修改数据无效问题 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先在原博客处建立分支，将hexo后端文件同步到github"><span class="nav-number">1.</span> <span class="nav-text">首先在原博客处建立分支，将hexo后端文件同步到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在树莓派上配置环境"><span class="nav-number">2.</span> <span class="nav-text">在树莓派上配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装node"><span class="nav-number">2.1.</span> <span class="nav-text">安装node</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.2.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-clone-远程仓库"><span class="nav-number">2.3.</span> <span class="nav-text">git clone 远程仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换到blog文件夹运行hexo"><span class="nav-number">2.4.</span> <span class="nav-text">切换到blog文件夹运行hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#去专门的仓库拉去主题（这一步也可以改成将主题下的-git文件删除，一次拉去源文件和主题的）"><span class="nav-number">2.5.</span> <span class="nav-text">去专门的仓库拉去主题（这一步也可以改成将主题下的.git文件删除，一次拉去源文件和主题的）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-number">3.</span> <span class="nav-text">验证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建新文章"><span class="nav-number">3.1.</span> <span class="nav-text">创建新文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）"><span class="nav-number">3.2.</span> <span class="nav-text">将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证本地运行"><span class="nav-number">3.3.</span> <span class="nav-text">验证本地运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证远程推送到github-page"><span class="nav-number">3.4.</span> <span class="nav-text">验证远程推送到github page</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证成功后可以推送源文件的更新到github的source分支"><span class="nav-number">4.</span> <span class="nav-text">验证成功后可以推送源文件的更新到github的source分支</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">huang yong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">120</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huang yong</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">68k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:02</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="true"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+<script src="/js/next-boot.js?v=7.4.1.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var id = element.id || '';
+    var src = element.src || '';
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (id !=='') {
+      script.id = element.id;
+    }
+    if (src !== '') {
+      script.src = src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '4ecd4b54b642d96917d0',
+      clientSecret: '2a9dab5419757f30806446f74129a868bc1aa1b3',
+      repo: 'inspiring26.github.io',
+      owner: 'inspiring26',
+      admin: ['inspiring26'],
+      id: '3818a69b179c02dcdef9d39a58b63ebf',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'false'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+    </div>
+</body>
+</html>
