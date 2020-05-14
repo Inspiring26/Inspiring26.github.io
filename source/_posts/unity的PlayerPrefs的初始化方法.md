@@ -8,3 +8,10 @@ tags: [unity, 方法]
 网上有的文章说的，用它们的第二个参数来初始化是不对的。
 但是有一个方法可以初始化：
 先查找有没有这个key值，没有则给它赋值，有则不再赋值，这样可以达到初始化的效果。
+代码如下：
+```
+// 初始化
+if(!PlayerPrefs.HasKey(energy)){
+    PlayerPrefs.SetInt("energy", 30)
+}
+```
