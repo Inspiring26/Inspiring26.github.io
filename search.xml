@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[unity的PlayerPrefs的初始化方法]]></title>
     <url>%2F2020%2F05%2F14%2Funity%E7%9A%84PlayerPrefs%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[以整形为例，不管是GetInt()还是SetInt(),其中的默认参数并不是如果没有这个key值将这个数值赋给它，而是返回这个数值作为替代。 网上有的文章说的，用它们的第二个参数来初始化是不对的。但是有一个方法可以初始化：先查找有没有这个key值，没有则给它赋值，有则不再赋值，这样可以达到初始化的效果。]]></content>
+    <content type="text"><![CDATA[以整形为例，不管是GetInt()还是SetInt(),其中的默认参数并不是如果没有这个key值将这个数值赋给它，而是返回这个数值作为替代。 网上有的文章说的，用它们的第二个参数来初始化是不对的。但是有一个方法可以初始化：先查找有没有这个key值，没有则给它赋值，有则不再赋值，这样可以达到初始化的效果。代码如下：1234&#x2F;&#x2F; 初始化if(!PlayerPrefs.HasKey(energy))&#123; PlayerPrefs.SetInt(&quot;energy&quot;, 30)&#125;]]></content>
       <tags>
         <tag>unity</tag>
         <tag>方法</tag>
@@ -603,8 +603,8 @@
     <url>%2F2019%2F10%2F28%2F%E9%85%8D%E7%BD%AEtornado-pytorch%E7%9A%84docker%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[拉去指定docker镜像（目前pytorch支持到pytorch1.3，python3.7）1docker pull python:3.7运行容器1docker run -dit python:3.7进入容器 123docker ps#59fe58579fd2 python:3.7 &quot;bash&quot; 35 minutes ago docker exec -it 59fe bash 配置环境12345python -V#Python 3.7.5pip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple torch&#x3D;&#x3D;1.3.0+cpu torchvision&#x3D;&#x3D;0.4.1+cpu -f https:&#x2F;&#x2F;download.pytorch.org&#x2F;whl&#x2F;torch_stable.htmlpip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple tornado redis pillow efficientnet_pytorch 此外，py文件中torch.load()要添加1,map_location&#x3D;torch.device(&#39;cpu&#39;)从而运行在cpu环境下。 安装redis数据库apt不能用临时源，且为了安装最新版本，从源文件编译安装12345wget -c http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-5.0.5.tar.gztar xzf redis-5.0.5.tar.gzcd redis-5.0.5make 启动redis123cd src&#x2F;nohup .&#x2F;redis-server &amp;.&#x2F;redis-cli]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>docker</tag>
+        <tag>pytorch</tag>
         <tag>redis</tag>
         <tag>tornado</tag>
       </tags>

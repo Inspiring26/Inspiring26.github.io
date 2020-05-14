@@ -266,7 +266,7 @@
                 
               
 
-              <time title="创建时间：2020-05-14 20:08:44 / 修改时间：20:13:30" itemprop="dateCreated datePublished" datetime="2020-05-14T20:08:44+08:00">2020-05-14</time>
+              <time title="创建时间：2020-05-14 20:08:44 / 修改时间：20:19:50" itemprop="dateCreated datePublished" datetime="2020-05-14T20:08:44+08:00">2020-05-14</time>
             </span>
           
             
@@ -283,7 +283,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>151</span>
+              <span>265</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -307,7 +307,7 @@
 
       
           <p>以整形为例，不管是GetInt()还是SetInt(),其中的默认参数并不是如果没有这个key值将这个数值赋给它，而是返回这个数值作为替代。</p>
-<p>网上有的文章说的，用它们的第二个参数来初始化是不对的。<br>但是有一个方法可以初始化：<br>先查找有没有这个key值，没有则给它赋值，有则不再赋值，这样可以达到初始化的效果。</p>
+<p>网上有的文章说的，用它们的第二个参数来初始化是不对的。<br>但是有一个方法可以初始化：<br>先查找有没有这个key值，没有则给它赋值，有则不再赋值，这样可以达到初始化的效果。<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 初始化</span><br><span class="line">if(!PlayerPrefs.HasKey(energy))&#123;</span><br><span class="line">    PlayerPrefs.SetInt(&quot;energy&quot;, 30)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         
       
