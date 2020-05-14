@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[unity2D分辨率适配]]></title>
+    <url>%2F2020%2F05%2F14%2Funity2D%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D%2F</url>
+    <content type="text"><![CDATA[假如你以375667的分辨率做的游戏，现在要适配10801920分辨率的机器（这个分辨率是目前比较主流的分辨率）。不用一个个元素的修改，也有一个前提，如果想图不糊，你是把10801920的图放在了375667的框里，这样放大才不糊。 具体扩大分辨率的方法是：在Canvas的Canvas Scaler 里将mode选择Scale with Screen，第二行的默认分辨率写成你实际开发过程中的分辨率，本例中是375*667。然后去game窗口将比例调成16:9(9:16)或其他分辨率，就可以看到真实的显示效果。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
+      <tags>
+        <tag>unity</tag>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[unity脚本修改数据无效问题]]></title>
     <url>%2F2020%2F05%2F12%2Funity%E8%84%9A%E6%9C%AC%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E6%97%A0%E6%95%88%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[unity中修改脚本数据后经常会发现运行时并没有使用修改后的数据，尤其是数组数据等。这时需要在脚本对应的inspector里点击齿轮，选择reset，此后就会使用脚本里的数据。需要经常对比二者数据是否一致，所以较好的方法是将数据初始化在Start()函数里。例如：12345public int[] arrSong &#x3D; new int[115];Start()&#123; arrSong &#x3D; new int[115]&#123;,,,,&#125;;&#125; 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
@@ -295,8 +304,8 @@
     <url>%2F2019%2F12%2F27%2FApple-Watch-%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%9A%90%E8%97%8F%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[1.在点亮屏幕后，双指放在时间上，手表会报时。 2.手表戴到手上需要解锁，如果此时手机解锁一次，手表就会自动解锁。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>Apple Watch</tag>
         <tag>技巧</tag>
+        <tag>Apple Watch</tag>
       </tags>
   </entry>
   <entry>
@@ -321,8 +330,8 @@
     <url>%2F2019%2F11%2F27%2Fpython%E7%AE%80%E5%8D%95%E8%80%8C%E6%9C%89%E7%94%A8%E7%9A%84%E6%97%A5%E5%B8%B8%E8%84%9A%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[获取文件夹内所有文件名12import osnext(os.walk(&#39;.&#39;))[2]移动文件等shell操作12import osos.system(&quot;mv aa bb&quot;) 多线程实际使用中可以通过htop看到，执行一个处理时只会把一个cpu线程核心用满，想充分利用cpu和节省时间，就要多用多线程。用起来非常简单，建议传入参数，以便分段同时执行123import threadingt1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)t1.run()举个用例1234567891011&gt;&gt;&gt; def handle(s,d):... for i in range(s,d):... im &#x3D; Image.open(namelist[i])... (width, height) &#x3D; (im.width&#x2F;max(im.width,im.height)*2000,im.height&#x2F;max(im.width,im.height)*2000)... im_re &#x3D; im.resize(( int(width), int(height) ))... im_re.save(&quot;..&#x2F;hands3&#x2F;&quot;+namelist[i])... &gt;&gt;&gt; t1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)&gt;&gt;&gt; t1.start()&gt;&gt;&gt; t2 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(len(namelist)&#x2F;&#x2F;2,len(namelist)),name&#x3D;&#39;2&#39;)&gt;&gt;&gt; t2.start() 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>技巧</tag>
         <tag>python</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -339,8 +348,8 @@
     <url>%2F2019%2F11%2F21%2Fmask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[获取绝对路径1os.path.abspath(&quot;..&#x2F;&quot;)联合路径或文件12os.path.join(ROOT_DIR, &quot;samples&#x2F;coco&#x2F;&quot;)os.path.join(ROOT_DIR, &quot;mask_rcnn_coco.h5&quot;) 如果不存在就下载或创建12if not os.path.exists(COCO_MODEL_PATH): utils.download_trained_weights(COCO_MODEL_PATH) 组织参数及调用 以及传参，用一部分也可以传整个，显得很简洁1234567891011class InferenceConfig(coco.CocoConfig): # Set batch size to 1 since we&#39;ll be running inference on # one image at a time. Batch size &#x3D; GPU_COUNT * IMAGES_PER_GPU GPU_COUNT &#x3D; 1 IMAGES_PER_GPU &#x3D; 1config &#x3D; InferenceConfig()config.GPU_COUNT()model &#x3D; modellib.MaskRCNN(mode&#x3D;&quot;inference&quot;, model_dir&#x3D;MODEL_DIR, config&#x3D;config) 列出文件夹里的所有文件和文件夹1next(os.walk(IMAGE_DIR))[2] 随机选取一个元素1random.choice(file_names) 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>技巧</tag>
         <tag>python</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
