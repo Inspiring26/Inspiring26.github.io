@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-05-14T09:26:47.567Z</updated>
+  <updated>2020-05-14T12:13:30.654Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unity的PlayerPrefs的初始化方法</title>
+    <link href="https://inspiring26.github.io/2020/05/14/unity%E7%9A%84PlayerPrefs%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95/"/>
+    <id>https://inspiring26.github.io/2020/05/14/unity的PlayerPrefs的初始化方法/</id>
+    <published>2020-05-14T12:08:44.000Z</published>
+    <updated>2020-05-14T12:13:30.654Z</updated>
+    
+    <content type="html"><![CDATA[<p>以整形为例，不管是GetInt()还是SetInt(),其中的默认参数并不是如果没有这个key值将这个数值赋给它，而是返回这个数值作为替代。</p><p>网上有的文章说的，用它们的第二个参数来初始化是不对的。<br>但是有一个方法可以初始化：<br>先查找有没有这个key值，没有则给它赋值，有则不再赋值，这样可以达到初始化的效果。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;以整形为例，不管是GetInt()还是SetInt(),其中的默认参数并不是如果没有这个key值将这个数值赋给它，而是返回这个数值作为替代。&lt;/p&gt;
+&lt;p&gt;网上有的文章说的，用它们的第二个参数来初始化是不对的。&lt;br&gt;但是有一个方法可以初始化：&lt;br&gt;先查找有没有这个key
+      
+    
+    </summary>
+    
+    
+    
+      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>unity发布webgl和android不能返回值、调用函数的原因</title>
@@ -44,13 +71,13 @@
     <link href="https://inspiring26.github.io/2020/05/14/unity2D%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D/"/>
     <id>https://inspiring26.github.io/2020/05/14/unity2D分辨率适配/</id>
     <published>2020-05-14T02:02:41.000Z</published>
-    <updated>2020-05-14T02:13:37.791Z</updated>
+    <updated>2020-05-14T09:29:01.886Z</updated>
     
-    <content type="html"><![CDATA[<p>假如你以375<em>667的分辨率做的游戏，<br>现在要适配1080</em>1920分辨率的机器（这个分辨率是目前比较主流的分辨率）。</p><p>不用一个个元素的修改，<br>也有一个前提，如果想图不糊，你是把1080<em>1920的图放在了375</em>667的框里，这样放大才不糊。</p><a id="more"></a><p>具体扩大分辨率的方法是：<br>在Canvas的Canvas Scaler 里将mode选择Scale with Screen，<br>第二行的默认分辨率写成你实际开发过程中的分辨率，本例中是375*667。<br>然后去game窗口将比例调成16:9(9:16)或其他分辨率，就可以看到真实的显示效果。</p><p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>]]></content>
+    <content type="html"><![CDATA[<p>假如你以375<em>667的分辨率做的游戏，<br>现在要适配1080\</em>1920分辨率的机器（这个分辨率是目前比较主流的分辨率）。</p><p>不用一个个元素的修改，<br>也有一个前提，如果想图不糊，你是把1080*1920的图放在了375*667的框里，这样放大才不糊。</p><a id="more"></a><p>具体扩大分辨率的方法是：<br>在Canvas的Canvas Scaler 里将mode选择Scale with Screen，<br>第二行的默认分辨率写成你实际开发过程中的分辨率，本例中是375*667。<br>然后去game窗口将比例调成16:9(9:16)或其他分辨率，就可以看到真实的显示效果。</p><p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;假如你以375&lt;em&gt;667的分辨率做的游戏，&lt;br&gt;现在要适配1080&lt;/em&gt;1920分辨率的机器（这个分辨率是目前比较主流的分辨率）。&lt;/p&gt;&lt;p&gt;不用一个个元素的修改，&lt;br&gt;也有一个前提，如果想图不糊，你是把1080&lt;em&gt;1920的图放在了375&lt;/em&gt;667的框里，这样放大才不糊。&lt;/p&gt;
+      &lt;p&gt;假如你以375&lt;em&gt;667的分辨率做的游戏，&lt;br&gt;现在要适配1080\&lt;/em&gt;1920分辨率的机器（这个分辨率是目前比较主流的分辨率）。&lt;/p&gt;&lt;p&gt;不用一个个元素的修改，&lt;br&gt;也有一个前提，如果想图不糊，你是把1080*1920的图放在了375*667的框里，这样放大才不糊。&lt;/p&gt;
     
     </summary>
     
@@ -469,32 +496,6 @@
       
       
         &lt;h3 id=&quot;添加一个全屏Image&quot;&gt;&lt;a href=&quot;#添加一个全屏Image&quot; class=&quot;headerlink&quot; title=&quot;添加一个全屏Image&quot;&gt;&lt;/a&gt;添加一个全屏Image&lt;/h3&gt;&lt;h3 id=&quot;将颜色修改为黑色，如090919&quot;&gt;&lt;a href=&quot;#将
-      
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity创建滑动拉近的选关界面</title>
-    <link href="https://inspiring26.github.io/2020/04/08/unity%E5%88%9B%E5%BB%BA%E6%BB%91%E5%8A%A8%E6%8B%89%E8%BF%91%E7%9A%84%E9%80%89%E5%85%B3%E7%95%8C%E9%9D%A2/"/>
-    <id>https://inspiring26.github.io/2020/04/08/unity创建滑动拉近的选关界面/</id>
-    <published>2020-04-08T07:22:13.000Z</published>
-    <updated>2020-05-07T05:27:53.733Z</updated>
-    
-    <content type="html"><![CDATA[<p>通过修改要显示的关卡图片的大小和位置，就能实现一种类似初代iphone滑动选择专辑的界面。<br><img src="/2020/04/08/unity%E5%88%9B%E5%BB%BA%E6%BB%91%E5%8A%A8%E6%8B%89%E8%BF%91%E7%9A%84%E9%80%89%E5%85%B3%E7%95%8C%E9%9D%A2/1.0.png" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;通过修改要显示的关卡图片的大小和位置，就能实现一种类似初代iphone滑动选择专辑的界面。&lt;br&gt;&lt;img src=&quot;/2020/04/08/unity%E5%88%9B%E5%BB%BA%E6%BB%91%E5%8A%A8%E6%8B%89%E8%BF%91%E7%9A%
       
     
     </summary>
