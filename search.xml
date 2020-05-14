@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[unity发布webgl和android不能返回值、调用函数的原因]]></title>
+    <url>%2F2020%2F05%2F14%2Funity%E5%8F%91%E5%B8%83webgl%E5%92%8Candroid%E4%B8%8D%E8%83%BD%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%8E%9F%E5%9B%A0%2F</url>
+    <content type="text"><![CDATA[所有的这些原因，无法进入游戏、无法打开成功/失败结束页面等主要是因为调用和litjson相关的函数了。使用这种需要引入dll的方法，一定要注意查清楚在各个平台的打包问题。所以要左多平台发布，尤其是有webgl，尽量使用unity自带的工具实现。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
+      <tags>
+        <tag>unity</tag>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[unity2D分辨率适配]]></title>
     <url>%2F2020%2F05%2F14%2Funity2D%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D%2F</url>
     <content type="text"><![CDATA[假如你以375667的分辨率做的游戏，现在要适配10801920分辨率的机器（这个分辨率是目前比较主流的分辨率）。不用一个个元素的修改，也有一个前提，如果想图不糊，你是把10801920的图放在了375667的框里，这样放大才不糊。 具体扩大分辨率的方法是：在Canvas的Canvas Scaler 里将mode选择Scale with Screen，第二行的默认分辨率写成你实际开发过程中的分辨率，本例中是375*667。然后去game窗口将比例调成16:9(9:16)或其他分辨率，就可以看到真实的显示效果。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
@@ -304,8 +313,8 @@
     <url>%2F2019%2F12%2F27%2FApple-Watch-%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%9A%90%E8%97%8F%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[1.在点亮屏幕后，双指放在时间上，手表会报时。 2.手表戴到手上需要解锁，如果此时手机解锁一次，手表就会自动解锁。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>技巧</tag>
         <tag>Apple Watch</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -330,8 +339,8 @@
     <url>%2F2019%2F11%2F27%2Fpython%E7%AE%80%E5%8D%95%E8%80%8C%E6%9C%89%E7%94%A8%E7%9A%84%E6%97%A5%E5%B8%B8%E8%84%9A%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[获取文件夹内所有文件名12import osnext(os.walk(&#39;.&#39;))[2]移动文件等shell操作12import osos.system(&quot;mv aa bb&quot;) 多线程实际使用中可以通过htop看到，执行一个处理时只会把一个cpu线程核心用满，想充分利用cpu和节省时间，就要多用多线程。用起来非常简单，建议传入参数，以便分段同时执行123import threadingt1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)t1.run()举个用例1234567891011&gt;&gt;&gt; def handle(s,d):... for i in range(s,d):... im &#x3D; Image.open(namelist[i])... (width, height) &#x3D; (im.width&#x2F;max(im.width,im.height)*2000,im.height&#x2F;max(im.width,im.height)*2000)... im_re &#x3D; im.resize(( int(width), int(height) ))... im_re.save(&quot;..&#x2F;hands3&#x2F;&quot;+namelist[i])... &gt;&gt;&gt; t1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)&gt;&gt;&gt; t1.start()&gt;&gt;&gt; t2 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(len(namelist)&#x2F;&#x2F;2,len(namelist)),name&#x3D;&#39;2&#39;)&gt;&gt;&gt; t2.start() 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>python</tag>
         <tag>技巧</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -348,8 +357,8 @@
     <url>%2F2019%2F11%2F21%2Fmask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[获取绝对路径1os.path.abspath(&quot;..&#x2F;&quot;)联合路径或文件12os.path.join(ROOT_DIR, &quot;samples&#x2F;coco&#x2F;&quot;)os.path.join(ROOT_DIR, &quot;mask_rcnn_coco.h5&quot;) 如果不存在就下载或创建12if not os.path.exists(COCO_MODEL_PATH): utils.download_trained_weights(COCO_MODEL_PATH) 组织参数及调用 以及传参，用一部分也可以传整个，显得很简洁1234567891011class InferenceConfig(coco.CocoConfig): # Set batch size to 1 since we&#39;ll be running inference on # one image at a time. Batch size &#x3D; GPU_COUNT * IMAGES_PER_GPU GPU_COUNT &#x3D; 1 IMAGES_PER_GPU &#x3D; 1config &#x3D; InferenceConfig()config.GPU_COUNT()model &#x3D; modellib.MaskRCNN(mode&#x3D;&quot;inference&quot;, model_dir&#x3D;MODEL_DIR, config&#x3D;config) 列出文件夹里的所有文件和文件夹1next(os.walk(IMAGE_DIR))[2] 随机选取一个元素1random.choice(file_names) 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>python</tag>
         <tag>技巧</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -585,8 +594,8 @@
     <url>%2F2019%2F10%2F28%2F%E9%85%8D%E7%BD%AEtornado-pytorch%E7%9A%84docker%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[拉去指定docker镜像（目前pytorch支持到pytorch1.3，python3.7）1docker pull python:3.7运行容器1docker run -dit python:3.7进入容器 123docker ps#59fe58579fd2 python:3.7 &quot;bash&quot; 35 minutes ago docker exec -it 59fe bash 配置环境12345python -V#Python 3.7.5pip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple torch&#x3D;&#x3D;1.3.0+cpu torchvision&#x3D;&#x3D;0.4.1+cpu -f https:&#x2F;&#x2F;download.pytorch.org&#x2F;whl&#x2F;torch_stable.htmlpip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple tornado redis pillow efficientnet_pytorch 此外，py文件中torch.load()要添加1,map_location&#x3D;torch.device(&#39;cpu&#39;)从而运行在cpu环境下。 安装redis数据库apt不能用临时源，且为了安装最新版本，从源文件编译安装12345wget -c http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-5.0.5.tar.gztar xzf redis-5.0.5.tar.gzcd redis-5.0.5make 启动redis123cd src&#x2F;nohup .&#x2F;redis-server &amp;.&#x2F;redis-cli]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>docker</tag>
+        <tag>pytorch</tag>
         <tag>redis</tag>
         <tag>tornado</tag>
       </tags>
@@ -651,8 +660,8 @@
     <url>%2F2019%2F10%2F22%2F%E7%99%BE%E5%BA%A6%E3%80%81google%E5%AF%B9%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E7%9A%84%E6%94%B6%E5%BD%95%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90%2F</url>
     <content type="text"><![CDATA[第一次把站点地图推送到百度、google是10-14，过了8天了。google收录的比较快，但是也是略有延后，也不是什么都收录。百度收录的更慢更少。]]></content>
       <tags>
-        <tag>GitHub Pages</tag>
         <tag>hexo</tag>
+        <tag>GitHub Pages</tag>
       </tags>
   </entry>
   <entry>
@@ -784,8 +793,8 @@
     <url>%2F2019%2F10%2F12%2F%E7%99%BE%E5%BA%A6%E3%80%81google%E3%80%81bing%E6%94%B6%E5%BD%95github-pages%E7%AB%99%E7%82%B9%2F</url>
     <content type="text"><![CDATA[由于Github Pages禁止的原因，百度、google、bing等搜索引擎都是不收录hexo-Github Pages创建的站点的，需要分别去每个搜索引擎提交站点。百度在themes/next/_config.yml中将google-site-verification和baidu-site-verification、bing-site-verification的值设置为true。 打开百度的站点提交地址http://ziyuan.baidu.com/site/index 一步步下去，由于hexo会修改根目录文件，文件验证会有问题，选择html标签验证。 修改themes/next/layout/_partials/head/head.swig中的元数据，baidu-site-verification对应的值。（ 一会儿google还要修改一次，bing目前没修改不知道有没有影响） 然后sh deploy.sh部署验证就可以了。 Googlegoole的方式类似，注意资源类型选网址前缀地址：https://www.google.com/webmasters/tools/home?hl=zh-CN bing用google帐号登录后可直接导入google的认证。地址：https://www.bing.com/webmaster/home/mysites 文章参考地址(关于站点地图的信息见这个链接)https://blog.csdn.net/qq_32454537/article/details/79482914 10.14更新文件验证方式或许可以把文件放在public文件夹(未验证)，因为pubic文件夹下的文件不会被修改。另外，由此可知：通过在public文件夹下放置文件、文件夹，就行成了一个类似ftp的下载站点。另外2，由于放在github pages上，速度依然不快，但是只要本地服务运行就可以本地访问，这就很快了。另外3，可以简单的运行hexo服务建立文件下载服务(需要输入完整的文件名，不可以查看目录)。 10.22更新bing不要忘了提交sitemap。]]></content>
       <tags>
-        <tag>GitHub Pages</tag>
         <tag>hexo</tag>
+        <tag>GitHub Pages</tag>
       </tags>
   </entry>
   <entry>

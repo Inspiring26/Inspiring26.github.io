@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-05-14T02:13:37.791Z</updated>
+  <updated>2020-05-14T09:26:47.567Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unity发布webgl和android不能返回值、调用函数的原因</title>
+    <link href="https://inspiring26.github.io/2020/05/14/unity%E5%8F%91%E5%B8%83webgl%E5%92%8Candroid%E4%B8%8D%E8%83%BD%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%8E%9F%E5%9B%A0/"/>
+    <id>https://inspiring26.github.io/2020/05/14/unity发布webgl和android不能返回值、调用函数的原因/</id>
+    <published>2020-05-14T09:18:20.000Z</published>
+    <updated>2020-05-14T09:26:47.567Z</updated>
+    
+    <content type="html"><![CDATA[<p>所有的这些原因，无法进入游戏、无法打开成功/失败结束页面等<br>主要是因为调用和litjson相关的函数了。</p><p>使用这种需要引入dll的方法，一定要注意查清楚在各个平台的打包问题。</p><p>所以要左多平台发布，尤其是有webgl，尽量使用unity自带的工具实现。</p><a id="more"></a><p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;所有的这些原因，无法进入游戏、无法打开成功/失败结束页面等&lt;br&gt;主要是因为调用和litjson相关的函数了。&lt;/p&gt;&lt;p&gt;使用这种需要引入dll的方法，一定要注意查清楚在各个平台的打包问题。&lt;/p&gt;&lt;p&gt;所以要左多平台发布，尤其是有webgl，尽量使用unity自带的工具实现。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>unity2D分辨率适配</title>
@@ -473,29 +496,6 @@
       
         &lt;p&gt;通过修改要显示的关卡图片的大小和位置，就能实现一种类似初代iphone滑动选择专辑的界面。&lt;br&gt;&lt;img src=&quot;/2020/04/08/unity%E5%88%9B%E5%BB%BA%E6%BB%91%E5%8A%A8%E6%8B%89%E8%BF%91%E7%9A%
       
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity创建滚动条</title>
-    <link href="https://inspiring26.github.io/2020/04/08/unity%E5%88%9B%E5%BB%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1/"/>
-    <id>https://inspiring26.github.io/2020/04/08/unity创建滚动条/</id>
-    <published>2020-04-08T06:05:34.000Z</published>
-    <updated>2020-05-07T05:27:53.733Z</updated>
-    
-    <content type="html"><![CDATA[<p>在遮挡图片同级创建一个scrollbar，<br>调整他的位置及滑动方向，一般选第三个bottom to top，<br>然后在遮蔽图片的scroll rect组件中有一个vertical Scrollbar区域来添加竖向滑动。</p><a id="more"></a><p>结构：<br>— 背景图片<br>— — 遮蔽图片<br>— — — 要显示的内容<br>— — Scrollbar</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在遮挡图片同级创建一个scrollbar，&lt;br&gt;调整他的位置及滑动方向，一般选第三个bottom to top，&lt;br&gt;然后在遮蔽图片的scroll rect组件中有一个vertical Scrollbar区域来添加竖向滑动。&lt;/p&gt;
     
     </summary>
     
