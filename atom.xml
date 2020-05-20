@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-05-14T12:19:50.054Z</updated>
+  <updated>2020-05-20T02:43:08.971Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu18.04部署hexo</title>
+    <link href="https://inspiring26.github.io/2020/05/20/ubuntu18-04%E9%83%A8%E7%BD%B2hexo/"/>
+    <id>https://inspiring26.github.io/2020/05/20/ubuntu18-04部署hexo/</id>
+    <published>2020-05-20T02:30:07.000Z</published>
+    <updated>2020-05-20T02:43:08.971Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ubuntu安装node"><a href="#ubuntu安装node" class="headerlink" title="ubuntu安装node"></a>ubuntu安装node</h3><p>参考连接：<br><a href="https://github.com/nodesource/distributions/blob/master/README.md" target="_blank" rel="noopener">https://github.com/nodesource/distributions/blob/master/README.md</a><br>指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Using Ubuntu</span><br><span class="line">curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br><span class="line"></span><br><span class="line"># Using Debian, as root</span><br><span class="line">curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -</span><br><span class="line">apt-get install -y nodejs</span><br></pre></td></tr></table></figure></p><a id="more"></a><h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h3 id="查看hexo自带功能"><a href="#查看hexo自带功能" class="headerlink" title="查看hexo自带功能"></a>查看hexo自带功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo</span><br></pre></td></tr></table></figure><p>可能会没有server参数</p><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo n alitset</span><br><span class="line">vim source&#x2F;_posts&#x2F;alitest.md</span><br></pre></td></tr></table></figure><h3 id="逐步部署查找问题"><a href="#逐步部署查找问题" class="headerlink" title="逐步部署查找问题"></a>逐步部署查找问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><h3 id="处理ERROR-Deployer-not-found-git-错误"><a href="#处理ERROR-Deployer-not-found-git-错误" class="headerlink" title="处理ERROR Deployer not found: git 错误"></a>处理ERROR Deployer not found: git 错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure><h3 id="配置git邮箱和用户名信息"><a href="#配置git邮箱和用户名信息" class="headerlink" title="配置git邮箱和用户名信息"></a>配置git邮箱和用户名信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email 1xxxx@qq.com</span><br><span class="line">git config --global user.name wxxx</span><br></pre></td></tr></table></figure><h3 id="尝试部署"><a href="#尝试部署" class="headerlink" title="尝试部署"></a>尝试部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sd deploy.sh</span><br></pre></td></tr></table></figure><h3 id="查看hexo功能"><a href="#查看hexo功能" class="headerlink" title="查看hexo功能"></a>查看hexo功能</h3><p>此时可能出现server参数了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo</span><br></pre></td></tr></table></figure></p><h3 id="启动服务到默认端口或指定端口"><a href="#启动服务到默认端口或指定端口" class="headerlink" title="启动服务到默认端口或指定端口"></a>启动服务到默认端口或指定端口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">或</span><br><span class="line">hexo server -p 80</span><br></pre></td></tr></table></figure><p>更多hexo信息参考：<br><a href="https://hexo.io/zh-cn/docs/server.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/server.html</a></p><h3 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsid hexo server -p 80</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;ubuntu安装node&quot;&gt;&lt;a href=&quot;#ubuntu安装node&quot; class=&quot;headerlink&quot; title=&quot;ubuntu安装node&quot;&gt;&lt;/a&gt;ubuntu安装node&lt;/h3&gt;&lt;p&gt;参考连接：&lt;br&gt;&lt;a href=&quot;https://github.com/nodesource/distributions/blob/master/README.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/nodesource/distributions/blob/master/README.md&lt;/a&gt;&lt;br&gt;指令：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Using Ubuntu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -sL https:&amp;#x2F;&amp;#x2F;deb.nodesource.com&amp;#x2F;setup_12.x | sudo -E bash -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y nodejs&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Using Debian, as root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -sL https:&amp;#x2F;&amp;#x2F;deb.nodesource.com&amp;#x2F;setup_12.x | bash -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-get install -y nodejs&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="hexo" scheme="https://inspiring26.github.io/tags/hexo/"/>
+    
+      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>unity的PlayerPrefs的初始化方法</title>
@@ -233,9 +258,9 @@
     
     
     
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
       <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
     
   </entry>
   
@@ -353,11 +378,11 @@
     
     
     
+      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
       <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -470,32 +495,6 @@
       
       
         &lt;p&gt;unity UI的Image，如果设置为透明只需在颜色里调整A值就可以了。&lt;br&gt;A值代表的是不透明度，越大越不透明。&lt;br&gt;但是当值为0和1或255和254时是很不同的，代表了一种开关。&lt;br&gt;要使背景全透，就要设置为1，不能设置为0。&lt;br&gt;除此外，可以加上不同的颜色形
-      
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity设置游戏暂停透明背景</title>
-    <link href="https://inspiring26.github.io/2020/04/13/unity%E8%AE%BE%E7%BD%AE%E6%B8%B8%E6%88%8F%E6%9A%82%E5%81%9C%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF/"/>
-    <id>https://inspiring26.github.io/2020/04/13/unity设置游戏暂停透明背景/</id>
-    <published>2020-04-13T02:23:09.000Z</published>
-    <updated>2020-05-07T05:27:53.737Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="添加一个全屏Image"><a href="#添加一个全屏Image" class="headerlink" title="添加一个全屏Image"></a>添加一个全屏Image</h3><h3 id="将颜色修改为黑色，如090919"><a href="#将颜色修改为黑色，如090919" class="headerlink" title="将颜色修改为黑色，如090919"></a>将颜色修改为黑色，如090919</h3><h3 id="将A值调到200，代表不透明程度"><a href="#将A值调到200，代表不透明程度" class="headerlink" title="将A值调到200，代表不透明程度"></a>将A值调到200，代表不透明程度</h3><h3 id="这样就建立了一个继续显示游戏内容的暂停界面"><a href="#这样就建立了一个继续显示游戏内容的暂停界面" class="headerlink" title="这样就建立了一个继续显示游戏内容的暂停界面"></a>这样就建立了一个继续显示游戏内容的暂停界面</h3><p><img src="/2020/04/13/unity%E8%AE%BE%E7%BD%AE%E6%B8%B8%E6%88%8F%E6%9A%82%E5%81%9C%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF/4.0.png" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;添加一个全屏Image&quot;&gt;&lt;a href=&quot;#添加一个全屏Image&quot; class=&quot;headerlink&quot; title=&quot;添加一个全屏Image&quot;&gt;&lt;/a&gt;添加一个全屏Image&lt;/h3&gt;&lt;h3 id=&quot;将颜色修改为黑色，如090919&quot;&gt;&lt;a href=&quot;#将
       
     
     </summary>
