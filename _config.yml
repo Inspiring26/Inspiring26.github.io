@@ -109,3 +109,9 @@ baidu_url_submit:
 #   type: baidu_url_submitter
 #   repo: git@github.com:Inspiring26/Inspiring26.github.io.git
 #   bracch: master
+
+# Social links
+# social:
+#   个人服务器: http://weehaa.xyz:4000/
+#   github服务器: https://inspiring26.github.io/
+#   简书: https://www.jianshu.com/u/1c73a3a8ae2d
