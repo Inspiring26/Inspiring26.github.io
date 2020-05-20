@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-05-20T02:43:08.971Z</updated>
+  <updated>2020-05-20T08:38:15.197Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unity图片大小变化后整体偏移的原来位置的方法</title>
+    <link href="https://inspiring26.github.io/2020/05/20/unity%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F%E5%8F%98%E5%8C%96%E5%90%8E%E6%95%B4%E4%BD%93%E5%81%8F%E7%A7%BB%E7%9A%84%E5%8E%9F%E6%9D%A5%E4%BD%8D%E7%BD%AE%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://inspiring26.github.io/2020/05/20/unity图片大小变化后整体偏移的原来位置的方法/</id>
+    <published>2020-05-20T08:35:13.000Z</published>
+    <updated>2020-05-20T08:38:15.197Z</updated>
+    
+    <content type="html"><![CDATA[<p>感觉上是锚点相关的内容。<br>实际上可以通过子游戏体轻松实现。<br>在子游戏体里微调位置，同时父游戏体还是原来的逻辑，不用修改脚本里的对应内容。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;感觉上是锚点相关的内容。&lt;br&gt;实际上可以通过子游戏体轻松实现。&lt;br&gt;在子游戏体里微调位置，同时父游戏体还是原来的逻辑，不用修改脚本里的对应内容。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu18.04部署hexo</title>
@@ -469,32 +496,6 @@
       
       
         &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cla
-      
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity的Image透明度</title>
-    <link href="https://inspiring26.github.io/2020/04/13/unity%E7%9A%84Image%E9%80%8F%E6%98%8E%E5%BA%A6/"/>
-    <id>https://inspiring26.github.io/2020/04/13/unity的Image透明度/</id>
-    <published>2020-04-13T07:30:14.000Z</published>
-    <updated>2020-05-07T05:27:53.737Z</updated>
-    
-    <content type="html"><![CDATA[<p>unity UI的Image，如果设置为透明只需在颜色里调整A值就可以了。<br>A值代表的是不透明度，越大越不透明。<br>但是当值为0和1或255和254时是很不同的，代表了一种开关。<br>要使背景全透，就要设置为1，不能设置为0。<br>除此外，可以加上不同的颜色形成不同颜色的遮罩。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;unity UI的Image，如果设置为透明只需在颜色里调整A值就可以了。&lt;br&gt;A值代表的是不透明度，越大越不透明。&lt;br&gt;但是当值为0和1或255和254时是很不同的，代表了一种开关。&lt;br&gt;要使背景全透，就要设置为1，不能设置为0。&lt;br&gt;除此外，可以加上不同的颜色形
       
     
     </summary>

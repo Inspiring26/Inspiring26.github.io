@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[unity图片大小变化后整体偏移的原来位置的方法]]></title>
+    <url>%2F2020%2F05%2F20%2Funity%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F%E5%8F%98%E5%8C%96%E5%90%8E%E6%95%B4%E4%BD%93%E5%81%8F%E7%A7%BB%E7%9A%84%E5%8E%9F%E6%9D%A5%E4%BD%8D%E7%BD%AE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[感觉上是锚点相关的内容。实际上可以通过子游戏体轻松实现。在子游戏体里微调位置，同时父游戏体还是原来的逻辑，不用修改脚本里的对应内容。]]></content>
+      <tags>
+        <tag>unity</tag>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu18.04部署hexo]]></title>
     <url>%2F2020%2F05%2F20%2Fubuntu18-04%E9%83%A8%E7%BD%B2hexo%2F</url>
     <content type="text"><![CDATA[ubuntu安装node参考连接：https://github.com/nodesource/distributions/blob/master/README.md指令：1234567# Using Ubuntucurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -sudo apt-get install -y nodejs# Using Debian, as rootcurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -apt-get install -y nodejs 查看版本12node -vnpm -v 安装hexo1npm install -g hexo-cli 查看hexo自带功能1hexo 可能会没有server参数 新建文章12hexo n alitsetvim source&#x2F;_posts&#x2F;alitest.md 逐步部署查找问题123hexo cleanhexo generatehexo deploy 处理ERROR Deployer not found: git 错误1npm install --save hexo-deployer-git 配置git邮箱和用户名信息12git config --global user.email 1xxxx@qq.comgit config --global user.name wxxx 尝试部署1sd deploy.sh 查看hexo功能此时可能出现server参数了1hexo 启动服务到默认端口或指定端口123hexo server或hexo server -p 80 更多hexo信息参考：https://hexo.io/zh-cn/docs/server.html 后台运行1setsid hexo server -p 80]]></content>
@@ -307,8 +316,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -562,8 +571,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1019,9 +1028,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
