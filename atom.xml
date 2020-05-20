@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-05-20T08:38:15.197Z</updated>
+  <updated>2020-05-20T09:16:32.574Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test5</title>
+    <link href="https://inspiring26.github.io/2020/05/20/test5/"/>
+    <id>https://inspiring26.github.io/2020/05/20/test5/</id>
+    <published>2020-05-20T09:15:41.000Z</published>
+    <updated>2020-05-20T09:16:32.574Z</updated>
+    
+    <content type="html"><![CDATA[<p>test</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;test&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>unity图片大小变化后整体偏移的原来位置的方法</title>
@@ -285,9 +308,9 @@
     
     
     
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
       <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
     
   </entry>
   
@@ -405,11 +428,11 @@
     
     
     
+      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
       <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -471,32 +494,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;第一种是在脚本的类里方法外public声明，挂载后拉上去，好处是可以处理未激活的游戏体，一次声明多次使用。&quot;&gt;&lt;a href=&quot;#第一种是在脚本的类里方法外public声明，挂载后拉上去，好处是可以处理未激活的游戏体，一次声明多次使用。&quot; class=&quot;headerlink&quot; title=&quot;第一种是在脚本的类里方法外public声明，挂载后拉上去，好处是可以处理未激活的游戏体，一次声明多次使用。&quot;&gt;&lt;/a&gt;第一种是在脚本的类里方法外public声明，挂载后拉上去，好处是可以处理未激活的游戏体，一次声明多次使用。&lt;/h3&gt;&lt;h3 id=&quot;第二种是使用&quot;&gt;&lt;a href=&quot;#第二种是使用&quot; class=&quot;headerlink&quot; title=&quot;第二种是使用&quot;&gt;&lt;/a&gt;第二种是使用&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;GameObject.Find(&amp;quot;Bricks1&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;只要名字不重复，随时可以使用，但是每次使用都要Find效率略低，不能Find未激活的游戏体。&lt;br&gt;并且要注意游戏体是否被其他程序设置为未激活了，比如你前一步程序把它的父物体设置未激活了就会导致找不到实体。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity的GameObject</title>
-    <link href="https://inspiring26.github.io/2020/04/13/unity%E7%9A%84GameObject/"/>
-    <id>https://inspiring26.github.io/2020/04/13/unity的GameObject/</id>
-    <published>2020-04-13T08:41:26.000Z</published>
-    <updated>2020-05-07T05:27:53.737Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GameObject.Find(&quot;Bricks1&quot;).GetComponent&lt;MakeBricksMove&gt;().enabled&#x3D;true;</span><br></pre></td></tr></table></figure><p>可以调用很多游戏体，但是不能调用没激活的游戏体。<br>要调用没预先没激活的游戏体，需要用public声明引用。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cla
-      
     
     </summary>
     
