@@ -59,16 +59,20 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="你说你要一场革命">
-<meta property="og:url" content="https://inspiring26.github.io/archives/page/7/index.html">
+  <meta name="description" content="在测试粒子系统的时候遇到无法调整游戏体位置的情况，即使将位置的数值更改了，游戏体还在原来的位置。 排查后发现是因为把其父游戏体的规模缩小为0了，位置是修改了但是在Scene窗口是看不出来变化的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unity无法调整游戏体位置的可能原因">
+<meta property="og:url" content="https://inspiring26.github.io/2020/05/21/unity%E6%97%A0%E6%B3%95%E8%B0%83%E6%95%B4%E6%B8%B8%E6%88%8F%E4%BD%93%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
+<meta property="og:description" content="在测试粒子系统的时候遇到无法调整游戏体位置的情况，即使将位置的数值更改了，游戏体还在原来的位置。 排查后发现是因为把其父游戏体的规模缩小为0了，位置是修改了但是在Scene窗口是看不出来变化的。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-21T08:08:12.000Z">
+<meta property="article:modified_time" content="2020-05-21T08:10:43.237Z">
 <meta property="article:author" content="huang yong">
-<meta property="article:tag" content="deeplearning">
-<meta property="article:tag" content=" AI">
+<meta property="article:tag" content="unity">
+<meta property="article:tag" content="方法">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://inspiring26.github.io/archives/page/7/">
+  <link rel="canonical" href="https://inspiring26.github.io/2020/05/21/unity%E6%97%A0%E6%B3%95%E8%B0%83%E6%95%B4%E6%B8%B8%E6%88%8F%E4%BD%93%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0/">
 
 
 <script id="page-configurations">
@@ -76,13 +80,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | 你说你要一场革命</title>
+  <title>unity无法调整游戏体位置的可能原因 | 你说你要一场革命</title>
   
 
 
@@ -229,348 +233,147 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        
-         
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2020/05/21/unity%E6%97%A0%E6%B3%95%E8%B0%83%E6%95%B4%E6%B8%B8%E6%88%8F%E4%BD%93%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huang yong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你说你要一场革命">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">unity无法调整游戏体位置的可能原因
+
           
-        <span class="collection-header">很好! 目前共计 128 篇日志。 继续努力。</span>
-      </div>
-      
+        </h2>
 
-      
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-  
-  
+              
+                
+              
 
-  
+              <time title="创建时间：2020-05-21 16:08:12 / 修改时间：16:10:43" itemprop="dateCreated datePublished" datetime="2020-05-21T16:08:12+08:00">2020-05-21</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>96</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
     
-    <div class="collection-year">
-      <h2 class="collection-header">2019</h2>
-    </div>
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-01T11:23:51+08:00"
-              content="2019-11-01">
-          11-01
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/11/01/%E9%87%8D%E5%BA%86%E5%85%AC%E4%BA%A4%E5%88%B7%E6%89%8B%E6%9C%BA/" itemprop="url">
-            <span itemprop="name">重庆公交刷手机</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-01T11:22:18+08:00"
-              content="2019-11-01">
-          11-01
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/11/01/%E5%86%99%E5%8D%9A%E5%AE%A2%E8%BE%83%E5%A5%BD%E7%9A%84%E6%96%B9%E6%B3%95/" itemprop="url">
-            <span itemprop="name">写博客较好的方法</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-01T11:00:47+08:00"
-              content="2019-11-01">
-          11-01
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/11/01/hexo%E7%9A%84markdown%E9%87%8C%E4%B8%8B%E5%88%92%E7%BA%BF%E4%B9%9F%E6%98%AF%E6%9C%89%E5%90%AB%E4%B9%89%E7%9A%84/" itemprop="url">
-            <span itemprop="name">hexo的markdown里下划线也是有含义的</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-01T10:56:32+08:00"
-              content="2019-11-01">
-          11-01
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/11/01/python%E7%9A%84%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/" itemprop="url">
-            <span itemprop="name">python的引用方式</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-31T18:09:49+08:00"
-              content="2019-10-31">
-          10-31
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/31/ios13%E5%85%81%E8%AE%B8%E4%B8%8D%E5%8F%97%E4%BF%A1%E4%BB%BB%E7%9A%84%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4%E6%98%AF%E7%81%B0%E8%89%B2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" itemprop="url">
-            <span itemprop="name">ios13允许不受信任的快捷指令是灰色的解决办法</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-30T17:58:43+08:00"
-              content="2019-10-30">
-          10-30
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/30/pytorch%E6%8A%8Aload%E7%9A%84%E6%95%B0%E6%8D%AEmap%E5%88%B0cpu%E4%B8%8A/" itemprop="url">
-            <span itemprop="name">pytorch把load的数据map到cpu上</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-30T16:54:05+08:00"
-              content="2019-10-30">
-          10-30
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/30/%E5%B0%B1%E4%B8%80%E4%B8%87%E5%B9%B4%E5%95%8A/" itemprop="url">
-            <span itemprop="name">就一万年啊</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-30T16:20:39+08:00"
-              content="2019-10-30">
-          10-30
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/30/%E5%AE%89%E8%A3%85nvidia-docker/" itemprop="url">
-            <span itemprop="name">安装nvidia-docker</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-29T17:04:36+08:00"
-              content="2019-10-29">
-          10-29
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/29/tornado%E8%B7%A8%E5%9F%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" itemprop="url">
-            <span itemprop="name">tornado跨域的解决方法</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-29T16:38:16+08:00"
-              content="2019-10-29">
-          10-29
-        </time>
-      </div>
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/29/%E5%90%84%E4%B8%AA%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87%E6%96%87%E6%A1%A3/" itemprop="url">
-            <span itemprop="name">各个常用工具的中英文文档</span>
-          </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
-
-
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在测试粒子系统的时候遇到无法调整游戏体位置的情况，即使将位置的数值更改了，游戏体还在原来的位置。</p>
+<p>排查后发现是因为把其父游戏体的规模缩小为0了，位置是修改了但是在Scene窗口是看不出来变化的。</p>
 
     </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/unity/" rel="tag"># unity</a>
+            
+              <a href="/tags/%E6%96%B9%E6%B3%95/" rel="tag"># 方法</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2020/05/21/unity%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88/" rel="next" title="unity粒子特效">
+                  <i class="fa fa-chevron-left"></i> unity粒子特效
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
 
 
           </div>
           
+    
+    <div class="comments" id="gitalk-container"></div>
+  
 
         </div>
           
@@ -583,6 +386,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -866,6 +674,24 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '4ecd4b54b642d96917d0',
+      clientSecret: '2a9dab5419757f30806446f74129a868bc1aa1b3',
+      repo: 'inspiring26.github.io',
+      owner: 'inspiring26',
+      admin: ['inspiring26'],
+      id: '37a702f57afa93a64371234f054b9781',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'false'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
     </div>
 </body>
