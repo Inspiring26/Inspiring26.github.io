@@ -1,10 +1,10 @@
 while true
 do
 	thetime=$(date "+%M")
-	remainder=$(($thetime%10))
+	remainder=$(($thetime%2))
 	if [ $remainder = '0' ]
 	then
-		git pull
+		cd ~/blog;git pull
 	else
 		sleep 60s
 	fi
