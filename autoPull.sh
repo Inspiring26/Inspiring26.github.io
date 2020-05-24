@@ -1,7 +1,7 @@
 while true
 do
 	thetime=$(date "+%M")
-	remainder=$(($thetime%2))
+	remainder=$(($thetime%5))
 	if [ $remainder = '0' ]
 	then
 		cd ~/blog;git pull
