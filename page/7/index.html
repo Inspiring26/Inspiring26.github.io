@@ -237,6 +237,214 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/11/05/%E4%BD%BF%E7%94%A8python%E5%BB%BA%E7%AB%8B%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huang yong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你说你要一场革命">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/11/05/%E4%BD%BF%E7%94%A8python%E5%BB%BA%E7%AB%8B%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5/" class="post-title-link" itemprop="url">使用python建立两台电脑之间的连接</a>
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-05 14:27:44" itemprop="dateCreated datePublished" datetime="2019-11-05T14:27:44+08:00">2019-11-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-07 13:27:53" itemprop="dateModified" datetime="2020-05-07T13:27:53+08:00">2020-05-07</time>
+              </span>
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.7k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>只需要使用python的socket库就可以建立两台电脑的数据通信</p><h3 id="选择主机和端口"><a href="#选择主机和端口" class="headerlink" title="选择主机和端口"></a>选择主机和端口</h3><p>选择一个电脑以它的端口作为交换的点，所有的数据都往这个点发送，或从这个点获取。<br>通常选服务器的端口作交换数据的地点，当然选客户端的端口也完全不影响。<br>比如我选的是服务器的端口，需要在server.bind() 里传入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&quot;192.168.2.38&quot;,5016)</span><br></pre></td></tr></table></figure><br>一旦一个使用bind绑定本机ip和端口了，另一个电脑只需要使用client.connect(),传入相同参数元组建立连接就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&quot;192.168.2.38&quot;,5016)</span><br></pre></td></tr></table></figure><br>这时使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp | grep 5016</span><br></pre></td></tr></table></figure><br>指令查看端口情况就可以看到一个ip在监听该ip下的这个端口，另一个ip的某个端口在和该端口建立了连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tcp        0      0 192.168.2.38:5016       0.0.0.0:*               LISTEN      16062&#x2F;python3       </span><br><span class="line">tcp        0      0 192.168.2.38:5016       192.168.3.43:56202      ESTABLISHED 16062&#x2F;python3</span><br></pre></td></tr></table></figure><br>上面结果的意思是：<br>0.0.0.0:*，也就是本机在监听192.168.2.38:5016<br>192.168.3.43:56202和192.168.2.38:5016建立了连接</p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/11/05/%E4%BD%BF%E7%94%A8python%E5%BB%BA%E7%AB%8B%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/11/01/%E6%B7%BB%E5%8A%A0%E6%8D%B7%E5%BE%84%E7%9A%84%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huang yong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你说你要一场革命">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/11/01/%E6%B7%BB%E5%8A%A0%E6%8D%B7%E5%BE%84%E7%9A%84%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">添加捷径的方式</a>
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-01 11:25:00" itemprop="dateCreated datePublished" datetime="2019-11-01T11:25:00+08:00">2019-11-01</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-07 13:27:53" itemprop="dateModified" datetime="2020-05-07T13:27:53+08:00">2020-05-07</time>
+              </span>
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>39</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>如果在捷径社区无法直接安装<br>可以先分享到微信 再跳转safari<br>然后就可以安装了</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/11/01/%E9%87%8D%E5%BA%86%E5%85%AC%E4%BA%A4%E5%88%B7%E6%89%8B%E6%9C%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1054,214 +1262,6 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/10/29/tornado%E8%B7%A8%E5%9F%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="huang yong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你说你要一场革命">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/29/tornado%E8%B7%A8%E5%9F%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">tornado跨域的解决方法</a>
-          
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-29 17:04:36" itemprop="dateCreated datePublished" datetime="2019-10-29T17:04:36+08:00">2019-10-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-07 13:27:53" itemprop="dateModified" datetime="2020-05-07T13:27:53+08:00">2020-05-07</time>
-              </span>
-            
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>1.6k</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>tornado h5跨域会报一种XMLHttpRequest错误，错误代码405。<br>即使在tornado里设置了跨域，依然报错，这是因为h5跨域请求时要先发一个options请求，需要在Handler里处理一下options请求，具体代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class BaseHandler(tornado.web.RequestHandler):</span><br><span class="line">    def set_default_headers(self):</span><br><span class="line">        self.set_header(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)</span><br><span class="line">        self.set_header(&#39;Access-Control-Allow-Headers&#39;, &#39;*&#39;)</span><br><span class="line">        self.set_header(&#39;Access-Control-Max-Age&#39;, 1000)</span><br><span class="line">        self.set_header(&quot;Content-Type&quot;, &quot;application&#x2F;json; charset&#x3D;UTF-8&quot;)</span><br><span class="line">        self.set_header(&#39;Access-Control-Allow-Methods&#39;, &#39;POST, GET, OPTIONS&#39;)</span><br><span class="line">        self.set_header(&#39;Access-Control-Allow-Headers&#39;,</span><br><span class="line">                        &#39;authorization, Authorization, Content-Type, Access-Control-Allow-Origin, Access-Control-Allow-Headers, X-Requested-By, Access-Control-Allow-Methods&#39;)</span><br><span class="line"></span><br><span class="line">class MainHandler(BaseHandler):</span><br><span class="line">    </span><br><span class="line">    async def post(self):</span><br><span class="line">        # 接收到图片的base64字符串</span><br><span class="line">        jsonbyte &#x3D; self.request.body.decode(&#39;utf8&#39;)</span><br><span class="line">        jsondict &#x3D; json.loads(jsonbyte)</span><br><span class="line">        picdata &#x3D; re.sub(&#39;^data:image&#x2F;.+;base64,&#39;, &#39;&#39;, jsondict[&quot;pic&quot;]+&quot;&#x3D;&#x3D;&quot;)</span><br><span class="line">        r.sadd(&quot;palm&quot;,picdata)</span><br><span class="line">        # 将图片转换成PIL读取的图片矩阵</span><br><span class="line">        binary_data &#x3D; base64.b64decode(picdata)</span><br><span class="line">        img_data &#x3D; BytesIO(binary_data)</span><br><span class="line">        imgtmp &#x3D; Image.open(img_data).convert(&quot;RGB&quot;)</span><br><span class="line">        res &#x3D; await predictHandler(imgtmp)     </span><br><span class="line">        self.finish(res)#finish方法也是调用的write方法</span><br><span class="line"></span><br><span class="line">    async def options(self):</span><br><span class="line">        self.finish()</span><br></pre></td></tr></table></figure><br>options方式请求只要通了就行，options请求之后就是正常的post请求了。</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/10/29/%E5%90%84%E4%B8%AA%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87%E6%96%87%E6%A1%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="huang yong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你说你要一场革命">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/29/%E5%90%84%E4%B8%AA%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87%E6%96%87%E6%A1%A3/" class="post-title-link" itemprop="url">各个常用工具的中英文文档</a>
-          
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-29 16:38:16" itemprop="dateCreated datePublished" datetime="2019-10-29T16:38:16+08:00">2019-10-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-07 13:27:53" itemprop="dateModified" datetime="2020-05-07T13:27:53+08:00">2020-05-07</time>
-              </span>
-            
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>949</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="docker-英文"><a href="#docker-英文" class="headerlink" title="docker 英文"></a>docker 英文</h3><p><a href="https://docs.docker.com/engine/reference/commandline/docker/" target="_blank" rel="noopener">https://docs.docker.com/engine/reference/commandline/docker/</a></p><h3 id="python-英文"><a href="#python-英文" class="headerlink" title="python 英文"></a>python 英文</h3><p><a href="https://docs.python.org/3.7/" target="_blank" rel="noopener">https://docs.python.org/3.7/</a></p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/29/%E5%90%84%E4%B8%AA%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87%E6%96%87%E6%A1%A3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
@@ -1311,7 +1311,7 @@
         
           <a href="/archives/%20%7C%7C%20archive">
         
-          <span class="site-state-item-count">128</span>
+          <span class="site-state-item-count">130</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1324,7 +1324,7 @@
             <a href="/tags/%20%7C%7C%20tags">
           
         
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">57</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1406,7 +1406,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">70k</span>
+    <span title="站点总字数">71k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-05-21T08:10:43.237Z</updated>
+  <updated>2020-05-28T03:06:46.297Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unity安卓分辨率适配</title>
+    <link href="https://inspiring26.github.io/2020/05/28/unity%E5%AE%89%E5%8D%93%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D/"/>
+    <id>https://inspiring26.github.io/2020/05/28/unity安卓分辨率适配/</id>
+    <published>2020-05-28T02:53:03.000Z</published>
+    <updated>2020-05-28T03:06:46.297Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里以u2d为例：<br>在开发的时候选一个16/9的分辨率，比如667/375。<br>在画布中设置好分辨率375/667。<br>在Game窗口可以选择多种分辨率比例进行测试。<br>有些分辨率是2:1的，这时候在不改变画布大小的情况下，将背景图片拉伸或放一张更长的图片就可以实现对2:1分辨率的简单适配。<br>比如可以将处于底层的背景图片的宽/高修改为375/867，这样就可以实现对页面的简单适配，解决屏幕上下部分出现空白的问题。</p><a id="more"></a><p>当然还可以更好的适配，比如先获取设备的分辨率，然后按比例确定上下端元素的位置，比如一些位移和释放技能的位置。<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 在默认using UnityEngine;的情况下</span><br><span class="line">Screen.height</span><br><span class="line">Screen.width</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里以u2d为例：&lt;br&gt;在开发的时候选一个16/9的分辨率，比如667/375。&lt;br&gt;在画布中设置好分辨率375/667。&lt;br&gt;在Game窗口可以选择多种分辨率比例进行测试。&lt;br&gt;有些分辨率是2:1的，这时候在不改变画布大小的情况下，将背景图片拉伸或放一张更长的图片就可以实现对2:1分辨率的简单适配。&lt;br&gt;比如可以将处于底层的背景图片的宽/高修改为375/867，这样就可以实现对页面的简单适配，解决屏幕上下部分出现空白的问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="Android" scheme="https://inspiring26.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim在全文替换字符串</title>
+    <link href="https://inspiring26.github.io/2020/05/24/vim%E5%9C%A8%E5%85%A8%E6%96%87%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>https://inspiring26.github.io/2020/05/24/vim在全文替换字符串/</id>
+    <published>2020-05-24T13:47:28.000Z</published>
+    <updated>2020-05-28T02:51:50.556Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:1,$s&#x2F;abc&#x2F;efg&#x2F;g</span><br></pre></td></tr></table></figure><p>表示从第一行开始将所有的abc替换为efg</p><h3 id="当前行替换"><a href="#当前行替换" class="headerlink" title="当前行替换"></a>当前行替换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s&#x2F;abc&#x2F;efg&#x2F;g</span><br></pre></td></tr></table></figure><h3 id="当前行只替换第一个"><a href="#当前行只替换第一个" class="headerlink" title="当前行只替换第一个"></a>当前行只替换第一个</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s&#x2F;abc&#x2F;efg&#x2F;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="回顾一下vim查找关键字"><a href="#回顾一下vim查找关键字" class="headerlink" title="回顾一下vim查找关键字"></a>回顾一下vim查找关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;abc</span><br></pre></td></tr></table></figure><p>即为查找，按n继续查找。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;:1,$s&amp;#x2F;abc&amp;#x2F;efg&amp;#x2F;g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;表示从第一行开始将所有的abc替换为efg&lt;/p&gt;&lt;h3 id=&quot;当前行替换&quot;&gt;&lt;a href=&quot;#当前行替换&quot; class=&quot;headerlink&quot; title=&quot;当前行替换&quot;&gt;&lt;/a&gt;当前行替换&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;:s&amp;#x2F;abc&amp;#x2F;efg&amp;#x2F;g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&quot;当前行只替换第一个&quot;&gt;&lt;a href=&quot;#当前行只替换第一个&quot; class=&quot;headerlink&quot; title=&quot;当前行只替换第一个&quot;&gt;&lt;/a&gt;当前行只替换第一个&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;:s&amp;#x2F;abc&amp;#x2F;efg&amp;#x2F;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="vim" scheme="https://inspiring26.github.io/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>unity无法调整游戏体位置的可能原因</title>
@@ -359,9 +407,9 @@
     
     
     
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
+    
+      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -451,54 +499,6 @@
     <summary type="html">
     
       &lt;p&gt;以火箭始终朝向砖块为例&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Vector3 dir &amp;#x3D; brickList[target%10].transform.position - rocket.transform.position;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;float angle &amp;#x3D; Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rocket.transform.rotation &amp;#x3D; Quaternion.AngleAxis(270+angle, Vector3.forward);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity加载图片、音乐及替换到指定组件上的总结</title>
-    <link href="https://inspiring26.github.io/2020/04/15/unity%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E5%8F%8A%E6%9B%BF%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%BB%84%E4%BB%B6%E4%B8%8A%E7%9A%84%E6%80%BB%E7%BB%93/"/>
-    <id>https://inspiring26.github.io/2020/04/15/unity加载图片、音乐及替换到指定组件上的总结/</id>
-    <published>2020-04-15T07:46:44.000Z</published>
-    <updated>2020-05-07T05:27:53.733Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h3><h4 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h4><p>我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;</span><br><span class="line">private object objs;</span><br><span class="line">private GameObject GObject;</span><br><span class="line"></span><br><span class="line">public void LoadMusic(int num)&#123;</span><br><span class="line">objs &#x3D; Resources.Load(songList[num]);</span><br><span class="line">GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; (AudioClip)objs; </span><br><span class="line">GObject.GetComponent&lt;AudioSource&gt;().Play();</span><br><span class="line">GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Start()&#123;</span><br><span class="line">    GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。<br>以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下：</p><a id="more"></a><h4 id="读取（unity风格）-主流方法）"><a href="#读取（unity风格）-主流方法）" class="headerlink" title="读取（unity风格）(主流方法）"></a>读取（unity风格）(主流方法）</h4><p>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;</span><br><span class="line">    private AudioClip objs;</span><br><span class="line">    private GameObject GObject;</span><br><span class="line"></span><br><span class="line">    public void LoadMusic(int num)&#123;</span><br><span class="line">    objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip;</span><br><span class="line">    GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; objs;</span><br><span class="line">    GObject.GetComponent&lt;AudioSource&gt;().Play();</span><br><span class="line">    GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    void Start()&#123;</span><br><span class="line">        GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><br>使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Resources.Load(路径, typeof(目标格式)) as 目标格式;</span><br></pre></td></tr></table></figure><br>形式读取。</p><h4 id="更简洁的写法"><a href="#更简洁的写法" class="headerlink" title="更简洁的写法"></a>更简洁的写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;</span><br><span class="line">    private AudioClip objs;</span><br><span class="line">    private GameObject GObject;</span><br><span class="line">    private AudioSource audioSource;</span><br><span class="line"></span><br><span class="line">    public void LoadMusic(int num)&#123;</span><br><span class="line">    objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip;</span><br><span class="line">    audioSource.clip &#x3D; objs;</span><br><span class="line">    audioSource.Play();</span><br><span class="line">    audioSource.loop &#x3D; true;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);</span><br><span class="line">        Debug.Log(GObject.GetComponent&lt;AudioSource&gt;()); &#x2F;&#x2F; 查看要用变量指代的具体是什么类型</span><br><span class="line">        audioSource &#x3D; GObject.GetComponent&lt;AudioSource&gt;();</span><br><span class="line"></span><br><span class="line">        LoadMusic(0); &#x2F;&#x2F; 打开游戏就播放</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>可以更进一步用变量替代重复的调用语句，如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GObject.GetComponent&lt;AudioSource&gt;()</span><br></pre></td></tr></table></figure><br><img src="/2020/04/15/unity%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E5%8F%8A%E6%9B%BF%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%BB%84%E4%BB%B6%E4%B8%8A%E7%9A%84%E6%80%BB%E7%BB%93/1.1.png" alt><br>具体声明为什么格式，可以先打印看一下。<br>另外开场就进行的操作，如播放音乐，可以放在Start()里。</p><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>需要注意的是要播放音乐，必须先把音乐组件放在某个游戏体上，不能凭空播放音乐。</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><h4 id="读取-1"><a href="#读取-1" class="headerlink" title="读取"></a>读取</h4><p>读取系统自带的图像组件，必须使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine.UI;</span><br></pre></td></tr></table></figure><br>否则会找不到Image。</p><p>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">private Image icon;</span><br><span class="line">public Sprite sp1,sp2;</span><br><span class="line">public void ChangeThePicture()&#123;</span><br><span class="line"></span><br><span class="line">if(this.GetComponent&lt;Scrollbar&gt;().value &lt; 0.5)&#123;</span><br><span class="line"></span><br><span class="line">icon.sprite &#x3D; sp1;</span><br><span class="line"></span><br><span class="line">&#125;else&#123;</span><br><span class="line">icon.sprite &#x3D; sp2;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">   &#x2F;&#x2F; Start is called before the first frame update</span><br><span class="line">   void Start()</span><br><span class="line">   &#123;</span><br><span class="line">       icon &#x3D; this.GetComponent&lt;Image&gt;();</span><br><span class="line">       sp1 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;矩形 3943 拷贝&quot;, typeof(Sprite)) as Sprite;</span><br><span class="line">       sp2 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;bg_kaiguan&quot;, typeof(Sprite)) as Sprite;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>图片挂的是sprite，音乐挂的是clip，都不是检视窗口内左侧的对应名字。<br>出于节省资源的考虑，可以把sp1、sp2这种多次使用的图片在父物体里以public方式加载，在当前脚本里调用即可，不在当前脚本加载是为了保持脚本重复利用。<br>于是另一个结论，重复利用的脚本不加载资源。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;音乐&quot;&gt;&lt;a href=&quot;#音乐&quot; class=&quot;headerlink&quot; title=&quot;音乐&quot;&gt;&lt;/a&gt;音乐&lt;/h3&gt;&lt;h4 id=&quot;读取&quot;&gt;&lt;a href=&quot;#读取&quot; class=&quot;headerlink&quot; title=&quot;读取&quot;&gt;&lt;/a&gt;读取&lt;/h4&gt;&lt;p&gt;我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。&lt;br&gt;代码：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;private string[] songList &amp;#x3D; &amp;#123;&amp;quot;fade_cut&amp;quot;,&amp;quot;Flirting_With_June_cut&amp;quot;,&amp;quot;lzttdmg_cut&amp;quot;,&amp;quot;Ocean_cut&amp;quot;,&amp;quot;Relax_cut&amp;quot;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;private object objs;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;private GameObject GObject;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;public void LoadMusic(int num)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	objs &amp;#x3D; Resources.Load(songList[num]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	GObject.GetComponent&amp;lt;AudioSource&amp;gt;().clip &amp;#x3D; (AudioClip)objs; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	GObject.GetComponent&amp;lt;AudioSource&amp;gt;().Play();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	GObject.GetComponent&amp;lt;AudioSource&amp;gt;().loop &amp;#x3D; true;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;void Start()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    GObject &amp;#x3D; GameObject.Find(&amp;quot;SelectionPage&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。&lt;br&gt;以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下：&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity脚本里的this和获取Scrollbar里的滑动值</title>
-    <link href="https://inspiring26.github.io/2020/04/15/unity%E8%84%9A%E6%9C%AC%E9%87%8C%E7%9A%84this%E5%92%8C%E8%8E%B7%E5%8F%96Scrollbar%E9%87%8C%E7%9A%84%E6%BB%91%E5%8A%A8%E5%80%BC/"/>
-    <id>https://inspiring26.github.io/2020/04/15/unity脚本里的this和获取Scrollbar里的滑动值/</id>
-    <published>2020-04-15T07:10:01.000Z</published>
-    <updated>2020-05-07T05:27:53.737Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="在脚本里使用this替代GameObject-Find-“”-，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。"><a href="#在脚本里使用this替代GameObject-Find-“”-，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。" class="headerlink" title="在脚本里使用this替代GameObject.Find(“”)，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。"></a>在脚本里使用this替代GameObject.Find(“”)，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。</h3><h3 id="通过"><a href="#通过" class="headerlink" title="通过"></a>通过</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.GetComponent&lt;Scrollbar&gt;().value</span><br></pre></td></tr></table></figure><a id="more"></a><p>就可以获得Scrollbar的滑动值。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;在脚本里使用this替代GameObject-Find-“”-，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。&quot;&gt;&lt;a href=&quot;#在脚本里使用this替代GameObject-Find-“”-，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。&quot; class=&quot;headerlink&quot; title=&quot;在脚本里使用this替代GameObject.Find(“”)，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。&quot;&gt;&lt;/a&gt;在脚本里使用this替代GameObject.Find(“”)，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。&lt;/h3&gt;&lt;h3 id=&quot;通过&quot;&gt;&lt;a href=&quot;#通过&quot; class=&quot;headerlink&quot; title=&quot;通过&quot;&gt;&lt;/a&gt;通过&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.GetComponent&amp;lt;Scrollbar&amp;gt;().value&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
