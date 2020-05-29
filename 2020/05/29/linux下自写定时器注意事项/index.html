@@ -59,15 +59,15 @@
   };
 </script>
 
-  <meta name="description" content="linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：12345678910111213while truedo	thetime&#x3D;$(date &quot;+%M&quot;)	remainder&#x3D;">
+  <meta name="description" content="linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：1234567891011121314while truedo	thetime&#x3D;$(date &quot;+%M&quot;)	thetime2&amp;#x3D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux下自写定时器注意事项">
 <meta property="og:url" content="https://inspiring26.github.io/2020/05/29/linux%E4%B8%8B%E8%87%AA%E5%86%99%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
-<meta property="og:description" content="linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：12345678910111213while truedo	thetime&#x3D;$(date &quot;+%M&quot;)	remainder&#x3D;">
+<meta property="og:description" content="linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：1234567891011121314while truedo	thetime&#x3D;$(date &quot;+%M&quot;)	thetime2&amp;#x3D">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-29T02:22:24.000Z">
-<meta property="article:modified_time" content="2020-05-29T02:30:23.301Z">
+<meta property="article:modified_time" content="2020-05-29T05:45:13.869Z">
 <meta property="article:author" content="huang yong">
 <meta property="article:tag" content="方法">
 <meta property="article:tag" content="linux">
@@ -270,7 +270,7 @@
                 
               
 
-              <time title="创建时间：2020-05-29 10:22:24 / 修改时间：10:30:23" itemprop="dateCreated datePublished" datetime="2020-05-29T10:22:24+08:00">2020-05-29</time>
+              <time title="创建时间：2020-05-29 10:22:24 / 修改时间：13:45:13" itemprop="dateCreated datePublished" datetime="2020-05-29T10:22:24+08:00">2020-05-29</time>
             </span>
           
             
@@ -295,7 +295,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>380</span>
+              <span>488</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -318,7 +318,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>linux下可以方便的自写定时器脚本。<br>常用的是每60秒判断一下时间。<br>以每5分钟git pull一次为例。<br>需要计算分钟数对5的余数为0.<br>但是可能会出现一个03%5的情况，这时候脚本计算会出错。<br>可以通过对分钟值加10来避免。<br>简单的脚本如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">while true</span><br><span class="line">do</span><br><span class="line">	thetime&#x3D;$(date &quot;+%M&quot;)</span><br><span class="line">	remainder&#x3D;$((($thetime+10)%5))</span><br><span class="line">	if [ $remainder &#x3D; &#39;0&#39; ]</span><br><span class="line">	then</span><br><span class="line">		cd ~&#x2F;blog;sh gitpull.sh</span><br><span class="line">		date</span><br><span class="line">		sleep 60s</span><br><span class="line">	else</span><br><span class="line">		sleep 60s</span><br><span class="line">	fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p><a id="more"></a>
+        <p>linux下可以方便的自写定时器脚本。<br>常用的是每60秒判断一下时间。<br>以每5分钟git pull一次为例。<br>需要计算分钟数对5的余数为0.<br>但是可能会出现一个03%5的情况，这时候脚本计算会出错。<br>可以通过对分钟值加10来避免。<br>简单的脚本如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">while true</span><br><span class="line">do</span><br><span class="line">	thetime&#x3D;$(date &quot;+%M&quot;)</span><br><span class="line">	thetime2&#x3D;&#96;expr $thetime + 10&#96;</span><br><span class="line">	remainder&#x3D;$(($thetime2%5))</span><br><span class="line">	if [ $remainder &#x3D; &#39;0&#39; ]</span><br><span class="line">	then</span><br><span class="line">		cd ~&#x2F;blog;sh gitpull.sh</span><br><span class="line">		date</span><br><span class="line">		sleep 60s</span><br><span class="line">	else</span><br><span class="line">		sleep 60s</span><br><span class="line">	fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure><br>shell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。<br>上面使用expr的方式是可行的。</p><a id="more"></a>
 <h3 id="需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因"><a href="#需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因" class="headerlink" title="需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因"></a>需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因</h3>
     </div>
 
