@@ -14,7 +14,8 @@ linux下可以方便的自写定时器脚本。
 while true
 do
 	thetime=$(date "+%M")
-	remainder=$((($thetime+10)%5))
+	thetime2=`expr $thetime + 10`
+	remainder=$(($thetime2%5))
 	if [ $remainder = '0' ]
 	then
 		cd ~/blog;sh gitpull.sh
@@ -26,5 +27,7 @@ do
 done
 
 ```
+shell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。
+上面使用expr的方式是可行的。
 
 ### 需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因
