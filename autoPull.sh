@@ -1,7 +1,7 @@
 while true
 do
 	thetime=$(date "+%M")
-	thetime2 = `expr $thetime + 10`
+	thetime2=`expr $thetime + 10`
 	remainder=$(($thetime2%5))
 	if [ $remainder = '0' ]
 	then
