@@ -1,7 +1,8 @@
 while true
 do
 	thetime=$(date "+%M")
-	remainder=$((($thetime+10)%5))
+	thetime2 = `expr $thetime + 10`
+	remainder=$(($thetime2%5))
 	if [ $remainder = '0' ]
 	then
 		cd ~/blog;sh gitpull.sh
