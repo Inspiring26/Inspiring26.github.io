@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[unity的inspector面板值不随脚本改变的理解]]></title>
+    <url>%2F2020%2F06%2F01%2Funity%E7%9A%84inspector%E9%9D%A2%E6%9D%BF%E5%80%BC%E4%B8%8D%E9%9A%8F%E8%84%9A%E6%9C%AC%E6%94%B9%E5%8F%98%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[unity脚本声明的一些public变量，一旦挂到游戏体上以后，在脚本修改这些值的时候，inspector面板里并不修改。你可以这么理解它的机制：你写一个脚本后你可以把它挂在多个游戏体上，你可以为每个脚本拉上当前所在的游戏体，你也可以对每个游戏体进行编号，这些都是可以直接在inspector界面拉到脚本上或写到脚本上的。unity为了实现让你随便拉游戏体的功能，在inspector面板上暴露出来的变量都是和这个游戏体绑定的，不是原来的脚本简单复制。 所以：不需要单独赋值的变量一律使用private，需要被其他脚本引用的变量，为它创建一个方法，直接返回该变量。即：除非单独一个脚本在多出使用，且分别赋值给变量，否则一律使用声明为私有变量。]]></content>
+      <tags>
+        <tag>unity</tag>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux下自写定时器注意事项]]></title>
     <url>%2F2020%2F05%2F29%2Flinux%E4%B8%8B%E8%87%AA%E5%86%99%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：1234567891011121314while truedo thetime&#x3D;$(date &quot;+%M&quot;) thetime2&#x3D;&#96;expr $thetime + 10&#96; remainder&#x3D;$(($thetime2%5)) if [ $remainder &#x3D; &#39;0&#39; ] then cd ~&#x2F;blog;sh gitpull.sh date sleep 60s else sleep 60s fidoneshell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。上面使用expr的方式是可行的。 需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因]]></content>
@@ -368,8 +377,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -393,8 +402,8 @@
     <url>%2F2019%2F12%2F27%2FApple-Watch-%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%9A%90%E8%97%8F%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[1.在点亮屏幕后，双指放在时间上，手表会报时。 2.手表戴到手上需要解锁，如果此时手机解锁一次，手表就会自动解锁。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>Apple Watch</tag>
         <tag>技巧</tag>
+        <tag>Apple Watch</tag>
       </tags>
   </entry>
   <entry>
@@ -419,8 +428,8 @@
     <url>%2F2019%2F11%2F27%2Fpython%E7%AE%80%E5%8D%95%E8%80%8C%E6%9C%89%E7%94%A8%E7%9A%84%E6%97%A5%E5%B8%B8%E8%84%9A%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[获取文件夹内所有文件名12import osnext(os.walk(&#39;.&#39;))[2]移动文件等shell操作12import osos.system(&quot;mv aa bb&quot;) 多线程实际使用中可以通过htop看到，执行一个处理时只会把一个cpu线程核心用满，想充分利用cpu和节省时间，就要多用多线程。用起来非常简单，建议传入参数，以便分段同时执行123import threadingt1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)t1.run()举个用例1234567891011&gt;&gt;&gt; def handle(s,d):... for i in range(s,d):... im &#x3D; Image.open(namelist[i])... (width, height) &#x3D; (im.width&#x2F;max(im.width,im.height)*2000,im.height&#x2F;max(im.width,im.height)*2000)... im_re &#x3D; im.resize(( int(width), int(height) ))... im_re.save(&quot;..&#x2F;hands3&#x2F;&quot;+namelist[i])... &gt;&gt;&gt; t1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)&gt;&gt;&gt; t1.start()&gt;&gt;&gt; t2 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(len(namelist)&#x2F;&#x2F;2,len(namelist)),name&#x3D;&#39;2&#39;)&gt;&gt;&gt; t2.start() 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>技巧</tag>
         <tag>python</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -437,8 +446,8 @@
     <url>%2F2019%2F11%2F21%2Fmask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[获取绝对路径1os.path.abspath(&quot;..&#x2F;&quot;)联合路径或文件12os.path.join(ROOT_DIR, &quot;samples&#x2F;coco&#x2F;&quot;)os.path.join(ROOT_DIR, &quot;mask_rcnn_coco.h5&quot;) 如果不存在就下载或创建12if not os.path.exists(COCO_MODEL_PATH): utils.download_trained_weights(COCO_MODEL_PATH) 组织参数及调用 以及传参，用一部分也可以传整个，显得很简洁1234567891011class InferenceConfig(coco.CocoConfig): # Set batch size to 1 since we&#39;ll be running inference on # one image at a time. Batch size &#x3D; GPU_COUNT * IMAGES_PER_GPU GPU_COUNT &#x3D; 1 IMAGES_PER_GPU &#x3D; 1config &#x3D; InferenceConfig()config.GPU_COUNT()model &#x3D; modellib.MaskRCNN(mode&#x3D;&quot;inference&quot;, model_dir&#x3D;MODEL_DIR, config&#x3D;config) 列出文件夹里的所有文件和文件夹1next(os.walk(IMAGE_DIR))[2] 随机选取一个元素1random.choice(file_names) 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>技巧</tag>
         <tag>python</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -623,8 +632,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -1080,9 +1089,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
+        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
