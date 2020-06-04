@@ -402,8 +402,8 @@
     <url>%2F2019%2F12%2F27%2FApple-Watch-%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%9A%90%E8%97%8F%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[1.在点亮屏幕后，双指放在时间上，手表会报时。 2.手表戴到手上需要解锁，如果此时手机解锁一次，手表就会自动解锁。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>技巧</tag>
         <tag>Apple Watch</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -428,8 +428,8 @@
     <url>%2F2019%2F11%2F27%2Fpython%E7%AE%80%E5%8D%95%E8%80%8C%E6%9C%89%E7%94%A8%E7%9A%84%E6%97%A5%E5%B8%B8%E8%84%9A%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[获取文件夹内所有文件名12import osnext(os.walk(&#39;.&#39;))[2]移动文件等shell操作12import osos.system(&quot;mv aa bb&quot;) 多线程实际使用中可以通过htop看到，执行一个处理时只会把一个cpu线程核心用满，想充分利用cpu和节省时间，就要多用多线程。用起来非常简单，建议传入参数，以便分段同时执行123import threadingt1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)t1.run()举个用例1234567891011&gt;&gt;&gt; def handle(s,d):... for i in range(s,d):... im &#x3D; Image.open(namelist[i])... (width, height) &#x3D; (im.width&#x2F;max(im.width,im.height)*2000,im.height&#x2F;max(im.width,im.height)*2000)... im_re &#x3D; im.resize(( int(width), int(height) ))... im_re.save(&quot;..&#x2F;hands3&#x2F;&quot;+namelist[i])... &gt;&gt;&gt; t1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)&gt;&gt;&gt; t1.start()&gt;&gt;&gt; t2 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(len(namelist)&#x2F;&#x2F;2,len(namelist)),name&#x3D;&#39;2&#39;)&gt;&gt;&gt; t2.start() 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>python</tag>
         <tag>技巧</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -446,8 +446,8 @@
     <url>%2F2019%2F11%2F21%2Fmask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[获取绝对路径1os.path.abspath(&quot;..&#x2F;&quot;)联合路径或文件12os.path.join(ROOT_DIR, &quot;samples&#x2F;coco&#x2F;&quot;)os.path.join(ROOT_DIR, &quot;mask_rcnn_coco.h5&quot;) 如果不存在就下载或创建12if not os.path.exists(COCO_MODEL_PATH): utils.download_trained_weights(COCO_MODEL_PATH) 组织参数及调用 以及传参，用一部分也可以传整个，显得很简洁1234567891011class InferenceConfig(coco.CocoConfig): # Set batch size to 1 since we&#39;ll be running inference on # one image at a time. Batch size &#x3D; GPU_COUNT * IMAGES_PER_GPU GPU_COUNT &#x3D; 1 IMAGES_PER_GPU &#x3D; 1config &#x3D; InferenceConfig()config.GPU_COUNT()model &#x3D; modellib.MaskRCNN(mode&#x3D;&quot;inference&quot;, model_dir&#x3D;MODEL_DIR, config&#x3D;config) 列出文件夹里的所有文件和文件夹1next(os.walk(IMAGE_DIR))[2] 随机选取一个元素1random.choice(file_names) 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>python</tag>
         <tag>技巧</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
