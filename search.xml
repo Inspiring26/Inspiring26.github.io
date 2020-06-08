@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[对熵的简单理解]]></title>
+    <url>%2F2020%2F06%2F08%2F%E5%AF%B9%E7%86%B5%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[简言之，事情越不确定熵越大假设有5枚硬币，都是正面，只有一种方式，3个正面2个反面，很多排列方式他们的熵分别为12S1 &#x3D; -1*ln(1)&#x3D;0S2 &#x3D; -1*(0.4*ln0.4+0.6*ln0.6)*5&#x3D;3.365 熵越大含的信息量越多比如神经网络分类的结果，假设有5类，一种是1，0，0，0，0，另一种是0.21，0.36,…类似上面的计算就可以得出第二种熵更大，它喊得信息也更多，可以用作知识蒸馏中的soft label，学生网络能学到更多信息。 越混乱熵越高，越稳定熵越低]]></content>
+      <tags>
+        <tag>思考</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[unity的inspector面板值不随脚本改变的理解]]></title>
     <url>%2F2020%2F06%2F01%2Funity%E7%9A%84inspector%E9%9D%A2%E6%9D%BF%E5%80%BC%E4%B8%8D%E9%9A%8F%E8%84%9A%E6%9C%AC%E6%94%B9%E5%8F%98%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[unity脚本声明的一些public变量，一旦挂到游戏体上以后，在脚本修改这些值的时候，inspector面板里并不修改。你可以这么理解它的机制：你写一个脚本后你可以把它挂在多个游戏体上，你可以为每个脚本拉上当前所在的游戏体，你也可以对每个游戏体进行编号，这些都是可以直接在inspector界面拉到脚本上或写到脚本上的。unity为了实现让你随便拉游戏体的功能，在inspector面板上暴露出来的变量都是和这个游戏体绑定的，不是原来的脚本简单复制。 所以：不需要单独赋值的变量一律使用private，需要被其他脚本引用的变量，为它创建一个方法，直接返回该变量。即：除非单独一个脚本在多出使用，且分别赋值给变量，否则一律使用声明为私有变量。]]></content>
@@ -154,8 +162,8 @@
     <url>%2F2020%2F04%2F23%2Funity%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3%2F</url>
     <content type="text"><![CDATA[可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。少了错综复杂的引用，当然更清晰，更易于管理。集中管理的好处还是很多的。可以集中的有，数据、帧操作等。 在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开1234&#x2F;&#x2F; 判断可点击区域内是否miss&#x2F;&#x2F; 这个区域可以比正常的状态判定区域稍微大一些，给点晚了的miss一些时间段&#x2F;&#x2F; 第一步，判断是否在可点按区域。方法是起点一个数组，终点一个数组，如果进入了第一个没进入第二个就是在区域内&#x2F;&#x2F; 第二步，判断是否点击。方法是起点进入时给一个未点击标识，到达终点时检查一下是否点了 12345678public void CloseHearts(int n)&#123;&#x2F;&#x2F;传入丢失星星数 &#x2F;&#x2F; 第一步，将所有heart按顺序装入数组 &#x2F;&#x2F; 第二步，从最后一个开始倒序关闭 for(int i&#x3D;2;i&gt;2-n;i--)&#123; heartList[i].transform.localScale &#x3D; new Vector3(0f,0f,1f); &#125;&#125; 游戏体的Find、实例化都放在Start()里，这个不用多说尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>总结</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -200,9 +208,9 @@
     <url>%2F2020%2F04%2F15%2Funity%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E5%8F%8A%E6%9B%BF%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%BB%84%E4%BB%B6%E4%B8%8A%E7%9A%84%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[音乐读取我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。代码：123456789101112131415private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;private object objs;private GameObject GObject;public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num]); GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; (AudioClip)objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;&#125;void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);&#125;可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下： 读取（unity风格）(主流方法）代码：1234567891011121314private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true; &#125; void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); &#125;使用1Resources.Load(路径, typeof(目标格式)) as 目标格式;形式读取。 更简洁的写法1234567891011121314151617181920private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; private AudioSource audioSource; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; audioSource.clip &#x3D; objs; audioSource.Play(); audioSource.loop &#x3D; true; &#125; void Start() &#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); Debug.Log(GObject.GetComponent&lt;AudioSource&gt;()); &#x2F;&#x2F; 查看要用变量指代的具体是什么类型 audioSource &#x3D; GObject.GetComponent&lt;AudioSource&gt;(); LoadMusic(0); &#x2F;&#x2F; 打开游戏就播放 &#125; 可以更进一步用变量替代重复的调用语句，如1GObject.GetComponent&lt;AudioSource&gt;()具体声明为什么格式，可以先打印看一下。另外开场就进行的操作，如播放音乐，可以放在Start()里。 注意需要注意的是要播放音乐，必须先把音乐组件放在某个游戏体上，不能凭空播放音乐。 图片读取读取系统自带的图像组件，必须使用1using UnityEngine.UI;否则会找不到Image。 代码：12345678910111213141516171819private Image icon;public Sprite sp1,sp2;public void ChangeThePicture()&#123; if(this.GetComponent&lt;Scrollbar&gt;().value &lt; 0.5)&#123; icon.sprite &#x3D; sp1; &#125;else&#123; icon.sprite &#x3D; sp2; &#125; &#125; &#x2F;&#x2F; Start is called before the first frame update void Start() &#123; icon &#x3D; this.GetComponent&lt;Image&gt;(); sp1 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;矩形 3943 拷贝&quot;, typeof(Sprite)) as Sprite; sp2 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;bg_kaiguan&quot;, typeof(Sprite)) as Sprite; &#125; 总结图片挂的是sprite，音乐挂的是clip，都不是检视窗口内左侧的对应名字。出于节省资源的考虑，可以把sp1、sp2这种多次使用的图片在父物体里以public方式加载，在当前脚本里调用即可，不在当前脚本加载是为了保持脚本重复利用。于是另一个结论，重复利用的脚本不加载资源。]]></content>
       <tags>
+        <tag>总结</tag>
         <tag>unity</tag>
         <tag>方法</tag>
-        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -337,8 +345,8 @@
     <url>%2F2020%2F03%2F20%2Fshell%E7%BC%96%E7%A8%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[定义变量时，变量名不加美元符号；变量名和等号间不能有空格；除了自己赋值，还可以用语句，如：for file in `ls /etc`;使用变量需加美元符，有两种：1$file $&#123;file&#125; 后者方便和其他字符串拼接；变量可以被重新定义或者说赋值，依然不加美元号； 以#开头的行是注释，被忽略；shell里没有多行注释符；对于代码块，可以用花括号括起来定义成函数，不调用时达到注释代码块效果； 只有两种数据类型，数字、字符串；字符串可以单引号、双引号、不引号,单引号内不能有变量、单引号的转义，双引号可以有变量、双引号的转义； 字符串拼接，1$file直接在空间上拼接，1$&#123;file&#125;可以在双引号内拼接； 获取字符串长度：1$&#123;#file&#125; 提取子字符串：1$&#123;#file:1:4&#125;下标从0开始计算，就是第1个到第4个，不是第1个到第三个； linux里的[是可执行程序，位置在1&#x2F;usr&#x2F;bin&#x2F;[所以前后必须有空格； if else:写成一行，有值的都算True1if ps -ef | grep ssh;then echo hello;fi写成脚本1234if ps -ef | grep sshthen echo hellofi其他情况：12345678910111213141516if ps -ef | grep sshthen echo helloelse echo world #else后是不能为空的fiif ps -ef | grep sshthen echo helloelif ps -ef | grep auto echo world #else后是不能为空的else echo greatfi for while:1234for var in item1 item2 ... itemndo commanddone写成一行：1for var in item1 item2 ... itemN; do command1; command2… ;done#命令间要用分号分开，done在最后一个命令之后单起一句，其后加不加分号都可以也可以传统for风格1234567for (( var&#x3D;1;var&lt;5 ;var++))do echo $vardone#单行for (( var&#x3D;1;var&lt;5;var++));do echo $var;done while:1234while conditiondo commanddone无限循环：1234567891011121314151617while :do commanddone或者while truedo commanddone或者for (( ; ;))do commanddone 一个类似与while的until1234util conditiondo commanddone 还有一直case语法了解一下123456789101112131415161718192021222324252627case &quot;$&#123;opt&#125;&quot; in &quot;Install-Puppet-Server&quot; ) install_master $1 exit ;; &quot;Install-Puppet-Client&quot; ) install_client $1 exit ;; &quot;Config-Puppet-Server&quot; ) config_puppet_master exit ;; &quot;Config-Puppet-Client&quot; ) config_puppet_client exit ;; &quot;Exit&quot; ) exit ;; * ) echo &quot;Bad option, please choose again&quot;esac 在bash里source和.是等效的，他们都是读入并执行指定文件12source .&#x2F;function.sh. .&#x2F;function.sh 顺便提一下获取文件绝对路径的方法12&gt;&gt;&gt;readlink -f test.sh&#x2F;home&#x2F;h2&#x2F;test.sh有这样的综合使用分析：readlink -f test.sh 是一个可执行shell语句，效果是获取test.sh的绝对路径要把执行完语句的结果传给变量的话，需要用``将语句括起来，123456789&gt;&gt;&gt;testpath&#x3D;\&#96;readlink -f test.sh\&#96;此时$testpath 的值就是路径字符串，直接运行$testpath 是运行该文件，可能会有权限问题，&gt;&gt;&gt;. $testpath &gt;&gt;&gt;source $testpath 都是执行那个脚本&gt;&gt;&gt;echo $testpath 是打印出路径地址 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>注意事项</tag>
         <tag>shell</tag>
+        <tag>注意事项</tag>
       </tags>
   </entry>
   <entry>
