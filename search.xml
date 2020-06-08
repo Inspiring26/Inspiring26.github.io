@@ -57,11 +57,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[test5]]></title>
-    <url>%2F2020%2F05%2F20%2Ftest5%2F</url>
-    <content type="text"><![CDATA[test]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[unity图片大小变化后整体偏移的原来位置的方法]]></title>
     <url>%2F2020%2F05%2F20%2Funity%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F%E5%8F%98%E5%8C%96%E5%90%8E%E6%95%B4%E4%BD%93%E5%81%8F%E7%A7%BB%E7%9A%84%E5%8E%9F%E6%9D%A5%E4%BD%8D%E7%BD%AE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[感觉上是锚点相关的内容。实际上可以通过子游戏体轻松实现。在子游戏体里微调位置，同时父游戏体还是原来的逻辑，不用修改脚本里的对应内容。]]></content>
