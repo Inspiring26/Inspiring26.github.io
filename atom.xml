@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-06-09T06:30:56.446Z</updated>
+  <updated>2020-06-09T08:46:54.599Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测速工具iperf3编译安装</title>
+    <link href="https://inspiring26.github.io/2020/06/09/%E6%B5%8B%E9%80%9F%E5%B7%A5%E5%85%B7iperf3%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    <id>https://inspiring26.github.io/2020/06/09/测速工具iperf3编译安装/</id>
+    <published>2020-06-09T08:30:54.000Z</published>
+    <updated>2020-06-09T08:46:54.599Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c https:&#x2F;&#x2F;iperf.fr&#x2F;download&#x2F;source&#x2F;iperf-3.1.3-source.tar.gz</span><br></pre></td></tr></table></figure><h3 id="解压编译"><a href="#解压编译" class="headerlink" title="解压编译"></a>解压编译</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf iperf-3.1.3-source.tar.gz</span><br><span class="line">cd iperf-3.1.3&#x2F;</span><br><span class="line">.&#x2F;configure</span><br><span class="line">make</span><br><span class="line">sudo su</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="修复一个小问题"><a href="#修复一个小问题" class="headerlink" title="修复一个小问题"></a>修复一个小问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iperf3</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 服务端</span><br><span class="line">iperf3 -s</span><br><span class="line"></span><br><span class="line"># 客户端</span><br><span class="line">iperf3 -c 127.0.0.1 -t 10</span><br><span class="line"># 或</span><br><span class="line">iperf3 -c 192.168.1.114 -t 10</span><br></pre></td></tr></table></figure><p>根据测试本地还是测试多机通信决定</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -c https:&amp;#x2F;&amp;#x2F;iperf.fr&amp;#x2F;download&amp;#x2F;source&amp;#x2F;iperf-3.1.3-source.tar.gz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&quot;解压编译&quot;&gt;&lt;a href=&quot;#解压编译&quot; class=&quot;headerlink&quot; title=&quot;解压编译&quot;&gt;&lt;/a&gt;解压编译&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar -zxvf iperf-3.1.3-source.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd iperf-3.1.3&amp;#x2F;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.&amp;#x2F;configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo su&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>linux查看系统版本相关信息</title>
@@ -485,29 +506,6 @@
       <category term="同步" scheme="https://inspiring26.github.io/tags/%E5%90%8C%E6%AD%A5/"/>
     
       <category term="多终端" scheme="https://inspiring26.github.io/tags/%E5%A4%9A%E7%BB%88%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity开发的一些感想</title>
-    <link href="https://inspiring26.github.io/2020/04/23/unity%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3/"/>
-    <id>https://inspiring26.github.io/2020/04/23/unity开发的一些感想/</id>
-    <published>2020-04-23T03:07:09.000Z</published>
-    <updated>2020-05-07T05:27:53.733Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。"><a href="#可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。" class="headerlink" title="可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。"></a>可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。</h4><p>少了错综复杂的引用，当然更清晰，更易于管理。<br>集中管理的好处还是很多的。<br>可以集中的有，数据、帧操作等。</p><a id="more"></a><h4 id="在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开"><a href="#在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开" class="headerlink" title="在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开"></a>在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 判断可点击区域内是否miss</span><br><span class="line">&#x2F;&#x2F; 这个区域可以比正常的状态判定区域稍微大一些，给点晚了的miss一些时间段</span><br><span class="line">&#x2F;&#x2F; 第一步，判断是否在可点按区域。方法是起点一个数组，终点一个数组，如果进入了第一个没进入第二个就是在区域内</span><br><span class="line">&#x2F;&#x2F; 第二步，判断是否点击。方法是起点进入时给一个未点击标识，到达终点时检查一下是否点了</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public void CloseHearts(int n)&#123;&#x2F;&#x2F;传入丢失星星数</span><br><span class="line">&#x2F;&#x2F; 第一步，将所有heart按顺序装入数组</span><br><span class="line">&#x2F;&#x2F; 第二步，从最后一个开始倒序关闭</span><br><span class="line">for(int i&#x3D;2;i&gt;2-n;i--)&#123;</span><br><span class="line">heartList[i].transform.localScale &#x3D; new Vector3(0f,0f,1f);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="游戏体的Find、实例化都放在Start-里，这个不用多说"><a href="#游戏体的Find、实例化都放在Start-里，这个不用多说" class="headerlink" title="游戏体的Find、实例化都放在Start()里，这个不用多说"></a>游戏体的Find、实例化都放在Start()里，这个不用多说</h4><h4 id="尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。"><a href="#尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。" class="headerlink" title="尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。"></a>尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。</h4><p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。&quot;&gt;&lt;a href=&quot;#可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。&quot; class=&quot;headerlink&quot; title=&quot;可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。&quot;&gt;&lt;/a&gt;可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。&lt;/h4&gt;&lt;p&gt;少了错综复杂的引用，当然更清晰，更易于管理。&lt;br&gt;集中管理的好处还是很多的。&lt;br&gt;可以集中的有，数据、帧操作等。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
