@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-06-09T06:00:07.405Z</updated>
+  <updated>2020-06-09T06:30:56.446Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux查看系统版本相关信息</title>
+    <link href="https://inspiring26.github.io/2020/06/09/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/"/>
+    <id>https://inspiring26.github.io/2020/06/09/linux查看系统版本相关信息/</id>
+    <published>2020-06-09T06:26:31.000Z</published>
+    <updated>2020-06-09T06:30:56.446Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="仅内核版本"><a href="#仅内核版本" class="headerlink" title="仅内核版本"></a>仅内核版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure><h3 id="内核版本、gcc版本"><a href="#内核版本、gcc版本" class="headerlink" title="内核版本、gcc版本"></a>内核版本、gcc版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;proc&#x2F;version</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">命令很简单，可以记住</span><br><span class="line"></span><br><span class="line">### 查看系统版本代号</span><br></pre></td></tr></table></figure><p>lsb_release -a<br>```<br>也很简单要记住</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;仅内核版本&quot;&gt;&lt;a href=&quot;#仅内核版本&quot; class=&quot;headerlink&quot; title=&quot;仅内核版本&quot;&gt;&lt;/a&gt;仅内核版本&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu下升级git</title>
@@ -105,9 +131,9 @@
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
     
-      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
-    
       <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
     
   </entry>
   
@@ -479,35 +505,9 @@
     
     
     
+      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
+    
       <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The type or namespace name &#39;Text&#39; could not be found</title>
-    <link href="https://inspiring26.github.io/2020/04/22/The-type-or-namespace-name-Text-could-not-be-found/"/>
-    <id>https://inspiring26.github.io/2020/04/22/The-type-or-namespace-name-Text-could-not-be-found/</id>
-    <published>2020-04-22T02:05:01.000Z</published>
-    <updated>2020-05-07T05:27:53.733Z</updated>
-    
-    <content type="html"><![CDATA[<p>这个问题的原因很可能是没有声明对应的namespaces，<br>在unity中使用UI构建物体，修改或调用其自带的脚本如Text等是需要先<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine.UI;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这个问题的原因很可能是没有声明对应的namespaces，&lt;br&gt;在unity中使用UI构建物体，修改或调用其自带的脚本如Text等是需要先&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;
-      
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
