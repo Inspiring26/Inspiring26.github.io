@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ubuntu下升级git]]></title>
+    <url>%2F2020%2F06%2F09%2Fubuntu%E4%B8%8B%E5%8D%87%E7%BA%A7git%2F</url>
+    <content type="text"><![CDATA[123sudo add-apt-repository ppa:git-core&#x2F;ppasudo apt updatesudo apt install git]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[对熵的简单理解]]></title>
     <url>%2F2020%2F06%2F08%2F%E5%AF%B9%E7%86%B5%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[简言之，事情越不确定熵越大假设有5枚硬币，都是正面，只有一种方式，3个正面2个反面，很多排列方式他们的熵分别为12S1 &#x3D; -1*ln(1)&#x3D;0S2 &#x3D; -1*(0.4*ln0.4+0.6*ln0.6)*5&#x3D;3.365 熵越大含的信息量越多比如神经网络分类的结果，假设有5类，一种是1，0，0，0，0，另一种是0.21，0.36,…类似上面的计算就可以得出第二种熵更大，它喊得信息也更多，可以用作知识蒸馏中的soft label，学生网络能学到更多信息。 越混乱熵越高，越稳定熵越低]]></content>
@@ -23,8 +32,8 @@
     <content type="text"><![CDATA[linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：1234567891011121314while truedo thetime&#x3D;$(date &quot;+%M&quot;) thetime2&#x3D;&#96;expr $thetime + 10&#96; remainder&#x3D;$(($thetime2%5)) if [ $remainder &#x3D; &#39;0&#39; ] then cd ~&#x2F;blog;sh gitpull.sh date sleep 60s else sleep 60s fidoneshell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。上面使用expr的方式是可行的。 需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>linux</tag>
         <tag>ubuntu</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -162,8 +171,8 @@
     <url>%2F2020%2F04%2F23%2Funity%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3%2F</url>
     <content type="text"><![CDATA[可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。少了错综复杂的引用，当然更清晰，更易于管理。集中管理的好处还是很多的。可以集中的有，数据、帧操作等。 在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开1234&#x2F;&#x2F; 判断可点击区域内是否miss&#x2F;&#x2F; 这个区域可以比正常的状态判定区域稍微大一些，给点晚了的miss一些时间段&#x2F;&#x2F; 第一步，判断是否在可点按区域。方法是起点一个数组，终点一个数组，如果进入了第一个没进入第二个就是在区域内&#x2F;&#x2F; 第二步，判断是否点击。方法是起点进入时给一个未点击标识，到达终点时检查一下是否点了 12345678public void CloseHearts(int n)&#123;&#x2F;&#x2F;传入丢失星星数 &#x2F;&#x2F; 第一步，将所有heart按顺序装入数组 &#x2F;&#x2F; 第二步，从最后一个开始倒序关闭 for(int i&#x3D;2;i&gt;2-n;i--)&#123; heartList[i].transform.localScale &#x3D; new Vector3(0f,0f,1f); &#125;&#125; 游戏体的Find、实例化都放在Start()里，这个不用多说尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>总结</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -208,9 +217,9 @@
     <url>%2F2020%2F04%2F15%2Funity%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E5%8F%8A%E6%9B%BF%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%BB%84%E4%BB%B6%E4%B8%8A%E7%9A%84%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[音乐读取我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。代码：123456789101112131415private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;private object objs;private GameObject GObject;public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num]); GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; (AudioClip)objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;&#125;void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);&#125;可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下： 读取（unity风格）(主流方法）代码：1234567891011121314private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true; &#125; void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); &#125;使用1Resources.Load(路径, typeof(目标格式)) as 目标格式;形式读取。 更简洁的写法1234567891011121314151617181920private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; private AudioSource audioSource; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; audioSource.clip &#x3D; objs; audioSource.Play(); audioSource.loop &#x3D; true; &#125; void Start() &#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); Debug.Log(GObject.GetComponent&lt;AudioSource&gt;()); &#x2F;&#x2F; 查看要用变量指代的具体是什么类型 audioSource &#x3D; GObject.GetComponent&lt;AudioSource&gt;(); LoadMusic(0); &#x2F;&#x2F; 打开游戏就播放 &#125; 可以更进一步用变量替代重复的调用语句，如1GObject.GetComponent&lt;AudioSource&gt;()具体声明为什么格式，可以先打印看一下。另外开场就进行的操作，如播放音乐，可以放在Start()里。 注意需要注意的是要播放音乐，必须先把音乐组件放在某个游戏体上，不能凭空播放音乐。 图片读取读取系统自带的图像组件，必须使用1using UnityEngine.UI;否则会找不到Image。 代码：12345678910111213141516171819private Image icon;public Sprite sp1,sp2;public void ChangeThePicture()&#123; if(this.GetComponent&lt;Scrollbar&gt;().value &lt; 0.5)&#123; icon.sprite &#x3D; sp1; &#125;else&#123; icon.sprite &#x3D; sp2; &#125; &#125; &#x2F;&#x2F; Start is called before the first frame update void Start() &#123; icon &#x3D; this.GetComponent&lt;Image&gt;(); sp1 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;矩形 3943 拷贝&quot;, typeof(Sprite)) as Sprite; sp2 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;bg_kaiguan&quot;, typeof(Sprite)) as Sprite; &#125; 总结图片挂的是sprite，音乐挂的是clip，都不是检视窗口内左侧的对应名字。出于节省资源的考虑，可以把sp1、sp2这种多次使用的图片在父物体里以public方式加载，在当前脚本里调用即可，不在当前脚本加载是为了保持脚本重复利用。于是另一个结论，重复利用的脚本不加载资源。]]></content>
       <tags>
+        <tag>总结</tag>
         <tag>unity</tag>
         <tag>方法</tag>
-        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -686,8 +695,8 @@
     <url>%2F2019%2F10%2F28%2F%E9%85%8D%E7%BD%AEtornado-pytorch%E7%9A%84docker%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[拉去指定docker镜像（目前pytorch支持到pytorch1.3，python3.7）1docker pull python:3.7运行容器1docker run -dit python:3.7进入容器 123docker ps#59fe58579fd2 python:3.7 &quot;bash&quot; 35 minutes ago docker exec -it 59fe bash 配置环境12345python -V#Python 3.7.5pip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple torch&#x3D;&#x3D;1.3.0+cpu torchvision&#x3D;&#x3D;0.4.1+cpu -f https:&#x2F;&#x2F;download.pytorch.org&#x2F;whl&#x2F;torch_stable.htmlpip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple tornado redis pillow efficientnet_pytorch 此外，py文件中torch.load()要添加1,map_location&#x3D;torch.device(&#39;cpu&#39;)从而运行在cpu环境下。 安装redis数据库apt不能用临时源，且为了安装最新版本，从源文件编译安装12345wget -c http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-5.0.5.tar.gztar xzf redis-5.0.5.tar.gzcd redis-5.0.5make 启动redis123cd src&#x2F;nohup .&#x2F;redis-server &amp;.&#x2F;redis-cli]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>pytorch</tag>
+        <tag>docker</tag>
         <tag>redis</tag>
         <tag>tornado</tag>
       </tags>
@@ -1056,8 +1065,8 @@
     <url>%2F2019%2F10%2F09%2F%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%B8%8B%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6md5%E5%80%BC%2F</url>
     <content type="text"><![CDATA[md5sum SwitchyOmega.crx直接md5sum 文件就可以了]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>md5</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
