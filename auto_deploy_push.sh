@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "编译测试"
+git commit -m "git嵌套"
 git push
