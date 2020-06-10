@@ -209,7 +209,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">135</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">136</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -264,6 +264,114 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/11/14/%E5%AF%B9%E7%8E%B0%E5%9C%A8%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E3%80%81%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E3%80%81bert%E7%AD%89%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huang yong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你说你要一场革命">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/11/14/%E5%AF%B9%E7%8E%B0%E5%9C%A8%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E3%80%81%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E3%80%81bert%E7%AD%89%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">对现在监督学习、非监督学习、bert等模型的思考</a>
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-14 14:54:15" itemprop="dateCreated datePublished" datetime="2019-11-14T14:54:15+08:00">2019-11-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-07 13:27:53" itemprop="dateModified" datetime="2020-05-07T13:27:53+08:00">2020-05-07</time>
+              </span>
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>833</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>不管是bert类的大规模预训练模型，还是视觉领域最新的把ImageNet准确率提升1%的Noisy Student，他们一个共同的特点，非监督学习。非监督学习的好处是数据大，通过大规模数据更容易学到其中的隐含规律、一般规律。<br>bert用了一种很巧妙的方法，开了个好头，一个新的思维方向。<br>数据量很多没法标注对把，我们可以把模型的结果设置称一种简单的关系，我们的目标是通过大量隐藏层去学到一个语言的内在关系。<br>bert采用的方法：<br>1，是使用两句话是否为上下句这种关系作为标签。这种关系不需要人工标注，通过简单的算法记录一下哪些是被分割开的就能实现。<br>2，还有一种方法是遮蔽部分词，让模型去预测，这种方法同样不需要标注数据，因为标签就是你遮蔽掉的词。<br>3，不仅仅做一种预测训练，既做了只有两个类别的上下句预测，又做了预测单词的非分类。我感觉这样使模型输出的结果不同，尽量减少对单一特定任务的效果，而是通过切换最后一层功能，尽量使模型学到的只是语言的特点，具体来说会在较深的层次中对各种词语搭配、句子骨干比较敏感，做出相应的反馈。<br>举个例子：<br>词语块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解放碑吃火锅</span><br><span class="line">农民辛苦 水稻</span><br><span class="line">...</span><br></pre></td></tr></table></figure><br>骨干类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xxx 是 xxx 榜样</span><br><span class="line">xxx 省 xxx 市</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/11/14/%E5%AF%B9%E7%8E%B0%E5%9C%A8%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E3%80%81%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E3%80%81bert%E7%AD%89%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
         
   
   
@@ -1199,106 +1307,6 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/11/01/hexo%E7%9A%84markdown%E9%87%8C%E4%B8%8B%E5%88%92%E7%BA%BF%E4%B9%9F%E6%98%AF%E6%9C%89%E5%90%AB%E4%B9%89%E7%9A%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="huang yong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你说你要一场革命">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/11/01/hexo%E7%9A%84markdown%E9%87%8C%E4%B8%8B%E5%88%92%E7%BA%BF%E4%B9%9F%E6%98%AF%E6%9C%89%E5%90%AB%E4%B9%89%E7%9A%84/" class="post-title-link" itemprop="url">hexo的markdown里下划线也是有含义的</a>
-          
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-11-01 11:00:47" itemprop="dateCreated datePublished" datetime="2019-11-01T11:00:47+08:00">2019-11-01</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-07 13:27:53" itemprop="dateModified" datetime="2020-05-07T13:27:53+08:00">2020-05-07</time>
-              </span>
-            
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>10</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>需要使用转义符右斜杠</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
@@ -1417,7 +1425,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">72k</span>
+    <span title="站点总字数">73k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

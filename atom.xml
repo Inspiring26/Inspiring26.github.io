@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-06-09T08:46:54.599Z</updated>
+  <updated>2020-06-10T03:20:09.822Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git嵌套</title>
+    <link href="https://inspiring26.github.io/2020/06/10/git%E5%B5%8C%E5%A5%97/"/>
+    <id>https://inspiring26.github.io/2020/06/10/git嵌套/</id>
+    <published>2020-06-10T02:03:12.000Z</published>
+    <updated>2020-06-10T03:20:09.822Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="git嵌套的好处"><a href="#git嵌套的好处" class="headerlink" title="git嵌套的好处"></a>git嵌套的好处</h3><p>1.可以多个人同时完成一个项目，每人完成项目不同的部分<br>2.可以将一段代码独立出来多出复用，同时可以对这一个功能单独进行维护（如hexo的主题）</p><h3 id="git嵌套方法"><a href="#git嵌套方法" class="headerlink" title="git嵌套方法"></a>git嵌套方法</h3><p>1.简单易理解，不推荐的<br>直接在对应的位置git clone<br>缺点是在其他位置clone的时候要查找各个git的地址分别git<br>2.submodule，推荐<br>方法：<br>先单独创建各个仓库，push到github等，然后通过git submodule add添加到指定位置<br>（ 这种方法不会引起什么混乱，子模块都是通过submodule添加的。缺点是创建了太多独立文件夹。）<br>另一种方法是把整个结构在初始好，如各自加上readme文件，由低级到上级逐个git push,最后删除子仓库通过git submodule add添加。</p><a id="more"></a><h4 id="如果子模块不多，第一种方法还好些。并且很多项目里使用的子模块并不多，比如有git仓库里只用了一个。"><a href="#如果子模块不多，第一种方法还好些。并且很多项目里使用的子模块并不多，比如有git仓库里只用了一个。" class="headerlink" title="如果子模块不多，第一种方法还好些。并且很多项目里使用的子模块并不多，比如有git仓库里只用了一个。"></a>如果子模块不多，第一种方法还好些。并且很多项目里使用的子模块并不多，比如有git仓库里只用了一个。</h4><h4 id="注意：主仓库内的子仓库是有对应版本的，在github可以清楚看到，所以子仓库更新后父仓库也是要commit的，如果此时不commit反而pull会把子仓库更新的版本覆盖掉的。"><a href="#注意：主仓库内的子仓库是有对应版本的，在github可以清楚看到，所以子仓库更新后父仓库也是要commit的，如果此时不commit反而pull会把子仓库更新的版本覆盖掉的。" class="headerlink" title="注意：主仓库内的子仓库是有对应版本的，在github可以清楚看到，所以子仓库更新后父仓库也是要commit的，如果此时不commit反而pull会把子仓库更新的版本覆盖掉的。"></a>注意：主仓库内的子仓库是有对应版本的，在github可以清楚看到，所以子仓库更新后父仓库也是要commit的，如果此时不commit反而pull会把子仓库更新的版本覆盖掉的。</h4><h4 id="多数情况下多人合作还是各自更新，然后merge的，较少考虑使用子仓库，如果做的内容比较独立，我想子仓库是更好更清晰的选择。"><a href="#多数情况下多人合作还是各自更新，然后merge的，较少考虑使用子仓库，如果做的内容比较独立，我想子仓库是更好更清晰的选择。" class="headerlink" title="多数情况下多人合作还是各自更新，然后merge的，较少考虑使用子仓库，如果做的内容比较独立，我想子仓库是更好更清晰的选择。"></a>多数情况下多人合作还是各自更新，然后merge的，较少考虑使用子仓库，如果做的内容比较独立，我想子仓库是更好更清晰的选择。</h4><h4 id="有多个相同子模块也是也各自更新的，在github里可以看到，同一个模块，在一个仓库里存在的版本并不同"><a href="#有多个相同子模块也是也各自更新的，在github里可以看到，同一个模块，在一个仓库里存在的版本并不同" class="headerlink" title="有多个相同子模块也是也各自更新的，在github里可以看到，同一个模块，在一个仓库里存在的版本并不同"></a>有多个相同子模块也是也各自更新的，在github里可以看到，同一个模块，在一个仓库里存在的版本并不同</h4><p><img src="/2020/06/10/git%E5%B5%8C%E5%A5%97/screenshot_138.png" alt="pic1"><br><img src="/2020/06/10/git%E5%B5%8C%E5%A5%97/screenshot_139.png" alt="pic2"></p><h4 id="在子仓库拉去的方法："><a href="#在子仓库拉去的方法：" class="headerlink" title="在子仓库拉去的方法："></a>在子仓库拉去的方法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin HEAD:master</span><br></pre></td></tr></table></figure><p>因为他的状态常常不是最前端，需要指定位置才行。其他地方的拉去也尽量采用git pull origin,以规范操作方式。 </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;git嵌套的好处&quot;&gt;&lt;a href=&quot;#git嵌套的好处&quot; class=&quot;headerlink&quot; title=&quot;git嵌套的好处&quot;&gt;&lt;/a&gt;git嵌套的好处&lt;/h3&gt;&lt;p&gt;1.可以多个人同时完成一个项目，每人完成项目不同的部分&lt;br&gt;2.可以将一段代码独立出来多出复用，同时可以对这一个功能单独进行维护（如hexo的主题）&lt;/p&gt;&lt;h3 id=&quot;git嵌套方法&quot;&gt;&lt;a href=&quot;#git嵌套方法&quot; class=&quot;headerlink&quot; title=&quot;git嵌套方法&quot;&gt;&lt;/a&gt;git嵌套方法&lt;/h3&gt;&lt;p&gt;1.简单易理解，不推荐的&lt;br&gt;直接在对应的位置git clone&lt;br&gt;缺点是在其他位置clone的时候要查找各个git的地址分别git&lt;br&gt;2.submodule，推荐&lt;br&gt;方法：&lt;br&gt;先单独创建各个仓库，push到github等，然后通过git submodule add添加到指定位置&lt;br&gt;（ 这种方法不会引起什么混乱，子模块都是通过submodule添加的。缺点是创建了太多独立文件夹。）&lt;br&gt;另一种方法是把整个结构在初始好，如各自加上readme文件，由低级到上级逐个git push,最后删除子仓库通过git submodule add添加。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="git" scheme="https://inspiring26.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>测速工具iperf3编译安装</title>
@@ -477,35 +500,6 @@
     
     
       <category term="测试" scheme="https://inspiring26.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客多处更新，多处git控制的经验</title>
-    <link href="https://inspiring26.github.io/2020/04/28/hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%A4%84%E6%9B%B4%E6%96%B0%EF%BC%8C%E5%A4%9A%E5%A4%84git%E6%8E%A7%E5%88%B6%E7%9A%84%E7%BB%8F%E9%AA%8C/"/>
-    <id>https://inspiring26.github.io/2020/04/28/hexo博客多处更新，多处git控制的经验/</id>
-    <published>2020-04-28T03:14:52.000Z</published>
-    <updated>2020-05-07T05:27:53.733Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="【注意】本文内容不完善，新的步骤参考-多出编辑更新hexo博客方法"><a href="#【注意】本文内容不完善，新的步骤参考-多出编辑更新hexo博客方法" class="headerlink" title="【注意】本文内容不完善，新的步骤参考 多出编辑更新hexo博客方法"></a>【注意】本文内容不完善，新的步骤参考 <a href="https://inspiring26.github.io/2020/05/06/多出编辑更新hexo博客方法/">多出编辑更新hexo博客方法</a></h3><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在ubuntu主机上有一个hexo的完整环境，可以发布更新博客。</p><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>在ubuntu、MBA、树莓派等设备上都可以进行博客更新，并且数据一致<br>（本文章是在MBA上完成）</p><a id="more"></a><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="第一-推送到gitgub"><a href="#第一-推送到gitgub" class="headerlink" title="第一,推送到gitgub"></a>第一,推送到gitgub</h4><p>在ubuntu上hexo根目录，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b source #创建新分支source</span><br><span class="line">git add -A</span><br><span class="line">git commit -m &quot;init blog&quot;</span><br><span class="line">git remote add origin git@github.com:&#123;username&#125;&#x2F;&#123;username&#125;.github.io.git</span><br><span class="line">git push origin source #本地origin推到source</span><br></pre></td></tr></table></figure><br>单独推送主题文件夹：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd theme&#x2F;next&#x2F;</span><br><span class="line">git init</span><br><span class="line">git add -A</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:&#123;username&#125;&#x2F;&#123;username&#125;.theme.next.git #这个仓库是新建的，专门用来存放改动过的主题next</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p><h4 id="第二，安装node环境"><a href="#第二，安装node环境" class="headerlink" title="第二，安装node环境"></a>第二，安装node环境</h4><p>MBA：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install node.js</span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><br>其他端类似，就是安装node和hexo</p><h3 id="第三，pull"><a href="#第三，pull" class="headerlink" title="第三，pull"></a>第三，pull</h3><p>MBA:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:&#123;username&#125;&#x2F;&#123;username&#125;.github.io.git</span><br><span class="line">git checkout source</span><br><span class="line">git pull #这两部是切换分支，和拉去改分支文件，其实就是个切换，文件提前一起拉下来了</span><br><span class="line">cd theme</span><br><span class="line">git clone git@github.com:&#123;username&#125;&#x2F;&#123;username&#125;.theme.next.git</span><br><span class="line">mv theme.next next</span><br><span class="line">cd ..</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>到次应该可以正常运行了</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>要git clone某个分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:&#123;username&#125;&#x2F;&#123;username&#125;.github.io.git</span><br><span class="line">git checkout source</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><br>仓库中有仓库，也就是说.git文件夹的子文件夹还要.git时，<br>在处理上层.git时，会忽略下层的，只保留了个文件夹名</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;【注意】本文内容不完善，新的步骤参考-多出编辑更新hexo博客方法&quot;&gt;&lt;a href=&quot;#【注意】本文内容不完善，新的步骤参考-多出编辑更新hexo博客方法&quot; class=&quot;headerlink&quot; title=&quot;【注意】本文内容不完善，新的步骤参考 多出编辑更新hexo博客方法&quot;&gt;&lt;/a&gt;【注意】本文内容不完善，新的步骤参考 &lt;a href=&quot;https://inspiring26.github.io/2020/05/06/多出编辑更新hexo博客方法/&quot;&gt;多出编辑更新hexo博客方法&lt;/a&gt;&lt;/h3&gt;&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;在ubuntu主机上有一个hexo的完整环境，可以发布更新博客。&lt;/p&gt;&lt;h3 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h3&gt;&lt;p&gt;在ubuntu、MBA、树莓派等设备上都可以进行博客更新，并且数据一致&lt;br&gt;（本文章是在MBA上完成）&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="hexo" scheme="https://inspiring26.github.io/tags/hexo/"/>
-    
-      <category term="git" scheme="https://inspiring26.github.io/tags/git/"/>
-    
-      <category term="同步" scheme="https://inspiring26.github.io/tags/%E5%90%8C%E6%AD%A5/"/>
-    
-      <category term="多终端" scheme="https://inspiring26.github.io/tags/%E5%A4%9A%E7%BB%88%E7%AB%AF/"/>
     
   </entry>
   
