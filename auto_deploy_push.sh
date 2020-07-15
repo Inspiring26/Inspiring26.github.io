@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "unity git版本控制"
+git commit -m "ubuntu桌面卡死解决办法"
 git push
