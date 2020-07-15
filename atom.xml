@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-06-28T04:27:59.698Z</updated>
+  <updated>2020-07-15T01:44:16.566Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu桌面卡住解决办法</title>
+    <link href="https://inspiring26.github.io/2020/07/15/ubuntu%E6%A1%8C%E9%9D%A2%E5%8D%A1%E4%BD%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>https://inspiring26.github.io/2020/07/15/ubuntu桌面卡住解决办法/</id>
+    <published>2020-07-15T01:42:28.000Z</published>
+    <updated>2020-07-15T01:44:16.566Z</updated>
+    
+    <content type="html"><![CDATA[<p>alt + ctrl + f1<br>登录(login)<br>sudo lightdm restart</p><p>测试中，原来打开的窗口都还在。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;alt + ctrl + f1&lt;br&gt;登录(login)&lt;br&gt;sudo lightdm restart&lt;/p&gt;
+&lt;p&gt;测试中，原来打开的窗口都还在。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>关于unity的git版本控制</title>
@@ -475,31 +503,6 @@
       <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多出编辑更新hexo博客方法</title>
-    <link href="https://inspiring26.github.io/2020/05/06/%E5%A4%9A%E5%87%BA%E7%BC%96%E8%BE%91%E6%9B%B4%E6%96%B0hexo%E5%8D%9A%E5%AE%A2%E6%96%B9%E6%B3%95/"/>
-    <id>https://inspiring26.github.io/2020/05/06/多出编辑更新hexo博客方法/</id>
-    <published>2020-05-06T06:20:18.000Z</published>
-    <updated>2020-05-07T05:27:53.741Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="首先在原博客处建立分支，将hexo后端文件同步到github"><a href="#首先在原博客处建立分支，将hexo后端文件同步到github" class="headerlink" title="首先在原博客处建立分支，将hexo后端文件同步到github"></a>首先在原博客处建立分支，将hexo后端文件同步到github</h3><p>如source分支<br>hexo建立的blog，一开始是没有git init的，这一点记不清了也没验证。<br>要把源文件更新到github的话，先git init，然后建立、切换分支，提交，添加远程git仓库地址，推送本地到远程。<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git init</span><br><span class="line">git checkout -b source</span><br><span class="line">git add -A</span><br><span class="line">git commit -m &quot;init blog&quot;</span><br><span class="line">git remote add origin git@github.com:&#123;username&#125;&#x2F;&#123;username&#125;.github.io.git</span><br><span class="line">git push origin source</span><br></pre></td></tr></table></figure><br>在这以后是可以切换master和source分支的。</p><a id="more"></a><h3 id="在树莓派上配置环境"><a href="#在树莓派上配置环境" class="headerlink" title="在树莓派上配置环境"></a>在树莓派上配置环境</h3><h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><p>使用二进制代码安装比较好，也不需要编译.<br>先去node.js官方网站下载：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a><br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget -c https:&#x2F;&#x2F;nodejs.org&#x2F;dist&#x2F;v12.16.3&#x2F;node-v12.16.3-linux-armv7l.tar.xz</span><br><span class="line">sudo mkdir -p &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs</span><br><span class="line">sudo tar -xJvf node-v12.16.3-linux-armv7l.tar.xz -C &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs</span><br><span class="line">cd ~</span><br><span class="line">sudo echo &quot;export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs&#x2F;node-v12.16.3-linux-armv7l&#x2F;bin:$PATH&quot; &gt;&gt; .bashrc</span><br><span class="line">source .bashrc</span><br></pre></td></tr></table></figure><br>然后，用hexo -v ;npm -v 验证版本。</p><h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>以管理员权限安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p><h4 id="git-clone-远程仓库"><a href="#git-clone-远程仓库" class="headerlink" title="git clone 远程仓库"></a>git clone 远程仓库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone git@XXX</span><br><span class="line"># 切换到新分支</span><br><span class="line"># 这里需要新建并切换</span><br><span class="line">git checkout -b source origin&#x2F;source</span><br></pre></td></tr></table></figure><h4 id="切换到blog文件夹运行hexo"><a href="#切换到blog文件夹运行hexo" class="headerlink" title="切换到blog文件夹运行hexo"></a>切换到blog文件夹运行hexo</h4><p>运行hexo，这时回报错，根据提示再次安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo --save</span><br><span class="line">npm audit fix</span><br></pre></td></tr></table></figure></p><h4 id="去专门的仓库拉去主题（这一步也可以改成将主题下的-git文件删除，一次拉去源文件和主题的）"><a href="#去专门的仓库拉去主题（这一步也可以改成将主题下的-git文件删除，一次拉去源文件和主题的）" class="headerlink" title="去专门的仓库拉去主题（这一步也可以改成将主题下的.git文件删除，一次拉去源文件和主题的）"></a>去专门的仓库拉去主题（这一步也可以改成将主题下的.git文件删除，一次拉去源文件和主题的）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd theme</span><br><span class="line">rm -r next</span><br><span class="line">git clone git@XXX</span><br><span class="line">cd ..</span><br></pre></td></tr></table></figure><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><h4 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;测试文章&quot;</span><br><span class="line">vim source&#x2F;_posts&#x2F;测试文章.md</span><br></pre></td></tr></table></figure><h4 id="将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）"><a href="#将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）" class="headerlink" title="将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）"></a>将两处连接添加到文章末尾（希望在文末追加一些固定文字时才需要此步骤）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat links.txt &gt;&gt; source&#x2F;_posts&#x2F;多出编辑更新hexo博客方法.md</span><br></pre></td></tr></table></figure><h4 id="验证本地运行"><a href="#验证本地运行" class="headerlink" title="验证本地运行"></a>验证本地运行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><h4 id="验证远程推送到github-page"><a href="#验证远程推送到github-page" class="headerlink" title="验证远程推送到github page"></a>验证远程推送到github page</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure><h3 id="验证成功后可以推送源文件的更新到github的source分支"><a href="#验证成功后可以推送源文件的更新到github的source分支" class="headerlink" title="验证成功后可以推送源文件的更新到github的source分支"></a>验证成功后可以推送源文件的更新到github的source分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure><p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;首先在原博客处建立分支，将hexo后端文件同步到github&quot;&gt;&lt;a href=&quot;#首先在原博客处建立分支，将hexo后端文件同步到github&quot; class=&quot;headerlink&quot; title=&quot;首先在原博客处建立分支，将hexo后端文件同步到github&quot;&gt;&lt;/a&gt;首先在原博客处建立分支，将hexo后端文件同步到github&lt;/h3&gt;&lt;p&gt;如source分支&lt;br&gt;hexo建立的blog，一开始是没有git init的，这一点记不清了也没验证。&lt;br&gt;要把源文件更新到github的话，先git init，然后建立、切换分支，提交，添加远程git仓库地址，推送本地到远程。&lt;br&gt;代码如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git checkout -b source&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add -A&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &amp;quot;init blog&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote add origin git@github.com:&amp;#123;username&amp;#125;&amp;#x2F;&amp;#123;username&amp;#125;.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git push origin source&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;在这以后是可以切换master和source分支的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="hexo" scheme="https://inspiring26.github.io/tags/hexo/"/>
-    
-      <category term="git" scheme="https://inspiring26.github.io/tags/git/"/>
     
   </entry>
   
