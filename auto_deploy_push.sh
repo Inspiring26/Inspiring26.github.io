@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "ubuntu桌面卡死解决办法"
+git commit -m "chrome无法选中文字"
 git push
