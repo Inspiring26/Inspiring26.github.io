@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-07-15T01:44:16.566Z</updated>
+  <updated>2020-07-21T06:32:12.078Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chrome插件网页便利贴导致无法选中文字</title>
+    <link href="https://inspiring26.github.io/2020/07/21/chrome%E6%8F%92%E4%BB%B6%E7%BD%91%E9%A1%B5%E4%BE%BF%E5%88%A9%E8%B4%B4%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E9%80%89%E4%B8%AD%E6%96%87%E5%AD%97/"/>
+    <id>https://inspiring26.github.io/2020/07/21/chrome插件网页便利贴导致无法选中文字/</id>
+    <published>2020-07-21T06:29:58.000Z</published>
+    <updated>2020-07-21T06:32:12.078Z</updated>
+    
+    <content type="html"><![CDATA[<p>安装 网页便利贴 后发现一些输入框内的文字无法选中，左键松开选中就消失了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;安装 网页便利贴 后发现一些输入框内的文字无法选中，左键松开选中就消失了。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="chrome" scheme="https://inspiring26.github.io/tags/chrome/"/>
+    
+      <category term="bug" scheme="https://inspiring26.github.io/tags/bug/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu桌面卡住解决办法</title>
@@ -472,29 +499,6 @@
     <summary type="html">
     
       &lt;p&gt;假如你以375&lt;em&gt;667的分辨率做的游戏，&lt;br&gt;现在要适配1080\&lt;/em&gt;1920分辨率的机器（这个分辨率是目前比较主流的分辨率）。&lt;/p&gt;&lt;p&gt;不用一个个元素的修改，&lt;br&gt;也有一个前提，如果想图不糊，你是把1080*1920的图放在了375*667的框里，这样放大才不糊。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity脚本修改数据无效问题</title>
-    <link href="https://inspiring26.github.io/2020/05/12/unity%E8%84%9A%E6%9C%AC%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E6%97%A0%E6%95%88%E9%97%AE%E9%A2%98/"/>
-    <id>https://inspiring26.github.io/2020/05/12/unity脚本修改数据无效问题/</id>
-    <published>2020-05-12T03:14:00.000Z</published>
-    <updated>2020-05-12T05:46:45.606Z</updated>
-    
-    <content type="html"><![CDATA[<p>unity中修改脚本数据后经常会发现运行时并没有使用修改后的数据，<br>尤其是数组数据等。</p><p>这时需要在脚本对应的inspector里点击齿轮，选择reset，此后就会使用脚本里的数据。</p><p>需要经常对比二者数据是否一致，所以较好的方法是将数据初始化在Start()函数里。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public int[] arrSong &#x3D; new int[115];</span><br><span class="line"></span><br><span class="line">Start()&#123;</span><br><span class="line">arrSong &#x3D; new int[115]&#123;,,,,&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;unity中修改脚本数据后经常会发现运行时并没有使用修改后的数据，&lt;br&gt;尤其是数组数据等。&lt;/p&gt;&lt;p&gt;这时需要在脚本对应的inspector里点击齿轮，选择reset，此后就会使用脚本里的数据。&lt;/p&gt;&lt;p&gt;需要经常对比二者数据是否一致，所以较好的方法是将数据初始化在Start()函数里。&lt;br&gt;例如：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;public int[] arrSong &amp;#x3D; new int[115];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Start()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	arrSong &amp;#x3D; new int[115]&amp;#123;,,,,&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
