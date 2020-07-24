@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "ubuntu apt升级python"
+git commit -m "ubuntu升级cuda、cuDNN"
 git push

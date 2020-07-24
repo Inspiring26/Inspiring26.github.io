@@ -60,4 +60,4 @@ wget https://bootstrap.pypa.io/get-pip.py --no-check-certificate
 sudo python3 get-pip.py
 ```
 
-### 12.pip3 list 会发现有很多库消失了，需要重新安装。OVER
+### 12.pip3 list 会发现有很多库消失了，需要重新安装，且还在的很多需要安装cp38版。OVER
