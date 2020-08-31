@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[python虚拟环境简单使用]]></title>
     <url>%2F2020%2F08%2F20%2Fpython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[安装virtualenv1pip3 install virtualenv查看版本1virtualenv --version如果版本大于20，默认不复制系统库进入项目文件夹，创建虚拟环境1virtualenv venv 进入环境1source venv&#x2F;bin&#x2F;activate 完成使用后退出虚拟环境1deactivate]]></content>
+    <content type="text"><![CDATA[安装virtualenv1pip3 install virtualenv查看版本1virtualenv --version如果版本大于20，默认不复制系统库进入项目文件夹，创建虚拟环境1virtualenv venv 进入环境1source venv&#x2F;bin&#x2F;activate 完成使用后退出虚拟环境1deactivate 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
         <tag>方法</tag>
         <tag>python</tag>
@@ -482,8 +482,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -737,8 +737,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1194,9 +1194,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
