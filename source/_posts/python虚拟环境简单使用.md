@@ -26,3 +26,7 @@ source venv/bin/activate
 deactivate
 ```
 
+
+
+老博客地址：[https://www.jianshu.com/u/1c73a3a8ae2d](https://www.jianshu.com/u/1c73a3a8ae2d)
+新博客地址：[https://inspiring26.github.io/](https://inspiring26.github.io/)
