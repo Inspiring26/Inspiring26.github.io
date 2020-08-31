@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-08-20T02:31:47.413Z</updated>
+  <updated>2020-08-31T06:39:04.892Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python生成式</title>
+    <link href="https://inspiring26.github.io/2020/08/31/python%E7%94%9F%E6%88%90%E5%BC%8F/"/>
+    <id>https://inspiring26.github.io/2020/08/31/python生成式/</id>
+    <published>2020-08-31T06:21:25.000Z</published>
+    <updated>2020-08-31T06:39:04.892Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-并列for循环其实是嵌套for循环"><a href="#1-并列for循环其实是嵌套for循环" class="headerlink" title="1. 并列for循环其实是嵌套for循环"></a>1. 并列for循环其实是嵌套for循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; [m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;]</span><br><span class="line">[&#39;AX&#39;, &#39;AY&#39;, &#39;AZ&#39;, &#39;BX&#39;, &#39;BY&#39;, &#39;BZ&#39;, &#39;CX&#39;, &#39;CY&#39;, &#39;CZ&#39;]</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="2-if…else"><a href="#2-if…else" class="headerlink" title="2.if…else"></a>2.if…else</h3><p>if可以在for语句之前，也可以在for语句之后<br>在for语句之后，if是个筛选条件，不能加else。<br>在for语句之前的部分是表达式，形如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 if 2％2&#x3D;&#x3D;0 else 0</span><br></pre></td></tr></table></figure><br>本来就是一个表达式。</p><p>总结：for语句之前是表达式，之后可加判断条件，仅限if，运行顺序是for—>for后判断—>(通过判断才运行表达式)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-并列for循环其实是嵌套for循环&quot;&gt;&lt;a href=&quot;#1-并列for循环其实是嵌套for循环&quot; class=&quot;headerlink&quot; title=&quot;1. 并列for循环其实是嵌套for循环&quot;&gt;&lt;/a&gt;1. 并列for循环其实是嵌套for循环&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt; [m + n for m in &amp;#39;ABC&amp;#39; for n in &amp;#39;XYZ&amp;#39;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&amp;#39;AX&amp;#39;, &amp;#39;AY&amp;#39;, &amp;#39;AZ&amp;#39;, &amp;#39;BX&amp;#39;, &amp;#39;BY&amp;#39;, &amp;#39;BZ&amp;#39;, &amp;#39;CX&amp;#39;, &amp;#39;CY&amp;#39;, &amp;#39;CZ&amp;#39;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python虚拟环境简单使用</title>
@@ -87,9 +112,9 @@
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
     
-      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
-    
       <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
+    
+      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
     
   </entry>
   
@@ -486,31 +511,6 @@
       <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu18.04部署hexo</title>
-    <link href="https://inspiring26.github.io/2020/05/20/ubuntu18-04%E9%83%A8%E7%BD%B2hexo/"/>
-    <id>https://inspiring26.github.io/2020/05/20/ubuntu18-04部署hexo/</id>
-    <published>2020-05-20T02:30:07.000Z</published>
-    <updated>2020-05-20T02:43:08.971Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="ubuntu安装node"><a href="#ubuntu安装node" class="headerlink" title="ubuntu安装node"></a>ubuntu安装node</h3><p>参考连接：<br><a href="https://github.com/nodesource/distributions/blob/master/README.md" target="_blank" rel="noopener">https://github.com/nodesource/distributions/blob/master/README.md</a><br>指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Using Ubuntu</span><br><span class="line">curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br><span class="line"></span><br><span class="line"># Using Debian, as root</span><br><span class="line">curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -</span><br><span class="line">apt-get install -y nodejs</span><br></pre></td></tr></table></figure></p><a id="more"></a><h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h3 id="查看hexo自带功能"><a href="#查看hexo自带功能" class="headerlink" title="查看hexo自带功能"></a>查看hexo自带功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo</span><br></pre></td></tr></table></figure><p>可能会没有server参数</p><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo n alitset</span><br><span class="line">vim source&#x2F;_posts&#x2F;alitest.md</span><br></pre></td></tr></table></figure><h3 id="逐步部署查找问题"><a href="#逐步部署查找问题" class="headerlink" title="逐步部署查找问题"></a>逐步部署查找问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><h3 id="处理ERROR-Deployer-not-found-git-错误"><a href="#处理ERROR-Deployer-not-found-git-错误" class="headerlink" title="处理ERROR Deployer not found: git 错误"></a>处理ERROR Deployer not found: git 错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure><h3 id="配置git邮箱和用户名信息"><a href="#配置git邮箱和用户名信息" class="headerlink" title="配置git邮箱和用户名信息"></a>配置git邮箱和用户名信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email 1xxxx@qq.com</span><br><span class="line">git config --global user.name wxxx</span><br></pre></td></tr></table></figure><h3 id="尝试部署"><a href="#尝试部署" class="headerlink" title="尝试部署"></a>尝试部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sd deploy.sh</span><br></pre></td></tr></table></figure><h3 id="查看hexo功能"><a href="#查看hexo功能" class="headerlink" title="查看hexo功能"></a>查看hexo功能</h3><p>此时可能出现server参数了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo</span><br></pre></td></tr></table></figure></p><h3 id="启动服务到默认端口或指定端口"><a href="#启动服务到默认端口或指定端口" class="headerlink" title="启动服务到默认端口或指定端口"></a>启动服务到默认端口或指定端口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">或</span><br><span class="line">hexo server -p 80</span><br></pre></td></tr></table></figure><p>更多hexo信息参考：<br><a href="https://hexo.io/zh-cn/docs/server.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/server.html</a></p><h3 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsid hexo server -p 80</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;ubuntu安装node&quot;&gt;&lt;a href=&quot;#ubuntu安装node&quot; class=&quot;headerlink&quot; title=&quot;ubuntu安装node&quot;&gt;&lt;/a&gt;ubuntu安装node&lt;/h3&gt;&lt;p&gt;参考连接：&lt;br&gt;&lt;a href=&quot;https://github.com/nodesource/distributions/blob/master/README.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/nodesource/distributions/blob/master/README.md&lt;/a&gt;&lt;br&gt;指令：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Using Ubuntu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -sL https:&amp;#x2F;&amp;#x2F;deb.nodesource.com&amp;#x2F;setup_12.x | sudo -E bash -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y nodejs&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Using Debian, as root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -sL https:&amp;#x2F;&amp;#x2F;deb.nodesource.com&amp;#x2F;setup_12.x | bash -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-get install -y nodejs&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="hexo" scheme="https://inspiring26.github.io/tags/hexo/"/>
-    
-      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
     
   </entry>
   

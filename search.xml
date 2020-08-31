@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python生成式]]></title>
+    <url>%2F2020%2F08%2F31%2Fpython%E7%94%9F%E6%88%90%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[1. 并列for循环其实是嵌套for循环12&gt;&gt;&gt; [m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;][&#39;AX&#39;, &#39;AY&#39;, &#39;AZ&#39;, &#39;BX&#39;, &#39;BY&#39;, &#39;BZ&#39;, &#39;CX&#39;, &#39;CY&#39;, &#39;CZ&#39;] 2.if…elseif可以在for语句之前，也可以在for语句之后在for语句之后，if是个筛选条件，不能加else。在for语句之前的部分是表达式，形如11 if 2％2&#x3D;&#x3D;0 else 0本来就是一个表达式。 总结：for语句之前是表达式，之后可加判断条件，仅限if，运行顺序是for—>for后判断—>(通过判断才运行表达式)]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>总结</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python虚拟环境简单使用]]></title>
     <url>%2F2020%2F08%2F20%2Fpython%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[安装virtualenv1pip3 install virtualenv查看版本1virtualenv --version如果版本大于20，默认不复制系统库进入项目文件夹，创建虚拟环境1virtualenv venv 进入环境1source venv&#x2F;bin&#x2F;activate 完成使用后退出虚拟环境1deactivate 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
@@ -27,8 +37,8 @@
     <content type="text"><![CDATA[本方法使用的是apt安装1.搜索ppa,找到可用的源2.在launchpad.net里搜索python33.建议找到一个叫Jonathon F的用户，他编译的包比较可靠。可以进入他的主页找到他发布的python的各个版本。4.以python3.8为例，打开对应页面5.里面有这样的添加ppa的指令12sudo add-apt-repository ppa:jonathonf&#x2F;python-3.8sudo apt-get update 6.添加、更新完后安装1sudo apt install python3.8 7.查看目前有的python版本12345678910$ ls &#x2F;usr&#x2F;bin&#x2F;pytho*&#x2F;usr&#x2F;bin&#x2F;python &#x2F;usr&#x2F;bin&#x2F;python3.6&#x2F;usr&#x2F;bin&#x2F;python2 &#x2F;usr&#x2F;bin&#x2F;python3.6-config&#x2F;usr&#x2F;bin&#x2F;python2.7 &#x2F;usr&#x2F;bin&#x2F;python3.6m&#x2F;usr&#x2F;bin&#x2F;python2.7-config &#x2F;usr&#x2F;bin&#x2F;python3.6m-config&#x2F;usr&#x2F;bin&#x2F;python2-config &#x2F;usr&#x2F;bin&#x2F;python3.8&#x2F;usr&#x2F;bin&#x2F;python2-jsonschema &#x2F;usr&#x2F;bin&#x2F;python3-config&#x2F;usr&#x2F;bin&#x2F;python2-pbr &#x2F;usr&#x2F;bin&#x2F;python3m&#x2F;usr&#x2F;bin&#x2F;python2-wsdump &#x2F;usr&#x2F;bin&#x2F;python3m-config&#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;usr&#x2F;bin&#x2F;python-config 8.删除老版本1sudo rm &#x2F;usr&#x2F;bin&#x2F;python3.6 9.删除原来的软链接1sudo rm &#x2F;usr&#x2F;bin&#x2F;python3 10.创建新的软链接1sudo ln -s &#x2F;usr&#x2F;bin&#x2F;python3.8 &#x2F;usr&#x2F;bin&#x2F;python3 11.可能需要重新安装pip12wget https:&#x2F;&#x2F;bootstrap.pypa.io&#x2F;get-pip.py --no-check-certificatesudo python3 get-pip.py 12.pip3 list 会发现有很多库消失了，需要重新安装，且还在的很多需要安装cp38版。OVER]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>python</tag>
         <tag>ubuntu</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -482,8 +492,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -737,8 +747,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -788,8 +798,8 @@
     <url>%2F2019%2F10%2F28%2F%E9%85%8D%E7%BD%AEtornado-pytorch%E7%9A%84docker%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[拉去指定docker镜像（目前pytorch支持到pytorch1.3，python3.7）1docker pull python:3.7运行容器1docker run -dit python:3.7进入容器 123docker ps#59fe58579fd2 python:3.7 &quot;bash&quot; 35 minutes ago docker exec -it 59fe bash 配置环境12345python -V#Python 3.7.5pip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple torch&#x3D;&#x3D;1.3.0+cpu torchvision&#x3D;&#x3D;0.4.1+cpu -f https:&#x2F;&#x2F;download.pytorch.org&#x2F;whl&#x2F;torch_stable.htmlpip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple tornado redis pillow efficientnet_pytorch 此外，py文件中torch.load()要添加1,map_location&#x3D;torch.device(&#39;cpu&#39;)从而运行在cpu环境下。 安装redis数据库apt不能用临时源，且为了安装最新版本，从源文件编译安装12345wget -c http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-5.0.5.tar.gztar xzf redis-5.0.5.tar.gzcd redis-5.0.5make 启动redis123cd src&#x2F;nohup .&#x2F;redis-server &amp;.&#x2F;redis-cli]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>docker</tag>
+        <tag>pytorch</tag>
         <tag>redis</tag>
         <tag>tornado</tag>
       </tags>
@@ -854,8 +864,8 @@
     <url>%2F2019%2F10%2F22%2F%E7%99%BE%E5%BA%A6%E3%80%81google%E5%AF%B9%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E7%9A%84%E6%94%B6%E5%BD%95%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90%2F</url>
     <content type="text"><![CDATA[第一次把站点地图推送到百度、google是10-14，过了8天了。google收录的比较快，但是也是略有延后，也不是什么都收录。百度收录的更慢更少。]]></content>
       <tags>
-        <tag>GitHub Pages</tag>
         <tag>hexo</tag>
+        <tag>GitHub Pages</tag>
       </tags>
   </entry>
   <entry>
@@ -987,8 +997,8 @@
     <url>%2F2019%2F10%2F12%2F%E7%99%BE%E5%BA%A6%E3%80%81google%E3%80%81bing%E6%94%B6%E5%BD%95github-pages%E7%AB%99%E7%82%B9%2F</url>
     <content type="text"><![CDATA[由于Github Pages禁止的原因，百度、google、bing等搜索引擎都是不收录hexo-Github Pages创建的站点的，需要分别去每个搜索引擎提交站点。百度在themes/next/_config.yml中将google-site-verification和baidu-site-verification、bing-site-verification的值设置为true。 打开百度的站点提交地址http://ziyuan.baidu.com/site/index 一步步下去，由于hexo会修改根目录文件，文件验证会有问题，选择html标签验证。 修改themes/next/layout/_partials/head/head.swig中的元数据，baidu-site-verification对应的值。（ 一会儿google还要修改一次，bing目前没修改不知道有没有影响） 然后sh deploy.sh部署验证就可以了。 Googlegoole的方式类似，注意资源类型选网址前缀地址：https://www.google.com/webmasters/tools/home?hl=zh-CN bing用google帐号登录后可直接导入google的认证。地址：https://www.bing.com/webmaster/home/mysites 文章参考地址(关于站点地图的信息见这个链接)https://blog.csdn.net/qq_32454537/article/details/79482914 10.14更新文件验证方式或许可以把文件放在public文件夹(未验证)，因为pubic文件夹下的文件不会被修改。另外，由此可知：通过在public文件夹下放置文件、文件夹，就行成了一个类似ftp的下载站点。另外2，由于放在github pages上，速度依然不快，但是只要本地服务运行就可以本地访问，这就很快了。另外3，可以简单的运行hexo服务建立文件下载服务(需要输入完整的文件名，不可以查看目录)。 10.22更新bing不要忘了提交sitemap。]]></content>
       <tags>
-        <tag>GitHub Pages</tag>
         <tag>hexo</tag>
+        <tag>GitHub Pages</tag>
       </tags>
   </entry>
   <entry>
@@ -1194,9 +1204,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
+        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
