@@ -1,7 +1,7 @@
 ---
 title: python生成式
 date: 2020-08-31 14:21:25
-tags:[python,方法,总结]
+tags: [python, 方法, 总结]
 ---
 ### 1. 并列for循环其实是嵌套for循环
 ```
