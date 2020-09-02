@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[jupyter卸载其他核心]]></title>
+    <url>%2F2020%2F09%2F02%2Fjupyter%E5%8D%B8%E8%BD%BD%E5%85%B6%E4%BB%96%E6%A0%B8%E5%BF%83%2F</url>
+    <content type="text"><![CDATA[查看1234➜ ~ jupyter kernelspec listAvailable kernels: javascript &#x2F;home&#x2F;h&#x2F;.local&#x2F;share&#x2F;jupyter&#x2F;kernels&#x2F;javascript python3 &#x2F;home&#x2F;h&#x2F;.local&#x2F;share&#x2F;jupyter&#x2F;kernels&#x2F;python3 卸载12345➜ ~ jupyter kernelspec remove javascriptKernel specs to remove: javascript &#x2F;home&#x2F;h&#x2F;.local&#x2F;share&#x2F;jupyter&#x2F;kernels&#x2F;javascriptRemove 1 kernel specs [y&#x2F;N]: y[RemoveKernelSpec] Removed &#x2F;home&#x2F;h&#x2F;.local&#x2F;share&#x2F;jupyter&#x2F;kernels&#x2F;javascript]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>jupyter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[golang、gin小知识点]]></title>
     <url>%2F2020%2F09%2F01%2Fgolang%E3%80%81gin%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
     <content type="text"><![CDATA[gin中常见的gin.H实际就是map[string]interface{}所以给网页传递变量的12345router.GET(&quot;&#x2F;index&quot;, func(c *gin.Context) &#123; c.HTML(http.StatusOK, &quot;index.tmpl&quot;, gin.H&#123; &quot;title&quot;: &quot;Main website&quot;, &#125;) &#125;)就可以替换为123router.GET(&quot;&#x2F;rec&quot;, func(c *gin.Context) &#123; c.HTML(http.StatusOK, &quot;index.tmpl&quot;, province_text_dict) &#125;) 接着上面讲如何讲interface{}转换为具体类型假设value为interface{}类型value.(type)可查看其类型如果是string类型，value.(string)即可转换类型为string。前提是要准确知道类型。]]></content>
@@ -14,8 +23,8 @@
     <url>%2F2020%2F08%2F31%2Fpython%E7%94%9F%E6%88%90%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[1. 并列for循环其实是嵌套for循环12&gt;&gt;&gt; [m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;][&#39;AX&#39;, &#39;AY&#39;, &#39;AZ&#39;, &#39;BX&#39;, &#39;BY&#39;, &#39;BZ&#39;, &#39;CX&#39;, &#39;CY&#39;, &#39;CZ&#39;] 2.if…elseif可以在for语句之前，也可以在for语句之后在for语句之后，if是个筛选条件，不能加else。在for语句之前的部分是表达式，形如11 if 2％2&#x3D;&#x3D;0 else 0本来就是一个表达式。 总结：for语句之前是表达式，之后可加判断条件，仅限if，运行顺序是for—>for后判断—>(通过判断才运行表达式)]]></content>
       <tags>
-        <tag>总结</tag>
         <tag>方法</tag>
+        <tag>总结</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -283,8 +292,8 @@
     <url>%2F2020%2F04%2F23%2Funity%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3%2F</url>
     <content type="text"><![CDATA[可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。少了错综复杂的引用，当然更清晰，更易于管理。集中管理的好处还是很多的。可以集中的有，数据、帧操作等。 在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开1234&#x2F;&#x2F; 判断可点击区域内是否miss&#x2F;&#x2F; 这个区域可以比正常的状态判定区域稍微大一些，给点晚了的miss一些时间段&#x2F;&#x2F; 第一步，判断是否在可点按区域。方法是起点一个数组，终点一个数组，如果进入了第一个没进入第二个就是在区域内&#x2F;&#x2F; 第二步，判断是否点击。方法是起点进入时给一个未点击标识，到达终点时检查一下是否点了 12345678public void CloseHearts(int n)&#123;&#x2F;&#x2F;传入丢失星星数 &#x2F;&#x2F; 第一步，将所有heart按顺序装入数组 &#x2F;&#x2F; 第二步，从最后一个开始倒序关闭 for(int i&#x3D;2;i&gt;2-n;i--)&#123; heartList[i].transform.localScale &#x3D; new Vector3(0f,0f,1f); &#125;&#125; 游戏体的Find、实例化都放在Start()里，这个不用多说尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>总结</tag>
         <tag>unity</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -329,9 +338,9 @@
     <url>%2F2020%2F04%2F15%2Funity%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E5%8F%8A%E6%9B%BF%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%BB%84%E4%BB%B6%E4%B8%8A%E7%9A%84%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[音乐读取我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。代码：123456789101112131415private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;private object objs;private GameObject GObject;public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num]); GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; (AudioClip)objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;&#125;void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);&#125;可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下： 读取（unity风格）(主流方法）代码：1234567891011121314private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true; &#125; void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); &#125;使用1Resources.Load(路径, typeof(目标格式)) as 目标格式;形式读取。 更简洁的写法1234567891011121314151617181920private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; private AudioSource audioSource; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; audioSource.clip &#x3D; objs; audioSource.Play(); audioSource.loop &#x3D; true; &#125; void Start() &#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); Debug.Log(GObject.GetComponent&lt;AudioSource&gt;()); &#x2F;&#x2F; 查看要用变量指代的具体是什么类型 audioSource &#x3D; GObject.GetComponent&lt;AudioSource&gt;(); LoadMusic(0); &#x2F;&#x2F; 打开游戏就播放 &#125; 可以更进一步用变量替代重复的调用语句，如1GObject.GetComponent&lt;AudioSource&gt;()具体声明为什么格式，可以先打印看一下。另外开场就进行的操作，如播放音乐，可以放在Start()里。 注意需要注意的是要播放音乐，必须先把音乐组件放在某个游戏体上，不能凭空播放音乐。 图片读取读取系统自带的图像组件，必须使用1using UnityEngine.UI;否则会找不到Image。 代码：12345678910111213141516171819private Image icon;public Sprite sp1,sp2;public void ChangeThePicture()&#123; if(this.GetComponent&lt;Scrollbar&gt;().value &lt; 0.5)&#123; icon.sprite &#x3D; sp1; &#125;else&#123; icon.sprite &#x3D; sp2; &#125; &#125; &#x2F;&#x2F; Start is called before the first frame update void Start() &#123; icon &#x3D; this.GetComponent&lt;Image&gt;(); sp1 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;矩形 3943 拷贝&quot;, typeof(Sprite)) as Sprite; sp2 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;bg_kaiguan&quot;, typeof(Sprite)) as Sprite; &#125; 总结图片挂的是sprite，音乐挂的是clip，都不是检视窗口内左侧的对应名字。出于节省资源的考虑，可以把sp1、sp2这种多次使用的图片在父物体里以public方式加载，在当前脚本里调用即可，不在当前脚本加载是为了保持脚本重复利用。于是另一个结论，重复利用的脚本不加载资源。]]></content>
       <tags>
-        <tag>总结</tag>
         <tag>unity</tag>
         <tag>方法</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -526,8 +535,8 @@
     <url>%2F2019%2F12%2F27%2FApple-Watch-%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%9A%90%E8%97%8F%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[1.在点亮屏幕后，双指放在时间上，手表会报时。 2.手表戴到手上需要解锁，如果此时手机解锁一次，手表就会自动解锁。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>Apple Watch</tag>
         <tag>技巧</tag>
+        <tag>Apple Watch</tag>
       </tags>
   </entry>
   <entry>
@@ -552,8 +561,8 @@
     <url>%2F2019%2F11%2F27%2Fpython%E7%AE%80%E5%8D%95%E8%80%8C%E6%9C%89%E7%94%A8%E7%9A%84%E6%97%A5%E5%B8%B8%E8%84%9A%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[获取文件夹内所有文件名12import osnext(os.walk(&#39;.&#39;))[2]移动文件等shell操作12import osos.system(&quot;mv aa bb&quot;) 多线程实际使用中可以通过htop看到，执行一个处理时只会把一个cpu线程核心用满，想充分利用cpu和节省时间，就要多用多线程。用起来非常简单，建议传入参数，以便分段同时执行123import threadingt1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)t1.run()举个用例1234567891011&gt;&gt;&gt; def handle(s,d):... for i in range(s,d):... im &#x3D; Image.open(namelist[i])... (width, height) &#x3D; (im.width&#x2F;max(im.width,im.height)*2000,im.height&#x2F;max(im.width,im.height)*2000)... im_re &#x3D; im.resize(( int(width), int(height) ))... im_re.save(&quot;..&#x2F;hands3&#x2F;&quot;+namelist[i])... &gt;&gt;&gt; t1 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(1,len(namelist)&#x2F;&#x2F;2),name&#x3D;&#39;1&#39;)&gt;&gt;&gt; t1.start()&gt;&gt;&gt; t2 &#x3D; threading.Thread(target&#x3D;handle, args&#x3D;(len(namelist)&#x2F;&#x2F;2,len(namelist)),name&#x3D;&#39;2&#39;)&gt;&gt;&gt; t2.start() 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>技巧</tag>
         <tag>python</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -570,8 +579,8 @@
     <url>%2F2019%2F11%2F21%2Fmask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[获取绝对路径1os.path.abspath(&quot;..&#x2F;&quot;)联合路径或文件12os.path.join(ROOT_DIR, &quot;samples&#x2F;coco&#x2F;&quot;)os.path.join(ROOT_DIR, &quot;mask_rcnn_coco.h5&quot;) 如果不存在就下载或创建12if not os.path.exists(COCO_MODEL_PATH): utils.download_trained_weights(COCO_MODEL_PATH) 组织参数及调用 以及传参，用一部分也可以传整个，显得很简洁1234567891011class InferenceConfig(coco.CocoConfig): # Set batch size to 1 since we&#39;ll be running inference on # one image at a time. Batch size &#x3D; GPU_COUNT * IMAGES_PER_GPU GPU_COUNT &#x3D; 1 IMAGES_PER_GPU &#x3D; 1config &#x3D; InferenceConfig()config.GPU_COUNT()model &#x3D; modellib.MaskRCNN(mode&#x3D;&quot;inference&quot;, model_dir&#x3D;MODEL_DIR, config&#x3D;config) 列出文件夹里的所有文件和文件夹1next(os.walk(IMAGE_DIR))[2] 随机选取一个元素1random.choice(file_names) 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>技巧</tag>
         <tag>python</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -807,8 +816,8 @@
     <url>%2F2019%2F10%2F28%2F%E9%85%8D%E7%BD%AEtornado-pytorch%E7%9A%84docker%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[拉去指定docker镜像（目前pytorch支持到pytorch1.3，python3.7）1docker pull python:3.7运行容器1docker run -dit python:3.7进入容器 123docker ps#59fe58579fd2 python:3.7 &quot;bash&quot; 35 minutes ago docker exec -it 59fe bash 配置环境12345python -V#Python 3.7.5pip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple torch&#x3D;&#x3D;1.3.0+cpu torchvision&#x3D;&#x3D;0.4.1+cpu -f https:&#x2F;&#x2F;download.pytorch.org&#x2F;whl&#x2F;torch_stable.htmlpip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple tornado redis pillow efficientnet_pytorch 此外，py文件中torch.load()要添加1,map_location&#x3D;torch.device(&#39;cpu&#39;)从而运行在cpu环境下。 安装redis数据库apt不能用临时源，且为了安装最新版本，从源文件编译安装12345wget -c http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-5.0.5.tar.gztar xzf redis-5.0.5.tar.gzcd redis-5.0.5make 启动redis123cd src&#x2F;nohup .&#x2F;redis-server &amp;.&#x2F;redis-cli]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>pytorch</tag>
+        <tag>docker</tag>
         <tag>redis</tag>
         <tag>tornado</tag>
       </tags>
