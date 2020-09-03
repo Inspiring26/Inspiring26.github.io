@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "oh-my-zsh查看权限"
+git commit -m "不要温和地走进那个良夜"
 git push
