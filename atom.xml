@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-09-15T06:18:48.785Z</updated>
+  <updated>2020-09-15T10:41:43.852Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>python官方命名规范简单终结</title>
-    <link href="https://inspiring26.github.io/2020/09/15/python%E5%AE%98%E6%96%B9%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E7%AE%80%E5%8D%95%E7%BB%88%E7%BB%93/"/>
-    <id>https://inspiring26.github.io/2020/09/15/python官方命名规范简单终结/</id>
+    <title>python官方命名规范简单总结</title>
+    <link href="https://inspiring26.github.io/2020/09/15/python%E5%AE%98%E6%96%B9%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/"/>
+    <id>https://inspiring26.github.io/2020/09/15/python官方命名规范简单总结/</id>
     <published>2020-09-15T05:41:30.000Z</published>
-    <updated>2020-09-15T06:18:48.785Z</updated>
+    <updated>2020-09-15T10:41:43.852Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1-不加分号"><a href="#1-不加分号" class="headerlink" title="1.不加分号"></a>1.不加分号</h3><h3 id="2-每行不超过80个字符"><a href="#2-每行不超过80个字符" class="headerlink" title="2.每行不超过80个字符"></a>2.每行不超过80个字符</h3><p>所有语句都是可以换行的<br>圆括号、中括号、花括号中的行是隐式连接起来的</p><h3 id="3-顶级定义之间空两行，方法之间空一行"><a href="#3-顶级定义之间空两行，方法之间空一行" class="headerlink" title="3.顶级定义之间空两行，方法之间空一行"></a>3.顶级定义之间空两行，方法之间空一行</h3><h3 id="4-每个导入单独占一行"><a href="#4-每个导入单独占一行" class="headerlink" title="4.每个导入单独占一行"></a>4.每个导入单独占一行</h3><h3 id="5-命名"><a href="#5-命名" class="headerlink" title="5.命名"></a>5.命名</h3><p>(1)除计数器、迭代器不使用单字符<br>(2)不使用-<br>(3)通常不使用__开头或结尾<br>(4)类名使用大驼峰<br>(5)模块名(函数名)使用小写加下划线<br>(6)变量名和函数名一样，小写加下划线</p><a id="more"></a><h3 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h3><p>(python-style-guide)[<a href="https://python-guide.gitbooks.io/python-style-guide/content/style-guide/variables.html" target="_blank" rel="noopener">https://python-guide.gitbooks.io/python-style-guide/content/style-guide/variables.html</a>]</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="1-不加分号"><a href="#1-不加分号" class="headerlink" title="1.不加分号"></a>1.不加分号</h3><h3 id="2-每行不超过80个字符"><a href="#2-每行不超过80个字符" class="headerlink" title="2.每行不超过80个字符"></a>2.每行不超过80个字符</h3><p>所有语句都是可以换行的<br>圆括号、中括号、花括号中的行是隐式连接起来的</p><h3 id="3-顶级定义之间空两行，方法之间空一行"><a href="#3-顶级定义之间空两行，方法之间空一行" class="headerlink" title="3.顶级定义之间空两行，方法之间空一行"></a>3.顶级定义之间空两行，方法之间空一行</h3><h3 id="4-每个导入单独占一行"><a href="#4-每个导入单独占一行" class="headerlink" title="4.每个导入单独占一行"></a>4.每个导入单独占一行</h3><h3 id="5-命名"><a href="#5-命名" class="headerlink" title="5.命名"></a>5.命名</h3><p>(1)除计数器、迭代器不使用单字符<br>(2)不使用-<br>(3)通常不使用__开头或结尾<br>(4)类名使用大驼峰<br>(5)模块名(函数名)使用小写加下划线<br>(6)变量名和函数名一样，小写加下划线</p><a id="more"></a><h3 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h3><p><a href="https://python-guide.gitbooks.io/python-style-guide/content/style-guide/variables.html" target="_blank" rel="noopener">python-style-guide</a></p>]]></content>
     
     <summary type="html">
     
