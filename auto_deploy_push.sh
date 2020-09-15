@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "不要温和地走进那个良夜 修改"
+git commit -m "python规范"
 git push
