@@ -1,5 +1,5 @@
 ---
-title: python官方命名规范简单终结
+title: python官方命名规范简单总结
 date: 2020-09-15 13:41:30
 tags: [python, 总结]
 ---
@@ -22,4 +22,4 @@ tags: [python, 总结]
 (6)变量名和函数名一样，小写加下划线
 
 ### 参考地址
-(python-style-guide)[https://python-guide.gitbooks.io/python-style-guide/content/style-guide/variables.html]
+[python-style-guide](https://python-guide.gitbooks.io/python-style-guide/content/style-guide/variables.html)
