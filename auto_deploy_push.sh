@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "python规范_修改"
+git commit -m "python多进程相关"
 git push
