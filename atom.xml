@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-09-15T10:41:43.852Z</updated>
+  <updated>2020-09-23T09:12:24.736Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pandas</title>
+    <link href="https://inspiring26.github.io/2020/09/23/pandas/"/>
+    <id>https://inspiring26.github.io/2020/09/23/pandas/</id>
+    <published>2020-09-23T09:06:46.000Z</published>
+    <updated>2020-09-23T09:12:24.736Z</updated>
+    
+    <content type="html"><![CDATA[<p>在做这个推荐系统的过程中，能用新方法的绝不用老方法，处理excel技术大大提升了。<br>如果是现在给皮皮处理excel，一定溜的飞起。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在做这个推荐系统的过程中，能用新方法的绝不用老方法，处理excel技术大大提升了。&lt;br&gt;如果是现在给皮皮处理excel，一定溜的飞起。。。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python装饰器</title>
+    <link href="https://inspiring26.github.io/2020/09/23/python%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
+    <id>https://inspiring26.github.io/2020/09/23/python装饰器/</id>
+    <published>2020-09-23T08:54:52.000Z</published>
+    <updated>2020-09-23T09:04:34.904Z</updated>
+    
+    <content type="html"><![CDATA[<p>装饰器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def foo():  </span><br><span class="line">    print &#39;in foo()&#39;  </span><br><span class="line">   </span><br><span class="line"># 定义一个计时器，传入一个，并返回另一个附加了计时功能的方法  </span><br><span class="line">def timeit(func):  </span><br><span class="line">       </span><br><span class="line">    # 定义一个内嵌的包装函数，给传入的函数加上计时功能的包装  </span><br><span class="line">    def wrapper():  </span><br><span class="line">        start &#x3D; time.clock()  </span><br><span class="line">        func()  </span><br><span class="line">        end &#x3D;time.clock()  </span><br><span class="line">        print &#39;Time Elapsed:&#39;, end - start  </span><br><span class="line">       </span><br><span class="line">    # 将包装后的函数返回  </span><br><span class="line">    return wrapper</span><br></pre></td></tr></table></figure><br>的实际使用是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo &#x3D; timeit(foo)</span><br></pre></td></tr></table></figure><br>简写为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@timeit</span><br><span class="line">def foo()</span><br></pre></td></tr></table></figure><br>很好理解：新foo等于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def wrapper():  </span><br><span class="line">    start &#x3D; time.clock()  </span><br><span class="line">    foo() # 原foo()函数  </span><br><span class="line">    end &#x3D;time.clock()  </span><br><span class="line">    print &#39;Time Elapsed:&#39;, end - start</span><br></pre></td></tr></table></figure></p><a id="more"></a><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>就是经过装饰器，把原函数传到新函数了。在新函数中又定义了一个嵌套函数，其实最终返回的结果就是这个嵌套函数。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;装饰器&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def foo():  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print &amp;#39;in foo()&amp;#39;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 定义一个计时器，传入一个，并返回另一个附加了计时功能的方法  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def timeit(func):  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # 定义一个内嵌的包装函数，给传入的函数加上计时功能的包装  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    def wrapper():  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        start &amp;#x3D; time.clock()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        func()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        end &amp;#x3D;time.clock()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        print &amp;#39;Time Elapsed:&amp;#39;, end - start  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # 将包装后的函数返回  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return wrapper&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;的实际使用是&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;foo &amp;#x3D; timeit(foo)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;简写为&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@timeit&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def foo()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;很好理解：新foo等于&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def wrapper():  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    start &amp;#x3D; time.clock()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    foo() # 原foo()函数  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    end &amp;#x3D;time.clock()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print &amp;#39;Time Elapsed:&amp;#39;, end - start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python多进程</title>
+    <link href="https://inspiring26.github.io/2020/09/23/python%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
+    <id>https://inspiring26.github.io/2020/09/23/python多进程/</id>
+    <published>2020-09-23T08:45:43.000Z</published>
+    <updated>2020-09-23T08:54:29.455Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="简单粗暴的方法"><a href="#简单粗暴的方法" class="headerlink" title="简单粗暴的方法"></a>简单粗暴的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))</span><br><span class="line">f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))</span><br><span class="line"></span><br><span class="line">f1.start()</span><br><span class="line">f2.start()</span><br><span class="line">f1.join()</span><br><span class="line">f2.join()</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="简单处理多进程"><a href="#简单处理多进程" class="headerlink" title="简单处理多进程"></a>简单处理多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ps&#x3D;[]</span><br><span class="line">for i in [fanca, funcb]</span><br><span class="line">    p&#x3D;Process(target&#x3D;i)</span><br><span class="line">    ps.append(p)</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    ps[i].start()</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    ps[i].join()</span><br></pre></td></tr></table></figure><h3 id="使用进程池处理多进程"><a href="#使用进程池处理多进程" class="headerlink" title="使用进程池处理多进程"></a>使用进程池处理多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps &#x3D; Pool(3)</span><br><span class="line">    for p in [write_showDF, write_clickDF, write_textLinks]:</span><br><span class="line">        ps.apply(p)</span><br><span class="line">    ps.close()</span><br><span class="line">    ps.join()</span><br></pre></td></tr></table></figure><h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><p>以第一种形式，且子进程间无交互为例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">q1res &#x3D; mp.Queue()</span><br><span class="line">q2res &#x3D; mp.Queue()</span><br><span class="line">f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))</span><br><span class="line">f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))</span><br><span class="line"></span><br><span class="line">f1.start()</span><br><span class="line">f2.start()</span><br><span class="line">f1.join()</span><br><span class="line">f2.join()</span><br><span class="line">rec_cec_df,norm_cec_df&#x3D;q1res.get(),q2res.get()</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;简单粗暴的方法&quot;&gt;&lt;a href=&quot;#简单粗暴的方法&quot; class=&quot;headerlink&quot; title=&quot;简单粗暴的方法&quot;&gt;&lt;/a&gt;简单粗暴的方法&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;f1 &amp;#x3D; Process(target&amp;#x3D;func1,args&amp;#x3D;(q1res,))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2 &amp;#x3D; Process(target&amp;#x3D;func2,args&amp;#x3D;(q2res,))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f1.start()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2.start()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f1.join()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2.join()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python官方命名规范简单总结</title>
@@ -434,75 +505,6 @@
     
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>对熵的简单理解</title>
-    <link href="https://inspiring26.github.io/2020/06/08/%E5%AF%B9%E7%86%B5%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/"/>
-    <id>https://inspiring26.github.io/2020/06/08/对熵的简单理解/</id>
-    <published>2020-06-08T10:12:09.000Z</published>
-    <updated>2020-06-08T10:28:15.873Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="简言之，事情越不确定熵越大"><a href="#简言之，事情越不确定熵越大" class="headerlink" title="简言之，事情越不确定熵越大"></a>简言之，事情越不确定熵越大</h3><p>假设有5枚硬币，都是正面，只有一种方式，3个正面2个反面，很多排列方式<br>他们的熵分别为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">S1 &#x3D; -1*ln(1)&#x3D;0</span><br><span class="line">S2 &#x3D; -1*(0.4*ln0.4+0.6*ln0.6)*5&#x3D;3.365</span><br></pre></td></tr></table></figure></p><a id="more"></a><h3 id="熵越大含的信息量越多"><a href="#熵越大含的信息量越多" class="headerlink" title="熵越大含的信息量越多"></a>熵越大含的信息量越多</h3><p>比如神经网络分类的结果，<br>假设有5类，一种是1，0，0，0，0，另一种是0.21，0.36,…<br>类似上面的计算就可以得出第二种熵更大，它喊得信息也更多，可以用作知识蒸馏中的soft label，学生网络能学到更多信息。</p><h3 id="越混乱熵越高，越稳定熵越低"><a href="#越混乱熵越高，越稳定熵越低" class="headerlink" title="越混乱熵越高，越稳定熵越低"></a>越混乱熵越高，越稳定熵越低</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;简言之，事情越不确定熵越大&quot;&gt;&lt;a href=&quot;#简言之，事情越不确定熵越大&quot; class=&quot;headerlink&quot; title=&quot;简言之，事情越不确定熵越大&quot;&gt;&lt;/a&gt;简言之，事情越不确定熵越大&lt;/h3&gt;&lt;p&gt;假设有5枚硬币，都是正面，只有一种方式，3个正面2个反面，很多排列方式&lt;br&gt;他们的熵分别为&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;S1 &amp;#x3D; -1*ln(1)&amp;#x3D;0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;S2 &amp;#x3D; -1*(0.4*ln0.4+0.6*ln0.6)*5&amp;#x3D;3.365&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="思考" scheme="https://inspiring26.github.io/tags/%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity的inspector面板值不随脚本改变的理解</title>
-    <link href="https://inspiring26.github.io/2020/06/01/unity%E7%9A%84inspector%E9%9D%A2%E6%9D%BF%E5%80%BC%E4%B8%8D%E9%9A%8F%E8%84%9A%E6%9C%AC%E6%94%B9%E5%8F%98%E7%9A%84%E7%90%86%E8%A7%A3/"/>
-    <id>https://inspiring26.github.io/2020/06/01/unity的inspector面板值不随脚本改变的理解/</id>
-    <published>2020-06-01T09:34:48.000Z</published>
-    <updated>2020-06-01T09:45:49.894Z</updated>
-    
-    <content type="html"><![CDATA[<p>unity脚本声明的一些public变量，一旦挂到游戏体上以后，在脚本修改这些值的时候，inspector面板里并不修改。</p><p>你可以这么理解它的机制：<br>你写一个脚本后你可以把它挂在多个游戏体上，你可以为每个脚本拉上当前所在的游戏体，你也可以对每个游戏体进行编号，这些都是可以直接在inspector界面拉到脚本上或写到脚本上的。<br>unity为了实现让你随便拉游戏体的功能，在inspector面板上暴露出来的变量都是和这个游戏体绑定的，不是原来的脚本简单复制。</p><a id="more"></a><p>所以：<br>不需要单独赋值的变量一律使用private，<br>需要被其他脚本引用的变量，为它创建一个方法，直接返回该变量。<br>即：<br>除非单独一个脚本在多出使用，且分别赋值给变量，否则一律使用声明为私有变量。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;unity脚本声明的一些public变量，一旦挂到游戏体上以后，在脚本修改这些值的时候，inspector面板里并不修改。&lt;/p&gt;&lt;p&gt;你可以这么理解它的机制：&lt;br&gt;你写一个脚本后你可以把它挂在多个游戏体上，你可以为每个脚本拉上当前所在的游戏体，你也可以对每个游戏体进行编号，这些都是可以直接在inspector界面拉到脚本上或写到脚本上的。&lt;br&gt;unity为了实现让你随便拉游戏体的功能，在inspector面板上暴露出来的变量都是和这个游戏体绑定的，不是原来的脚本简单复制。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux下自写定时器注意事项</title>
-    <link href="https://inspiring26.github.io/2020/05/29/linux%E4%B8%8B%E8%87%AA%E5%86%99%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
-    <id>https://inspiring26.github.io/2020/05/29/linux下自写定时器注意事项/</id>
-    <published>2020-05-29T02:22:24.000Z</published>
-    <updated>2020-05-29T05:45:13.869Z</updated>
-    
-    <content type="html"><![CDATA[<p>linux下可以方便的自写定时器脚本。<br>常用的是每60秒判断一下时间。<br>以每5分钟git pull一次为例。<br>需要计算分钟数对5的余数为0.<br>但是可能会出现一个03%5的情况，这时候脚本计算会出错。<br>可以通过对分钟值加10来避免。<br>简单的脚本如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">while true</span><br><span class="line">do</span><br><span class="line">thetime&#x3D;$(date &quot;+%M&quot;)</span><br><span class="line">thetime2&#x3D;&#96;expr $thetime + 10&#96;</span><br><span class="line">remainder&#x3D;$(($thetime2%5))</span><br><span class="line">if [ $remainder &#x3D; &#39;0&#39; ]</span><br><span class="line">then</span><br><span class="line">cd ~&#x2F;blog;sh gitpull.sh</span><br><span class="line">date</span><br><span class="line">sleep 60s</span><br><span class="line">else</span><br><span class="line">sleep 60s</span><br><span class="line">fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure><br>shell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。<br>上面使用expr的方式是可行的。</p><a id="more"></a><h3 id="需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因"><a href="#需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因" class="headerlink" title="需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因"></a>需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;linux下可以方便的自写定时器脚本。&lt;br&gt;常用的是每60秒判断一下时间。&lt;br&gt;以每5分钟git pull一次为例。&lt;br&gt;需要计算分钟数对5的余数为0.&lt;br&gt;但是可能会出现一个03%5的情况，这时候脚本计算会出错。&lt;br&gt;可以通过对分钟值加10来避免。&lt;br&gt;简单的脚本如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;while true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	thetime&amp;#x3D;$(date &amp;quot;+%M&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	thetime2&amp;#x3D;&amp;#96;expr $thetime + 10&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	remainder&amp;#x3D;$(($thetime2%5))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	if [ $remainder &amp;#x3D; &amp;#39;0&amp;#39; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	then&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		cd ~&amp;#x2F;blog;sh gitpull.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		date&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		sleep 60s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	else&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		sleep 60s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	fi&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;done&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;shell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。&lt;br&gt;上面使用expr的方式是可行的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
     
       <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
     
