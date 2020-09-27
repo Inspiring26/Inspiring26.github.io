@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pytorch损失函数会导致显存不断增长的问题]]></title>
+    <url>%2F2020%2F09%2F27%2Fpytorch%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[分析如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。 解决方法1.转换为.cpu()再累加2.声明.cuda()变量]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>pytorch</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[pandas]]></title>
     <url>%2F2020%2F09%2F23%2Fpandas%2F</url>
     <content type="text"><![CDATA[在做这个推荐系统的过程中，能用新方法的绝不用老方法，处理excel技术大大提升了。如果是现在给皮皮处理excel，一定溜的飞起。。。]]></content>
@@ -20,7 +30,7 @@
   <entry>
     <title><![CDATA[python多进程]]></title>
     <url>%2F2020%2F09%2F23%2Fpython%E5%A4%9A%E8%BF%9B%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[简单粗暴的方法1234567f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))f1.start()f2.start()f1.join()f2.join() 简单处理多进程12345678910ps&#x3D;[]for i in [fanca, funcb] p&#x3D;Process(target&#x3D;i) ps.append(p)for i in range(2): ps[i].start()for i in range(2): ps[i].join() 使用进程池处理多进程12345ps &#x3D; Pool(3) for p in [write_showDF, write_clickDF, write_textLinks]: ps.apply(p) ps.close() ps.join() 进程间通信以第一种形式，且子进程间无交互为例12345678910q1res &#x3D; mp.Queue()q2res &#x3D; mp.Queue()f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))f1.start()f2.start()f1.join()f2.join()rec_cec_df,norm_cec_df&#x3D;q1res.get(),q2res.get()]]></content>
+    <content type="text"><![CDATA[简单粗暴的方法1234567f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))f1.start()f2.start()f1.join()f2.join() 简单处理多进程12345678910ps&#x3D;[]for i in [fanca, funcb] p&#x3D;Process(target&#x3D;i) ps.append(p)for i in range(2): ps[i].start()for i in range(2): ps[i].join() 使用进程池处理多进程12345ps &#x3D; Pool(3)for p in [write_showDF, write_clickDF, write_textLinks]: ps.apply(p)ps.close()ps.join() 进程间通信以第一种形式，且子进程间无交互为例12345678910q1res &#x3D; mp.Queue()q2res &#x3D; mp.Queue()f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))f1.start()f2.start()f1.join()f2.join()rec_cec_df,norm_cec_df&#x3D;q1res.get(),q2res.get()]]></content>
       <tags>
         <tag>总结</tag>
         <tag>python</tag>

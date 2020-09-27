@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-09-23T09:12:24.736Z</updated>
+  <updated>2020-09-27T07:45:31.596Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pytorch损失函数会导致显存不断增长的问题</title>
+    <link href="https://inspiring26.github.io/2020/09/27/pytorch%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://inspiring26.github.io/2020/09/27/pytorch损失函数会导致显存不断增长的问题/</id>
+    <published>2020-09-27T07:40:01.000Z</published>
+    <updated>2020-09-27T07:45:31.596Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。<br>如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。</p><a id="more"></a><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>1.转换为.cpu()再累加<br>2.声明.cuda()变量</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;p&gt;如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。&lt;br&gt;如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="pytorch" scheme="https://inspiring26.github.io/tags/pytorch/"/>
+    
+      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>pandas</title>
@@ -69,9 +94,9 @@
     <link href="https://inspiring26.github.io/2020/09/23/python%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
     <id>https://inspiring26.github.io/2020/09/23/python多进程/</id>
     <published>2020-09-23T08:45:43.000Z</published>
-    <updated>2020-09-23T08:54:29.455Z</updated>
+    <updated>2020-09-23T09:17:10.078Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="简单粗暴的方法"><a href="#简单粗暴的方法" class="headerlink" title="简单粗暴的方法"></a>简单粗暴的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))</span><br><span class="line">f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))</span><br><span class="line"></span><br><span class="line">f1.start()</span><br><span class="line">f2.start()</span><br><span class="line">f1.join()</span><br><span class="line">f2.join()</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="简单处理多进程"><a href="#简单处理多进程" class="headerlink" title="简单处理多进程"></a>简单处理多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ps&#x3D;[]</span><br><span class="line">for i in [fanca, funcb]</span><br><span class="line">    p&#x3D;Process(target&#x3D;i)</span><br><span class="line">    ps.append(p)</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    ps[i].start()</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    ps[i].join()</span><br></pre></td></tr></table></figure><h3 id="使用进程池处理多进程"><a href="#使用进程池处理多进程" class="headerlink" title="使用进程池处理多进程"></a>使用进程池处理多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps &#x3D; Pool(3)</span><br><span class="line">    for p in [write_showDF, write_clickDF, write_textLinks]:</span><br><span class="line">        ps.apply(p)</span><br><span class="line">    ps.close()</span><br><span class="line">    ps.join()</span><br></pre></td></tr></table></figure><h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><p>以第一种形式，且子进程间无交互为例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">q1res &#x3D; mp.Queue()</span><br><span class="line">q2res &#x3D; mp.Queue()</span><br><span class="line">f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))</span><br><span class="line">f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))</span><br><span class="line"></span><br><span class="line">f1.start()</span><br><span class="line">f2.start()</span><br><span class="line">f1.join()</span><br><span class="line">f2.join()</span><br><span class="line">rec_cec_df,norm_cec_df&#x3D;q1res.get(),q2res.get()</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="简单粗暴的方法"><a href="#简单粗暴的方法" class="headerlink" title="简单粗暴的方法"></a>简单粗暴的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))</span><br><span class="line">f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))</span><br><span class="line"></span><br><span class="line">f1.start()</span><br><span class="line">f2.start()</span><br><span class="line">f1.join()</span><br><span class="line">f2.join()</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="简单处理多进程"><a href="#简单处理多进程" class="headerlink" title="简单处理多进程"></a>简单处理多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ps&#x3D;[]</span><br><span class="line">for i in [fanca, funcb]</span><br><span class="line">    p&#x3D;Process(target&#x3D;i)</span><br><span class="line">    ps.append(p)</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    ps[i].start()</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    ps[i].join()</span><br></pre></td></tr></table></figure><h3 id="使用进程池处理多进程"><a href="#使用进程池处理多进程" class="headerlink" title="使用进程池处理多进程"></a>使用进程池处理多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps &#x3D; Pool(3)</span><br><span class="line">for p in [write_showDF, write_clickDF, write_textLinks]:</span><br><span class="line">    ps.apply(p)</span><br><span class="line">ps.close()</span><br><span class="line">ps.join()</span><br></pre></td></tr></table></figure><h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><p>以第一种形式，且子进程间无交互为例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">q1res &#x3D; mp.Queue()</span><br><span class="line">q2res &#x3D; mp.Queue()</span><br><span class="line">f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))</span><br><span class="line">f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))</span><br><span class="line"></span><br><span class="line">f1.start()</span><br><span class="line">f2.start()</span><br><span class="line">f1.join()</span><br><span class="line">f2.join()</span><br><span class="line">rec_cec_df,norm_cec_df&#x3D;q1res.get(),q2res.get()</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
@@ -481,32 +506,6 @@
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu下升级git</title>
-    <link href="https://inspiring26.github.io/2020/06/09/ubuntu%E4%B8%8B%E5%8D%87%E7%BA%A7git/"/>
-    <id>https://inspiring26.github.io/2020/06/09/ubuntu下升级git/</id>
-    <published>2020-06-09T05:58:20.000Z</published>
-    <updated>2020-06-09T06:00:07.405Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:git-core&#x2F;ppa</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
-      
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
     
   </entry>
   
