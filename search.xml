@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[pytorch损失函数会导致显存不断增长的问题]]></title>
     <url>%2F2020%2F09%2F27%2Fpytorch%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[分析如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。 解决方法1.转换为.cpu()再累加2.声明.cuda()变量]]></content>
+    <content type="text"><![CDATA[分析如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。 解决方法1.转换为.cpu()再累加实际代码并不难使用.cpu(),而是.item()1234567loss &#x3D; criterion(labels,outputs).item()totalloss+&#x3D;loss或loss &#x3D; criterion(labels,outputs)totalloss+&#x3D;loss.item()如果使用.cpu(),只是在内存中生成了一份，显存中的并未释放。2.声明.cuda()变量]]></content>
       <tags>
         <tag>方法</tag>
         <tag>pytorch</tag>

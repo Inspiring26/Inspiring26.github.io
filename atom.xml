@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-09-27T07:45:31.596Z</updated>
+  <updated>2020-09-27T07:51:28.576Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://inspiring26.github.io/2020/09/27/pytorch%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://inspiring26.github.io/2020/09/27/pytorch损失函数会导致显存不断增长的问题/</id>
     <published>2020-09-27T07:40:01.000Z</published>
-    <updated>2020-09-27T07:45:31.596Z</updated>
+    <updated>2020-09-27T07:51:28.576Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。<br>如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。</p><a id="more"></a><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>1.转换为.cpu()再累加<br>2.声明.cuda()变量</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。<br>如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。</p><a id="more"></a><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>1.转换为.cpu()再累加<br>实际代码并不难使用.cpu(),而是.item()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">loss &#x3D; criterion(labels,outputs).item()</span><br><span class="line">totalloss+&#x3D;loss</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">loss &#x3D; criterion(labels,outputs)</span><br><span class="line">totalloss+&#x3D;loss.item()</span><br></pre></td></tr></table></figure><br>如果使用.cpu(),只是在内存中生成了一份，显存中的并未释放。<br>2.声明.cuda()变量</p>]]></content>
     
     <summary type="html">
     
