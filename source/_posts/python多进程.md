@@ -31,10 +31,10 @@ for i in range(2):
 ### 使用进程池处理多进程
 ```
 ps = Pool(3)
-    for p in [write_showDF, write_clickDF, write_textLinks]:
-        ps.apply(p)
-    ps.close()
-    ps.join()
+for p in [write_showDF, write_clickDF, write_textLinks]:
+    ps.apply(p)
+ps.close()
+ps.join()
 ```
 
 ### 进程间通信
