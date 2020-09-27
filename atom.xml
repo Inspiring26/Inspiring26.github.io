@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-09-27T07:51:28.576Z</updated>
+  <updated>2020-09-27T10:23:57.651Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -17,17 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pytorch将张量加载到gpu显存时，cpu内存会增加2G左右</title>
+    <link href="https://inspiring26.github.io/2020/09/27/pytorch%E5%B0%86%E5%BC%A0%E9%87%8F%E5%8A%A0%E8%BD%BD%E5%88%B0gpu%E6%98%BE%E5%AD%98%E6%97%B6%EF%BC%8Ccpu%E5%86%85%E5%AD%98%E4%BC%9A%E5%A2%9E%E5%8A%A02G%E5%B7%A6%E5%8F%B3/"/>
+    <id>https://inspiring26.github.io/2020/09/27/pytorch将张量加载到gpu显存时，cpu内存会增加2G左右/</id>
+    <published>2020-09-27T10:19:41.000Z</published>
+    <updated>2020-09-27T10:23:57.651Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一次将张量等转移到gpu时，cpu内存会增加2G，这是正常现象，是cuda和pytorch初始化共同导致的。<br>同一个程序只有第一次操作时会增加。<br>更多信息参考pytorch的issues<br><a href="https://github.com/pytorch/pytorch/issues/12873" target="_blank" rel="noopener">地址</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;第一次将张量等转移到gpu时，cpu内存会增加2G，这是正常现象，是cuda和pytorch初始化共同导致的。&lt;br&gt;同一个程序只有第一次操作时会增加。&lt;br&gt;更多信息参考pytorch的issues&lt;br&gt;&lt;a href=&quot;https://github.com/pytor
+      
+    
+    </summary>
+    
+    
+    
+      <category term="pytorch" scheme="https://inspiring26.github.io/tags/pytorch/"/>
+    
+      <category term="分析" scheme="https://inspiring26.github.io/tags/%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
     <title>pytorch损失函数会导致显存不断增长的问题</title>
     <link href="https://inspiring26.github.io/2020/09/27/pytorch%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://inspiring26.github.io/2020/09/27/pytorch损失函数会导致显存不断增长的问题/</id>
     <published>2020-09-27T07:40:01.000Z</published>
-    <updated>2020-09-27T07:51:28.576Z</updated>
+    <updated>2020-09-27T10:11:59.939Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。<br>如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。</p><a id="more"></a><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>1.转换为.cpu()再累加<br>实际代码并不难使用.cpu(),而是.item()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">loss &#x3D; criterion(labels,outputs).item()</span><br><span class="line">totalloss+&#x3D;loss</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">loss &#x3D; criterion(labels,outputs)</span><br><span class="line">totalloss+&#x3D;loss.item()</span><br></pre></td></tr></table></figure><br>如果使用.cpu(),只是在内存中生成了一份，显存中的并未释放。<br>2.声明.cuda()变量</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。<br>如果我们计算总损失的变量是.cpu()类型的，每次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。</p><a id="more"></a><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>1.转换为.cpu()再累加<br>实际代码并不难使用.cpu(),而是.item()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">loss &#x3D; criterion(labels,outputs).item()</span><br><span class="line">totalloss+&#x3D;loss</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">loss &#x3D; criterion(labels,outputs)</span><br><span class="line">totalloss+&#x3D;loss.item()</span><br></pre></td></tr></table></figure><br>如果使用.cpu(),只是在内存中生成了一份，显存中的并未释放。<br>2.声明.cuda()变量</p>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;p&gt;如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。&lt;br&gt;如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。&lt;/p&gt;
+      &lt;h3 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;p&gt;如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。&lt;br&gt;如果我们计算总损失的变量是.cpu()类型的，每次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。&lt;/p&gt;
     
     </summary>
     
@@ -480,32 +506,6 @@
     
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux查看系统版本相关信息</title>
-    <link href="https://inspiring26.github.io/2020/06/09/linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/"/>
-    <id>https://inspiring26.github.io/2020/06/09/linux查看系统版本相关信息/</id>
-    <published>2020-06-09T06:26:31.000Z</published>
-    <updated>2020-06-09T06:30:56.446Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="仅内核版本"><a href="#仅内核版本" class="headerlink" title="仅内核版本"></a>仅内核版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure><h3 id="内核版本、gcc版本"><a href="#内核版本、gcc版本" class="headerlink" title="内核版本、gcc版本"></a>内核版本、gcc版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;proc&#x2F;version</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">命令很简单，可以记住</span><br><span class="line"></span><br><span class="line">### 查看系统版本代号</span><br></pre></td></tr></table></figure><p>lsb_release -a<br>```<br>也很简单要记住</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;仅内核版本&quot;&gt;&lt;a href=&quot;#仅内核版本&quot; class=&quot;headerlink&quot; title=&quot;仅内核版本&quot;&gt;&lt;/a&gt;仅内核版本&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
-      
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
     
   </entry>
   

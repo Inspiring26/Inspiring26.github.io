@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pytorch将张量加载到gpu显存时，cpu内存会增加2G左右]]></title>
+    <url>%2F2020%2F09%2F27%2Fpytorch%E5%B0%86%E5%BC%A0%E9%87%8F%E5%8A%A0%E8%BD%BD%E5%88%B0gpu%E6%98%BE%E5%AD%98%E6%97%B6%EF%BC%8Ccpu%E5%86%85%E5%AD%98%E4%BC%9A%E5%A2%9E%E5%8A%A02G%E5%B7%A6%E5%8F%B3%2F</url>
+    <content type="text"><![CDATA[第一次将张量等转移到gpu时，cpu内存会增加2G，这是正常现象，是cuda和pytorch初始化共同导致的。同一个程序只有第一次操作时会增加。更多信息参考pytorch的issues地址]]></content>
+      <tags>
+        <tag>pytorch</tag>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[pytorch损失函数会导致显存不断增长的问题]]></title>
     <url>%2F2020%2F09%2F27%2Fpytorch%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[分析如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。如果我们计算总损失的变量是.cpu()类型的，没次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。 解决方法1.转换为.cpu()再累加实际代码并不难使用.cpu(),而是.item()1234567loss &#x3D; criterion(labels,outputs).item()totalloss+&#x3D;loss或loss &#x3D; criterion(labels,outputs)totalloss+&#x3D;loss.item()如果使用.cpu(),只是在内存中生成了一份，显存中的并未释放。2.声明.cuda()变量]]></content>
+    <content type="text"><![CDATA[分析如果已经把模型和变量放到显存中了，每个epoch计算的损失值也是在显存中的，即.cuda()的类型。如果我们计算总损失的变量是.cpu()类型的，每次迭代的时候计算到的的.cuda()格式变量是不会释放的，从而会导致显存不断增加。 解决方法1.转换为.cpu()再累加实际代码并不难使用.cpu(),而是.item()1234567loss &#x3D; criterion(labels,outputs).item()totalloss+&#x3D;loss或loss &#x3D; criterion(labels,outputs)totalloss+&#x3D;loss.item()如果使用.cpu(),只是在内存中生成了一份，显存中的并未释放。2.声明.cuda()变量]]></content>
       <tags>
         <tag>方法</tag>
         <tag>pytorch</tag>
@@ -212,8 +221,8 @@
     <content type="text"><![CDATA[linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：1234567891011121314while truedo thetime&#x3D;$(date &quot;+%M&quot;) thetime2&#x3D;&#96;expr $thetime + 10&#96; remainder&#x3D;$(($thetime2%5)) if [ $remainder &#x3D; &#39;0&#39; ] then cd ~&#x2F;blog;sh gitpull.sh date sleep 60s else sleep 60s fidoneshell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。上面使用expr的方式是可行的。 需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>linux</tag>
         <tag>ubuntu</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -875,10 +884,10 @@
     <url>%2F2019%2F10%2F28%2F%E9%85%8D%E7%BD%AEtornado-pytorch%E7%9A%84docker%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[拉去指定docker镜像（目前pytorch支持到pytorch1.3，python3.7）1docker pull python:3.7运行容器1docker run -dit python:3.7进入容器 123docker ps#59fe58579fd2 python:3.7 &quot;bash&quot; 35 minutes ago docker exec -it 59fe bash 配置环境12345python -V#Python 3.7.5pip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple torch&#x3D;&#x3D;1.3.0+cpu torchvision&#x3D;&#x3D;0.4.1+cpu -f https:&#x2F;&#x2F;download.pytorch.org&#x2F;whl&#x2F;torch_stable.htmlpip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple tornado redis pillow efficientnet_pytorch 此外，py文件中torch.load()要添加1,map_location&#x3D;torch.device(&#39;cpu&#39;)从而运行在cpu环境下。 安装redis数据库apt不能用临时源，且为了安装最新版本，从源文件编译安装12345wget -c http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-5.0.5.tar.gztar xzf redis-5.0.5.tar.gzcd redis-5.0.5make 启动redis123cd src&#x2F;nohup .&#x2F;redis-server &amp;.&#x2F;redis-cli]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>docker</tag>
-        <tag>redis</tag>
+        <tag>pytorch</tag>
         <tag>tornado</tag>
+        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -903,8 +912,8 @@
     <content type="text"><![CDATA[使用的是siege进行的压测： 从图上可以看到对于高并发使用线程池后在各项响应时间上都有提升的。可见在高并发，尤其是和tornado搭配使用的时候务必使用redis且用线程池。tornado和redis有很多相似的地方比如都是单线程，都是非阻塞IO。它两个应该配合使用，应该作为在相应方面的主要工具，毕竟速度越快越好。]]></content>
       <tags>
         <tag>python</tag>
-        <tag>redis</tag>
         <tag>tornado</tag>
+        <tag>redis</tag>
         <tag>siege</tag>
       </tags>
   </entry>
