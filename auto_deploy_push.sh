@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "pytorch初始化导致cpu内存增加"
+git commit -m "生成日期列表"
 git push
