@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-11-19T09:09:34.808Z</updated>
+  <updated>2020-11-19T09:14:49.633Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>查看当前使用的是那个shell</title>
-    <link href="https://inspiring26.github.io/2020/11/19/%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E9%82%A3%E4%B8%AAshell/"/>
-    <id>https://inspiring26.github.io/2020/11/19/查看当前使用的是那个shell/</id>
+    <title>查看当前使用的是哪个shell</title>
+    <link href="https://inspiring26.github.io/2020/11/19/%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%AAshell/"/>
+    <id>https://inspiring26.github.io/2020/11/19/查看当前使用的是哪个shell/</id>
     <published>2020-11-19T09:08:34.000Z</published>
-    <updated>2020-11-19T09:09:34.808Z</updated>
+    <updated>2020-11-19T09:14:49.633Z</updated>
     
     <content type="html"><![CDATA[<h3 id="查看是bash还是zsh等"><a href="#查看是bash还是zsh等" class="headerlink" title="查看是bash还是zsh等"></a>查看是bash还是zsh等</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $0</span><br></pre></td></tr></table></figure>]]></content>
     

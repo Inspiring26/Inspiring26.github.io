@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[查看当前使用的是那个shell]]></title>
-    <url>%2F2020%2F11%2F19%2F%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E9%82%A3%E4%B8%AAshell%2F</url>
+    <title><![CDATA[查看当前使用的是哪个shell]]></title>
+    <url>%2F2020%2F11%2F19%2F%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%AAshell%2F</url>
     <content type="text"><![CDATA[查看是bash还是zsh等1echo $0]]></content>
       <tags>
         <tag>方法</tag>
