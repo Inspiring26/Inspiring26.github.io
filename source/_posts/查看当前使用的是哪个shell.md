@@ -1,5 +1,5 @@
 ---
-title: 查看当前使用的是那个shell
+title: 查看当前使用的是哪个shell
 date: 2020-11-19 17:08:34
 tags: [方法, linux]
 ---
