@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "linux卸载oh-my-zsh"
+git commit -m "看当前使用的是那个shell"
 git push
