@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-10-28T06:25:17.667Z</updated>
+  <updated>2020-11-19T06:34:56.633Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux卸载oh_my_zsh</title>
+    <link href="https://inspiring26.github.io/2020/11/19/linux%E5%8D%B8%E8%BD%BDoh-my-zsh/"/>
+    <id>https://inspiring26.github.io/2020/11/19/linux卸载oh-my-zsh/</id>
+    <published>2020-11-19T06:33:16.000Z</published>
+    <updated>2020-11-19T06:34:56.633Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ uninstall_oh_my_zsh</span><br><span class="line">Are you sure you want to remove Oh My Zsh? [y&#x2F;N] y</span><br><span class="line">Removing ~&#x2F;.oh-my-zsh</span><br><span class="line">Looking for original zsh config...</span><br><span class="line">Switching your shell back to &#39;&#x2F;bin&#x2F;bash&#39;:</span><br><span class="line">Password: </span><br><span class="line">Thanks for trying out Oh My Zsh. It&#39;s been uninstalled.</span><br><span class="line">Don&#39;t forget to restart your terminal!</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="切换or-not"><a href="#切换or-not" class="headerlink" title="切换or not"></a>切换or not</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chsh -s &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;卸载&quot;&gt;&lt;a href=&quot;#卸载&quot; class=&quot;headerlink&quot; title=&quot;卸载&quot;&gt;&lt;/a&gt;卸载&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;➜  ~ uninstall_oh_my_zsh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Are you sure you want to remove Oh My Zsh? [y&amp;#x2F;N] y&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Removing ~&amp;#x2F;.oh-my-zsh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Looking for original zsh config...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Switching your shell back to &amp;#39;&amp;#x2F;bin&amp;#x2F;bash&amp;#39;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Password: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Thanks for trying out Oh My Zsh. It&amp;#39;s been uninstalled.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Don&amp;#39;t forget to restart your terminal!&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>大概是最简单的生成日期列表及获得今天日期代码</title>
@@ -485,29 +508,6 @@
       <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
       <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git嵌套</title>
-    <link href="https://inspiring26.github.io/2020/06/10/git%E5%B5%8C%E5%A5%97/"/>
-    <id>https://inspiring26.github.io/2020/06/10/git嵌套/</id>
-    <published>2020-06-10T02:03:12.000Z</published>
-    <updated>2020-06-10T03:20:09.822Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="git嵌套的好处"><a href="#git嵌套的好处" class="headerlink" title="git嵌套的好处"></a>git嵌套的好处</h3><p>1.可以多个人同时完成一个项目，每人完成项目不同的部分<br>2.可以将一段代码独立出来多出复用，同时可以对这一个功能单独进行维护（如hexo的主题）</p><h3 id="git嵌套方法"><a href="#git嵌套方法" class="headerlink" title="git嵌套方法"></a>git嵌套方法</h3><p>1.简单易理解，不推荐的<br>直接在对应的位置git clone<br>缺点是在其他位置clone的时候要查找各个git的地址分别git<br>2.submodule，推荐<br>方法：<br>先单独创建各个仓库，push到github等，然后通过git submodule add添加到指定位置<br>（ 这种方法不会引起什么混乱，子模块都是通过submodule添加的。缺点是创建了太多独立文件夹。）<br>另一种方法是把整个结构在初始好，如各自加上readme文件，由低级到上级逐个git push,最后删除子仓库通过git submodule add添加。</p><a id="more"></a><h4 id="如果子模块不多，第一种方法还好些。并且很多项目里使用的子模块并不多，比如有git仓库里只用了一个。"><a href="#如果子模块不多，第一种方法还好些。并且很多项目里使用的子模块并不多，比如有git仓库里只用了一个。" class="headerlink" title="如果子模块不多，第一种方法还好些。并且很多项目里使用的子模块并不多，比如有git仓库里只用了一个。"></a>如果子模块不多，第一种方法还好些。并且很多项目里使用的子模块并不多，比如有git仓库里只用了一个。</h4><h4 id="注意：主仓库内的子仓库是有对应版本的，在github可以清楚看到，所以子仓库更新后父仓库也是要commit的，如果此时不commit反而pull会把子仓库更新的版本覆盖掉的。"><a href="#注意：主仓库内的子仓库是有对应版本的，在github可以清楚看到，所以子仓库更新后父仓库也是要commit的，如果此时不commit反而pull会把子仓库更新的版本覆盖掉的。" class="headerlink" title="注意：主仓库内的子仓库是有对应版本的，在github可以清楚看到，所以子仓库更新后父仓库也是要commit的，如果此时不commit反而pull会把子仓库更新的版本覆盖掉的。"></a>注意：主仓库内的子仓库是有对应版本的，在github可以清楚看到，所以子仓库更新后父仓库也是要commit的，如果此时不commit反而pull会把子仓库更新的版本覆盖掉的。</h4><h4 id="多数情况下多人合作还是各自更新，然后merge的，较少考虑使用子仓库，如果做的内容比较独立，我想子仓库是更好更清晰的选择。"><a href="#多数情况下多人合作还是各自更新，然后merge的，较少考虑使用子仓库，如果做的内容比较独立，我想子仓库是更好更清晰的选择。" class="headerlink" title="多数情况下多人合作还是各自更新，然后merge的，较少考虑使用子仓库，如果做的内容比较独立，我想子仓库是更好更清晰的选择。"></a>多数情况下多人合作还是各自更新，然后merge的，较少考虑使用子仓库，如果做的内容比较独立，我想子仓库是更好更清晰的选择。</h4><h4 id="有多个相同子模块也是也各自更新的，在github里可以看到，同一个模块，在一个仓库里存在的版本并不同"><a href="#有多个相同子模块也是也各自更新的，在github里可以看到，同一个模块，在一个仓库里存在的版本并不同" class="headerlink" title="有多个相同子模块也是也各自更新的，在github里可以看到，同一个模块，在一个仓库里存在的版本并不同"></a>有多个相同子模块也是也各自更新的，在github里可以看到，同一个模块，在一个仓库里存在的版本并不同</h4><p><img src="/2020/06/10/git%E5%B5%8C%E5%A5%97/screenshot_138.png" alt="pic1"><br><img src="/2020/06/10/git%E5%B5%8C%E5%A5%97/screenshot_139.png" alt="pic2"></p><h4 id="在子仓库拉去的方法："><a href="#在子仓库拉去的方法：" class="headerlink" title="在子仓库拉去的方法："></a>在子仓库拉去的方法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin HEAD:master</span><br></pre></td></tr></table></figure><p>因为他的状态常常不是最前端，需要指定位置才行。其他地方的拉去也尽量采用git pull origin,以规范操作方式。 </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;git嵌套的好处&quot;&gt;&lt;a href=&quot;#git嵌套的好处&quot; class=&quot;headerlink&quot; title=&quot;git嵌套的好处&quot;&gt;&lt;/a&gt;git嵌套的好处&lt;/h3&gt;&lt;p&gt;1.可以多个人同时完成一个项目，每人完成项目不同的部分&lt;br&gt;2.可以将一段代码独立出来多出复用，同时可以对这一个功能单独进行维护（如hexo的主题）&lt;/p&gt;&lt;h3 id=&quot;git嵌套方法&quot;&gt;&lt;a href=&quot;#git嵌套方法&quot; class=&quot;headerlink&quot; title=&quot;git嵌套方法&quot;&gt;&lt;/a&gt;git嵌套方法&lt;/h3&gt;&lt;p&gt;1.简单易理解，不推荐的&lt;br&gt;直接在对应的位置git clone&lt;br&gt;缺点是在其他位置clone的时候要查找各个git的地址分别git&lt;br&gt;2.submodule，推荐&lt;br&gt;方法：&lt;br&gt;先单独创建各个仓库，push到github等，然后通过git submodule add添加到指定位置&lt;br&gt;（ 这种方法不会引起什么混乱，子模块都是通过submodule添加的。缺点是创建了太多独立文件夹。）&lt;br&gt;另一种方法是把整个结构在初始好，如各自加上readme文件，由低级到上级逐个git push,最后删除子仓库通过git submodule add添加。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="git" scheme="https://inspiring26.github.io/tags/git/"/>
     
   </entry>
   
