@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-11-19T06:34:56.633Z</updated>
+  <updated>2020-11-19T09:09:34.808Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>查看当前使用的是那个shell</title>
+    <link href="https://inspiring26.github.io/2020/11/19/%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E9%82%A3%E4%B8%AAshell/"/>
+    <id>https://inspiring26.github.io/2020/11/19/查看当前使用的是那个shell/</id>
+    <published>2020-11-19T09:08:34.000Z</published>
+    <updated>2020-11-19T09:09:34.808Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="查看是bash还是zsh等"><a href="#查看是bash还是zsh等" class="headerlink" title="查看是bash还是zsh等"></a>查看是bash还是zsh等</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $0</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;查看是bash还是zsh等&quot;&gt;&lt;a href=&quot;#查看是bash还是zsh等&quot; class=&quot;headerlink&quot; title=&quot;查看是bash还是zsh等&quot;&gt;&lt;/a&gt;查看是bash还是zsh等&lt;/h3&gt;&lt;figure class=&quot;highlight plai
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>linux卸载oh_my_zsh</title>
@@ -485,29 +511,6 @@
       <category term="unity" scheme="https://inspiring26.github.io/tags/unity/"/>
     
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python编码及decode、encode</title>
-    <link href="https://inspiring26.github.io/2020/06/12/python%E7%BC%96%E7%A0%81%E5%8F%8Adecode%E3%80%81encode/"/>
-    <id>https://inspiring26.github.io/2020/06/12/python编码及decode、encode/</id>
-    <published>2020-06-12T02:11:58.000Z</published>
-    <updated>2020-06-15T08:17:31.239Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="什么是编码"><a href="#什么是编码" class="headerlink" title="什么是编码"></a>什么是编码</h3><p>计算机是01二进制的，我们看到的文字等数据和二进制的转换规则就是编码。</p><h3 id="编码历史"><a href="#编码历史" class="headerlink" title="编码历史"></a>编码历史</h3><p>漂亮国发明计算机后，用8位01组合(2^8=256)做出了第一个转换规则，就是所谓的ASCII表。<br>计算机进入中国256个字符不够用，还要表示汉字呢，于是对ASCII进行了扩展，就是GB2312。<br>后续又不够用，扩展为GB18030。<br>同理每个国家都有自己的编码。必须安装这种编码才能看懂对应意思。</p><a id="more"></a><p>后来国际上起草了一个统一编码能表示任何国家的文字，就是UNICODE。使用的是两个字节2^16=65536表示所有文字，好像并不多啊。</p><p>然后漂亮国觉得自己吃亏了，本来一个字节就可以表示的，浪费一倍存储空间。<br>于是提出了一种新的格式，较通用转换格式UTF,这个U就是UNICODE，常见的有utf-8，utf-16，说白了就是一种变长编码方法，信息论里常见的很，于是美国一个字节，欧洲两个字节，东南亚三个字节，感觉我们吃亏了一个字节。</p><h4 id="decode和encode"><a href="#decode和encode" class="headerlink" title="decode和encode"></a>decode和encode</h4><p>python内部是unicode，以unicode作为中间编码，其他编码需要先解码成unicode，再从unicode编码成另一种编码。<br>python里的字符串是unicode编码的，可以看作是python在内存中的原始编码，转化为其他的如GB2312、utf-8需要编码，是编码，即python的unicode到其他编码方式间都是编码，编码。反过来才是解码。<br>以下编码都是可以的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; aa&#x3D;&quot;abc&quot;;type(aa)</span><br><span class="line">&lt;class &#39;str&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; bb&#x3D;aa.encode(&quot;utf-8&quot;);type(bb)</span><br><span class="line">&lt;class &#39;bytes&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; cc&#x3D;aa.encode(&quot;utf-16&quot;);type(cc)</span><br><span class="line">&lt;class &#39;bytes&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; dd&#x3D;aa.encode(&quot;GB2312&quot;);type(dd)</span><br><span class="line">&lt;class &#39;bytes&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; ee&#x3D;aa.encode(&quot;GB18030&quot;);type(ee)</span><br><span class="line">&lt;class &#39;bytes&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; ff&#x3D;ee.decode(&quot;GB18030&quot;);type(ff)</span><br><span class="line">&lt;class &#39;str&#39;&gt;</span><br></pre></td></tr></table></figure><br>从上面代码可以看到<em>不是unicode就是不str，只要是unicode编码的就是str，其他编码都是bytes</em><br>unicode可以看作底层的统一的，它到其他都是编码。</p><h3 id="关系图"><a href="#关系图" class="headerlink" title="关系图"></a>关系图</h3><p><img src="/2020/06/12/python%E7%BC%96%E7%A0%81%E5%8F%8Adecode%E3%80%81encode/a123.png" alt="a123.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;什么是编码&quot;&gt;&lt;a href=&quot;#什么是编码&quot; class=&quot;headerlink&quot; title=&quot;什么是编码&quot;&gt;&lt;/a&gt;什么是编码&lt;/h3&gt;&lt;p&gt;计算机是01二进制的，我们看到的文字等数据和二进制的转换规则就是编码。&lt;/p&gt;&lt;h3 id=&quot;编码历史&quot;&gt;&lt;a href=&quot;#编码历史&quot; class=&quot;headerlink&quot; title=&quot;编码历史&quot;&gt;&lt;/a&gt;编码历史&lt;/h3&gt;&lt;p&gt;漂亮国发明计算机后，用8位01组合(2^8=256)做出了第一个转换规则，就是所谓的ASCII表。&lt;br&gt;计算机进入中国256个字符不够用，还要表示汉字呢，于是对ASCII进行了扩展，就是GB2312。&lt;br&gt;后续又不够用，扩展为GB18030。&lt;br&gt;同理每个国家都有自己的编码。必须安装这种编码才能看懂对应意思。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
     
   </entry>
   

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[查看当前使用的是那个shell]]></title>
+    <url>%2F2020%2F11%2F19%2F%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E9%82%A3%E4%B8%AAshell%2F</url>
+    <content type="text"><![CDATA[查看是bash还是zsh等1echo $0]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux卸载oh_my_zsh]]></title>
     <url>%2F2020%2F11%2F19%2Flinux%E5%8D%B8%E8%BD%BDoh-my-zsh%2F</url>
     <content type="text"><![CDATA[卸载12345678➜ ~ uninstall_oh_my_zshAre you sure you want to remove Oh My Zsh? [y&#x2F;N] yRemoving ~&#x2F;.oh-my-zshLooking for original zsh config...Switching your shell back to &#39;&#x2F;bin&#x2F;bash&#39;:Password: Thanks for trying out Oh My Zsh. It&#39;s been uninstalled.Don&#39;t forget to restart your terminal! 切换or not1sudo chsh -s &#x2F;bin&#x2F;bash]]></content>
