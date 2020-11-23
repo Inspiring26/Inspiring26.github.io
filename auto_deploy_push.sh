@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "看当前使用的是哪个shell"
+git commit -m "linux将内容移出交换区或开关交换区"
 git push
