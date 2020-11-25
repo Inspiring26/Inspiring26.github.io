@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[word、excel等office文件内容提取及预览的方法]]></title>
+    <url>%2F2020%2F11%2F25%2Fword%E3%80%81excel%E7%AD%89office%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%8F%90%E5%8F%96%E5%8F%8A%E9%A2%84%E8%A7%88%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[预览预览而不下载的方法就是，转换为pdf，点击时将pdf不作为附件。这时就会新打开一个预览页面。提取在windows服务器上，以前使用的时office自带的接口进行转换，转换后用pdfminer提取内容作为简介。部署到linux系统上可以使用libreoffice转换。但是转换后再用pdfminer提取会出现同一个字的大量重复。 linux下用wps转换不成，突然想到的一个效果很好的方法分析问题：之所以出现pdfminer提取乱码，是因为用的不是word转换的。解决方法：上传的是pdf格式的，一般是别人用word转换好的，直接提取不会出现什么问题，那种确实不能提取的除非ocr识别，可以不管。上传的是word、excel、ppt等格式的，可以将转换展示和内容提取分开。转换展示，即使用libreoffice转换为pdf后展示。内容提取可以将文件转换成txt文件,word里有一个另存为txt的选项，这样就可以非常完整的提取到word的内容。 总结原路几乎走不通的问题，换个思路就完整高效的解决了。遇到问题了，唯有转化、转化、转化，这也是我从《数学之美》里获得的收获。]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vim常用指令]]></title>
     <url>%2F2020%2F11%2F25%2Fvim%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[定位12G&#x2F;1G&#x2F;gg 最后一行&#x2F;第一行&#x2F;第一行w&#x2F;b 下一个单词&#x2F;前一个单词编辑/插入12i&#x2F;I&#x2F;a&#x2F;A 光标字符前插入&#x2F;行首插入&#x2F;光标之后插入&#x2F;行尾插入$&#x2F;^ 仅移动光标不编辑的行尾&#x2F;行首 删除/复制/粘贴123dd&#x2F;ndd 删除当前行&#x2F;删除当前行开始的n行yy&#x2F;nyy 复制当前行&#x2F;复制当前行开始的n行p 粘贴 查找1&#x2F;word 斜杠加单词就开始查找，回车后n下一个，N反方向下一个 替换12345678910:%s&#x2F;word1&#x2F;word2&#x2F;gc :s 当前行:%s 全文:6,10s 6到10行:.,+2s 当前行加后面两行常用的是:%s :s不加后面的&#x2F;g表示只替换后面的一个这个位置可以有g(全部)、i(大小写不敏感)、I（大小写敏感）、c（需要确认） 定位或查找后新开一行1o&#x2F;O o在下面开一行&#x2F;O在上面开一行 查看具体指令的文档12:help word 查询指令用法:q 返回之前编辑的文件 plan接下来一个月把编辑器转到vim。]]></content>
@@ -623,8 +632,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -878,8 +887,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1335,9 +1344,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>

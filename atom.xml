@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-11-25T06:32:47.292Z</updated>
+  <updated>2020-11-25T07:57:32.933Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>word、excel等office文件内容提取及预览的方法</title>
+    <link href="https://inspiring26.github.io/2020/11/25/word%E3%80%81excel%E7%AD%89office%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%8F%90%E5%8F%96%E5%8F%8A%E9%A2%84%E8%A7%88%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://inspiring26.github.io/2020/11/25/word、excel等office文件内容提取及预览的方法/</id>
+    <published>2020-11-25T07:24:12.000Z</published>
+    <updated>2020-11-25T07:57:32.933Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><p>预览而不下载的方法就是，转换为pdf，点击时将pdf不作为附件。这时就会新打开一个预览页面。</p><h3 id="提取"><a href="#提取" class="headerlink" title="提取"></a>提取</h3><p>在windows服务器上，以前使用的时office自带的接口进行转换，转换后用pdfminer提取内容作为简介。<br>部署到linux系统上可以使用libreoffice转换。但是转换后再用pdfminer提取会出现同一个字的大量重复。</p><a id="more"></a><h3 id="linux下用wps转换不成，突然想到的一个效果很好的方法"><a href="#linux下用wps转换不成，突然想到的一个效果很好的方法" class="headerlink" title="linux下用wps转换不成，突然想到的一个效果很好的方法"></a>linux下用wps转换不成，突然想到的一个效果很好的方法</h3><p>分析问题：之所以出现pdfminer提取乱码，是因为用的不是word转换的。<br>解决方法：<br>上传的是pdf格式的，一般是别人用word转换好的，直接提取不会出现什么问题，那种确实不能提取的除非ocr识别，可以不管。<br>上传的是word、excel、ppt等格式的，可以将转换展示和内容提取分开。转换展示，即使用libreoffice转换为pdf后展示。内容提取可以将文件转换成txt文件,<strong>word里有一个另存为txt的选项</strong>，这样就可以非常完整的提取到word的内容。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>原路几乎走不通的问题，换个思路就完整高效的解决了。<br>遇到问题了，唯有转化、转化、转化，这也是我从《数学之美》里获得的收获。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;预览&quot;&gt;&lt;a href=&quot;#预览&quot; class=&quot;headerlink&quot; title=&quot;预览&quot;&gt;&lt;/a&gt;预览&lt;/h3&gt;&lt;p&gt;预览而不下载的方法就是，转换为pdf，点击时将pdf不作为附件。这时就会新打开一个预览页面。&lt;/p&gt;&lt;h3 id=&quot;提取&quot;&gt;&lt;a href=&quot;#提取&quot; class=&quot;headerlink&quot; title=&quot;提取&quot;&gt;&lt;/a&gt;提取&lt;/h3&gt;&lt;p&gt;在windows服务器上，以前使用的时office自带的接口进行转换，转换后用pdfminer提取内容作为简介。&lt;br&gt;部署到linux系统上可以使用libreoffice转换。但是转换后再用pdfminer提取会出现同一个字的大量重复。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>vim常用指令</title>
@@ -478,33 +501,6 @@
       <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
     
       <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chrome插件网页便利贴导致无法选中文字</title>
-    <link href="https://inspiring26.github.io/2020/07/21/chrome%E6%8F%92%E4%BB%B6%E7%BD%91%E9%A1%B5%E4%BE%BF%E5%88%A9%E8%B4%B4%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E9%80%89%E4%B8%AD%E6%96%87%E5%AD%97/"/>
-    <id>https://inspiring26.github.io/2020/07/21/chrome插件网页便利贴导致无法选中文字/</id>
-    <published>2020-07-21T06:29:58.000Z</published>
-    <updated>2020-07-21T06:32:12.078Z</updated>
-    
-    <content type="html"><![CDATA[<p>安装 网页便利贴 后发现一些输入框内的文字无法选中，左键松开选中就消失了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;安装 网页便利贴 后发现一些输入框内的文字无法选中，左键松开选中就消失了。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-      <category term="chrome" scheme="https://inspiring26.github.io/tags/chrome/"/>
-    
-      <category term="bug" scheme="https://inspiring26.github.io/tags/bug/"/>
     
   </entry>
   
