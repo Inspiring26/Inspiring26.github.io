@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[aliyun上传下载带宽]]></title>
+    <url>%2F2020%2F12%2F11%2Faliyun%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E5%B8%A6%E5%AE%BD%2F</url>
+    <content type="text"><![CDATA[我开的是1Mbps带宽的VPS，自己搭的下载服务，下载速度在130k/s左右；scp上传的速度固定在2.0MB/s。就是说如果作为后台使用，传入数据需控制在2M/s以内，以仅传压缩字符串为例：123&#123; &quot;info&quot;:&quot;7c3146c32a3d8ac8c46bd97d014049183487bd6e.ADF1604288936AAA&quot;&#125;body 占74b加上header共占336b如果这么传信息可以做到6~7千的并发 而下载的130k/s几乎不可用，连一个图片都不能传。 更新用公司电脑和家里树莓派同时测试上传一个在2.0MB/s 一个在2.8MB/s，结合论坛资料，阿里云上传带宽是不限制的，可以到达10M/s~20M/s。 提升带宽费用过高，稍后测试反向代理树莓派的方式进行下载。]]></content>
+      <tags>
+        <tag>alinyun</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[歌曲分享1]]></title>
     <url>%2F2020%2F11%2F25%2F%E6%AD%8C%E6%9B%B2%E5%88%86%E4%BA%AB1%2F</url>
     <content type="text"><![CDATA[今天发现了两首挺好听的歌。一首是田馥甄的《一一》一首是司南的《冬眠》]]></content>
@@ -185,8 +193,8 @@
     <content type="text"><![CDATA[本方法使用的是apt安装1.搜索ppa,找到可用的源2.在launchpad.net里搜索python33.建议找到一个叫Jonathon F的用户，他编译的包比较可靠。可以进入他的主页找到他发布的python的各个版本。4.以python3.8为例，打开对应页面5.里面有这样的添加ppa的指令12sudo add-apt-repository ppa:jonathonf&#x2F;python-3.8sudo apt-get update 6.添加、更新完后安装1sudo apt install python3.8 7.查看目前有的python版本12345678910$ ls &#x2F;usr&#x2F;bin&#x2F;pytho*&#x2F;usr&#x2F;bin&#x2F;python &#x2F;usr&#x2F;bin&#x2F;python3.6&#x2F;usr&#x2F;bin&#x2F;python2 &#x2F;usr&#x2F;bin&#x2F;python3.6-config&#x2F;usr&#x2F;bin&#x2F;python2.7 &#x2F;usr&#x2F;bin&#x2F;python3.6m&#x2F;usr&#x2F;bin&#x2F;python2.7-config &#x2F;usr&#x2F;bin&#x2F;python3.6m-config&#x2F;usr&#x2F;bin&#x2F;python2-config &#x2F;usr&#x2F;bin&#x2F;python3.8&#x2F;usr&#x2F;bin&#x2F;python2-jsonschema &#x2F;usr&#x2F;bin&#x2F;python3-config&#x2F;usr&#x2F;bin&#x2F;python2-pbr &#x2F;usr&#x2F;bin&#x2F;python3m&#x2F;usr&#x2F;bin&#x2F;python2-wsdump &#x2F;usr&#x2F;bin&#x2F;python3m-config&#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;usr&#x2F;bin&#x2F;python-config 8.删除老版本1sudo rm &#x2F;usr&#x2F;bin&#x2F;python3.6 9.删除原来的软链接1sudo rm &#x2F;usr&#x2F;bin&#x2F;python3 10.创建新的软链接1sudo ln -s &#x2F;usr&#x2F;bin&#x2F;python3.8 &#x2F;usr&#x2F;bin&#x2F;python3 11.可能需要重新安装pip12wget https:&#x2F;&#x2F;bootstrap.pypa.io&#x2F;get-pip.py --no-check-certificatesudo python3 get-pip.py 12.pip3 list 会发现有很多库消失了，需要重新安装，且还在的很多需要安装cp38版。OVER]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>ubuntu</tag>
         <tag>python</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
