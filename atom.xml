@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-12-11T07:52:46.370Z</updated>
+  <updated>2020-12-15T02:24:07.320Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>备案问题，域名实名认证信息与备案主体不一致</title>
+    <link href="https://inspiring26.github.io/2020/12/15/%E5%A4%87%E6%A1%88%E9%97%AE%E9%A2%98%EF%BC%8C%E5%9F%9F%E5%90%8D%E5%AE%9E%E5%90%8D%E8%AE%A4%E8%AF%81%E4%BF%A1%E6%81%AF%E4%B8%8E%E5%A4%87%E6%A1%88%E4%B8%BB%E4%BD%93%E4%B8%8D%E4%B8%80%E8%87%B4/"/>
+    <id>https://inspiring26.github.io/2020/12/15/备案问题，域名实名认证信息与备案主体不一致/</id>
+    <published>2020-12-15T02:19:38.000Z</published>
+    <updated>2020-12-15T02:24:07.320Z</updated>
+    
+    <content type="html"><![CDATA[<p>我在腾讯云买的域名，并做了实名认证。<br>服务器在阿里云，在阿里云作备案时提示域名实名认证和备案主体不一致。</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>首先核对一下域名认证的实名信息，包括拼音的大小写都要一致。<br>然后等个2~5天再提交就可以了。<br>之所以要好几天，感觉是腾讯阿里间不好好配合。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我在腾讯云买的域名，并做了实名认证。&lt;br&gt;服务器在阿里云，在阿里云作备案时提示域名实名认证和备案主体不一致。&lt;/p&gt;
+&lt;h3 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h3&gt;&lt;p
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>树莓派及其他linux系统查看位数</title>
@@ -471,31 +496,6 @@
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="golang" scheme="https://inspiring26.github.io/tags/golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python生成式</title>
-    <link href="https://inspiring26.github.io/2020/08/31/python%E7%94%9F%E6%88%90%E5%BC%8F/"/>
-    <id>https://inspiring26.github.io/2020/08/31/python生成式/</id>
-    <published>2020-08-31T06:21:25.000Z</published>
-    <updated>2020-08-31T06:39:04.892Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-并列for循环其实是嵌套for循环"><a href="#1-并列for循环其实是嵌套for循环" class="headerlink" title="1. 并列for循环其实是嵌套for循环"></a>1. 并列for循环其实是嵌套for循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; [m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;]</span><br><span class="line">[&#39;AX&#39;, &#39;AY&#39;, &#39;AZ&#39;, &#39;BX&#39;, &#39;BY&#39;, &#39;BZ&#39;, &#39;CX&#39;, &#39;CY&#39;, &#39;CZ&#39;]</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="2-if…else"><a href="#2-if…else" class="headerlink" title="2.if…else"></a>2.if…else</h3><p>if可以在for语句之前，也可以在for语句之后<br>在for语句之后，if是个筛选条件，不能加else。<br>在for语句之前的部分是表达式，形如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 if 2％2&#x3D;&#x3D;0 else 0</span><br></pre></td></tr></table></figure><br>本来就是一个表达式。</p><p>总结：for语句之前是表达式，之后可加判断条件，仅限if，运行顺序是for—>for后判断—>(通过判断才运行表达式)</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-并列for循环其实是嵌套for循环&quot;&gt;&lt;a href=&quot;#1-并列for循环其实是嵌套for循环&quot; class=&quot;headerlink&quot; title=&quot;1. 并列for循环其实是嵌套for循环&quot;&gt;&lt;/a&gt;1. 并列for循环其实是嵌套for循环&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt; [m + n for m in &amp;#39;ABC&amp;#39; for n in &amp;#39;XYZ&amp;#39;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&amp;#39;AX&amp;#39;, &amp;#39;AY&amp;#39;, &amp;#39;AZ&amp;#39;, &amp;#39;BX&amp;#39;, &amp;#39;BY&amp;#39;, &amp;#39;BZ&amp;#39;, &amp;#39;CX&amp;#39;, &amp;#39;CY&amp;#39;, &amp;#39;CZ&amp;#39;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
     
   </entry>
   
