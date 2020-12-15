@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "备案问题"
+git commit -m "python逐行读取"
 git push
