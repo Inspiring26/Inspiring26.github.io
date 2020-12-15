@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[python逐行读取]]></title>
     <url>%2F2020%2F12%2F15%2Fpython%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96%2F</url>
-    <content type="text"><![CDATA[逐行读取可以循环使用到文件末尾是返回的是空字符串即使到文字末尾了依然可以循环调用，不会报错print的技巧当你想看具体的输出结果时，在结果外加上方括号就可以了。]]></content>
+    <content type="text"><![CDATA[逐行读取可以循环使用到文件末尾是返回的是空字符串即使到文字末尾了依然可以循环调用，不会报错print的技巧当你想看具体的输出结果时，在结果外加上方括号就可以了。 补充 只要在读取的时候判断是否为空，最后多出一个空行不影响的，毕竟最后一行没有换行号。]]></content>
       <tags>
         <tag>方法</tag>
         <tag>python</tag>

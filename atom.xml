@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-12-15T03:03:19.630Z</updated>
+  <updated>2020-12-15T07:58:59.106Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://inspiring26.github.io/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/"/>
     <id>https://inspiring26.github.io/2020/12/15/python逐行读取/</id>
     <published>2020-12-15T02:55:33.000Z</published>
-    <updated>2020-12-15T03:03:19.630Z</updated>
+    <updated>2020-12-15T07:58:59.106Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_11-00.png" alt="pic"></p><h3 id="逐行读取可以循环使用"><a href="#逐行读取可以循环使用" class="headerlink" title="逐行读取可以循环使用"></a>逐行读取可以循环使用</h3><h3 id="到文件末尾是返回的是空字符串"><a href="#到文件末尾是返回的是空字符串" class="headerlink" title="到文件末尾是返回的是空字符串"></a>到文件末尾是返回的是空字符串</h3><h3 id="即使到文字末尾了依然可以循环调用，不会报错"><a href="#即使到文字末尾了依然可以循环调用，不会报错" class="headerlink" title="即使到文字末尾了依然可以循环调用，不会报错"></a>即使到文字末尾了依然可以循环调用，不会报错</h3><h3 id="print的技巧"><a href="#print的技巧" class="headerlink" title="print的技巧"></a>print的技巧</h3><p>当你想看具体的输出结果时，在结果外加上方括号就可以了。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_11-00.png" alt="pic"></p><h3 id="逐行读取可以循环使用"><a href="#逐行读取可以循环使用" class="headerlink" title="逐行读取可以循环使用"></a>逐行读取可以循环使用</h3><h3 id="到文件末尾是返回的是空字符串"><a href="#到文件末尾是返回的是空字符串" class="headerlink" title="到文件末尾是返回的是空字符串"></a>到文件末尾是返回的是空字符串</h3><h3 id="即使到文字末尾了依然可以循环调用，不会报错"><a href="#即使到文字末尾了依然可以循环调用，不会报错" class="headerlink" title="即使到文字末尾了依然可以循环调用，不会报错"></a>即使到文字末尾了依然可以循环调用，不会报错</h3><h3 id="print的技巧"><a href="#print的技巧" class="headerlink" title="print的技巧"></a>print的技巧</h3><p>当你想看具体的输出结果时，在结果外加上方括号就可以了。</p><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><img src="/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_15-54.png" alt="pic2"><br><img src="/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_15-54_1.png" alt="pic3"></p><p>只要在读取的时候判断是否为空，最后多出一个空行不影响的，毕竟最后一行没有换行号。</p>]]></content>
     
     <summary type="html">
     
