@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python逐行读取]]></title>
+    <url>%2F2020%2F12%2F15%2Fpython%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96%2F</url>
+    <content type="text"><![CDATA[逐行读取可以循环使用到文件末尾是返回的是空字符串即使到文字末尾了依然可以循环调用，不会报错print的技巧当你想看具体的输出结果时，在结果外加上方括号就可以了。]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[备案问题，域名实名认证信息与备案主体不一致]]></title>
     <url>%2F2020%2F12%2F15%2F%E5%A4%87%E6%A1%88%E9%97%AE%E9%A2%98%EF%BC%8C%E5%9F%9F%E5%90%8D%E5%AE%9E%E5%90%8D%E8%AE%A4%E8%AF%81%E4%BF%A1%E6%81%AF%E4%B8%8E%E5%A4%87%E6%A1%88%E4%B8%BB%E4%BD%93%E4%B8%8D%E4%B8%80%E8%87%B4%2F</url>
     <content type="text"><![CDATA[我在腾讯云买的域名，并做了实名认证。服务器在阿里云，在阿里云作备案时提示域名实名认证和备案主体不一致。 解决方法首先核对一下域名认证的实名信息，包括拼音的大小写都要一致。然后等个2~5天再提交就可以了。之所以要好几天，感觉是腾讯阿里间不好好配合。]]></content>

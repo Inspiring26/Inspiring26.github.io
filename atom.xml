@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-12-15T02:24:07.320Z</updated>
+  <updated>2020-12-15T03:03:19.630Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python逐行读取</title>
+    <link href="https://inspiring26.github.io/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/"/>
+    <id>https://inspiring26.github.io/2020/12/15/python逐行读取/</id>
+    <published>2020-12-15T02:55:33.000Z</published>
+    <updated>2020-12-15T03:03:19.630Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_11-00.png" alt="pic"></p><h3 id="逐行读取可以循环使用"><a href="#逐行读取可以循环使用" class="headerlink" title="逐行读取可以循环使用"></a>逐行读取可以循环使用</h3><h3 id="到文件末尾是返回的是空字符串"><a href="#到文件末尾是返回的是空字符串" class="headerlink" title="到文件末尾是返回的是空字符串"></a>到文件末尾是返回的是空字符串</h3><h3 id="即使到文字末尾了依然可以循环调用，不会报错"><a href="#即使到文字末尾了依然可以循环调用，不会报错" class="headerlink" title="即使到文字末尾了依然可以循环调用，不会报错"></a>即使到文字末尾了依然可以循环调用，不会报错</h3><h3 id="print的技巧"><a href="#print的技巧" class="headerlink" title="print的技巧"></a>print的技巧</h3><p>当你想看具体的输出结果时，在结果外加上方括号就可以了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_11-00.png&quot; alt=&quot;pic&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;逐行读取可以循环使用&quot;&gt;&lt;a href=&quot;#逐行读取可
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>备案问题，域名实名认证信息与备案主体不一致</title>
@@ -473,29 +500,6 @@
       <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="jupyter" scheme="https://inspiring26.github.io/tags/jupyter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang、gin小知识点</title>
-    <link href="https://inspiring26.github.io/2020/09/01/golang%E3%80%81gin%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <id>https://inspiring26.github.io/2020/09/01/golang、gin小知识点/</id>
-    <published>2020-09-01T05:43:13.000Z</published>
-    <updated>2020-09-01T05:51:43.825Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="gin中常见的gin-H"><a href="#gin中常见的gin-H" class="headerlink" title="gin中常见的gin.H"></a>gin中常见的gin.H</h3><p>实际就是map[string]interface{}<br>所以给网页传递变量的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">router.GET(&quot;&#x2F;index&quot;, func(c *gin.Context) &#123;</span><br><span class="line">c.HTML(http.StatusOK, &quot;index.tmpl&quot;, gin.H&#123;</span><br><span class="line">&quot;title&quot;: &quot;Main website&quot;,</span><br><span class="line">&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><br>就可以替换为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.GET(&quot;&#x2F;rec&quot;, func(c *gin.Context) &#123;</span><br><span class="line">c.HTML(http.StatusOK, &quot;index.tmpl&quot;, province_text_dict)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><a id="more"></a><h3 id="接着上面讲如何讲interface-转换为具体类型"><a href="#接着上面讲如何讲interface-转换为具体类型" class="headerlink" title="接着上面讲如何讲interface{}转换为具体类型"></a>接着上面讲如何讲interface{}转换为具体类型</h3><p>假设value为interface{}类型<br>value.(type)可查看其类型<br>如果是string类型，<br>value.(string)即可转换类型为string。<br>前提是要准确知道类型。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;gin中常见的gin-H&quot;&gt;&lt;a href=&quot;#gin中常见的gin-H&quot; class=&quot;headerlink&quot; title=&quot;gin中常见的gin.H&quot;&gt;&lt;/a&gt;gin中常见的gin.H&lt;/h3&gt;&lt;p&gt;实际就是map[string]interface{}&lt;br&gt;所以给网页传递变量的&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;router.GET(&amp;quot;&amp;#x2F;index&amp;quot;, func(c *gin.Context) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		c.HTML(http.StatusOK, &amp;quot;index.tmpl&amp;quot;, gin.H&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;quot;title&amp;quot;: &amp;quot;Main website&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;就可以替换为&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;router.GET(&amp;quot;&amp;#x2F;rec&amp;quot;, func(c *gin.Context) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		c.HTML(http.StatusOK, &amp;quot;index.tmpl&amp;quot;, province_text_dict)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="golang" scheme="https://inspiring26.github.io/tags/golang/"/>
     
   </entry>
   
