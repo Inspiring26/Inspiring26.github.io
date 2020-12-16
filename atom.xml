@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-12-15T07:58:59.106Z</updated>
+  <updated>2020-12-16T03:26:11.897Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>network DISABLED description: Wireless interface</title>
+    <link href="https://inspiring26.github.io/2020/12/16/network-DISABLED-description-Wireless-interface/"/>
+    <id>https://inspiring26.github.io/2020/12/16/network-DISABLED-description-Wireless-interface/</id>
+    <published>2020-12-16T03:21:43.000Z</published>
+    <updated>2020-12-16T03:26:11.897Z</updated>
+    
+    <content type="html"><![CDATA[<p>linux打开无线网卡</p><h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ lshw -C network</span><br><span class="line">WARNING: you should run this program as super-user.</span><br><span class="line">  *-network                 </span><br><span class="line">       description: Ethernet interface</span><br><span class="line">       product: RTL8111&#x2F;8168&#x2F;8411 PCI Express Gigabit Ethernet Controller</span><br><span class="line">       vendor: Realtek Semiconductor Co., Ltd.</span><br><span class="line">       physical id: 0</span><br><span class="line">       bus info: pci@0000:02:00.0</span><br><span class="line">       logical name: enp2s0</span><br><span class="line">       version: 16</span><br><span class="line">       serial: e0:d5:5e:ca:e7:d7</span><br><span class="line">       size: 100Mbit&#x2F;s</span><br><span class="line">       capacity: 1Gbit&#x2F;s</span><br><span class="line">       width: 64 bits</span><br><span class="line">       clock: 33MHz</span><br><span class="line">       capabilities: bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation</span><br><span class="line">       configuration: autonegotiation&#x3D;on broadcast&#x3D;yes driver&#x3D;r8169 duplex&#x3D;full firmware&#x3D;rtl8168h-2_0.0.2 02&#x2F;26&#x2F;15 ip&#x3D;192.168.2.38 latency&#x3D;0 link&#x3D;yes multicast&#x3D;yes port&#x3D;MII speed&#x3D;100Mbit&#x2F;s</span><br><span class="line">       resources: irq:16 ioport:3000(size&#x3D;256) memory:a5204000-a5204fff memory:a5200000-a5203fff</span><br><span class="line">  *-network DISABLED</span><br><span class="line">       description: Wireless interface</span><br><span class="line">       physical id: 1</span><br><span class="line">       bus info: usb@1:3</span><br><span class="line">       logical name: wlx983f9f1816c5</span><br><span class="line">       serial: 98:3f:9f:18:16:c5</span><br><span class="line">       capabilities: ethernet physical wireless</span><br><span class="line">       configuration: broadcast&#x3D;yes driver&#x3D;rt2800usb driverversion&#x3D;5.4.0-54-generic firmware&#x3D;N&#x2F;A link&#x3D;no multicast&#x3D;yes wireless&#x3D;IEEE 802.11</span><br><span class="line">WARNING: output may be incomplete or inaccurate, you should run this program as super-user.</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="找到名字后开启"><a href="#找到名字后开启" class="headerlink" title="找到名字后开启"></a>找到名字后开启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ifconfig wlx983f9f1816c5 up</span><br></pre></td></tr></table></figure><h3 id="再查看，已经开启"><a href="#再查看，已经开启" class="headerlink" title="再查看，已经开启"></a>再查看，已经开启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ lshw -C network</span><br><span class="line">WARNING: you should run this program as super-user.</span><br><span class="line">  *-network                 </span><br><span class="line">       description: Ethernet interface</span><br><span class="line">       product: RTL8111&#x2F;8168&#x2F;8411 PCI Express Gigabit Ethernet Controller</span><br><span class="line">       vendor: Realtek Semiconductor Co., Ltd.</span><br><span class="line">       physical id: 0</span><br><span class="line">       bus info: pci@0000:02:00.0</span><br><span class="line">       logical name: enp2s0</span><br><span class="line">       version: 16</span><br><span class="line">       serial: e0:d5:5e:ca:e7:d7</span><br><span class="line">       size: 100Mbit&#x2F;s</span><br><span class="line">       capacity: 1Gbit&#x2F;s</span><br><span class="line">       width: 64 bits</span><br><span class="line">       clock: 33MHz</span><br><span class="line">       capabilities: bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation</span><br><span class="line">       configuration: autonegotiation&#x3D;on broadcast&#x3D;yes driver&#x3D;r8169 duplex&#x3D;full firmware&#x3D;rtl8168h-2_0.0.2 02&#x2F;26&#x2F;15 ip&#x3D;192.168.2.38 latency&#x3D;0 link&#x3D;yes multicast&#x3D;yes port&#x3D;MII speed&#x3D;100Mbit&#x2F;s</span><br><span class="line">       resources: irq:16 ioport:3000(size&#x3D;256) memory:a5204000-a5204fff memory:a5200000-a5203fff</span><br><span class="line">  *-network</span><br><span class="line">       description: Wireless interface</span><br><span class="line">       physical id: 1</span><br><span class="line">       bus info: usb@1:3</span><br><span class="line">       logical name: wlx983f9f1816c5</span><br><span class="line">       serial: 98:3f:9f:18:16:c5</span><br><span class="line">       capabilities: ethernet physical wireless</span><br><span class="line">       configuration: broadcast&#x3D;yes driver&#x3D;rt2800usb driverversion&#x3D;5.4.0-54-generic firmware&#x3D;0.36 link&#x3D;no multicast&#x3D;yes wireless&#x3D;IEEE 802.11</span><br><span class="line">WARNING: output may be incomplete or inaccurate, you should run this program as super-user.</span><br></pre></td></tr></table></figure><h3 id="查看网络信息"><a href="#查看网络信息" class="headerlink" title="查看网络信息"></a>查看网络信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ ifconfig</span><br><span class="line">enp2s0: flags&#x3D;4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 192.168.2.38  netmask 255.255.252.0  broadcast 192.168.3.255</span><br><span class="line">        inet6 fe80::9a45:2081:a371:efdd  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether e0:d5:5e:ca:e7:d7  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 54246037  bytes 22551243144 (22.5 GB)</span><br><span class="line">        RX errors 0  dropped 4864651  overruns 0  frame 0</span><br><span class="line">        TX packets 10198222  bytes 2698013990 (2.6 GB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">lo: flags&#x3D;73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536</span><br><span class="line">        inet 127.0.0.1  netmask 255.0.0.0</span><br><span class="line">        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;</span><br><span class="line">        loop  txqueuelen 1000  (Local Loopback)</span><br><span class="line">        RX packets 1215066  bytes 663870515 (663.8 MB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 1215066  bytes 663870515 (663.8 MB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">wlx983f9f1816c5: flags&#x3D;4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500</span><br><span class="line">        ether 98:3f:9f:18:16:c5  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 0  bytes 0 (0.0 B)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 0  bytes 0 (0.0 B)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br></pre></td></tr></table></figure><p>已经开启，接下来就可以配合create_ap创建热点</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;linux打开无线网卡&lt;/p&gt;&lt;h3 id=&quot;查看&quot;&gt;&lt;a href=&quot;#查看&quot; class=&quot;headerlink&quot; title=&quot;查看&quot;&gt;&lt;/a&gt;查看&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;h@h-B360M-D2VX-SI:~&amp;#x2F;Downloads&amp;#x2F;wicd$ lshw -C network&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WARNING: you should run this program as super-user.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  *-network                 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       description: Ethernet interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       product: RTL8111&amp;#x2F;8168&amp;#x2F;8411 PCI Express Gigabit Ethernet Controller&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       vendor: Realtek Semiconductor Co., Ltd.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       physical id: 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       bus info: pci@0000:02:00.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       logical name: enp2s0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       version: 16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       serial: e0:d5:5e:ca:e7:d7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       size: 100Mbit&amp;#x2F;s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       capacity: 1Gbit&amp;#x2F;s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       width: 64 bits&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       clock: 33MHz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       capabilities: bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       configuration: autonegotiation&amp;#x3D;on broadcast&amp;#x3D;yes driver&amp;#x3D;r8169 duplex&amp;#x3D;full firmware&amp;#x3D;rtl8168h-2_0.0.2 02&amp;#x2F;26&amp;#x2F;15 ip&amp;#x3D;192.168.2.38 latency&amp;#x3D;0 link&amp;#x3D;yes multicast&amp;#x3D;yes port&amp;#x3D;MII speed&amp;#x3D;100Mbit&amp;#x2F;s&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       resources: irq:16 ioport:3000(size&amp;#x3D;256) memory:a5204000-a5204fff memory:a5200000-a5203fff&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  *-network DISABLED&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       description: Wireless interface&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       physical id: 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       bus info: usb@1:3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       logical name: wlx983f9f1816c5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       serial: 98:3f:9f:18:16:c5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       capabilities: ethernet physical wireless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       configuration: broadcast&amp;#x3D;yes driver&amp;#x3D;rt2800usb driverversion&amp;#x3D;5.4.0-54-generic firmware&amp;#x3D;N&amp;#x2F;A link&amp;#x3D;no multicast&amp;#x3D;yes wireless&amp;#x3D;IEEE 802.11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WARNING: output may be incomplete or inaccurate, you should run this program as super-user.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>create_ap配置热点及随系统启动</title>
+    <link href="https://inspiring26.github.io/2020/12/16/create-ap%E9%85%8D%E7%BD%AE%E7%83%AD%E7%82%B9%E5%8F%8A%E9%9A%8F%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8/"/>
+    <id>https://inspiring26.github.io/2020/12/16/create-ap配置热点及随系统启动/</id>
+    <published>2020-12-16T03:12:19.000Z</published>
+    <updated>2020-12-16T03:18:53.055Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim &#x2F;etc&#x2F;create_ap.conf</span><br></pre></td></tr></table></figure><h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WIFI_IFACE&#x3D;wlx983f9f1816c5</span><br><span class="line">INTERNET_IFACE&#x3D;enp2s0</span><br><span class="line">SSID&#x3D;hhh</span><br><span class="line">PASSPHRASE&#x3D;****#密码</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="开启、关闭、开机启动"><a href="#开启、关闭、开机启动" class="headerlink" title="开启、关闭、开机启动"></a>开启、关闭、开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start create_ap # 开启热点</span><br><span class="line">sudo systemctl stop create_ap # 关闭热点</span><br><span class="line">sudo systemctl enable create_ap.service # 开机启动</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h@h-B360M-D2VX-SI:~&#x2F;Github&#x2F;blog$ sudo systemctl enable create_ap.service</span><br><span class="line">Created symlink &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;multi-user.target.wants&#x2F;create_ap.service → &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;create_ap.service.</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vim &amp;#x2F;etc&amp;#x2F;create_ap.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&quot;修改&quot;&gt;&lt;a href=&quot;#修改&quot; class=&quot;headerlink&quot; title=&quot;修改&quot;&gt;&lt;/a&gt;修改&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;WIFI_IFACE&amp;#x3D;wlx983f9f1816c5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;INTERNET_IFACE&amp;#x3D;enp2s0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SSID&amp;#x3D;hhh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PASSPHRASE&amp;#x3D;****#密码&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>create_ap Failed to initialize lock</title>
+    <link href="https://inspiring26.github.io/2020/12/16/create-ap-Failed-to-initialize-lock/"/>
+    <id>https://inspiring26.github.io/2020/12/16/create-ap-Failed-to-initialize-lock/</id>
+    <published>2020-12-16T03:05:34.000Z</published>
+    <updated>2020-12-16T03:08:08.147Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查看</span><br><span class="line">ls &#x2F;tmp&#x2F;create_ap.all.lock</span><br><span class="line"></span><br><span class="line">cat &#x2F;tmp&#x2F;create_ap.all.lock</span><br><span class="line"># 删除</span><br><span class="line">rm &#x2F;tmp&#x2F;create_ap.all.lock</span><br></pre></td></tr></table></figure><a id="more"></a><p>再使用create_ap创建就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 查看&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ls &amp;#x2F;tmp&amp;#x2F;create_ap.all.lock&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cat &amp;#x2F;tmp&amp;#x2F;create_ap.all.lock&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 删除&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rm &amp;#x2F;tmp&amp;#x2F;create_ap.all.lock&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="https://inspiring26.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>python逐行读取</title>
@@ -426,80 +495,6 @@
       <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
     
       <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>不要温和地走进那个良夜</title>
-    <link href="https://inspiring26.github.io/2020/09/03/%E4%B8%8D%E8%A6%81%E6%B8%A9%E5%92%8C%E5%9C%B0%E8%B5%B0%E8%BF%9B%E9%82%A3%E4%B8%AA%E8%89%AF%E5%A4%9C/"/>
-    <id>https://inspiring26.github.io/2020/09/03/不要温和地走进那个良夜/</id>
-    <published>2020-09-03T07:28:41.000Z</published>
-    <updated>2020-09-04T03:00:57.190Z</updated>
-    
-    <content type="html"><![CDATA[<p>不要温和地走进那个良夜，<br>白昼将尽，暮年仍应燃烧咆哮，<br>怒斥吧，怒斥，怒斥那光的消逝。<br>虽在白昼尽头，智者自知该踏上征途</p><hr><p>不要温和地走进那个良夜<br>不要静候命运的安排</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;不要温和地走进那个良夜，&lt;br&gt;白昼将尽，暮年仍应燃烧咆哮，&lt;br&gt;怒斥吧，怒斥，怒斥那光的消逝。&lt;br&gt;虽在白昼尽头，智者自知该踏上征途&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;不要温和地走进那个良夜&lt;br&gt;不要静候命运的安排&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>oh_my_zsh下查看当前是不是root权限</title>
-    <link href="https://inspiring26.github.io/2020/09/03/oh-my-zsh%E4%B8%8B%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%98%AF%E4%B8%8D%E6%98%AFroot%E6%9D%83%E9%99%90/"/>
-    <id>https://inspiring26.github.io/2020/09/03/oh-my-zsh下查看当前是不是root权限/</id>
-    <published>2020-09-03T01:43:31.000Z</published>
-    <updated>2020-09-03T01:44:21.666Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ whoami</span><br><span class="line">h</span><br><span class="line">➜  ~ sudo su</span><br><span class="line">[sudo] password for h: </span><br><span class="line">h-B360M-D2VX-SI# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
-      
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jupyter卸载其他核心</title>
-    <link href="https://inspiring26.github.io/2020/09/02/jupyter%E5%8D%B8%E8%BD%BD%E5%85%B6%E4%BB%96%E6%A0%B8%E5%BF%83/"/>
-    <id>https://inspiring26.github.io/2020/09/02/jupyter卸载其他核心/</id>
-    <published>2020-09-02T03:06:11.000Z</published>
-    <updated>2020-09-02T03:07:58.807Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ jupyter kernelspec list</span><br><span class="line">Available kernels:</span><br><span class="line">  javascript    &#x2F;home&#x2F;h&#x2F;.local&#x2F;share&#x2F;jupyter&#x2F;kernels&#x2F;javascript</span><br><span class="line">  python3       &#x2F;home&#x2F;h&#x2F;.local&#x2F;share&#x2F;jupyter&#x2F;kernels&#x2F;python3</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ jupyter kernelspec remove javascript</span><br><span class="line">Kernel specs to remove:</span><br><span class="line">  javascript          &#x2F;home&#x2F;h&#x2F;.local&#x2F;share&#x2F;jupyter&#x2F;kernels&#x2F;javascript</span><br><span class="line">Remove 1 kernel specs [y&#x2F;N]: y</span><br><span class="line">[RemoveKernelSpec] Removed &#x2F;home&#x2F;h&#x2F;.local&#x2F;share&#x2F;jupyter&#x2F;kernels&#x2F;javascript</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;查看&quot;&gt;&lt;a href=&quot;#查看&quot; class=&quot;headerlink&quot; title=&quot;查看&quot;&gt;&lt;/a&gt;查看&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;➜  ~ jupyter kernelspec list&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Available kernels:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  javascript    &amp;#x2F;home&amp;#x2F;h&amp;#x2F;.local&amp;#x2F;share&amp;#x2F;jupyter&amp;#x2F;kernels&amp;#x2F;javascript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  python3       &amp;#x2F;home&amp;#x2F;h&amp;#x2F;.local&amp;#x2F;share&amp;#x2F;jupyter&amp;#x2F;kernels&amp;#x2F;python3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="jupyter" scheme="https://inspiring26.github.io/tags/jupyter/"/>
     
   </entry>
   
