@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-12-16T08:31:17.276Z</updated>
+  <updated>2020-12-16T09:46:49.388Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu重启搜狗输入法</title>
+    <link href="https://inspiring26.github.io/2020/12/16/Ubuntu%E9%87%8D%E5%90%AF%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/"/>
+    <id>https://inspiring26.github.io/2020/12/16/Ubuntu重启搜狗输入法/</id>
+    <published>2020-12-16T09:44:17.000Z</published>
+    <updated>2020-12-16T09:46:49.388Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p>直接右上角或者其他显示图标的位置退出</p><h3 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h3><p>alt + f2<br>搜fcitx<br>运行即可</p><p>网上很多方法不可用，这个有效</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;退出&quot;&gt;&lt;a href=&quot;#退出&quot; class=&quot;headerlink&quot; title=&quot;退出&quot;&gt;&lt;/a&gt;退出&lt;/h3&gt;&lt;p&gt;直接右上角或者其他显示图标的位置退出&lt;/p&gt;
+&lt;h3 id=&quot;打开&quot;&gt;&lt;a href=&quot;#打开&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="ubuntu" scheme="https://inspiring26.github.io/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>torch.nn的方法接收cuda上的数据问题</title>
@@ -467,29 +494,6 @@
     <summary type="html">
     
       &lt;p&gt;装饰器&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def foo():  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print &amp;#39;in foo()&amp;#39;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 定义一个计时器，传入一个，并返回另一个附加了计时功能的方法  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def timeit(func):  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # 定义一个内嵌的包装函数，给传入的函数加上计时功能的包装  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    def wrapper():  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        start &amp;#x3D; time.clock()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        func()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        end &amp;#x3D;time.clock()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        print &amp;#39;Time Elapsed:&amp;#39;, end - start  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # 将包装后的函数返回  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return wrapper&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;的实际使用是&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;foo &amp;#x3D; timeit(foo)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;简写为&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@timeit&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;def foo()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;很好理解：新foo等于&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def wrapper():  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    start &amp;#x3D; time.clock()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    foo() # 原foo()函数  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    end &amp;#x3D;time.clock()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print &amp;#39;Time Elapsed:&amp;#39;, end - start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python多进程</title>
-    <link href="https://inspiring26.github.io/2020/09/23/python%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
-    <id>https://inspiring26.github.io/2020/09/23/python多进程/</id>
-    <published>2020-09-23T08:45:43.000Z</published>
-    <updated>2020-09-23T09:17:10.078Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="简单粗暴的方法"><a href="#简单粗暴的方法" class="headerlink" title="简单粗暴的方法"></a>简单粗暴的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))</span><br><span class="line">f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))</span><br><span class="line"></span><br><span class="line">f1.start()</span><br><span class="line">f2.start()</span><br><span class="line">f1.join()</span><br><span class="line">f2.join()</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="简单处理多进程"><a href="#简单处理多进程" class="headerlink" title="简单处理多进程"></a>简单处理多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ps&#x3D;[]</span><br><span class="line">for i in [fanca, funcb]</span><br><span class="line">    p&#x3D;Process(target&#x3D;i)</span><br><span class="line">    ps.append(p)</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    ps[i].start()</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    ps[i].join()</span><br></pre></td></tr></table></figure><h3 id="使用进程池处理多进程"><a href="#使用进程池处理多进程" class="headerlink" title="使用进程池处理多进程"></a>使用进程池处理多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps &#x3D; Pool(3)</span><br><span class="line">for p in [write_showDF, write_clickDF, write_textLinks]:</span><br><span class="line">    ps.apply(p)</span><br><span class="line">ps.close()</span><br><span class="line">ps.join()</span><br></pre></td></tr></table></figure><h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><p>以第一种形式，且子进程间无交互为例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">q1res &#x3D; mp.Queue()</span><br><span class="line">q2res &#x3D; mp.Queue()</span><br><span class="line">f1 &#x3D; Process(target&#x3D;func1,args&#x3D;(q1res,))</span><br><span class="line">f2 &#x3D; Process(target&#x3D;func2,args&#x3D;(q2res,))</span><br><span class="line"></span><br><span class="line">f1.start()</span><br><span class="line">f2.start()</span><br><span class="line">f1.join()</span><br><span class="line">f2.join()</span><br><span class="line">rec_cec_df,norm_cec_df&#x3D;q1res.get(),q2res.get()</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;简单粗暴的方法&quot;&gt;&lt;a href=&quot;#简单粗暴的方法&quot; class=&quot;headerlink&quot; title=&quot;简单粗暴的方法&quot;&gt;&lt;/a&gt;简单粗暴的方法&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;f1 &amp;#x3D; Process(target&amp;#x3D;func1,args&amp;#x3D;(q1res,))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2 &amp;#x3D; Process(target&amp;#x3D;func2,args&amp;#x3D;(q2res,))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f1.start()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2.start()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f1.join()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2.join()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

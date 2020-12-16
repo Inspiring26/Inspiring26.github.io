@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu重启搜狗输入法]]></title>
+    <url>%2F2020%2F12%2F16%2FUbuntu%E9%87%8D%E5%90%AF%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[退出直接右上角或者其他显示图标的位置退出 打开alt + f2搜fcitx运行即可 网上很多方法不可用，这个有效]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[torch.nn的方法接收cuda上的数据问题]]></title>
     <url>%2F2020%2F12%2F16%2Ftorch-nn%E7%9A%84%E6%96%B9%E6%B3%95%E6%8E%A5%E6%94%B6cuda%E4%B8%8A%E7%9A%84%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[在测试一些nn的方法时，比如Embedding，是不能接收cuda上的数据的，所以只能用来测试不在显存中的数据。测试通过后，只需在出具传入网络前加载在显存，同时将网络转到gpu类型：1testnet.to(torch.device(&quot;cuda:0&quot;))也可以不断用小的模型去测试，但是不太方便，不建议。]]></content>
@@ -243,8 +252,8 @@
     <content type="text"><![CDATA[升级python大版本后，需要重新安装多个库，包括pytorch相关的库。1.查看已有的cuda1ls &#x2F;usr&#x2F;local&#x2F;cuda*cuda是带版本号cuda的软链2.使用bin目录下自带脚本卸载 1sudo &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;bin&#x2F;uninstall_*.pl 3.删除剩余文件12ls &#x2F;usr&#x2F;local&#x2F;cuda*sudo rm -rf &#x2F;usr&#x2F;local&#x2F;cuda* 4.下载对应版本cuda、cudnn，注意是对应不是最新123456# cuda toolkit 下载run文件https:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-toolkit-archive# cuDNNhttps:&#x2F;&#x2F;developer.nvidia.com&#x2F;rdp&#x2F;cudnn-archive# 同时参考pytorch的版本要求https:&#x2F;&#x2F;pytorch.org&#x2F;get-started&#x2F;locally&#x2F; 5.安装cuda12# 通常除了驱动都安装sudo sh cuda_*_linux.run 6.修改环境变量12345# vim ~&#x2F;.bashrcexport LD_LIBRARY_PATH&#x3D;$LD_LIBRARY_PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;binexport CUDA_HOME&#x3D;$CUDA_HOME:&#x2F;usr&#x2F;local&#x2F;cuda 有软链直接修改成cuda就可以了，不用加版本号 7.升级cudnn12345678910tar -zxvf cudnn*.tgzsudo cp include&#x2F;cudnn.h &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;include&#x2F;sudo cp lib64&#x2F;lib* &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64&#x2F;# 在新文件夹建立软链cd &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64&#x2F;sudo chmod +r libcudnn.so.7.0.5sudo ln -sf libcudnn.so.7.0.5 libcudnn.so.7 sudo ln -sf libcudnn.so.7 libcudnn.so sudo ldconfig 8.OVER]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>cuda</tag>
         <tag>ubuntu</tag>
+        <tag>cuda</tag>
         <tag>cudnn</tag>
         <tag>升级</tag>
       </tags>
@@ -710,8 +719,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -965,8 +974,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1422,9 +1431,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
