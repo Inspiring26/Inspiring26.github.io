@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "linux 网络及热点"
+git commit -m "接收cuda上的数据问题"
 git push
