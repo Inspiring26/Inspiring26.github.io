@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://inspiring26.github.io/"/>
-  <updated>2020-12-16T03:26:11.897Z</updated>
+  <updated>2020-12-16T08:31:17.276Z</updated>
   <id>https://inspiring26.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>torch.nn的方法接收cuda上的数据问题</title>
+    <link href="https://inspiring26.github.io/2020/12/16/torch-nn%E7%9A%84%E6%96%B9%E6%B3%95%E6%8E%A5%E6%94%B6cuda%E4%B8%8A%E7%9A%84%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98/"/>
+    <id>https://inspiring26.github.io/2020/12/16/torch-nn的方法接收cuda上的数据问题/</id>
+    <published>2020-12-16T08:27:20.000Z</published>
+    <updated>2020-12-16T08:31:17.276Z</updated>
+    
+    <content type="html"><![CDATA[<p>在测试一些nn的方法时，比如Embedding，是不能接收cuda上的数据的，所以只能用来测试不在显存中的数据。<br>测试通过后，只需在出具传入网络前加载在显存，同时将网络转到gpu类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">testnet.to(torch.device(&quot;cuda:0&quot;))</span><br></pre></td></tr></table></figure><br>也可以不断用小的模型去测试，但是不太方便，不建议。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在测试一些nn的方法时，比如Embedding，是不能接收cuda上的数据的，所以只能用来测试不在显存中的数据。&lt;br&gt;测试通过后，只需在出具传入网络前加载在显存，同时将网络转到gpu类型：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="https://inspiring26.github.io/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="pytorch" scheme="https://inspiring26.github.io/tags/pytorch/"/>
+    
+  </entry>
   
   <entry>
     <title>network DISABLED description: Wireless interface</title>
@@ -464,29 +490,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;简单粗暴的方法&quot;&gt;&lt;a href=&quot;#简单粗暴的方法&quot; class=&quot;headerlink&quot; title=&quot;简单粗暴的方法&quot;&gt;&lt;/a&gt;简单粗暴的方法&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;f1 &amp;#x3D; Process(target&amp;#x3D;func1,args&amp;#x3D;(q1res,))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2 &amp;#x3D; Process(target&amp;#x3D;func2,args&amp;#x3D;(q2res,))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f1.start()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2.start()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f1.join()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;f2.join()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="总结" scheme="https://inspiring26.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="python" scheme="https://inspiring26.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python官方命名规范简单总结</title>
-    <link href="https://inspiring26.github.io/2020/09/15/python%E5%AE%98%E6%96%B9%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E7%AE%80%E5%8D%95%E6%80%BB%E7%BB%93/"/>
-    <id>https://inspiring26.github.io/2020/09/15/python官方命名规范简单总结/</id>
-    <published>2020-09-15T05:41:30.000Z</published>
-    <updated>2020-09-15T10:41:43.852Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-不加分号"><a href="#1-不加分号" class="headerlink" title="1.不加分号"></a>1.不加分号</h3><h3 id="2-每行不超过80个字符"><a href="#2-每行不超过80个字符" class="headerlink" title="2.每行不超过80个字符"></a>2.每行不超过80个字符</h3><p>所有语句都是可以换行的<br>圆括号、中括号、花括号中的行是隐式连接起来的</p><h3 id="3-顶级定义之间空两行，方法之间空一行"><a href="#3-顶级定义之间空两行，方法之间空一行" class="headerlink" title="3.顶级定义之间空两行，方法之间空一行"></a>3.顶级定义之间空两行，方法之间空一行</h3><h3 id="4-每个导入单独占一行"><a href="#4-每个导入单独占一行" class="headerlink" title="4.每个导入单独占一行"></a>4.每个导入单独占一行</h3><h3 id="5-命名"><a href="#5-命名" class="headerlink" title="5.命名"></a>5.命名</h3><p>(1)除计数器、迭代器不使用单字符<br>(2)不使用-<br>(3)通常不使用__开头或结尾<br>(4)类名使用大驼峰<br>(5)模块名(函数名)使用小写加下划线<br>(6)变量名和函数名一样，小写加下划线</p><a id="more"></a><h3 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h3><p><a href="https://python-guide.gitbooks.io/python-style-guide/content/style-guide/variables.html" target="_blank" rel="noopener">python-style-guide</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-不加分号&quot;&gt;&lt;a href=&quot;#1-不加分号&quot; class=&quot;headerlink&quot; title=&quot;1.不加分号&quot;&gt;&lt;/a&gt;1.不加分号&lt;/h3&gt;&lt;h3 id=&quot;2-每行不超过80个字符&quot;&gt;&lt;a href=&quot;#2-每行不超过80个字符&quot; class=&quot;headerlink&quot; title=&quot;2.每行不超过80个字符&quot;&gt;&lt;/a&gt;2.每行不超过80个字符&lt;/h3&gt;&lt;p&gt;所有语句都是可以换行的&lt;br&gt;圆括号、中括号、花括号中的行是隐式连接起来的&lt;/p&gt;&lt;h3 id=&quot;3-顶级定义之间空两行，方法之间空一行&quot;&gt;&lt;a href=&quot;#3-顶级定义之间空两行，方法之间空一行&quot; class=&quot;headerlink&quot; title=&quot;3.顶级定义之间空两行，方法之间空一行&quot;&gt;&lt;/a&gt;3.顶级定义之间空两行，方法之间空一行&lt;/h3&gt;&lt;h3 id=&quot;4-每个导入单独占一行&quot;&gt;&lt;a href=&quot;#4-每个导入单独占一行&quot; class=&quot;headerlink&quot; title=&quot;4.每个导入单独占一行&quot;&gt;&lt;/a&gt;4.每个导入单独占一行&lt;/h3&gt;&lt;h3 id=&quot;5-命名&quot;&gt;&lt;a href=&quot;#5-命名&quot; class=&quot;headerlink&quot; title=&quot;5.命名&quot;&gt;&lt;/a&gt;5.命名&lt;/h3&gt;&lt;p&gt;(1)除计数器、迭代器不使用单字符&lt;br&gt;(2)不使用-&lt;br&gt;(3)通常不使用__开头或结尾&lt;br&gt;(4)类名使用大驼峰&lt;br&gt;(5)模块名(函数名)使用小写加下划线&lt;br&gt;(6)变量名和函数名一样，小写加下划线&lt;/p&gt;
     
     </summary>
     
