@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "python逐行读取(修改)"
+git commit -m "linux 网络及热点"
 git push
