@@ -62,7 +62,7 @@
   <meta name="description" content="当我们想在一个彩色图片上用一种颜色标识出相关信息，同时不覆盖原有信息，一个简单的方式是直接取各自RGB通道的数值，按一定百分比相加即可。123456789101112131415from PIL import Imagefrom skimage import ioimport numpy as npimport matplotlib.pyplot as pltimage1 &#x3D; Image">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图片色彩叠加">
-<meta property="og:url" content="https://inspiring26.github.io/2019/12/27/%E5%9B%BE%E7%89%87%E8%89%B2%E5%BD%A9%E5%8F%A0%E5%8A%A0/index.html">
+<meta property="og:url" content="http://weehaa.top/2019/12/27/%E5%9B%BE%E7%89%87%E8%89%B2%E5%BD%A9%E5%8F%A0%E5%8A%A0/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
 <meta property="og:description" content="当我们想在一个彩色图片上用一种颜色标识出相关信息，同时不覆盖原有信息，一个简单的方式是直接取各自RGB通道的数值，按一定百分比相加即可。123456789101112131415from PIL import Imagefrom skimage import ioimport numpy as npimport matplotlib.pyplot as pltimage1 &#x3D; Image">
 <meta property="og:locale" content="zh_CN">
@@ -72,7 +72,7 @@
 <meta property="article:tag" content="方法">
 <meta property="article:tag" content="图像">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://inspiring26.github.io/2019/12/27/%E5%9B%BE%E7%89%87%E8%89%B2%E5%BD%A9%E5%8F%A0%E5%8A%A0/">
+  <link rel="canonical" href="http://weehaa.top/2019/12/27/%E5%9B%BE%E7%89%87%E8%89%B2%E5%BD%A9%E5%8F%A0%E5%8A%A0/">
 
 
 <script id="page-configurations">
@@ -272,7 +272,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/12/27/%E5%9B%BE%E7%89%87%E8%89%B2%E5%BD%A9%E5%8F%A0%E5%8A%A0/">
+    <link itemprop="mainEntityOfPage" href="http://weehaa.top/2019/12/27/%E5%9B%BE%E7%89%87%E8%89%B2%E5%BD%A9%E5%8F%A0%E5%8A%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huang yong">
@@ -357,7 +357,7 @@
 
       
         <p>当我们想在一个彩色图片上用一种颜色标识出相关信息，同时不覆盖原有信息，一个简单的方式是直接取各自RGB通道的数值，按一定百分比相加即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">from skimage import io</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">image1 &#x3D; Image.open(&quot;aa.jpg&quot;)</span><br><span class="line">image2 &#x3D; Image.open(&quot;bb.jpg&quot;)</span><br><span class="line">image1 &#x3D; np.array(image1)</span><br><span class="line">image2 &#x3D; np.array(image2)</span><br><span class="line"></span><br><span class="line">image2[...,0] &#x3D; image1[...,0]*0.4 + iamge2[...,0]*0.6</span><br><span class="line">image2[...,1] &#x3D; image1[...,1]*0.4 + iamge2[...,1]*0.6</span><br><span class="line">image2[...,2] &#x3D; image1[...,2]*0.4 + iamge2[...,2]*0.6</span><br><span class="line"></span><br><span class="line">io.imshow(image2);plt.show()</span><br></pre></td></tr></table></figure><br>当要标注时 选择指定的范围替换即可。</p><a id="more"></a>
-<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>
+<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/" target="_blank" rel="noopener">https://inspiring26.github.io/</a></p>
 
     </div>
 
@@ -468,7 +468,7 @@
       
         
       
-        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
+        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
       </span>
     
       <span class="links-of-author-item">
@@ -479,7 +479,7 @@
       
         
       
-        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
+        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
       </span>
     
       <span class="links-of-author-item">

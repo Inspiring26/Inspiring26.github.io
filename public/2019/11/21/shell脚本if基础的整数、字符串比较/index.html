@@ -62,7 +62,7 @@
   <meta name="description" content="整数比较等于1&quot;$a&quot; -eq &quot;$b&quot; ] #不加引号也可以的不等于1if [ &quot;$a&quot; -ne &quot;$b&quot; ]大于1if [ &quot;$a&quot; -gt &quot;$b&quot; ]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell脚本if基础的整数、字符串比较">
-<meta property="og:url" content="https://inspiring26.github.io/2019/11/21/shell%E8%84%9A%E6%9C%ACif%E5%9F%BA%E7%A1%80%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/index.html">
+<meta property="og:url" content="http://weehaa.top/2019/11/21/shell%E8%84%9A%E6%9C%ACif%E5%9F%BA%E7%A1%80%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
 <meta property="og:description" content="整数比较等于1&quot;$a&quot; -eq &quot;$b&quot; ] #不加引号也可以的不等于1if [ &quot;$a&quot; -ne &quot;$b&quot; ]大于1if [ &quot;$a&quot; -gt &quot;$b&quot; ]">
 <meta property="og:locale" content="zh_CN">
@@ -72,7 +72,7 @@
 <meta property="article:tag" content="方法">
 <meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://inspiring26.github.io/2019/11/21/shell%E8%84%9A%E6%9C%ACif%E5%9F%BA%E7%A1%80%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/">
+  <link rel="canonical" href="http://weehaa.top/2019/11/21/shell%E8%84%9A%E6%9C%ACif%E5%9F%BA%E7%A1%80%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/">
 
 
 <script id="page-configurations">
@@ -272,7 +272,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/11/21/shell%E8%84%9A%E6%9C%ACif%E5%9F%BA%E7%A1%80%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/">
+    <link itemprop="mainEntityOfPage" href="http://weehaa.top/2019/11/21/shell%E8%84%9A%E6%9C%ACif%E5%9F%BA%E7%A1%80%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huang yong">
@@ -358,7 +358,7 @@
       
         <h3 id="整数比较"><a href="#整数比较" class="headerlink" title="整数比较"></a>整数比较</h3><p>等于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;$a&quot; -eq &quot;$b&quot; ] #不加引号也可以的</span><br></pre></td></tr></table></figure><br>不等于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if [ &quot;$a&quot; -ne &quot;$b&quot; ]</span><br></pre></td></tr></table></figure><br>大于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if [ &quot;$a&quot; -gt &quot;$b&quot; ]</span><br></pre></td></tr></table></figure></p><a id="more"></a>
 <h3 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h3><p>等于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if [ &quot;$a&quot; &#x3D; &quot;$b&quot; ]</span><br><span class="line">if [ &quot;$a&quot; &#x3D;&#x3D; &quot;$b&quot; ]#两种都可以，应该要加引号的，没测试</span><br></pre></td></tr></table></figure><br>不等于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if [ &quot;$a&quot;x !&#x3D; &quot;$b&quot;x ]</span><br></pre></td></tr></table></figure><br>还可以用通配符的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if [[ &quot;123&quot; &#x3D; &quot;12&quot;* ]];then echo &quot;&#x3D;&quot;;fi</span><br><span class="line">&#x3D;</span><br><span class="line">if [[ &quot;123&quot; &#x3D; 12* ]];then echo &quot;&#x3D;&quot;;fi</span><br><span class="line">&#x3D;</span><br><span class="line">#通配符匹配的时候尽量用双括号，具体使用时自己先验证以下</span><br></pre></td></tr></table></figure></p>
-<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>
+<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/" target="_blank" rel="noopener">https://inspiring26.github.io/</a></p>
 
     </div>
 
@@ -471,7 +471,7 @@
       
         
       
-        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
+        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
       </span>
     
       <span class="links-of-author-item">
@@ -482,7 +482,7 @@
       
         
       
-        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
+        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
       </span>
     
       <span class="links-of-author-item">
