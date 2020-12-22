@@ -62,19 +62,19 @@
   <meta name="description" content="1.当在jupyter notebook中调试程序导致程序无法关闭时，可以使用ps -aux|grep python来排查2.当发现多个和jupyter notebook相关的进程时，应该考虑进程号靠后的，靠前的时启动jupyter notebook程序的进程。kill -9 [进程号]后成功释放显存。如下图所示：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jupyter_notebook上程序导致显存占满卡死，无法关闭的情况">
-<meta property="og:url" content="https://inspiring26.github.io/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/index.html">
+<meta property="og:url" content="http://weehaa.top/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
 <meta property="og:description" content="1.当在jupyter notebook中调试程序导致程序无法关闭时，可以使用ps -aux|grep python来排查2.当发现多个和jupyter notebook相关的进程时，应该考虑进程号靠后的，靠前的时启动jupyter notebook程序的进程。kill -9 [进程号]后成功释放显存。如下图所示：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://inspiring26.github.io/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/screenshot_61.png">
+<meta property="og:image" content="http://weehaa.top/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/screenshot_61.png">
 <meta property="article:published_time" content="2019-10-09T08:47:47.000Z">
 <meta property="article:modified_time" content="2020-05-07T05:27:53.733Z">
 <meta property="article:author" content="huang yong">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="jupyter">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://inspiring26.github.io/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/screenshot_61.png">
-  <link rel="canonical" href="https://inspiring26.github.io/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/">
+<meta name="twitter:image" content="http://weehaa.top/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/screenshot_61.png">
+  <link rel="canonical" href="http://weehaa.top/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/">
 
 
 <script id="page-configurations">
@@ -274,7 +274,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/">
+    <link itemprop="mainEntityOfPage" href="http://weehaa.top/2019/10/09/jupyter-notebook%E4%B8%8A%E7%A8%8B%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E5%8D%A1%E6%AD%BB%EF%BC%8C%E6%97%A0%E6%B3%95%E5%85%B3%E9%97%AD%E7%9A%84%E6%83%85%E5%86%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huang yong">
@@ -474,7 +474,7 @@
       
         
       
-        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
+        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
       </span>
     
       <span class="links-of-author-item">
@@ -485,7 +485,7 @@
       
         
       
-        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
+        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
       </span>
     
       <span class="links-of-author-item">

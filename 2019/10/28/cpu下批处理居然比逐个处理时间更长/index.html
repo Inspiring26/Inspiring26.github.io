@@ -62,20 +62,20 @@
   <meta name="description" content="测试在cpu下一次预测一个图片和一次预测两个消耗时间的对比。实验中有两个模型，也就是说每个预测里面预测了两次。实验部分代码：123456789101112131415161718192021222324async def predictHandler3():    global pic_dict,pic_dict_res    keylist &#x3D; list(pic_dict.keys()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cpu下批处理居然比逐个处理时间更长">
-<meta property="og:url" content="https://inspiring26.github.io/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/index.html">
+<meta property="og:url" content="http://weehaa.top/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
 <meta property="og:description" content="测试在cpu下一次预测一个图片和一次预测两个消耗时间的对比。实验中有两个模型，也就是说每个预测里面预测了两次。实验部分代码：123456789101112131415161718192021222324async def predictHandler3():    global pic_dict,pic_dict_res    keylist &#x3D; list(pic_dict.keys()">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://inspiring26.github.io/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/screenshot_69.png">
-<meta property="og:image" content="https://inspiring26.github.io/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/screenshot_70.png">
+<meta property="og:image" content="http://weehaa.top/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/screenshot_69.png">
+<meta property="og:image" content="http://weehaa.top/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/screenshot_70.png">
 <meta property="article:published_time" content="2019-10-28T07:32:26.000Z">
 <meta property="article:modified_time" content="2020-05-07T05:27:53.733Z">
 <meta property="article:author" content="huang yong">
 <meta property="article:tag" content="pytorch">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://inspiring26.github.io/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/screenshot_69.png">
-  <link rel="canonical" href="https://inspiring26.github.io/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/">
+<meta name="twitter:image" content="http://weehaa.top/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/screenshot_69.png">
+  <link rel="canonical" href="http://weehaa.top/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/">
 
 
 <script id="page-configurations">
@@ -275,7 +275,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/">
+    <link itemprop="mainEntityOfPage" href="http://weehaa.top/2019/10/28/cpu%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%B1%85%E7%84%B6%E6%AF%94%E9%80%90%E4%B8%AA%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E6%9B%B4%E9%95%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huang yong">
@@ -473,7 +473,7 @@
       
         
       
-        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
+        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
       </span>
     
       <span class="links-of-author-item">
@@ -484,7 +484,7 @@
       
         
       
-        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
+        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
       </span>
     
       <span class="links-of-author-item">

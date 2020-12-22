@@ -62,7 +62,7 @@
   <meta name="description" content="动态增长代码：123456import keras.backend.tensorflow_backend as KTFimport tensorflow as tfconfig &#x3D; tf.ConfigProto()config.gpu_options.allow_growth&#x3D;True  sess &#x3D; tf.Session(config&#x3D;config)KTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器容易因gpu显存占满而卡死，那就尽量使用动态增长，牺牲一点性能也是可以的">
-<meta property="og:url" content="https://inspiring26.github.io/2019/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%B9%E6%98%93%E5%9B%A0gpu%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E8%80%8C%E5%8D%A1%E6%AD%BB%EF%BC%8C%E9%82%A3%E5%B0%B1%E5%B0%BD%E9%87%8F%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E5%A2%9E%E9%95%BF%EF%BC%8C%E7%89%BA%E7%89%B2%E4%B8%80%E7%82%B9%E6%80%A7%E8%83%BD%E4%B9%9F%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9A%84/index.html">
+<meta property="og:url" content="http://weehaa.top/2019/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%B9%E6%98%93%E5%9B%A0gpu%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E8%80%8C%E5%8D%A1%E6%AD%BB%EF%BC%8C%E9%82%A3%E5%B0%B1%E5%B0%BD%E9%87%8F%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E5%A2%9E%E9%95%BF%EF%BC%8C%E7%89%BA%E7%89%B2%E4%B8%80%E7%82%B9%E6%80%A7%E8%83%BD%E4%B9%9F%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9A%84/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
 <meta property="og:description" content="动态增长代码：123456import keras.backend.tensorflow_backend as KTFimport tensorflow as tfconfig &#x3D; tf.ConfigProto()config.gpu_options.allow_growth&#x3D;True  sess &#x3D; tf.Session(config&#x3D;config)KTF">
 <meta property="og:locale" content="zh_CN">
@@ -72,7 +72,7 @@
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="keras">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://inspiring26.github.io/2019/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%B9%E6%98%93%E5%9B%A0gpu%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E8%80%8C%E5%8D%A1%E6%AD%BB%EF%BC%8C%E9%82%A3%E5%B0%B1%E5%B0%BD%E9%87%8F%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E5%A2%9E%E9%95%BF%EF%BC%8C%E7%89%BA%E7%89%B2%E4%B8%80%E7%82%B9%E6%80%A7%E8%83%BD%E4%B9%9F%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9A%84/">
+  <link rel="canonical" href="http://weehaa.top/2019/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%B9%E6%98%93%E5%9B%A0gpu%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E8%80%8C%E5%8D%A1%E6%AD%BB%EF%BC%8C%E9%82%A3%E5%B0%B1%E5%B0%BD%E9%87%8F%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E5%A2%9E%E9%95%BF%EF%BC%8C%E7%89%BA%E7%89%B2%E4%B8%80%E7%82%B9%E6%80%A7%E8%83%BD%E4%B9%9F%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9A%84/">
 
 
 <script id="page-configurations">
@@ -272,7 +272,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%B9%E6%98%93%E5%9B%A0gpu%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E8%80%8C%E5%8D%A1%E6%AD%BB%EF%BC%8C%E9%82%A3%E5%B0%B1%E5%B0%BD%E9%87%8F%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E5%A2%9E%E9%95%BF%EF%BC%8C%E7%89%BA%E7%89%B2%E4%B8%80%E7%82%B9%E6%80%A7%E8%83%BD%E4%B9%9F%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9A%84/">
+    <link itemprop="mainEntityOfPage" href="http://weehaa.top/2019/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%B9%E6%98%93%E5%9B%A0gpu%E6%98%BE%E5%AD%98%E5%8D%A0%E6%BB%A1%E8%80%8C%E5%8D%A1%E6%AD%BB%EF%BC%8C%E9%82%A3%E5%B0%B1%E5%B0%BD%E9%87%8F%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E5%A2%9E%E9%95%BF%EF%BC%8C%E7%89%BA%E7%89%B2%E4%B8%80%E7%82%B9%E6%80%A7%E8%83%BD%E4%B9%9F%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9A%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huang yong">
@@ -467,7 +467,7 @@
       
         
       
-        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
+        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
       </span>
     
       <span class="links-of-author-item">
@@ -478,7 +478,7 @@
       
         
       
-        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
+        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
       </span>
     
       <span class="links-of-author-item">

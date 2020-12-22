@@ -62,7 +62,7 @@
   <meta name="description" content="获取绝对路径1os.path.abspath(&quot;..&#x2F;&quot;)联合路径或文件12os.path.join(ROOT_DIR, &quot;samples&#x2F;coco&#x2F;&quot;)os.path.join(ROOT_DIR, &quot;mask_rcnn_coco.h5&quot;)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mask rcnn里优秀的python用法">
-<meta property="og:url" content="https://inspiring26.github.io/2019/11/21/mask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:url" content="http://weehaa.top/2019/11/21/mask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
 <meta property="og:description" content="获取绝对路径1os.path.abspath(&quot;..&#x2F;&quot;)联合路径或文件12os.path.join(ROOT_DIR, &quot;samples&#x2F;coco&#x2F;&quot;)os.path.join(ROOT_DIR, &quot;mask_rcnn_coco.h5&quot;)">
 <meta property="og:locale" content="zh_CN">
@@ -72,7 +72,7 @@
 <meta property="article:tag" content="技巧">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://inspiring26.github.io/2019/11/21/mask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95/">
+  <link rel="canonical" href="http://weehaa.top/2019/11/21/mask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95/">
 
 
 <script id="page-configurations">
@@ -272,7 +272,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2019/11/21/mask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://weehaa.top/2019/11/21/mask-rcnn%E9%87%8C%E4%BC%98%E7%A7%80%E7%9A%84python%E7%94%A8%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huang yong">
@@ -362,7 +362,7 @@
 <h3 id="组织参数及调用-以及传参，用一部分也可以传整个，显得很简洁"><a href="#组织参数及调用-以及传参，用一部分也可以传整个，显得很简洁" class="headerlink" title="组织参数及调用 以及传参，用一部分也可以传整个，显得很简洁"></a>组织参数及调用 以及传参，用一部分也可以传整个，显得很简洁</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class InferenceConfig(coco.CocoConfig):</span><br><span class="line">    # Set batch size to 1 since we&#39;ll be running inference on</span><br><span class="line">    # one image at a time. Batch size &#x3D; GPU_COUNT * IMAGES_PER_GPU</span><br><span class="line">    GPU_COUNT &#x3D; 1</span><br><span class="line">    IMAGES_PER_GPU &#x3D; 1</span><br><span class="line"></span><br><span class="line">config &#x3D; InferenceConfig()</span><br><span class="line">config.GPU_COUNT()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">model &#x3D; modellib.MaskRCNN(mode&#x3D;&quot;inference&quot;, model_dir&#x3D;MODEL_DIR, config&#x3D;config)</span><br></pre></td></tr></table></figure>
 <h3 id="列出文件夹里的所有文件和文件夹"><a href="#列出文件夹里的所有文件和文件夹" class="headerlink" title="列出文件夹里的所有文件和文件夹"></a>列出文件夹里的所有文件和文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">next(os.walk(IMAGE_DIR))[2]</span><br></pre></td></tr></table></figure>
 <h3 id="随机选取一个元素"><a href="#随机选取一个元素" class="headerlink" title="随机选取一个元素"></a>随机选取一个元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.choice(file_names)</span><br></pre></td></tr></table></figure>
-<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>
+<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/" target="_blank" rel="noopener">https://inspiring26.github.io/</a></p>
 
     </div>
 
@@ -475,7 +475,7 @@
       
         
       
-        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
+        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
       </span>
     
       <span class="links-of-author-item">
@@ -486,7 +486,7 @@
       
         
       
-        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
+        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
       </span>
     
       <span class="links-of-author-item">

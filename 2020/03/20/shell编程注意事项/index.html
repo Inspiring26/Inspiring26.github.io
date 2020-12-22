@@ -62,7 +62,7 @@
   <meta name="description" content="定义变量时，变量名不加美元符号；变量名和等号间不能有空格；除了自己赋值，还可以用语句，如：for file in &#96;ls &#x2F;etc&#96;;使用变量需加美元符，有两种：1$file  $&amp;#123;file&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell编程注意事项">
-<meta property="og:url" content="https://inspiring26.github.io/2020/03/20/shell%E7%BC%96%E7%A8%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
+<meta property="og:url" content="http://weehaa.top/2020/03/20/shell%E7%BC%96%E7%A8%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
 <meta property="og:site_name" content="你说你要一场革命">
 <meta property="og:description" content="定义变量时，变量名不加美元符号；变量名和等号间不能有空格；除了自己赋值，还可以用语句，如：for file in &#96;ls &#x2F;etc&#96;;使用变量需加美元符，有两种：1$file  $&amp;#123;file&amp;#125;">
 <meta property="og:locale" content="zh_CN">
@@ -72,7 +72,7 @@
 <meta property="article:tag" content="注意事项">
 <meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://inspiring26.github.io/2020/03/20/shell%E7%BC%96%E7%A8%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
+  <link rel="canonical" href="http://weehaa.top/2020/03/20/shell%E7%BC%96%E7%A8%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
 
 
 <script id="page-configurations">
@@ -272,7 +272,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://inspiring26.github.io/2020/03/20/shell%E7%BC%96%E7%A8%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
+    <link itemprop="mainEntityOfPage" href="http://weehaa.top/2020/03/20/shell%E7%BC%96%E7%A8%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huang yong">
@@ -372,7 +372,7 @@
 <p>还有一直case语法了解一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">case &quot;$&#123;opt&#125;&quot; in</span><br><span class="line">	&quot;Install-Puppet-Server&quot; )</span><br><span class="line">		install_master $1</span><br><span class="line">		exit</span><br><span class="line">	;;</span><br><span class="line"></span><br><span class="line">	&quot;Install-Puppet-Client&quot; )</span><br><span class="line">		install_client $1</span><br><span class="line">		exit</span><br><span class="line">	;;</span><br><span class="line"></span><br><span class="line">	&quot;Config-Puppet-Server&quot; )</span><br><span class="line">		config_puppet_master</span><br><span class="line">		exit</span><br><span class="line">	;;</span><br><span class="line"></span><br><span class="line">	&quot;Config-Puppet-Client&quot; )</span><br><span class="line">		config_puppet_client</span><br><span class="line">		exit</span><br><span class="line">	;;</span><br><span class="line"></span><br><span class="line">	&quot;Exit&quot; )</span><br><span class="line">		exit</span><br><span class="line">	;;</span><br><span class="line"></span><br><span class="line">	* ) echo &quot;Bad option, please choose again&quot;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure></p>
 <p>在bash里source和.是等效的，他们都是读入并执行指定文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source .&#x2F;function.sh</span><br><span class="line">. .&#x2F;function.sh</span><br></pre></td></tr></table></figure></p>
 <p>顺便提一下获取文件绝对路径的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;readlink -f test.sh</span><br><span class="line">&#x2F;home&#x2F;h2&#x2F;test.sh</span><br></pre></td></tr></table></figure><br>有这样的综合使用分析：<br>readlink -f test.sh 是一个可执行shell语句，效果是获取test.sh的绝对路径<br>要把执行完语句的结果传给变量的话，需要用``将语句括起来，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;testpath&#x3D;\&#96;readlink -f test.sh\&#96;</span><br><span class="line">此时$testpath 的值就是路径字符串，</span><br><span class="line">直接运行$testpath 是运行该文件，可能会有权限问题，</span><br><span class="line">&gt;&gt;&gt;. $testpath </span><br><span class="line">&gt;&gt;&gt;source $testpath </span><br><span class="line">都是执行那个脚本</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;echo $testpath </span><br><span class="line">是打印出路径地址</span><br></pre></td></tr></table></figure></p>
-<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/">https://inspiring26.github.io/</a></p>
+<p>老博客地址：<a href="https://www.jianshu.com/u/1c73a3a8ae2d" target="_blank" rel="noopener">https://www.jianshu.com/u/1c73a3a8ae2d</a><br>新博客地址：<a href="https://inspiring26.github.io/" target="_blank" rel="noopener">https://inspiring26.github.io/</a></p>
 
     </div>
 
@@ -483,7 +483,7 @@
       
         
       
-        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
+        <a href="http://weehaa.top/" title="个人服务器 &rarr; http://weehaa.top/"><i class="fa fa-fw fa-globe"></i>个人服务器</a>
       </span>
     
       <span class="links-of-author-item">
@@ -494,7 +494,7 @@
       
         
       
-        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
+        <a href="https://inspiring26.github.io/" title="github服务器 &rarr; https://inspiring26.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-square"></i>github服务器</a>
       </span>
     
       <span class="links-of-author-item">
