@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[在matplotlib中一次性添加中文字体的方式]]></title>
+    <url>%2F2020%2F12%2F23%2F%E5%9C%A8matplotlib%E4%B8%AD%E4%B8%80%E6%AC%A1%E6%80%A7%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E7%9A%84%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[这是一个临时添加中文或其他字体的方式，永久添加可能会有各种问题，这个是一定有效的。代码：12345678910import matplotlib from matplotlib.font_manager import * import matplotlib.pyplot as plt myfont &#x3D; FontProperties(fname&#x3D;&#39;&#x2F;home&#x2F;h&#x2F;Downloads&#x2F;SimHei.ttf&#39;,size&#x3D;10)matplotlib.rcParams[&#39;axes.unicode_minus&#39;]&#x3D;False x&#x3D;[*range(10)]y&#x3D;[*range(10,20)]plt.title(&quot;中国&quot;,fontproperties&#x3D;myfont)plt.scatter(x,y) 效果：]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python解包]]></title>
     <url>%2F2020%2F12%2F23%2Fpython%E8%A7%A3%E5%8C%85%2F</url>
     <content type="text"><![CDATA[Python中的解包符号是要配合列表使用的，此外也可以在print里直接使用。]]></content>
@@ -12,7 +21,7 @@
   <entry>
     <title><![CDATA[python字典合并]]></title>
     <url>%2F2020%2F12%2F23%2Fpython%E5%AD%97%E5%85%B8%E5%90%88%E5%B9%B6%2F</url>
-    <content type="text"><![CDATA[Python字典合并，直接使用解包号就可以合并，且有相同内容时后面的会覆盖前面的。]]></content>
+    <content type="text"><![CDATA[Python字典合并，直接使用解包号就可以合并，且有相同key时后面的会覆盖前面的。]]></content>
       <tags>
         <tag>方法</tag>
         <tag>python</tag>

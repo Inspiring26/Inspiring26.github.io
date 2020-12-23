@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "完成切换接口后的总结2"
+git commit -m "在matplotlib中 一次性添加中文字体的方式"
 git push
