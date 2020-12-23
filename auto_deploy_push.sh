@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "百度收录_modify1"
+git commit -m "完成切换接口后的总结"
 git push
