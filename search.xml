@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[python解包]]></title>
     <url>%2F2020%2F12%2F23%2Fpython%E8%A7%A3%E5%8C%85%2F</url>
-    <content type="text"><![CDATA[Python中的解包符号*是要配合列表使用的，此外也可以在print里直接使用。]]></content>
+    <content type="text"><![CDATA[Python中的解包符号是要配合列表使用的，此外也可以在print里直接使用。]]></content>
       <tags>
         <tag>方法</tag>
         <tag>python</tag>

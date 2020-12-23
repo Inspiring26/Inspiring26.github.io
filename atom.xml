@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2020-12-23T03:18:17.801Z</updated>
+  <updated>2020-12-23T03:31:17.197Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://weehaa.top/2020/12/23/python%E8%A7%A3%E5%8C%85/"/>
     <id>http://weehaa.top/2020/12/23/python解包/</id>
     <published>2020-12-23T03:16:17.000Z</published>
-    <updated>2020-12-23T03:18:17.801Z</updated>
+    <updated>2020-12-23T03:31:17.197Z</updated>
     
-    <content type="html"><![CDATA[<p>Python中的解包符号*是要配合列表使用的，此外也可以在print里直接使用。</p><p><img src="/2020/12/23/python%E8%A7%A3%E5%8C%85/2020-12-22_15-24.png" alt="pic"></p>]]></content>
+    <content type="html"><![CDATA[<p>Python中的解包符号是要配合列表使用的，此外也可以在print里直接使用。</p><p><img src="/2020/12/23/python%E8%A7%A3%E5%8C%85/2020-12-22_15-24.png" alt="pic"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Python中的解包符号*是要配合列表使用的，此外也可以在print里直接使用。&lt;/p&gt;
+        &lt;p&gt;Python中的解包符号是要配合列表使用的，此外也可以在print里直接使用。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/2020/12/23/python%E8%A7%A3%E5%8C%85/2020-12-22_15-24.png&quot; alt=&quot;pic&quot;&gt;&lt;/p&gt;
 
       
