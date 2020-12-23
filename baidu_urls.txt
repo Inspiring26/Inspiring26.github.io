@@ -1,3 +1,7 @@
+http://weehaa.top/2020/12/23/python%E8%A7%A3%E5%8C%85/
+http://weehaa.top/2020/12/23/python%E5%AD%97%E5%85%B8%E5%90%88%E5%B9%B6/
+http://weehaa.top/2020/12/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E9%80%9F%E5%BA%A6%E5%BE%88%E6%85%A2/
+http://weehaa.top/2020/12/23/pytorch%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/
 http://weehaa.top/2020/12/16/Ubuntu%E9%87%8D%E5%90%AF%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95/
 http://weehaa.top/2020/12/16/torch-nn%E7%9A%84%E6%96%B9%E6%B3%95%E6%8E%A5%E6%94%B6cuda%E4%B8%8A%E7%9A%84%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98/
 http://weehaa.top/2020/12/16/network-DISABLED-description-Wireless-interface/
