@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2020-12-23T09:55:48.027Z</updated>
+  <updated>2020-12-24T02:56:37.567Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell快速计算加减乘除</title>
+    <link href="http://weehaa.top/2020/12/24/shell%E5%BF%AB%E9%80%9F%E8%AE%A1%E7%AE%97%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/"/>
+    <id>http://weehaa.top/2020/12/24/shell快速计算加减乘除/</id>
+    <published>2020-12-24T02:54:41.000Z</published>
+    <updated>2020-12-24T02:56:37.567Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h@h-B360M-D2VX-SI:~&#x2F;Github&#x2F;blog&#x2F;source&#x2F;_posts$ &#96;expr 1 + 1&#96;</span><br><span class="line">bash: 2: command not found</span><br><span class="line">h@h-B360M-D2VX-SI:~&#x2F;Github&#x2F;blog&#x2F;source&#x2F;_posts$ $((1+1))</span><br><span class="line">bash: 2: command not found</span><br></pre></td></tr></table></figure><a id="more"></a><p>需要注意的是，使用第一种方法符号和数字间必须要加空格。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;h@h-B360M-D2VX-SI:~&amp;#x2F;Github&amp;#x2F;blog&amp;#x2F;source&amp;#x2F;_posts$ &amp;#96;expr 1 + 1&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bash: 2: command not found&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;h@h-B360M-D2VX-SI:~&amp;#x2F;Github&amp;#x2F;blog&amp;#x2F;source&amp;#x2F;_posts$ $((1+1))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bash: 2: command not found&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="shell" scheme="http://weehaa.top/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>在matplotlib中一次性添加中文字体的方式</title>
@@ -479,29 +502,6 @@
       
         &lt;h3 id=&quot;查看是bash还是zsh等&quot;&gt;&lt;a href=&quot;#查看是bash还是zsh等&quot; class=&quot;headerlink&quot; title=&quot;查看是bash还是zsh等&quot;&gt;&lt;/a&gt;查看是bash还是zsh等&lt;/h3&gt;&lt;figure class=&quot;highlight plai
       
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux卸载oh_my_zsh</title>
-    <link href="http://weehaa.top/2020/11/19/linux%E5%8D%B8%E8%BD%BDoh-my-zsh/"/>
-    <id>http://weehaa.top/2020/11/19/linux卸载oh-my-zsh/</id>
-    <published>2020-11-19T06:33:16.000Z</published>
-    <updated>2020-11-19T06:34:56.633Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ uninstall_oh_my_zsh</span><br><span class="line">Are you sure you want to remove Oh My Zsh? [y&#x2F;N] y</span><br><span class="line">Removing ~&#x2F;.oh-my-zsh</span><br><span class="line">Looking for original zsh config...</span><br><span class="line">Switching your shell back to &#39;&#x2F;bin&#x2F;bash&#39;:</span><br><span class="line">Password: </span><br><span class="line">Thanks for trying out Oh My Zsh. It&#39;s been uninstalled.</span><br><span class="line">Don&#39;t forget to restart your terminal!</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="切换or-not"><a href="#切换or-not" class="headerlink" title="切换or not"></a>切换or not</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chsh -s &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;卸载&quot;&gt;&lt;a href=&quot;#卸载&quot; class=&quot;headerlink&quot; title=&quot;卸载&quot;&gt;&lt;/a&gt;卸载&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;➜  ~ uninstall_oh_my_zsh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Are you sure you want to remove Oh My Zsh? [y&amp;#x2F;N] y&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Removing ~&amp;#x2F;.oh-my-zsh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Looking for original zsh config...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Switching your shell back to &amp;#39;&amp;#x2F;bin&amp;#x2F;bash&amp;#39;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Password: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Thanks for trying out Oh My Zsh. It&amp;#39;s been uninstalled.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Don&amp;#39;t forget to restart your terminal!&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
