@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[pyecharts展示请求量]]></title>
     <url>%2F2020%2F12%2F24%2Fpyecharts%E5%B1%95%E7%A4%BA%E8%AF%B7%E6%B1%82%E9%87%8F%2F</url>
-    <content type="text"><![CDATA[效果图代码，直接从jupyter notebook导出为md格式123456import osimport pandas as pdimport numpy as npimport pyecharts.options as optsfrom pyecharts.charts import Line# https://gallery.pyecharts.org/#/Line/basic_area_chart 12# 请求量os.system("find . -name 'stat20201223.rec'|xargs grep '\\.'|cut -d '.' -f4,4|cut -c 16-19|sort|uniq -c|sort -n &gt; tmpres1.txt") 0 12# 点击量# os.system("find . -name 'stat20201223.rec'|xargs grep 'c$'|cut -d '.' -f4,4|cut -c 16-19|sort|uniq -c|sort -n &gt; tmpres1.txt") 1234567891011121314os.system("tail -n 1440 tmpres1.txt &gt; tmpres2.txt")xdata,ydata=[],[]with open("tmpres2.txt","r") as f: tmp=f.readline().split(" ") while len(tmp)&gt;1: ydata.append(int(tmp[-2])) xdata.append(int(tmp[-1].replace("\n",""))) tmp=f.readline().split(" ") df = pd.DataFrame(np.array([xdata,ydata]).T)df=df.sort_values(by=[0,1],ascending=True,ignore_index=True)df[0]=df[0].astype(str)xd=df[0].tolist()yd=df[1].tolist() 12345678910111213141516c = ( Line(init_opts=opts.InitOpts(width="1000px")) .add_xaxis(xd) .add_yaxis("20201223 每分钟请求量", yd, areastyle_opts=opts.AreaStyleOpts(opacity=0.5)) .set_global_opts( tooltip_opts=opts.TooltipOpts(is_show=False), yaxis_opts=opts.AxisOpts( type_="value", axistick_opts=opts.AxisTickOpts(is_show=True), splitline_opts=opts.SplitLineOpts(is_show=True), ), xaxis_opts=opts.AxisOpts(type_="category", boundary_gap=False), )# .set_global_opts(title_opts=opts.TitleOpts(title="Line-面积图")) .render("line_area_style.html")) 总结以后可以更加方便的导出jupyter notebook代码。]]></content>
+    <content type="text"><![CDATA[效果图代码，直接从jupyter notebook导出为md格式123456import osimport pandas as pdimport numpy as npimport pyecharts.options as optsfrom pyecharts.charts import Line# https://gallery.pyecharts.org/#/Line/basic_area_chart 12# 请求量os.system("find . -name 'stat20201223.rec'|xargs grep '\\.'|cut -d '.' -f4,4|cut -c 16-19|sort|uniq -c|sort -n &gt; tmpres1.txt") 0 12# 点击量# os.system("find . -name 'stat20201223.rec'|xargs grep 'c$'|cut -d '.' -f4,4|cut -c 16-19|sort|uniq -c|sort -n &gt; tmpres1.txt") 1234567891011121314os.system("tail -n 1440 tmpres1.txt &gt; tmpres2.txt")xdata,ydata=[],[]with open("tmpres2.txt","r") as f: tmp=f.readline().split(" ") while len(tmp)&gt;1: ydata.append(int(tmp[-2])) xdata.append(int(tmp[-1].replace("\n",""))) tmp=f.readline().split(" ") df = pd.DataFrame(np.array([xdata,ydata]).T)df=df.sort_values(by=[0,1],ascending=True,ignore_index=True)df[0]=df[0].astype(str)xd=df[0].tolist()yd=df[1].tolist() 1234567891011121314151617c = ( Line(init_opts=opts.InitOpts(width="1000px")) .add_xaxis(xd) .add_yaxis("20201223 每分钟请求量", yd, areastyle_opts=opts.AreaStyleOpts(opacity=0.5)) .set_global_opts( tooltip_opts=opts.TooltipOpts(is_show=False), yaxis_opts=opts.AxisOpts( type_="value", axistick_opts=opts.AxisTickOpts(is_show=True), splitline_opts=opts.SplitLineOpts(is_show=True), ), xaxis_opts=opts.AxisOpts(type_="category", boundary_gap=False), )# .set_global_opts(title_opts=opts.TitleOpts(title="Line-面积图")) .render("line_area_style.html"))c 总结以后可以更加方便的导出jupyter notebook代码。]]></content>
       <tags>
         <tag>方法</tag>
         <tag>python</tag>
@@ -297,8 +297,8 @@
     <url>%2F2020%2F08%2F31%2Fpython%E7%94%9F%E6%88%90%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[1. 并列for循环其实是嵌套for循环12&gt;&gt;&gt; [m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;][&#39;AX&#39;, &#39;AY&#39;, &#39;AZ&#39;, &#39;BX&#39;, &#39;BY&#39;, &#39;BZ&#39;, &#39;CX&#39;, &#39;CY&#39;, &#39;CZ&#39;] 2.if…elseif可以在for语句之前，也可以在for语句之后在for语句之后，if是个筛选条件，不能加else。在for语句之前的部分是表达式，形如11 if 2％2&#x3D;&#x3D;0 else 0本来就是一个表达式。 总结：for语句之前是表达式，之后可加判断条件，仅限if，运行顺序是for—>for后判断—>(通过判断才运行表达式)]]></content>
       <tags>
-        <tag>总结</tag>
         <tag>方法</tag>
+        <tag>总结</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -356,8 +356,8 @@
     <url>%2F2020%2F06%2F28%2F%E5%85%B3%E4%BA%8Eunity%E7%9A%84git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F</url>
     <content type="text"><![CDATA[unity版本控制，只需对Assets和ProjectSettings做git控制就可以了并且，不用担心，只包含这两个文件夹的工程也可以被unity hub添加为项目的，它会自己补上其他的。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -417,8 +417,8 @@
     <url>%2F2020%2F06%2F01%2Funity%E7%9A%84inspector%E9%9D%A2%E6%9D%BF%E5%80%BC%E4%B8%8D%E9%9A%8F%E8%84%9A%E6%9C%AC%E6%94%B9%E5%8F%98%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[unity脚本声明的一些public变量，一旦挂到游戏体上以后，在脚本修改这些值的时候，inspector面板里并不修改。你可以这么理解它的机制：你写一个脚本后你可以把它挂在多个游戏体上，你可以为每个脚本拉上当前所在的游戏体，你也可以对每个游戏体进行编号，这些都是可以直接在inspector界面拉到脚本上或写到脚本上的。unity为了实现让你随便拉游戏体的功能，在inspector面板上暴露出来的变量都是和这个游戏体绑定的，不是原来的脚本简单复制。 所以：不需要单独赋值的变量一律使用private，需要被其他脚本引用的变量，为它创建一个方法，直接返回该变量。即：除非单独一个脚本在多出使用，且分别赋值给变量，否则一律使用声明为私有变量。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -436,8 +436,8 @@
     <url>%2F2020%2F05%2F28%2Funity%E5%AE%89%E5%8D%93%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D%2F</url>
     <content type="text"><![CDATA[这里以u2d为例：在开发的时候选一个16/9的分辨率，比如667/375。在画布中设置好分辨率375/667。在Game窗口可以选择多种分辨率比例进行测试。有些分辨率是2:1的，这时候在不改变画布大小的情况下，将背景图片拉伸或放一张更长的图片就可以实现对2:1分辨率的简单适配。比如可以将处于底层的背景图片的宽/高修改为375/867，这样就可以实现对页面的简单适配，解决屏幕上下部分出现空白的问题。 当然还可以更好的适配，比如先获取设备的分辨率，然后按比例确定上下端元素的位置，比如一些位移和释放技能的位置。代码：123# 在默认using UnityEngine;的情况下Screen.heightScreen.width]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
         <tag>Android</tag>
       </tags>
   </entry>
@@ -455,8 +455,8 @@
     <url>%2F2020%2F05%2F21%2Funity%E6%97%A0%E6%B3%95%E8%B0%83%E6%95%B4%E6%B8%B8%E6%88%8F%E4%BD%93%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0%2F</url>
     <content type="text"><![CDATA[在测试粒子系统的时候遇到无法调整游戏体位置的情况，即使将位置的数值更改了，游戏体还在原来的位置。 排查后发现是因为把其父游戏体的规模缩小为0了，位置是修改了但是在Scene窗口是看不出来变化的。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -464,8 +464,8 @@
     <url>%2F2020%2F05%2F21%2Funity%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88%2F</url>
     <content type="text"><![CDATA[控制方向默认是发散的，把Rect Transform里的Rotation为（90，0，0），方向就是朝下。控制喷射粒子的长度逐渐调整粒子系统主面版的Start Lifetime数值，可以看到火焰长度的变化 控制粒子体积变化激活Size over Lifetime，点击面板上方打开编辑器，即可调整体积百分比随时间变化 调整粒子的频率或者说间隔激活Emission，调整单位时间生成粒子的数量RateOverTime即可]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -473,8 +473,8 @@
     <url>%2F2020%2F05%2F20%2Funity%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F%E5%8F%98%E5%8C%96%E5%90%8E%E6%95%B4%E4%BD%93%E5%81%8F%E7%A7%BB%E7%9A%84%E5%8E%9F%E6%9D%A5%E4%BD%8D%E7%BD%AE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[感觉上是锚点相关的内容。实际上可以通过子游戏体轻松实现。在子游戏体里微调位置，同时父游戏体还是原来的逻辑，不用修改脚本里的对应内容。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -483,8 +483,8 @@
     <content type="text"><![CDATA[ubuntu安装node参考连接：https://github.com/nodesource/distributions/blob/master/README.md指令：1234567# Using Ubuntucurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -sudo apt-get install -y nodejs# Using Debian, as rootcurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -apt-get install -y nodejs 查看版本12node -vnpm -v 安装hexo1npm install -g hexo-cli 查看hexo自带功能1hexo 可能会没有server参数 新建文章12hexo n alitsetvim source&#x2F;_posts&#x2F;alitest.md 逐步部署查找问题123hexo cleanhexo generatehexo deploy 处理ERROR Deployer not found: git 错误1npm install --save hexo-deployer-git 配置git邮箱和用户名信息12git config --global user.email 1xxxx@qq.comgit config --global user.name wxxx 尝试部署1sd deploy.sh 查看hexo功能此时可能出现server参数了1hexo 启动服务到默认端口或指定端口123hexo server或hexo server -p 80 更多hexo信息参考：https://hexo.io/zh-cn/docs/server.html 后台运行1setsid hexo server -p 80]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>hexo</tag>
         <tag>ubuntu</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -492,8 +492,8 @@
     <url>%2F2020%2F05%2F14%2Funity%E7%9A%84PlayerPrefs%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[以整形为例，不管是GetInt()还是SetInt(),其中的默认参数并不是如果没有这个key值将这个数值赋给它，而是返回这个数值作为替代。 网上有的文章说的，用它们的第二个参数来初始化是不对的。但是有一个方法可以初始化：先查找有没有这个key值，没有则给它赋值，有则不再赋值，这样可以达到初始化的效果。代码如下：1234&#x2F;&#x2F; 初始化if(!PlayerPrefs.HasKey(energy))&#123; PlayerPrefs.SetInt(&quot;energy&quot;, 30)&#125;]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -501,8 +501,8 @@
     <url>%2F2020%2F05%2F14%2Funity%E5%8F%91%E5%B8%83webgl%E5%92%8Candroid%E4%B8%8D%E8%83%BD%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%8E%9F%E5%9B%A0%2F</url>
     <content type="text"><![CDATA[所有的这些原因，无法进入游戏、无法打开成功/失败结束页面等主要是因为调用和litjson相关的函数了。使用这种需要引入dll的方法，一定要注意查清楚在各个平台的打包问题。所以要左多平台发布，尤其是有webgl，尽量使用unity自带的工具实现。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -510,8 +510,8 @@
     <url>%2F2020%2F05%2F14%2Funity2D%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D%2F</url>
     <content type="text"><![CDATA[假如你以375667的分辨率做的游戏，现在要适配1080\1920分辨率的机器（这个分辨率是目前比较主流的分辨率）。不用一个个元素的修改，也有一个前提，如果想图不糊，你是把1080*1920的图放在了375*667的框里，这样放大才不糊。 具体扩大分辨率的方法是：在Canvas的Canvas Scaler 里将mode选择Scale with Screen，第二行的默认分辨率写成你实际开发过程中的分辨率，本例中是375*667。然后去game窗口将比例调成16:9(9:16)或其他分辨率，就可以看到真实的显示效果。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -519,8 +519,8 @@
     <url>%2F2020%2F05%2F12%2Funity%E8%84%9A%E6%9C%AC%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E6%97%A0%E6%95%88%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[unity中修改脚本数据后经常会发现运行时并没有使用修改后的数据，尤其是数组数据等。这时需要在脚本对应的inspector里点击齿轮，选择reset，此后就会使用脚本里的数据。需要经常对比二者数据是否一致，所以较好的方法是将数据初始化在Start()函数里。例如：12345public int[] arrSong &#x3D; new int[115];Start()&#123; arrSong &#x3D; new int[115]&#123;,,,,&#125;;&#125; 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -575,8 +575,8 @@
     <url>%2F2020%2F04%2F22%2FThe-type-or-namespace-name-Text-could-not-be-found%2F</url>
     <content type="text"><![CDATA[这个问题的原因很可能是没有声明对应的namespaces，在unity中使用UI构建物体，修改或调用其自带的脚本如Text等是需要先1using UnityEngine.UI;]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -584,8 +584,8 @@
     <url>%2F2020%2F04%2F17%2Funity%E7%9A%84webgl%E6%96%87%E4%BB%B6%E5%A4%B9%E9%83%A8%E7%BD%B2%E5%88%B0Apache%E7%9A%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%2F</url>
     <content type="text"><![CDATA[在网上找了半天就没有一个把unity发布为webgl，并部署到Apache的详细方法。所以自己写一个发布为webgl在unity窗口file-&gt;build setting-&gt;选中webgl；至少选中一个场景；webgl右侧什么都不选；然后build and run； 编译结束会在本地浏览器打开网页，要保证这一步哪呢个通说明游戏没问题。 部署到Apache安装apache以ubuntu下为例：123456789101112131415161718192021222324apache2 -version &#x2F;&#x2F;验证有没有sudo apt updatesudo apt install apache2apache2 -version &#x2F;&#x2F;验证是否安装成功&#x2F;&#x2F;配置UFW防火墙sudo ufw app list&#x2F;&#x2F;包含以下信息ApacheApache FullApache SecureCUPSOpenSSHsudo ufw allow &#39;Apache&#39;&#x2F;&#x2F;验证Apache服务是否正在运行。&#x2F;&#x2F;其实我在这一项有些功能没有正常运行，但是并没影响后面webgl的运行sudo systemctl status apache2&#x2F;&#x2F;可以查看本地ip 方便复制使用hostname -I在浏览器里打开，可以看到apache的默认页面；找到www/html信息的位置；以管理员权限修改index.html文件名；以管理员权限将webgl的Build、TemplateData、index.html文件复制到/var/www/html/下1sudo cp -r .&#x2F;* &#x2F;var&#x2F;www&#x2F;html&#x2F; 打开localhost]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
         <tag>Apache</tag>
       </tags>
   </entry>
@@ -594,8 +594,8 @@
     <url>%2F2020%2F04%2F17%2Funity-c-%E6%95%B0%E7%BB%84%E8%A3%85%E5%8F%98%E9%87%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[一开始想详细写，后因全栈开发较忙，搁置了一段时间，现简单描述一下方法一使用打印功能擦看出对应的类型AudioClip、Rigidbody2D等直接用他们申明数组，多维的用下面之类的格式1public Rigidbody2D[,] R2D &#x3D; new Rigidbody2D[10,27]; 注意不能对太底层的申明，因为那就是深拷贝了，无法达到引用的目的深浅拷贝可以看这里 方法二使用object声明，之后再对数组进行转型，如下1newlsit &#x3D; (AudioClip[])someList;]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -603,8 +603,8 @@
     <url>%2F2020%2F04%2F17%2Funity2D%E6%9C%9D%E5%90%91%E7%9B%AE%E6%A0%87%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[以火箭始终朝向砖块为例123Vector3 dir &#x3D; brickList[target%10].transform.position - rocket.transform.position;float angle &#x3D; Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;rocket.transform.rotation &#x3D; Quaternion.AngleAxis(270+angle, Vector3.forward); Mathf.Atan2反正弦函数，输入两个参数：y轴长度、x轴长度如Mathf.Atan2(1,1)的值为0.7853982，约是3.14除以4。 Mathf.Rad2Deg弧度到度的转化常量，等于360/（PI*2）还有一个相反的函数Mathf.Deg2Rad Quaternion.AngleAxisQuaternion是unity中的四元数，123456&#x2F;&#x2F;transform沿y轴旋转30度 transform.rotation &#x3D; Quaternion.AngleAxis(30, Vector3.up); &#x2F;&#x2F;transform沿z轴旋转30度 transform.rotation &#x3D; Quaternion.AngleAxis(30, Vector3.forward); &#x2F;&#x2F;transform沿x轴旋转30度 transform.rotation &#x3D; Quaternion.AngleAxis(30, Vector3.left);]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -612,9 +612,9 @@
     <url>%2F2020%2F04%2F15%2Funity%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E5%8F%8A%E6%9B%BF%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%BB%84%E4%BB%B6%E4%B8%8A%E7%9A%84%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[音乐读取我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。代码：123456789101112131415private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;private object objs;private GameObject GObject;public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num]); GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; (AudioClip)objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;&#125;void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);&#125;可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下： 读取（unity风格）(主流方法）代码：1234567891011121314private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true; &#125; void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); &#125;使用1Resources.Load(路径, typeof(目标格式)) as 目标格式;形式读取。 更简洁的写法1234567891011121314151617181920private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; private AudioSource audioSource; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; audioSource.clip &#x3D; objs; audioSource.Play(); audioSource.loop &#x3D; true; &#125; void Start() &#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); Debug.Log(GObject.GetComponent&lt;AudioSource&gt;()); &#x2F;&#x2F; 查看要用变量指代的具体是什么类型 audioSource &#x3D; GObject.GetComponent&lt;AudioSource&gt;(); LoadMusic(0); &#x2F;&#x2F; 打开游戏就播放 &#125; 可以更进一步用变量替代重复的调用语句，如1GObject.GetComponent&lt;AudioSource&gt;()具体声明为什么格式，可以先打印看一下。另外开场就进行的操作，如播放音乐，可以放在Start()里。 注意需要注意的是要播放音乐，必须先把音乐组件放在某个游戏体上，不能凭空播放音乐。 图片读取读取系统自带的图像组件，必须使用1using UnityEngine.UI;否则会找不到Image。 代码：12345678910111213141516171819private Image icon;public Sprite sp1,sp2;public void ChangeThePicture()&#123; if(this.GetComponent&lt;Scrollbar&gt;().value &lt; 0.5)&#123; icon.sprite &#x3D; sp1; &#125;else&#123; icon.sprite &#x3D; sp2; &#125; &#125; &#x2F;&#x2F; Start is called before the first frame update void Start() &#123; icon &#x3D; this.GetComponent&lt;Image&gt;(); sp1 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;矩形 3943 拷贝&quot;, typeof(Sprite)) as Sprite; sp2 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;bg_kaiguan&quot;, typeof(Sprite)) as Sprite; &#125; 总结图片挂的是sprite，音乐挂的是clip，都不是检视窗口内左侧的对应名字。出于节省资源的考虑，可以把sp1、sp2这种多次使用的图片在父物体里以public方式加载，在当前脚本里调用即可，不在当前脚本加载是为了保持脚本重复利用。于是另一个结论，重复利用的脚本不加载资源。]]></content>
       <tags>
+        <tag>方法</tag>
         <tag>总结</tag>
         <tag>unity</tag>
-        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -622,8 +622,8 @@
     <url>%2F2020%2F04%2F15%2Funity%E8%84%9A%E6%9C%AC%E9%87%8C%E7%9A%84this%E5%92%8C%E8%8E%B7%E5%8F%96Scrollbar%E9%87%8C%E7%9A%84%E6%BB%91%E5%8A%A8%E5%80%BC%2F</url>
     <content type="text"><![CDATA[在脚本里使用this替代GameObject.Find(“”)，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。通过1this.GetComponent&lt;Scrollbar&gt;().value 就可以获得Scrollbar的滑动值。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -631,8 +631,8 @@
     <url>%2F2020%2F04%2F15%2Funity%E5%91%BD%E5%90%8D%E3%80%81%E6%96%87%E4%BB%B6%E5%A4%B9%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[unity的游戏体一定要好好命名，不要重名不重名是因为后续基本都是用GameObject.Find(“”)查找游戏体。查找的时候务必加上多级路径提升查找效率；多次使用要提前查找、赋值给变量；所有查找放在Start()里。 命名除了列表内容不使用数字，用能表达出意思的英文。 Assets至少应该包括Resources、Scenes、Scripts、Pictures文件夹Resources存放音视频，应分为多个文件夹，文件夹以主要游戏体命名，如2D开发中画布下的游戏体。除非有特殊的需求，一般不用过于细分。Scenes存放游戏场景，业务量不大的话建议使用一个主场景，一个测试功能的场景。Scripts存放游戏脚本，分为多个文件夹，文件夹以主要游戏体命名。Pictures存放游戏图片，分为多个文件夹，文件夹以主要游戏体命名。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>注意事项</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -640,8 +640,8 @@
     <url>%2F2020%2F04%2F14%2Funity%E5%BC%95%E7%94%A8%E6%B8%B8%E6%88%8F%E4%BD%93%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[第一种是在脚本的类里方法外public声明，挂载后拉上去，好处是可以处理未激活的游戏体，一次声明多次使用。第二种是使用1GameObject.Find(&quot;Bricks1&quot;)只要名字不重复，随时可以使用，但是每次使用都要Find效率略低，不能Find未激活的游戏体。并且要注意游戏体是否被其他程序设置为未激活了，比如你前一步程序把它的父物体设置未激活了就会导致找不到实体。 GameObject.Find() 有很多缺陷，不能引用各种未激活的游戏体，比如开始游戏要激活某个游戏体就不能用它。只要是经历过未激活状态的就不能再用它激活。不想大量提前声明，使用GameObject.Find()而又不导致无法引用错误的方法是，将2D、3D物体的scale分别变为（0，0，1）和（0，0，0）。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -649,8 +649,8 @@
     <url>%2F2020%2F04%2F13%2Funity%E7%9A%84GameObject%2F</url>
     <content type="text"><![CDATA[1GameObject.Find(&quot;Bricks1&quot;).GetComponent&lt;MakeBricksMove&gt;().enabled&#x3D;true; 可以调用很多游戏体，但是不能调用没激活的游戏体。要调用没预先没激活的游戏体，需要用public声明引用。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -658,8 +658,8 @@
     <url>%2F2020%2F04%2F13%2Funity%E7%9A%84Image%E9%80%8F%E6%98%8E%E5%BA%A6%2F</url>
     <content type="text"><![CDATA[unity UI的Image，如果设置为透明只需在颜色里调整A值就可以了。A值代表的是不透明度，越大越不透明。但是当值为0和1或255和254时是很不同的，代表了一种开关。要使背景全透，就要设置为1，不能设置为0。除此外，可以加上不同的颜色形成不同颜色的遮罩。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -667,8 +667,8 @@
     <url>%2F2020%2F04%2F13%2Funity%E8%AE%BE%E7%BD%AE%E6%B8%B8%E6%88%8F%E6%9A%82%E5%81%9C%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF%2F</url>
     <content type="text"><![CDATA[添加一个全屏Image将颜色修改为黑色，如090919将A值调到200，代表不透明程度这样就建立了一个继续显示游戏内容的暂停界面]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -676,8 +676,8 @@
     <url>%2F2020%2F04%2F08%2Funity%E5%88%9B%E5%BB%BA%E6%BB%91%E5%8A%A8%E6%8B%89%E8%BF%91%E7%9A%84%E9%80%89%E5%85%B3%E7%95%8C%E9%9D%A2%2F</url>
     <content type="text"><![CDATA[通过修改要显示的关卡图片的大小和位置，就能实现一种类似初代iphone滑动选择专辑的界面。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -685,8 +685,8 @@
     <url>%2F2020%2F04%2F08%2Funity%E5%88%9B%E5%BB%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
     <content type="text"><![CDATA[在遮挡图片同级创建一个scrollbar，调整他的位置及滑动方向，一般选第三个bottom to top，然后在遮蔽图片的scroll rect组件中有一个vertical Scrollbar区域来添加竖向滑动。 结构：— 背景图片— — 遮蔽图片— — — 要显示的内容— — Scrollbar]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -694,8 +694,8 @@
     <url>%2F2020%2F04%2F03%2Funity%E5%88%87%E6%8D%A2%E5%9C%BA%E6%99%AF%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[目前了解到的切换场景、页面的方法是创建多个场景进行跳转创建两个空场景n1、n2同时加载n1、n2，在file-&gt;build setting里添加两个场景，使编号分别为0、1，关闭设置窗口。单独打开n1，让n2不加载或者移除n2 在层级窗口，创建UI-&gt;Button 在项目窗口创建c sharp文件，命名为Jump，如下图编辑此文件。 将Jump拉到Canvas的检视窗口，为什么要拉到这里，是因为下一步添加脚本不能直接拉C sharp文件，需要拉一个游戏体。这一步可以理解为安置，下一步理解为引用。 选中Button游戏体，在检视窗口的button脚本下按加号，将Canvas游戏体拉到runtime only下，在runtime only右选择Jump.OnLoginButtonClick 加载n2，卸载n1，创建Image，拉一张图片到检视窗口的下图位置，图片要先处理为精灵，调整长宽。 保存场景，加载n1，卸载n2，paly，成功。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -703,8 +703,8 @@
     <url>%2F2020%2F04%2F03%2Funity%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%EF%BC%8C%E6%96%B9%E6%B3%95%E4%BA%8C%2F</url>
     <content type="text"><![CDATA[首先在画布游戏体里创建一个rawImage。解释一下：为什么要在画布游戏体里创建？因为画可以理解成一个容器，其他ui元素都填充到该容器中。如果你直接创建rawImage，系统会自动创建一个canvas，并把rawImage放在canvas下。当然你也可以先船舰canvas，再选中它创建rawImage，效果是一样的。 另外，你加到canvas的组件并不会直接显示，而是在rawImage中设置的窗口里显示。你把video palyer挂到canvas或rawImage上都可以，但显示窗口由rawImage决定。 「只有放在画布下的子物体才参与ui的渲染。」 在画布中将宽、高调整为500、500，在Raw Image（script）里将新建的材质拉进去。 材质随意新建一个就可以。 将Video player组件添加到canvas或rawImage，感觉添加到后者更合理，将视频和材质都拉到对应的位置，渲染模式设置为rander texture。 播放即可看到效果，视频、声音都有。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -712,9 +712,9 @@
     <url>%2F2020%2F04%2F03%2Fubuntu%E4%B8%8B%E5%BE%80unity%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[直接添加mp4等文件失败的原因是unity需要使用quicktime player作为视频的播放器。mac自带，windows可以安装，linux不好处理。 解决方法用ffmpeg将视频转换成unity自身支持的ogv格式。指令：1ffmpeg -i video.mp4 vode.ogv再次导入即可成功。]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -722,8 +722,8 @@
     <url>%2F2020%2F04%2F03%2Funity%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%2F</url>
     <content type="text"><![CDATA[1.在层级窗口创建空白游戏体2.游戏体的检视窗口添加video player组件3.video player 组件里源选择“video clip”，视频拉如下面的位置，渲染模式选择“camera far plane”，把层级窗口的主摄像机拉到下面位置。 4.播放，即可看到加入的视频]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>方法</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -784,8 +784,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1039,8 +1039,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1496,9 +1496,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
