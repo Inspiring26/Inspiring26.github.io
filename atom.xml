@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2020-12-24T02:56:37.567Z</updated>
+  <updated>2020-12-24T07:06:37.335Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pyecharts展示请求量</title>
+    <link href="http://weehaa.top/2020/12/24/pyecharts%E5%B1%95%E7%A4%BA%E8%AF%B7%E6%B1%82%E9%87%8F/"/>
+    <id>http://weehaa.top/2020/12/24/pyecharts展示请求量/</id>
+    <published>2020-12-24T07:01:36.000Z</published>
+    <updated>2020-12-24T07:06:37.335Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="/2020/12/24/pyecharts%E5%B1%95%E7%A4%BA%E8%AF%B7%E6%B1%82%E9%87%8F/2020-12-24_14-58.png" alt></p><h3 id="代码，直接从jupyter-notebook导出为md格式"><a href="#代码，直接从jupyter-notebook导出为md格式" class="headerlink" title="代码，直接从jupyter notebook导出为md格式"></a>代码，直接从jupyter notebook导出为md格式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pyecharts.options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Line</span><br><span class="line"><span class="comment"># https://gallery.pyecharts.org/#/Line/basic_area_chart</span></span><br></pre></td></tr></table></figure><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 请求量</span></span><br><span class="line">os.system(<span class="string">"find . -name 'stat20201223.rec'|xargs grep '\\.'|cut -d '.' -f4,4|cut -c 16-19|sort|uniq -c|sort -n &gt; tmpres1.txt"</span>)</span><br></pre></td></tr></table></figure><pre><code>0</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 点击量</span></span><br><span class="line"><span class="comment"># os.system("find . -name 'stat20201223.rec'|xargs grep 'c$'|cut -d '.' -f4,4|cut -c 16-19|sort|uniq -c|sort -n &gt; tmpres1.txt")</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">os.system(<span class="string">"tail -n 1440 tmpres1.txt &gt; tmpres2.txt"</span>)</span><br><span class="line">xdata,ydata=[],[]</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"tmpres2.txt"</span>,<span class="string">"r"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    tmp=f.readline().split(<span class="string">" "</span>)</span><br><span class="line">    <span class="keyword">while</span> len(tmp)&gt;<span class="number">1</span>:</span><br><span class="line">        ydata.append(int(tmp[<span class="number">-2</span>]))</span><br><span class="line">        xdata.append(int(tmp[<span class="number">-1</span>].replace(<span class="string">"\n"</span>,<span class="string">""</span>)))</span><br><span class="line">        tmp=f.readline().split(<span class="string">" "</span>)</span><br><span class="line">    </span><br><span class="line">df = pd.DataFrame(np.array([xdata,ydata]).T)</span><br><span class="line">df=df.sort_values(by=[<span class="number">0</span>,<span class="number">1</span>],ascending=<span class="literal">True</span>,ignore_index=<span class="literal">True</span>)</span><br><span class="line">df[<span class="number">0</span>]=df[<span class="number">0</span>].astype(str)</span><br><span class="line">xd=df[<span class="number">0</span>].tolist()</span><br><span class="line">yd=df[<span class="number">1</span>].tolist()</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">c = (</span><br><span class="line">    Line(init_opts=opts.InitOpts(width=<span class="string">"1000px"</span>))</span><br><span class="line">    .add_xaxis(xd)</span><br><span class="line">    .add_yaxis(<span class="string">"20201223 每分钟请求量"</span>, yd, areastyle_opts=opts.AreaStyleOpts(opacity=<span class="number">0.5</span>))</span><br><span class="line">    .set_global_opts(</span><br><span class="line">        tooltip_opts=opts.TooltipOpts(is_show=<span class="literal">False</span>),</span><br><span class="line">        yaxis_opts=opts.AxisOpts(</span><br><span class="line">            type_=<span class="string">"value"</span>,</span><br><span class="line">            axistick_opts=opts.AxisTickOpts(is_show=<span class="literal">True</span>),</span><br><span class="line">            splitline_opts=opts.SplitLineOpts(is_show=<span class="literal">True</span>),</span><br><span class="line">        ),</span><br><span class="line">        xaxis_opts=opts.AxisOpts(type_=<span class="string">"category"</span>, boundary_gap=<span class="literal">False</span>),</span><br><span class="line">    )</span><br><span class="line"><span class="comment">#     .set_global_opts(title_opts=opts.TitleOpts(title="Line-面积图"))</span></span><br><span class="line">    .render(<span class="string">"line_area_style.html"</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以后可以更加方便的导出jupyter notebook代码。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;效果图&quot;&gt;&lt;a href=&quot;#效果图&quot; class=&quot;headerlink&quot; title=&quot;效果图&quot;&gt;&lt;/a&gt;效果图&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2020/12/24/pyecharts%E5%B1%95%E7%A4%BA%E8%AF%B7%E6%B1%82%E9%87%8F/2020-12-24_14-58.png&quot; alt&gt;&lt;/p&gt;&lt;h3 id=&quot;代码，直接从jupyter-notebook导出为md格式&quot;&gt;&lt;a href=&quot;#代码，直接从jupyter-notebook导出为md格式&quot; class=&quot;headerlink&quot; title=&quot;代码，直接从jupyter notebook导出为md格式&quot;&gt;&lt;/a&gt;代码，直接从jupyter notebook导出为md格式&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; pd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; pyecharts.options &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; opts&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyecharts.charts &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; Line&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# https://gallery.pyecharts.org/#/Line/basic_area_chart&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="python" scheme="http://weehaa.top/tags/python/"/>
+    
+      <category term="echarts" scheme="http://weehaa.top/tags/echarts/"/>
+    
+  </entry>
   
   <entry>
     <title>shell快速计算加减乘除</title>
@@ -475,32 +500,6 @@
       
       
         &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
-      
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>查看当前使用的是哪个shell</title>
-    <link href="http://weehaa.top/2020/11/19/%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%AAshell/"/>
-    <id>http://weehaa.top/2020/11/19/查看当前使用的是哪个shell/</id>
-    <published>2020-11-19T09:08:34.000Z</published>
-    <updated>2020-11-19T09:14:49.633Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="查看是bash还是zsh等"><a href="#查看是bash还是zsh等" class="headerlink" title="查看是bash还是zsh等"></a>查看是bash还是zsh等</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $0</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;查看是bash还是zsh等&quot;&gt;&lt;a href=&quot;#查看是bash还是zsh等&quot; class=&quot;headerlink&quot; title=&quot;查看是bash还是zsh等&quot;&gt;&lt;/a&gt;查看是bash还是zsh等&lt;/h3&gt;&lt;figure class=&quot;highlight plai
       
     
     </summary>
