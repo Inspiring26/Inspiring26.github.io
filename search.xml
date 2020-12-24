@@ -566,8 +566,8 @@
     <url>%2F2020%2F04%2F23%2Funity%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3%2F</url>
     <content type="text"><![CDATA[可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。少了错综复杂的引用，当然更清晰，更易于管理。集中管理的好处还是很多的。可以集中的有，数据、帧操作等。 在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开1234&#x2F;&#x2F; 判断可点击区域内是否miss&#x2F;&#x2F; 这个区域可以比正常的状态判定区域稍微大一些，给点晚了的miss一些时间段&#x2F;&#x2F; 第一步，判断是否在可点按区域。方法是起点一个数组，终点一个数组，如果进入了第一个没进入第二个就是在区域内&#x2F;&#x2F; 第二步，判断是否点击。方法是起点进入时给一个未点击标识，到达终点时检查一下是否点了 12345678public void CloseHearts(int n)&#123;&#x2F;&#x2F;传入丢失星星数 &#x2F;&#x2F; 第一步，将所有heart按顺序装入数组 &#x2F;&#x2F; 第二步，从最后一个开始倒序关闭 for(int i&#x3D;2;i&gt;2-n;i--)&#123; heartList[i].transform.localScale &#x3D; new Vector3(0f,0f,1f); &#125;&#125; 游戏体的Find、实例化都放在Start()里，这个不用多说尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>总结</tag>
         <tag>unity</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -613,8 +613,8 @@
     <content type="text"><![CDATA[音乐读取我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。代码：123456789101112131415private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;private object objs;private GameObject GObject;public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num]); GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; (AudioClip)objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;&#125;void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);&#125;可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下： 读取（unity风格）(主流方法）代码：1234567891011121314private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true; &#125; void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); &#125;使用1Resources.Load(路径, typeof(目标格式)) as 目标格式;形式读取。 更简洁的写法1234567891011121314151617181920private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; private AudioSource audioSource; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; audioSource.clip &#x3D; objs; audioSource.Play(); audioSource.loop &#x3D; true; &#125; void Start() &#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); Debug.Log(GObject.GetComponent&lt;AudioSource&gt;()); &#x2F;&#x2F; 查看要用变量指代的具体是什么类型 audioSource &#x3D; GObject.GetComponent&lt;AudioSource&gt;(); LoadMusic(0); &#x2F;&#x2F; 打开游戏就播放 &#125; 可以更进一步用变量替代重复的调用语句，如1GObject.GetComponent&lt;AudioSource&gt;()具体声明为什么格式，可以先打印看一下。另外开场就进行的操作，如播放音乐，可以放在Start()里。 注意需要注意的是要播放音乐，必须先把音乐组件放在某个游戏体上，不能凭空播放音乐。 图片读取读取系统自带的图像组件，必须使用1using UnityEngine.UI;否则会找不到Image。 代码：12345678910111213141516171819private Image icon;public Sprite sp1,sp2;public void ChangeThePicture()&#123; if(this.GetComponent&lt;Scrollbar&gt;().value &lt; 0.5)&#123; icon.sprite &#x3D; sp1; &#125;else&#123; icon.sprite &#x3D; sp2; &#125; &#125; &#x2F;&#x2F; Start is called before the first frame update void Start() &#123; icon &#x3D; this.GetComponent&lt;Image&gt;(); sp1 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;矩形 3943 拷贝&quot;, typeof(Sprite)) as Sprite; sp2 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;bg_kaiguan&quot;, typeof(Sprite)) as Sprite; &#125; 总结图片挂的是sprite，音乐挂的是clip，都不是检视窗口内左侧的对应名字。出于节省资源的考虑，可以把sp1、sp2这种多次使用的图片在父物体里以public方式加载，在当前脚本里调用即可，不在当前脚本加载是为了保持脚本重复利用。于是另一个结论，重复利用的脚本不加载资源。]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>总结</tag>
         <tag>unity</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -631,8 +631,8 @@
     <url>%2F2020%2F04%2F15%2Funity%E5%91%BD%E5%90%8D%E3%80%81%E6%96%87%E4%BB%B6%E5%A4%B9%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[unity的游戏体一定要好好命名，不要重名不重名是因为后续基本都是用GameObject.Find(“”)查找游戏体。查找的时候务必加上多级路径提升查找效率；多次使用要提前查找、赋值给变量；所有查找放在Start()里。 命名除了列表内容不使用数字，用能表达出意思的英文。 Assets至少应该包括Resources、Scenes、Scripts、Pictures文件夹Resources存放音视频，应分为多个文件夹，文件夹以主要游戏体命名，如2D开发中画布下的游戏体。除非有特殊的需求，一般不用过于细分。Scenes存放游戏场景，业务量不大的话建议使用一个主场景，一个测试功能的场景。Scripts存放游戏脚本，分为多个文件夹，文件夹以主要游戏体命名。Pictures存放游戏图片，分为多个文件夹，文件夹以主要游戏体命名。]]></content>
       <tags>
-        <tag>注意事项</tag>
         <tag>unity</tag>
+        <tag>注意事项</tag>
       </tags>
   </entry>
   <entry>
@@ -784,8 +784,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -1039,8 +1039,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -1496,9 +1496,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
+        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
