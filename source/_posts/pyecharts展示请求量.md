@@ -72,6 +72,7 @@ c = (
 #     .set_global_opts(title_opts=opts.TitleOpts(title="Line-面积图"))
     .render("line_area_style.html")
 )
+c
 ```
 
 ### 总结
