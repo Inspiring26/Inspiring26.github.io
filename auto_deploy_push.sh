@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "布丰问题的思考"
+git commit -m "记录部分C代码"
 git push
