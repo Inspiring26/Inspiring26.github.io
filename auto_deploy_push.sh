@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "添加了备案信息，让github page重新加载一次"
+git commit -m "布丰问题的思考"
 git push

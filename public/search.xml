@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于布丰问题的思考]]></title>
+    <url>%2F2020%2F12%2F26%2F%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83%2F</url>
+    <content type="text"><![CDATA[结论只要能建立起大小关系的表达，比如临界关系，哪怕二者是不同范畴的内容，比如距离和角度，我们也可以在坐标轴上得到他们关系的表示，并计算其他方面的关系。关键点是不同范畴内容照样建立坐标系，会得出一些特别的结果，比如以为算不出的结果。 书籍原图]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>思考</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[pyecharts展示请求量]]></title>
     <url>%2F2020%2F12%2F24%2Fpyecharts%E5%B1%95%E7%A4%BA%E8%AF%B7%E6%B1%82%E9%87%8F%2F</url>
     <content type="text"><![CDATA[效果图代码，直接从jupyter notebook导出为md格式123456import osimport pandas as pdimport numpy as npimport pyecharts.options as optsfrom pyecharts.charts import Line# https://gallery.pyecharts.org/#/Line/basic_area_chart 12# 请求量os.system("find . -name 'stat20201223.rec'|xargs grep '\\.'|cut -d '.' -f4,4|cut -c 16-19|sort|uniq -c|sort -n &gt; tmpres1.txt") 0 12# 点击量# os.system("find . -name 'stat20201223.rec'|xargs grep 'c$'|cut -d '.' -f4,4|cut -c 16-19|sort|uniq -c|sort -n &gt; tmpres1.txt") 1234567891011121314os.system("tail -n 1440 tmpres1.txt &gt; tmpres2.txt")xdata,ydata=[],[]with open("tmpres2.txt","r") as f: tmp=f.readline().split(" ") while len(tmp)&gt;1: ydata.append(int(tmp[-2])) xdata.append(int(tmp[-1].replace("\n",""))) tmp=f.readline().split(" ") df = pd.DataFrame(np.array([xdata,ydata]).T)df=df.sort_values(by=[0,1],ascending=True,ignore_index=True)df[0]=df[0].astype(str)xd=df[0].tolist()yd=df[1].tolist() 1234567891011121314151617c = ( Line(init_opts=opts.InitOpts(width="1000px")) .add_xaxis(xd) .add_yaxis("20201223 每分钟请求量", yd, areastyle_opts=opts.AreaStyleOpts(opacity=0.5)) .set_global_opts( tooltip_opts=opts.TooltipOpts(is_show=False), yaxis_opts=opts.AxisOpts( type_="value", axistick_opts=opts.AxisTickOpts(is_show=True), splitline_opts=opts.SplitLineOpts(is_show=True), ), xaxis_opts=opts.AxisOpts(type_="category", boundary_gap=False), )# .set_global_opts(title_opts=opts.TitleOpts(title="Line-面积图")) .render("line_area_style.html"))c 总结以后可以更加方便的导出jupyter notebook代码。]]></content>
@@ -566,8 +575,8 @@
     <url>%2F2020%2F04%2F23%2Funity%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3%2F</url>
     <content type="text"><![CDATA[可以新建一个游戏体上面存储所有要操作的数据，如果游戏场景比较多，可以在接近根结点的每个大游戏体上简历几个脚本，分别存储不同的信息。信息集中管理逻辑更清晰，在其他脚本中的引用也更少。少了错综复杂的引用，当然更清晰，更易于管理。集中管理的好处还是很多的。可以集中的有，数据、帧操作等。 在实现一个逻辑时可以注释列出要做的各个步骤，这样非常易于逻辑的展开1234&#x2F;&#x2F; 判断可点击区域内是否miss&#x2F;&#x2F; 这个区域可以比正常的状态判定区域稍微大一些，给点晚了的miss一些时间段&#x2F;&#x2F; 第一步，判断是否在可点按区域。方法是起点一个数组，终点一个数组，如果进入了第一个没进入第二个就是在区域内&#x2F;&#x2F; 第二步，判断是否点击。方法是起点进入时给一个未点击标识，到达终点时检查一下是否点了 12345678public void CloseHearts(int n)&#123;&#x2F;&#x2F;传入丢失星星数 &#x2F;&#x2F; 第一步，将所有heart按顺序装入数组 &#x2F;&#x2F; 第二步，从最后一个开始倒序关闭 for(int i&#x3D;2;i&gt;2-n;i--)&#123; heartList[i].transform.localScale &#x3D; new Vector3(0f,0f,1f); &#125;&#125; 游戏体的Find、实例化都放在Start()里，这个不用多说尽量一数组的方式进行操作，将问题转为数组，转化为纯粹的数学问题，条理更清晰，运行效率也更高。老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>unity</tag>
         <tag>总结</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
@@ -613,8 +622,8 @@
     <content type="text"><![CDATA[音乐读取我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。代码：123456789101112131415private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;private object objs;private GameObject GObject;public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num]); GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; (AudioClip)objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;&#125;void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);&#125;可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下： 读取（unity风格）(主流方法）代码：1234567891011121314private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true; &#125; void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); &#125;使用1Resources.Load(路径, typeof(目标格式)) as 目标格式;形式读取。 更简洁的写法1234567891011121314151617181920private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; private AudioSource audioSource; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; audioSource.clip &#x3D; objs; audioSource.Play(); audioSource.loop &#x3D; true; &#125; void Start() &#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); Debug.Log(GObject.GetComponent&lt;AudioSource&gt;()); &#x2F;&#x2F; 查看要用变量指代的具体是什么类型 audioSource &#x3D; GObject.GetComponent&lt;AudioSource&gt;(); LoadMusic(0); &#x2F;&#x2F; 打开游戏就播放 &#125; 可以更进一步用变量替代重复的调用语句，如1GObject.GetComponent&lt;AudioSource&gt;()具体声明为什么格式，可以先打印看一下。另外开场就进行的操作，如播放音乐，可以放在Start()里。 注意需要注意的是要播放音乐，必须先把音乐组件放在某个游戏体上，不能凭空播放音乐。 图片读取读取系统自带的图像组件，必须使用1using UnityEngine.UI;否则会找不到Image。 代码：12345678910111213141516171819private Image icon;public Sprite sp1,sp2;public void ChangeThePicture()&#123; if(this.GetComponent&lt;Scrollbar&gt;().value &lt; 0.5)&#123; icon.sprite &#x3D; sp1; &#125;else&#123; icon.sprite &#x3D; sp2; &#125; &#125; &#x2F;&#x2F; Start is called before the first frame update void Start() &#123; icon &#x3D; this.GetComponent&lt;Image&gt;(); sp1 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;矩形 3943 拷贝&quot;, typeof(Sprite)) as Sprite; sp2 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;bg_kaiguan&quot;, typeof(Sprite)) as Sprite; &#125; 总结图片挂的是sprite，音乐挂的是clip，都不是检视窗口内左侧的对应名字。出于节省资源的考虑，可以把sp1、sp2这种多次使用的图片在父物体里以public方式加载，在当前脚本里调用即可，不在当前脚本加载是为了保持脚本重复利用。于是另一个结论，重复利用的脚本不加载资源。]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>unity</tag>
         <tag>总结</tag>
+        <tag>unity</tag>
       </tags>
   </entry>
   <entry>
