@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[无题]]></title>
+    <url>%2F2020%2F12%2F26%2F%E6%97%A0%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[孩儿立志出乡关，学不成名誓不还。埋骨何须桑梓地，人生无处不青山。]]></content>
+      <tags>
+        <tag>思考</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C语言读取两个或多个数组]]></title>
     <url>%2F2020%2F12%2F26%2FC%E8%AF%AD%E8%A8%80%E8%AF%BB%E5%8F%96%E4%B8%A4%E4%B8%AA%E6%88%96%E5%A4%9A%E4%B8%AA%E6%95%B0%E7%BB%84%2F</url>
     <content type="text"><![CDATA[代码123456789101112131415161718192021#include &lt;stdio.h&gt;void main() &#123; int a[20],b[20],num&#x3D;0,i&#x3D;0; while(1)&#123; if (num&#x3D;&#x3D;0)&#123; scanf(&quot;%d&quot;,&amp;a[i++]); if (a[i-1]&#x3D;&#x3D;-1)&#123; i&#x3D;0; num++; &#125; &#125; if (num&#x3D;&#x3D;1)&#123; scanf(&quot;%d&quot;,&amp;b[i++]); if (b[i-1]&#x3D;&#x3D;-1)&#123; break; &#125; &#125; &#125; printf(&quot;%d&quot;,a[0]); printf(&quot;%d&quot;,b[0]);&#125;]]></content>
@@ -1116,8 +1124,8 @@
     <url>%2F2019%2F10%2F28%2F%E9%85%8D%E7%BD%AEtornado-pytorch%E7%9A%84docker%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[拉去指定docker镜像（目前pytorch支持到pytorch1.3，python3.7）1docker pull python:3.7运行容器1docker run -dit python:3.7进入容器 123docker ps#59fe58579fd2 python:3.7 &quot;bash&quot; 35 minutes ago docker exec -it 59fe bash 配置环境12345python -V#Python 3.7.5pip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple torch&#x3D;&#x3D;1.3.0+cpu torchvision&#x3D;&#x3D;0.4.1+cpu -f https:&#x2F;&#x2F;download.pytorch.org&#x2F;whl&#x2F;torch_stable.htmlpip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple tornado redis pillow efficientnet_pytorch 此外，py文件中torch.load()要添加1,map_location&#x3D;torch.device(&#39;cpu&#39;)从而运行在cpu环境下。 安装redis数据库apt不能用临时源，且为了安装最新版本，从源文件编译安装12345wget -c http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-5.0.5.tar.gztar xzf redis-5.0.5.tar.gzcd redis-5.0.5make 启动redis123cd src&#x2F;nohup .&#x2F;redis-server &amp;.&#x2F;redis-cli]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>docker</tag>
+        <tag>pytorch</tag>
         <tag>redis</tag>
         <tag>tornado</tag>
       </tags>

@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "记录部分C代码"
+git commit -m "学不成名誓不还"
 git push
