@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "学不成名誓不还"
+git commit -m "golang增减时间"
 git push
