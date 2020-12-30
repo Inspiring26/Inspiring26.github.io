@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[which和whereis的区别]]></title>
+    <url>%2F2020%2F12%2F30%2Fwhich%E5%92%8Cwhereis%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[示例12345h@h-B360M-D2VX-SI:~$ cxfixbash: cxfix: command not foundh@h-B360M-D2VX-SI:~$ which cxfixh@h-B360M-D2VX-SI:~$ whereis cxfixcxfix: &#x2F;opt&#x2F;cxoffice&#x2F;bin&#x2F;cxfix 总结都是查找可执行文件，简单说，whereis查询更广，which查询默认的几个位置。]]></content>
+      <tags>
+        <tag>总结</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[golang增减时间]]></title>
     <url>%2F2020%2F12%2F28%2Fgolang%E5%A2%9E%E5%87%8F%E6%97%B6%E9%97%B4%2F</url>
     <content type="text"><![CDATA[1234567891011121314package mainimport ( &quot;fmt&quot; &quot;time&quot;)func main() &#123; start :&#x3D; time.Date(2009, 1, 1, 0, 0, 0, 0, time.UTC) oneDayLater :&#x3D; start.AddDate(0, 0, 1) oneMonthLater :&#x3D; start.AddDate(0, 1, 0) oneYearLater :&#x3D; start.AddDate(1, 0, 0)&#125; AddDate里的参数可以为负。]]></content>
@@ -39,8 +48,8 @@
     <url>%2F2020%2F12%2F26%2F%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83%2F</url>
     <content type="text"><![CDATA[结论只要能建立起大小关系的表达，比如临界关系，哪怕二者是不同范畴的内容，比如距离和角度，我们也可以在坐标轴上得到他们关系的表示，并计算其他方面的关系。关键点是不同范畴内容照样建立坐标系，会得出一些特别的结果，比如以为算不出的结果。 书籍原图]]></content>
       <tags>
-        <tag>数学</tag>
         <tag>思考</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>

@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "golang增减时间"
+git commit -m "which和whereis的区别"
 git push
