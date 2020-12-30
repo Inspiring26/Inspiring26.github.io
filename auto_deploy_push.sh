@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "which和whereis的区别"
+git commit -m "linux创建热点及相关程序功能介绍"
 git push
