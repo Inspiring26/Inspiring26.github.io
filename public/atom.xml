@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2020-12-30T10:14:46.302Z</updated>
+  <updated>2020-12-31T01:11:19.105Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://weehaa.top/2020/12/30/linux%E5%88%9B%E5%BB%BA%E7%83%AD%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/"/>
     <id>http://weehaa.top/2020/12/30/linux创建热点及相关程序功能介绍/</id>
     <published>2020-12-30T09:50:49.000Z</published>
-    <updated>2020-12-30T10:14:46.302Z</updated>
+    <updated>2020-12-31T01:11:19.105Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我的150Mbs的RT3070l无线网卡，通过create_ap创建的热点下载速度在500-700k，而且首次打开网页很慢。<br>今天集中解决一下这个问题。<br>create_ap仓库已经停止维护，在其页面上推荐了一个图形界面的分支。<br>名字叫<a href="https://github.com/lakinduakash/linux-wifi-hotspot" target="_blank" rel="noopener">linux-wifi-hotspot</a>。<br>也可以叫 WiFi hotspot(linux搜索里显示的)，<br>也可以叫 wihotspot (终端启动的指令)。<br>下载、安装后，网络上也没找到详细的介绍。<br>下面介绍下界面各个功能的含义，及对应效果。</p><a id="more"></a><h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><p><img src="/2020/12/30/linux%E5%88%9B%E5%BB%BA%E7%83%AD%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/2020-12-30_17-49.png" alt="2020-12-30\_17-49.png"></p><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>SSID 热点的名字<br>Password 密码<br>Open 选中则不使用密码<br>WiFi interfaces 建立热点的无线网卡<br>Internet interfaces 机器上联网的网卡<br>Frequency band 根据无线网卡功能选，5G快距离近<br>Hidden 隐藏网络<br>Use psk 加密的一个选项，可不勾<br>Set mac 只有设置的mac才能连接<br>No virt 不使用虚拟化接口功能，经过测试，不选网速更快<br>Channel 取值范围在1-11，我的只有在7及以下才可使用，越大网速越快<br>Mac Filter 添加mac的设备无法连接<br>80211n 80211ac ac比n更快，支持ac就选ac</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我的150Mbs的RT3070l无线网卡，通过create_ap创建的热点下载速度在500-700k，而且首次打开网页很慢。<br>今天集中解决一下这个问题。<br>create_ap仓库已经停止维护，在其页面上推荐了一个图形界面的分支。<br>名字叫<a href="https://github.com/lakinduakash/linux-wifi-hotspot" target="_blank" rel="noopener">linux-wifi-hotspot</a>。<br>也可以叫 WiFi hotspot(linux搜索里显示的)，<br>也可以叫 wihotspot (终端启动的指令)。<br>下载、安装后，网络上也没找到详细的介绍。<br>下面介绍下界面各个功能的含义，及对应效果。</p><a id="more"></a><h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><p><img src="/2020/12/30/linux%E5%88%9B%E5%BB%BA%E7%83%AD%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/2020-12-30_17-49.png" alt="2020-12-30\_17-49.png"></p><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>SSID 热点的名字<br>Password 密码<br>Open 选中则不使用密码<br>WiFi interfaces 建立热点的无线网卡<br>Internet interfaces 机器上联网的网卡<br>Frequency band 根据无线网卡功能选，5G快距离近<br>Hidden 隐藏网络<br>Use psk 加密的一个选项，可不勾<br>Set mac 只有设置的mac才能连接<br>No virt 不使用虚拟化接口功能，经过测试，不选网速更快<br>Channel 取值范围在1-11，我的只有在7及以下才可使用，越大网速越快<br>Mac Filter 添加mac的设备无法连接<br>80211n 80211ac ac比n更快，支持ac就选ac</p><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>下载局域网网盘文件：<br>在安卓iqoo z1下可以达到4.2M/s<br>在iPhone12下可以3.6M/s</p>]]></content>
     
     <summary type="html">
     
@@ -180,9 +180,9 @@
     
     
     
-      <category term="思考" scheme="http://weehaa.top/tags/%E6%80%9D%E8%80%83/"/>
-    
       <category term="数学" scheme="http://weehaa.top/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="思考" scheme="http://weehaa.top/tags/%E6%80%9D%E8%80%83/"/>
     
   </entry>
   
