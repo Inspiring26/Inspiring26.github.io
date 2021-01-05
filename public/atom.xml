@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2020-12-31T01:11:19.105Z</updated>
+  <updated>2021-01-05T08:04:17.266Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决cuda、cudnn下载慢问题</title>
+    <link href="http://weehaa.top/2021/01/05/%E8%A7%A3%E5%86%B3cuda%E3%80%81cudnn%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/"/>
+    <id>http://weehaa.top/2021/01/05/解决cuda、cudnn下载慢问题/</id>
+    <published>2021-01-05T08:00:48.000Z</published>
+    <updated>2021-01-05T08:04:17.266Z</updated>
+    
+    <content type="html"><![CDATA[<p>阿里云有对应的下载镜像地址：<br><a href="https://mirrors.aliyun.com/nvidia-cuda/ubuntu2004/x86_64/" target="_blank" rel="noopener">https://mirrors.aliyun.com/nvidia-cuda/ubuntu2004/x86_64/</a></p><p>更多内容可以在这里找：<br><a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener">https://developer.aliyun.com/mirror/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;阿里云有对应的下载镜像地址：&lt;br&gt;&lt;a href=&quot;https://mirrors.aliyun.com/nvidia-cuda/ubuntu2004/x86_64/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mirrors.aliy
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="cuda" scheme="http://weehaa.top/tags/cuda/"/>
+    
+  </entry>
   
   <entry>
     <title>linux创建热点及相关程序功能介绍</title>
@@ -180,9 +206,9 @@
     
     
     
-      <category term="数学" scheme="http://weehaa.top/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="思考" scheme="http://weehaa.top/tags/%E6%80%9D%E8%80%83/"/>
+    
+      <category term="数学" scheme="http://weehaa.top/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -483,33 +509,6 @@
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python逐行读取</title>
-    <link href="http://weehaa.top/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/"/>
-    <id>http://weehaa.top/2020/12/15/python逐行读取/</id>
-    <published>2020-12-15T02:55:33.000Z</published>
-    <updated>2020-12-15T07:58:59.106Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_11-00.png" alt="pic"></p><h3 id="逐行读取可以循环使用"><a href="#逐行读取可以循环使用" class="headerlink" title="逐行读取可以循环使用"></a>逐行读取可以循环使用</h3><h3 id="到文件末尾是返回的是空字符串"><a href="#到文件末尾是返回的是空字符串" class="headerlink" title="到文件末尾是返回的是空字符串"></a>到文件末尾是返回的是空字符串</h3><h3 id="即使到文字末尾了依然可以循环调用，不会报错"><a href="#即使到文字末尾了依然可以循环调用，不会报错" class="headerlink" title="即使到文字末尾了依然可以循环调用，不会报错"></a>即使到文字末尾了依然可以循环调用，不会报错</h3><h3 id="print的技巧"><a href="#print的技巧" class="headerlink" title="print的技巧"></a>print的技巧</h3><p>当你想看具体的输出结果时，在结果外加上方括号就可以了。</p><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><img src="/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_15-54.png" alt="pic2"><br><img src="/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_15-54_1.png" alt="pic3"></p><p>只要在读取的时候判断是否为空，最后多出一个空行不影响的，毕竟最后一行没有换行号。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/2020/12/15/python%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96/2020-12-15_11-00.png&quot; alt=&quot;pic&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;逐行读取可以循环使用&quot;&gt;&lt;a href=&quot;#逐行读取可
-      
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="python" scheme="http://weehaa.top/tags/python/"/>
     
   </entry>
   

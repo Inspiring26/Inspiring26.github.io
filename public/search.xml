@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解决cuda、cudnn下载慢问题]]></title>
+    <url>%2F2021%2F01%2F05%2F%E8%A7%A3%E5%86%B3cuda%E3%80%81cudnn%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[阿里云有对应的下载镜像地址：https://mirrors.aliyun.com/nvidia-cuda/ubuntu2004/x86_64/ 更多内容可以在这里找：https://developer.aliyun.com/mirror/]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>cuda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux创建热点及相关程序功能介绍]]></title>
     <url>%2F2020%2F12%2F30%2Flinux%E5%88%9B%E5%BB%BA%E7%83%AD%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D%2F</url>
     <content type="text"><![CDATA[前言我的150Mbs的RT3070l无线网卡，通过create_ap创建的热点下载速度在500-700k，而且首次打开网页很慢。今天集中解决一下这个问题。create_ap仓库已经停止维护，在其页面上推荐了一个图形界面的分支。名字叫linux-wifi-hotspot。也可以叫 WiFi hotspot(linux搜索里显示的)，也可以叫 wihotspot (终端启动的指令)。下载、安装后，网络上也没找到详细的介绍。下面介绍下界面各个功能的含义，及对应效果。 界面 功能SSID 热点的名字Password 密码Open 选中则不使用密码WiFi interfaces 建立热点的无线网卡Internet interfaces 机器上联网的网卡Frequency band 根据无线网卡功能选，5G快距离近Hidden 隐藏网络Use psk 加密的一个选项，可不勾Set mac 只有设置的mac才能连接No virt 不使用虚拟化接口功能，经过测试，不选网速更快Channel 取值范围在1-11，我的只有在7及以下才可使用，越大网速越快Mac Filter 添加mac的设备无法连接80211n 80211ac ac比n更快，支持ac就选ac 效果下载局域网网盘文件：在安卓iqoo z1下可以达到4.2M/s在iPhone12下可以3.6M/s]]></content>
@@ -58,8 +67,8 @@
     <url>%2F2020%2F12%2F26%2F%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83%2F</url>
     <content type="text"><![CDATA[结论只要能建立起大小关系的表达，比如临界关系，哪怕二者是不同范畴的内容，比如距离和角度，我们也可以在坐标轴上得到他们关系的表示，并计算其他方面的关系。关键点是不同范畴内容照样建立坐标系，会得出一些特别的结果，比如以为算不出的结果。 书籍原图]]></content>
       <tags>
-        <tag>数学</tag>
         <tag>思考</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
