@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "解决cuda、cudnn下载慢问题"
+git commit -m "Ubuntu查看显卡具体型号"
 git push
