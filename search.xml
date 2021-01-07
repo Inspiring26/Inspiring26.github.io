@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu查看显卡具体型号]]></title>
+    <url>%2F2021%2F01%2F07%2FUbuntu%E6%9F%A5%E7%9C%8B%E6%98%BE%E5%8D%A1%E5%85%B7%E4%BD%93%E5%9E%8B%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[指令123root@h2-B85M-D2V-SI:~# nvidia-smi -q | grep Product Product Name : GeForce RTX 2070 SUPER Product Brand : GeForce]]></content>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>linux</tag>
+        <tag>nvidia</tag>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[解决cuda、cudnn下载慢问题]]></title>
     <url>%2F2021%2F01%2F05%2F%E8%A7%A3%E5%86%B3cuda%E3%80%81cudnn%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[阿里云有对应的下载镜像地址：https://mirrors.aliyun.com/nvidia-cuda/ubuntu2004/x86_64/ 更多内容可以在这里找：https://developer.aliyun.com/mirror/]]></content>
@@ -14,9 +25,9 @@
     <url>%2F2020%2F12%2F30%2Flinux%E5%88%9B%E5%BB%BA%E7%83%AD%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D%2F</url>
     <content type="text"><![CDATA[前言我的150Mbs的RT3070l无线网卡，通过create_ap创建的热点下载速度在500-700k，而且首次打开网页很慢。今天集中解决一下这个问题。create_ap仓库已经停止维护，在其页面上推荐了一个图形界面的分支。名字叫linux-wifi-hotspot。也可以叫 WiFi hotspot(linux搜索里显示的)，也可以叫 wihotspot (终端启动的指令)。下载、安装后，网络上也没找到详细的介绍。下面介绍下界面各个功能的含义，及对应效果。 界面 功能SSID 热点的名字Password 密码Open 选中则不使用密码WiFi interfaces 建立热点的无线网卡Internet interfaces 机器上联网的网卡Frequency band 根据无线网卡功能选，5G快距离近Hidden 隐藏网络Use psk 加密的一个选项，可不勾Set mac 只有设置的mac才能连接No virt 不使用虚拟化接口功能，经过测试，不选网速更快Channel 取值范围在1-11，我的只有在7及以下才可使用，越大网速越快Mac Filter 添加mac的设备无法连接80211n 80211ac ac比n更快，支持ac就选ac 效果下载局域网网盘文件：在安卓iqoo z1下可以达到4.2M/s在iPhone12下可以3.6M/s]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -24,8 +35,8 @@
     <url>%2F2020%2F12%2F30%2Fwhich%E5%92%8Cwhereis%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[示例12345h@h-B360M-D2VX-SI:~$ cxfixbash: cxfix: command not foundh@h-B360M-D2VX-SI:~$ which cxfixh@h-B360M-D2VX-SI:~$ whereis cxfixcxfix: &#x2F;opt&#x2F;cxoffice&#x2F;bin&#x2F;cxfix 总结都是查找可执行文件，简单说，whereis查询更广，which查询默认的几个位置。]]></content>
       <tags>
-        <tag>总结</tag>
         <tag>linux</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -141,8 +152,8 @@
     <url>%2F2020%2F12%2F16%2FUbuntu%E9%87%8D%E5%90%AF%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95%2F</url>
     <content type="text"><![CDATA[退出直接右上角或者其他显示图标的位置退出 打开alt + f2搜fcitx运行即可 网上很多方法不可用，这个有效]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -159,8 +170,8 @@
     <url>%2F2020%2F12%2F16%2Fnetwork-DISABLED-description-Wireless-interface%2F</url>
     <content type="text"><![CDATA[linux打开无线网卡查看123456789101112131415161718192021222324252627h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ lshw -C networkWARNING: you should run this program as super-user. *-network description: Ethernet interface product: RTL8111&#x2F;8168&#x2F;8411 PCI Express Gigabit Ethernet Controller vendor: Realtek Semiconductor Co., Ltd. physical id: 0 bus info: pci@0000:02:00.0 logical name: enp2s0 version: 16 serial: e0:d5:5e:ca:e7:d7 size: 100Mbit&#x2F;s capacity: 1Gbit&#x2F;s width: 64 bits clock: 33MHz capabilities: bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation configuration: autonegotiation&#x3D;on broadcast&#x3D;yes driver&#x3D;r8169 duplex&#x3D;full firmware&#x3D;rtl8168h-2_0.0.2 02&#x2F;26&#x2F;15 ip&#x3D;192.168.2.38 latency&#x3D;0 link&#x3D;yes multicast&#x3D;yes port&#x3D;MII speed&#x3D;100Mbit&#x2F;s resources: irq:16 ioport:3000(size&#x3D;256) memory:a5204000-a5204fff memory:a5200000-a5203fff *-network DISABLED description: Wireless interface physical id: 1 bus info: usb@1:3 logical name: wlx983f9f1816c5 serial: 98:3f:9f:18:16:c5 capabilities: ethernet physical wireless configuration: broadcast&#x3D;yes driver&#x3D;rt2800usb driverversion&#x3D;5.4.0-54-generic firmware&#x3D;N&#x2F;A link&#x3D;no multicast&#x3D;yes wireless&#x3D;IEEE 802.11WARNING: output may be incomplete or inaccurate, you should run this program as super-user. 找到名字后开启1sudo ifconfig wlx983f9f1816c5 up 再查看，已经开启123456789101112131415161718192021222324252627h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ lshw -C networkWARNING: you should run this program as super-user. *-network description: Ethernet interface product: RTL8111&#x2F;8168&#x2F;8411 PCI Express Gigabit Ethernet Controller vendor: Realtek Semiconductor Co., Ltd. physical id: 0 bus info: pci@0000:02:00.0 logical name: enp2s0 version: 16 serial: e0:d5:5e:ca:e7:d7 size: 100Mbit&#x2F;s capacity: 1Gbit&#x2F;s width: 64 bits clock: 33MHz capabilities: bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation configuration: autonegotiation&#x3D;on broadcast&#x3D;yes driver&#x3D;r8169 duplex&#x3D;full firmware&#x3D;rtl8168h-2_0.0.2 02&#x2F;26&#x2F;15 ip&#x3D;192.168.2.38 latency&#x3D;0 link&#x3D;yes multicast&#x3D;yes port&#x3D;MII speed&#x3D;100Mbit&#x2F;s resources: irq:16 ioport:3000(size&#x3D;256) memory:a5204000-a5204fff memory:a5200000-a5203fff *-network description: Wireless interface physical id: 1 bus info: usb@1:3 logical name: wlx983f9f1816c5 serial: 98:3f:9f:18:16:c5 capabilities: ethernet physical wireless configuration: broadcast&#x3D;yes driver&#x3D;rt2800usb driverversion&#x3D;5.4.0-54-generic firmware&#x3D;0.36 link&#x3D;no multicast&#x3D;yes wireless&#x3D;IEEE 802.11WARNING: output may be incomplete or inaccurate, you should run this program as super-user. 查看网络信息12345678910111213141516171819202122232425h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ ifconfigenp2s0: flags&#x3D;4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500 inet 192.168.2.38 netmask 255.255.252.0 broadcast 192.168.3.255 inet6 fe80::9a45:2081:a371:efdd prefixlen 64 scopeid 0x20&lt;link&gt; ether e0:d5:5e:ca:e7:d7 txqueuelen 1000 (Ethernet) RX packets 54246037 bytes 22551243144 (22.5 GB) RX errors 0 dropped 4864651 overruns 0 frame 0 TX packets 10198222 bytes 2698013990 (2.6 GB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0lo: flags&#x3D;73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536 inet 127.0.0.1 netmask 255.0.0.0 inet6 ::1 prefixlen 128 scopeid 0x10&lt;host&gt; loop txqueuelen 1000 (Local Loopback) RX packets 1215066 bytes 663870515 (663.8 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 1215066 bytes 663870515 (663.8 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0wlx983f9f1816c5: flags&#x3D;4099&lt;UP,BROADCAST,MULTICAST&gt; mtu 1500 ether 98:3f:9f:18:16:c5 txqueuelen 1000 (Ethernet) RX packets 0 bytes 0 (0.0 B) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 0 bytes 0 (0.0 B) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 已经开启，接下来就可以配合create_ap创建热点]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -168,8 +179,8 @@
     <url>%2F2020%2F12%2F16%2Fcreate-ap%E9%85%8D%E7%BD%AE%E7%83%AD%E7%82%B9%E5%8F%8A%E9%9A%8F%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%2F</url>
     <content type="text"><![CDATA[配置1sudo vim &#x2F;etc&#x2F;create_ap.conf修改1234WIFI_IFACE&#x3D;wlx983f9f1816c5INTERNET_IFACE&#x3D;enp2s0SSID&#x3D;hhhPASSPHRASE&#x3D;****#密码 开启、关闭、开机启动123sudo systemctl start create_ap # 开启热点sudo systemctl stop create_ap # 关闭热点sudo systemctl enable create_ap.service # 开机启动 12h@h-B360M-D2VX-SI:~&#x2F;Github&#x2F;blog$ sudo systemctl enable create_ap.serviceCreated symlink &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;multi-user.target.wants&#x2F;create_ap.service → &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;create_ap.service.]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -177,8 +188,8 @@
     <url>%2F2020%2F12%2F16%2Fcreate-ap-Failed-to-initialize-lock%2F</url>
     <content type="text"><![CDATA[123456# 查看ls &#x2F;tmp&#x2F;create_ap.all.lockcat &#x2F;tmp&#x2F;create_ap.all.lock# 删除rm &#x2F;tmp&#x2F;create_ap.all.lock 再使用create_ap创建就可以了]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -228,8 +239,8 @@
     <url>%2F2020%2F11%2F25%2Fword%E3%80%81excel%E7%AD%89office%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%8F%90%E5%8F%96%E5%8F%8A%E9%A2%84%E8%A7%88%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[预览预览而不下载的方法就是，转换为pdf，点击时将pdf不作为附件。这时就会新打开一个预览页面。提取在windows服务器上，以前使用的时office自带的接口进行转换，转换后用pdfminer提取内容作为简介。部署到linux系统上可以使用libreoffice转换。但是转换后再用pdfminer提取会出现同一个字的大量重复。 linux下用wps转换不成，突然想到的一个效果很好的方法分析问题：之所以出现pdfminer提取乱码，是因为用的不是word转换的。解决方法：上传的是pdf格式的，一般是别人用word转换好的，直接提取不会出现什么问题，那种确实不能提取的除非ocr识别，可以不管。上传的是word、excel、ppt等格式的，可以将转换展示和内容提取分开。转换展示，即使用libreoffice转换为pdf后展示。内容提取可以将文件转换成txt文件,word里有一个另存为txt的选项，这样就可以非常完整的提取到word的内容。 总结原路几乎走不通的问题，换个思路就完整高效的解决了。遇到问题了，唯有转化、转化、转化，这也是我从《数学之美》里获得的收获。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -237,8 +248,8 @@
     <url>%2F2020%2F11%2F25%2Fvim%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[定位12G&#x2F;1G&#x2F;gg 最后一行&#x2F;第一行&#x2F;第一行w&#x2F;b 下一个单词&#x2F;前一个单词编辑/插入12i&#x2F;I&#x2F;a&#x2F;A 光标字符前插入&#x2F;行首插入&#x2F;光标之后插入&#x2F;行尾插入$&#x2F;^ 仅移动光标不编辑的行尾&#x2F;行首 删除/复制/粘贴123dd&#x2F;ndd 删除当前行&#x2F;删除当前行开始的n行yy&#x2F;nyy 复制当前行&#x2F;复制当前行开始的n行p 粘贴 查找1&#x2F;word 斜杠加单词就开始查找，回车后n下一个，N反方向下一个 替换12345678910:%s&#x2F;word1&#x2F;word2&#x2F;gc :s 当前行:%s 全文:6,10s 6到10行:.,+2s 当前行加后面两行常用的是:%s :s不加后面的&#x2F;g表示只替换后面的一个这个位置可以有g(全部)、i(大小写不敏感)、I（大小写敏感）、c（需要确认） 定位或查找后新开一行1o&#x2F;O o在下面开一行&#x2F;O在上面开一行 查看具体指令的文档12:help word 查询指令用法:q 返回之前编辑的文件 plan接下来一个月把编辑器转到vim。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -246,8 +257,8 @@
     <url>%2F2020%2F11%2F23%2Flinux%E5%B0%86%E5%86%85%E5%AE%B9%E7%A7%BB%E5%87%BA%E4%BA%A4%E6%8D%A2%E5%8C%BA%E6%88%96%E5%BC%80%E5%85%B3%E4%BA%A4%E6%8D%A2%E5%8C%BA%2F</url>
     <content type="text"><![CDATA[123456789# 查看交换区文件➜ h2 swaponNAME TYPE SIZE USED PRIO&#x2F;swapfile file 2G 729.6M -2# 关闭所有的➜ h2 swapoff -a# 挂载指定的交换文件➜ h2 swapon &#x2F;swapfile ➜ h2]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -255,8 +266,8 @@
     <url>%2F2020%2F11%2F19%2F%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%AAshell%2F</url>
     <content type="text"><![CDATA[查看是bash还是zsh等1echo $0]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -264,8 +275,8 @@
     <url>%2F2020%2F11%2F19%2Flinux%E5%8D%B8%E8%BD%BDoh-my-zsh%2F</url>
     <content type="text"><![CDATA[卸载12345678➜ ~ uninstall_oh_my_zshAre you sure you want to remove Oh My Zsh? [y&#x2F;N] yRemoving ~&#x2F;.oh-my-zshLooking for original zsh config...Switching your shell back to &#39;&#x2F;bin&#x2F;bash&#39;:Password: Thanks for trying out Oh My Zsh. It&#39;s been uninstalled.Don&#39;t forget to restart your terminal! 切换or not1sudo chsh -s &#x2F;bin&#x2F;bash]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -341,8 +352,8 @@
     <url>%2F2020%2F09%2F03%2Foh-my-zsh%E4%B8%8B%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%98%AF%E4%B8%8D%E6%98%AFroot%E6%9D%83%E9%99%90%2F</url>
     <content type="text"><![CDATA[123456➜ ~ whoamih➜ ~ sudo su[sudo] password for h: h-B360M-D2VX-SI# whoamiroot]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -387,8 +398,8 @@
     <url>%2F2020%2F07%2F24%2Fubuntu%E5%8D%87%E7%BA%A7cuda%E3%80%81cudnn%2F</url>
     <content type="text"><![CDATA[升级python大版本后，需要重新安装多个库，包括pytorch相关的库。1.查看已有的cuda1ls &#x2F;usr&#x2F;local&#x2F;cuda*cuda是带版本号cuda的软链2.使用bin目录下自带脚本卸载 1sudo &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;bin&#x2F;uninstall_*.pl 3.删除剩余文件12ls &#x2F;usr&#x2F;local&#x2F;cuda*sudo rm -rf &#x2F;usr&#x2F;local&#x2F;cuda* 4.下载对应版本cuda、cudnn，注意是对应不是最新123456# cuda toolkit 下载run文件https:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-toolkit-archive# cuDNNhttps:&#x2F;&#x2F;developer.nvidia.com&#x2F;rdp&#x2F;cudnn-archive# 同时参考pytorch的版本要求https:&#x2F;&#x2F;pytorch.org&#x2F;get-started&#x2F;locally&#x2F; 5.安装cuda12# 通常除了驱动都安装sudo sh cuda_*_linux.run 6.修改环境变量12345# vim ~&#x2F;.bashrcexport LD_LIBRARY_PATH&#x3D;$LD_LIBRARY_PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;binexport CUDA_HOME&#x3D;$CUDA_HOME:&#x2F;usr&#x2F;local&#x2F;cuda 有软链直接修改成cuda就可以了，不用加版本号 7.升级cudnn12345678910tar -zxvf cudnn*.tgzsudo cp include&#x2F;cudnn.h &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;include&#x2F;sudo cp lib64&#x2F;lib* &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64&#x2F;# 在新文件夹建立软链cd &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64&#x2F;sudo chmod +r libcudnn.so.7.0.5sudo ln -sf libcudnn.so.7.0.5 libcudnn.so.7 sudo ln -sf libcudnn.so.7 libcudnn.so sudo ldconfig 8.OVER]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>方法</tag>
         <tag>cuda</tag>
         <tag>cudnn</tag>
         <tag>升级</tag>
@@ -399,8 +410,8 @@
     <url>%2F2020%2F07%2F23%2Fubuntu%E5%8D%87%E7%BA%A7python%E7%89%88%E6%9C%AC%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[本方法使用的是apt安装1.搜索ppa,找到可用的源2.在launchpad.net里搜索python33.建议找到一个叫Jonathon F的用户，他编译的包比较可靠。可以进入他的主页找到他发布的python的各个版本。4.以python3.8为例，打开对应页面5.里面有这样的添加ppa的指令12sudo add-apt-repository ppa:jonathonf&#x2F;python-3.8sudo apt-get update 6.添加、更新完后安装1sudo apt install python3.8 7.查看目前有的python版本12345678910$ ls &#x2F;usr&#x2F;bin&#x2F;pytho*&#x2F;usr&#x2F;bin&#x2F;python &#x2F;usr&#x2F;bin&#x2F;python3.6&#x2F;usr&#x2F;bin&#x2F;python2 &#x2F;usr&#x2F;bin&#x2F;python3.6-config&#x2F;usr&#x2F;bin&#x2F;python2.7 &#x2F;usr&#x2F;bin&#x2F;python3.6m&#x2F;usr&#x2F;bin&#x2F;python2.7-config &#x2F;usr&#x2F;bin&#x2F;python3.6m-config&#x2F;usr&#x2F;bin&#x2F;python2-config &#x2F;usr&#x2F;bin&#x2F;python3.8&#x2F;usr&#x2F;bin&#x2F;python2-jsonschema &#x2F;usr&#x2F;bin&#x2F;python3-config&#x2F;usr&#x2F;bin&#x2F;python2-pbr &#x2F;usr&#x2F;bin&#x2F;python3m&#x2F;usr&#x2F;bin&#x2F;python2-wsdump &#x2F;usr&#x2F;bin&#x2F;python3m-config&#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;usr&#x2F;bin&#x2F;python-config 8.删除老版本1sudo rm &#x2F;usr&#x2F;bin&#x2F;python3.6 9.删除原来的软链接1sudo rm &#x2F;usr&#x2F;bin&#x2F;python3 10.创建新的软链接1sudo ln -s &#x2F;usr&#x2F;bin&#x2F;python3.8 &#x2F;usr&#x2F;bin&#x2F;python3 11.可能需要重新安装pip12wget https:&#x2F;&#x2F;bootstrap.pypa.io&#x2F;get-pip.py --no-check-certificatesudo python3 get-pip.py 12.pip3 list 会发现有很多库消失了，需要重新安装，且还在的很多需要安装cp38版。OVER]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>方法</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -418,8 +429,8 @@
     <url>%2F2020%2F07%2F15%2Fubuntu%E6%A1%8C%E9%9D%A2%E5%8D%A1%E4%BD%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[alt + ctrl + f1登录(login)sudo lightdm restart 测试中，原来打开的窗口都还在。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -462,8 +473,8 @@
     <url>%2F2020%2F06%2F09%2Flinux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%2F</url>
     <content type="text"><![CDATA[仅内核版本1uname -a 内核版本、gcc版本12345cat &#x2F;proc&#x2F;version&#96;&#96;&#96; 命令很简单，可以记住### 查看系统版本代号 lsb_release -a```也很简单要记住]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -471,8 +482,8 @@
     <url>%2F2020%2F06%2F09%2Fubuntu%E4%B8%8B%E5%8D%87%E7%BA%A7git%2F</url>
     <content type="text"><![CDATA[123sudo add-apt-repository ppa:git-core&#x2F;ppasudo apt updatesudo apt install git]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -497,9 +508,9 @@
     <url>%2F2020%2F05%2F29%2Flinux%E4%B8%8B%E8%87%AA%E5%86%99%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：1234567891011121314while truedo thetime&#x3D;$(date &quot;+%M&quot;) thetime2&#x3D;&#96;expr $thetime + 10&#96; remainder&#x3D;$(($thetime2%5)) if [ $remainder &#x3D; &#39;0&#39; ] then cd ~&#x2F;blog;sh gitpull.sh date sleep 60s else sleep 60s fidoneshell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。上面使用expr的方式是可行的。 需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
         <tag>linux</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -553,8 +564,8 @@
     <url>%2F2020%2F05%2F20%2Fubuntu18-04%E9%83%A8%E7%BD%B2hexo%2F</url>
     <content type="text"><![CDATA[ubuntu安装node参考连接：https://github.com/nodesource/distributions/blob/master/README.md指令：1234567# Using Ubuntucurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -sudo apt-get install -y nodejs# Using Debian, as rootcurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -apt-get install -y nodejs 查看版本12node -vnpm -v 安装hexo1npm install -g hexo-cli 查看hexo自带功能1hexo 可能会没有server参数 新建文章12hexo n alitsetvim source&#x2F;_posts&#x2F;alitest.md 逐步部署查找问题123hexo cleanhexo generatehexo deploy 处理ERROR Deployer not found: git 错误1npm install --save hexo-deployer-git 配置git邮箱和用户名信息12git config --global user.email 1xxxx@qq.comgit config --global user.name wxxx 尝试部署1sd deploy.sh 查看hexo功能此时可能出现server参数了1hexo 启动服务到默认端口或指定端口123hexo server或hexo server -p 80 更多hexo信息参考：https://hexo.io/zh-cn/docs/server.html 后台运行1setsid hexo server -p 80]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>方法</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -783,8 +794,8 @@
     <url>%2F2020%2F04%2F03%2Fubuntu%E4%B8%8B%E5%BE%80unity%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[直接添加mp4等文件失败的原因是unity需要使用quicktime player作为视频的播放器。mac自带，windows可以安装，linux不好处理。 解决方法用ffmpeg将视频转换成unity自身支持的ogv格式。指令：1ffmpeg -i video.mp4 vode.ogv再次导入即可成功。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>ubuntu</tag>
+        <tag>方法</tag>
         <tag>unity</tag>
       </tags>
   </entry>
@@ -854,9 +865,9 @@
     <url>%2F2020%2F03%2F16%2F%E5%B0%86nvidia%E6%B7%BB%E5%8A%A0%E5%88%B0runtime%2F</url>
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
+        <tag>nvidia</tag>
         <tag>方法</tag>
         <tag>docker</tag>
-        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -1110,8 +1121,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1514,8 +1525,8 @@
     <url>%2F2019%2F10%2F10%2F%E4%B8%BApytorch%E5%AE%89%E8%A3%85nvidia%E7%9A%84apex%E5%8A%A0%E9%80%9F%2F</url>
     <content type="text"><![CDATA[三个指令，不需要配置环境变量123$ git clone https:&#x2F;&#x2F;github.com&#x2F;NVIDIA&#x2F;apex$ cd apex$ pip3 install -v --no-cache-dir --global-option&#x3D;&quot;--cpp_ext&quot; --global-option&#x3D;&quot;--cuda_ext&quot; .&#x2F;]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>nvidia</tag>
+        <tag>pytorch</tag>
       </tags>
   </entry>
   <entry>
@@ -1567,8 +1578,8 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
         <tag>cuda</tag>
       </tags>
   </entry>
