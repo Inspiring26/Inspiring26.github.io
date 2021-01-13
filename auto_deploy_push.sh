@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "golang多线程简单逻辑1"
+git commit -m "ubuntu开机执行自定义脚本"
 git push

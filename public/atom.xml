@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-01-13T09:38:06.004Z</updated>
+  <updated>2021-01-13T10:14:42.931Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu开机执行自定义脚本</title>
+    <link href="http://weehaa.top/2021/01/13/ubuntu%E5%BC%80%E6%9C%BA%E6%89%A7%E8%A1%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E8%84%9A%E6%9C%AC/"/>
+    <id>http://weehaa.top/2021/01/13/ubuntu开机执行自定义脚本/</id>
+    <published>2021-01-13T10:02:01.000Z</published>
+    <updated>2021-01-13T10:14:42.931Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>切换到root。<br>没有的文件自己创建新的。</p><h3 id="创建或修改rc-local-service"><a href="#创建或修改rc-local-service" class="headerlink" title="创建或修改rc-local.service"></a>创建或修改rc-local.service</h3><p>vim /etc/systemd/system/rc-local.service</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit] </span><br><span class="line">Description&#x3D;&#x2F;etc&#x2F;rc.local Compatibility </span><br><span class="line">ConditionPathExists&#x3D;&#x2F;etc&#x2F;rc.local </span><br><span class="line"></span><br><span class="line">[Service] </span><br><span class="line">Type&#x3D;forking </span><br><span class="line">ExecStart&#x3D;&#x2F;etc&#x2F;rc.local start </span><br><span class="line">TimeoutSec&#x3D;0 </span><br><span class="line">StandardOutput&#x3D;tty </span><br><span class="line">RemainAfterExit&#x3D;yes </span><br><span class="line">SysVStartPriority&#x3D;99 </span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="穿件或修改对应的rc-local"><a href="#穿件或修改对应的rc-local" class="headerlink" title="穿件或修改对应的rc.local"></a>穿件或修改对应的rc.local</h3><p>vim  /etc/rc.local</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh -e </span><br><span class="line">## rc.local</span><br><span class="line"></span><br><span class="line"># This script is executed at the end of each multiuser runlevel.</span><br><span class="line"># Make sure that the script will &quot;exit 0&quot; on success or any other </span><br><span class="line"># value on error. </span><br><span class="line"># In order to enable or disable this script just change the execution  bits. </span><br><span class="line"># By default this script does nothing. </span><br><span class="line"></span><br><span class="line">#start script</span><br><span class="line"></span><br><span class="line">cd &#x2F;home&#x2F;h2&#x2F;stat\_data</span><br><span class="line">python3 switchControl.py &gt;&gt; control.log &amp;</span><br><span class="line"></span><br><span class="line">#end script</span><br><span class="line"></span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure><h3 id="加权限"><a href="#加权限" class="headerlink" title="加权限"></a>加权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x &#x2F;etc&#x2F;rc.local</span><br></pre></td></tr></table></figure><h3 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable rc-local</span><br></pre></td></tr></table></figure><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start rc-local.service</span><br></pre></td></tr></table></figure><h3 id="查看当前运行状态"><a href="#查看当前运行状态" class="headerlink" title="查看当前运行状态"></a>查看当前运行状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status rc-local.service</span><br></pre></td></tr></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>从上面配置可以看出，/etc/systemd/system/下的服务名可以随意设定。<br>里面对应的local文件路径要写对。<br>然后看开启服务、运行服务、查看状态即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h3&gt;&lt;p&gt;切换到root。&lt;br&gt;没有的文件自己创建新的。&lt;/p&gt;&lt;h3 id=&quot;创建或修改rc-local-service&quot;&gt;&lt;a href=&quot;#创建或修改rc-local-service&quot; class=&quot;headerlink&quot; title=&quot;创建或修改rc-local.service&quot;&gt;&lt;/a&gt;创建或修改rc-local.service&lt;/h3&gt;&lt;p&gt;vim /etc/systemd/system/rc-local.service&lt;/p&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[Unit] &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Description&amp;#x3D;&amp;#x2F;etc&amp;#x2F;rc.local Compatibility &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ConditionPathExists&amp;#x3D;&amp;#x2F;etc&amp;#x2F;rc.local &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[Service] &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Type&amp;#x3D;forking &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ExecStart&amp;#x3D;&amp;#x2F;etc&amp;#x2F;rc.local start &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;TimeoutSec&amp;#x3D;0 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;StandardOutput&amp;#x3D;tty &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;RemainAfterExit&amp;#x3D;yes &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SysVStartPriority&amp;#x3D;99 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[Install]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WantedBy&amp;#x3D;multi-user.target&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>golang多线程简单逻辑</title>
@@ -59,9 +82,9 @@
     
     
     
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
       <category term="python" scheme="http://weehaa.top/tags/python/"/>
     
@@ -88,9 +111,9 @@
     
     
     
-      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
     
   </entry>
   
@@ -139,13 +162,13 @@
     
     
     
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
     
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
       <category term="nvidia" scheme="http://weehaa.top/tags/nvidia/"/>
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -192,11 +215,11 @@
     
     
     
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
     
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -493,33 +516,6 @@
       <category term="golang" scheme="http://weehaa.top/tags/golang/"/>
     
       <category term="python" scheme="http://weehaa.top/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pytorch相关数据类型</title>
-    <link href="http://weehaa.top/2020/12/23/pytorch%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://weehaa.top/2020/12/23/pytorch相关数据类型/</id>
-    <published>2020-12-23T02:52:45.000Z</published>
-    <updated>2020-12-23T02:57:59.644Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2020/12/23/pytorch%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/2020-12-23_10-57.png" alt="pic"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/2020/12/23/pytorch%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/2020-12-23_10-57.png&quot; alt=&quot;pic&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-      <category term="记录" scheme="http://weehaa.top/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-      <category term="pytorch" scheme="http://weehaa.top/tags/pytorch/"/>
     
   </entry>
   
