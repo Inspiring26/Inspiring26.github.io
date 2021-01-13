@@ -52,7 +52,7 @@ import (
     "sync"
 )
 ```
-必要的库
+必要的库。
 
 
 ```
@@ -60,7 +60,7 @@ var (
     cpunum = runtime.NumCPU()-1
 )
 ```
-要使用的cpu数量，建议不全使用
+要使用的cpu数量，建议不全使用。
 
 
 ```
@@ -69,9 +69,9 @@ var (
     wg := sync.WaitGroup{}
 
 ```
-建立管道
-声明使用的cpu数
-建立互斥关系，本例中主要为了实现所有线程执行完后再执行后续程序
+建立管道。
+声明使用的cpu数。
+建立互斥关系，本例中主要为了实现所有线程执行完后再执行后续程序。
 
 ```
     for i := 0; i < cpunum; i++{
@@ -88,10 +88,10 @@ var (
     close(ch)
 
 ```
-后面每个任务结束时要done一个wg，这里根据具体情况加，是循环就在每个循环里加，保证后面能全部done即可
-没有缓冲的、阻塞式的往管道传递字符串
-Wait是等所有线程都执行完，即增加的数字被全done掉
-关闭管道
+后面每个任务结束时要done一个wg，这里根据具体情况加，是循环就在每个循环里加，保证后面能全部done即可。
+没有缓冲的、阻塞式的往管道传递字符串。
+Wait是等所有线程都执行完，即增加的数字被全done掉。
+关闭管道。
 
 ```
 func WgReadLogs(ch chan string,wg *sync.WaitGroup){
@@ -112,7 +112,7 @@ func WgReadLogs(ch chan string,wg *sync.WaitGroup){
 ReadLogs()就是要执行的任务，不再解释。
 
 ### 总结
-就是开指定个线程
-管道阻塞传值
-wg同步
-WgReadLogs循环接收
+就是开指定个线程。
+管道阻塞传值。
+wg同步。
+WgReadLogs循环接收。
