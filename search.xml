@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[golang多线程简单逻辑]]></title>
+    <url>%2F2021%2F01%2F13%2Fgolang%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AE%80%E5%8D%95%E9%80%BB%E8%BE%91%2F</url>
+    <content type="text"><![CDATA[目标实现指定个核心最大化使用，比如核心总数减一。代码123456789101112131415161718192021222324252627282930313233343536package mainimport ( &quot;runtime&quot; &quot;sync&quot;)var ( cpunum &#x3D; runtime.NumCPU()-1)func main()&#123; ch :&#x3D; make(chan string) runtime.GOMAXPROCS(cpunum) wg :&#x3D; sync.WaitGroup&#123;&#125; for i :&#x3D; 0; i &lt; cpunum; i++&#123; go WgReadLogs(ch, &amp;wg) &#125; wg.Add(2) ch &lt;- &quot;.&#x2F;health&#x2F;stat1.rec&quot; ch &lt;- &quot;.&#x2F;report&#x2F;stat2.rec&quot; wg.Wait() close(ch)&#125;func WgReadLogs(ch chan string,wg *sync.WaitGroup)&#123; for true&#123; tmp,ok :&#x3D; &lt;-ch if !ok&#123; break &#125; ReadLogs(tmp) wg.Done() &#125;&#125;func ReadLogs(logname string)&#123; fmt.Println(logname)&#125; 解释1234import ( &quot;runtime&quot; &quot;sync&quot;) 必要的库 123var ( cpunum &#x3D; runtime.NumCPU()-1) 要使用的cpu数量，建议不全使用 123ch :&#x3D; make(chan string)runtime.GOMAXPROCS(cpunum)wg :&#x3D; sync.WaitGroup&#123;&#125; 建立管道声明使用的cpu数建立互斥关系，本例中主要为了实现所有线程执行完后再执行后续程序 123for i :&#x3D; 0; i &lt; cpunum; i++&#123; go WgReadLogs(ch, &amp;wg)&#125; 创建cpu数减1个线程 12345wg.Add(2)ch &lt;- &quot;.&#x2F;health&#x2F;stat1.rec&quot;ch &lt;- &quot;.&#x2F;report&#x2F;stat2.rec&quot;wg.Wait()close(ch) 后面每个任务结束时要done一个wg，这里根据具体情况加，是循环就在每个循环里加，保证后面能全部done即可没有缓冲的、阻塞式的往管道传递字符串Wait是等所有线程都执行完，即增加的数字被全done掉关闭管道 12345678910func WgReadLogs(ch chan string,wg *sync.WaitGroup)&#123; for true&#123; tmp,ok :&#x3D; &lt;-ch if !ok&#123; break &#125; ReadLogs(tmp) wg.Done() &#125;&#125; 假设已有的函数是ReadLogs，在它的基础上加个Wg加函数名的新函数，我觉得这种方式不改变原有的，比较舒服。大意是：循环从管道读取字符串，读不到了就跳出循环。每个ReadLogs()之后加一个wg.Done()，相当于计数减一。 ReadLogs()就是要执行的任务，不再解释。 总结就是开指定个线程管道阻塞传值wg同步WgReadLogs循环接收]]></content>
+      <tags>
+        <tag>总结</tag>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[linux下python复制内容到粘贴板]]></title>
+    <url>%2F2021%2F01%2F13%2Flinux%E4%B8%8Bpython%E5%A4%8D%E5%88%B6%E5%86%85%E5%AE%B9%E5%88%B0%E7%B2%98%E8%B4%B4%E6%9D%BF%2F</url>
+    <content type="text"><![CDATA[安装pyperclip库1pip3 install pyperclip 安装xclip1sudo apt install xclip 和粘贴板交互12345import pyperclip# 复制到粘贴板pyperclip.copy(&#39;test&#39;)# 从粘贴板复制pyperclip.paste()]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>linux</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu重复输密码进不了系统解决方法]]></title>
     <url>%2F2021%2F01%2F11%2Fubuntu%E9%87%8D%E5%A4%8D%E8%BE%93%E5%AF%86%E7%A0%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[起因今天在使用xstart时导致，xUbuntu重启后循环跳出输密码界面，无法进入桌面。 解决方法ctrl + alt + F1进入终端删除用户主目录下的.Xauthority 原因每次用户登录的时候都要读取对应.Xauthority的信息，我之前的操作导致其权限发生变化，这点在删除时就可以看到。删除后重启正常进入桌面。]]></content>
@@ -883,8 +902,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -1138,8 +1157,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -1595,9 +1614,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
+        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
