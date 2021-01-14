@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "ubuntu开机执行自定义脚本"
+git commit -m "golang统一处理err"
 git push
