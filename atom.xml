@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-01-13T10:14:42.931Z</updated>
+  <updated>2021-01-14T02:58:43.962Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>golang统一处理err</title>
+    <link href="http://weehaa.top/2021/01/14/golang%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86err/"/>
+    <id>http://weehaa.top/2021/01/14/golang统一处理err/</id>
+    <published>2021-01-14T02:50:46.000Z</published>
+    <updated>2021-01-14T02:58:43.962Z</updated>
+    
+    <content type="html"><![CDATA[<p>程序写完，一堆nil看着难受，以后统一这么写吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func FuckErr(err error)&#123;</span><br><span class="line">    if err!&#x3D;nil&#123;</span><br><span class="line">        panic(err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;程序写完，一堆nil看着难受，以后统一这么写吧&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="golang" scheme="http://weehaa.top/tags/golang/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu开机执行自定义脚本</title>
@@ -489,31 +515,6 @@
     
     
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="python" scheme="http://weehaa.top/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字符串拼接速度很慢</title>
-    <link href="http://weehaa.top/2020/12/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E9%80%9F%E5%BA%A6%E5%BE%88%E6%85%A2/"/>
-    <id>http://weehaa.top/2020/12/23/字符串拼接速度很慢/</id>
-    <published>2020-12-23T03:00:19.000Z</published>
-    <updated>2020-12-23T03:08:52.340Z</updated>
-    
-    <content type="html"><![CDATA[<p>在处理少量数据时不会察觉，字符串拼接的速度是比较慢的。<br>在使用golang处理百万级别的数据时，每拼接一万条大约需要1~2秒。<br>还有就是在写循环时，可以先把循环里要处理的较复杂内容去掉感受一下，再逐步加进来。<br>而文件写缓冲之后一次或分多次更新到硬盘上瞬间完成。<br>所以能写缓冲的一定要避免拼接后一次性写入。</p><a id="more"></a><p>在Python上也是，拼接一次性写入很慢，耗时大约是每次写入的10倍。<br>所以把循环放在with open内是更高效更合理的写法。</p><p><img src="/2020/12/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E9%80%9F%E5%BA%A6%E5%BE%88%E6%85%A2/2020-12-22_10-13.png" alt="pic"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在处理少量数据时不会察觉，字符串拼接的速度是比较慢的。&lt;br&gt;在使用golang处理百万级别的数据时，每拼接一万条大约需要1~2秒。&lt;br&gt;还有就是在写循环时，可以先把循环里要处理的较复杂内容去掉感受一下，再逐步加进来。&lt;br&gt;而文件写缓冲之后一次或分多次更新到硬盘上瞬间完成。&lt;br&gt;所以能写缓冲的一定要避免拼接后一次性写入。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="总结" scheme="http://weehaa.top/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="golang" scheme="http://weehaa.top/tags/golang/"/>
     
       <category term="python" scheme="http://weehaa.top/tags/python/"/>
     
