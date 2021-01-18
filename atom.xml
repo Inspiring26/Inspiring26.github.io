@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-01-14T03:29:14.708Z</updated>
+  <updated>2021-01-18T08:30:05.378Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>具体工程中cpu、内存使用感受</title>
+    <link href="http://weehaa.top/2021/01/14/%E5%85%B7%E4%BD%93%E5%B7%A5%E7%A8%8B%E4%B8%ADcpu%E3%80%81%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
+    <id>http://weehaa.top/2021/01/14/具体工程中cpu、内存使用感受/</id>
+    <published>2021-01-14T07:04:09.000Z</published>
+    <updated>2021-01-18T08:30:05.378Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>做了一个有几十亿数据，几千万用户，截止目前，数据刚收集没多久。<br>对内存和cpu的使用率有一点总结。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>就像一般服务器的负载原小于核心数才好一样，内存和cpu是重要资源，随着数据的增长可能大幅增加。<br>在设计算法时，将它们控制在一个较低百分比十分重要。<br>以我处理的数据为例，5个线程一起跑，要处理的每个文件在2G多，还在持续增长。<br>在并发处理时，16G的内存能达到90%，这是非常不好的。<br>经过一些分割处理，将文件减小到原来的1/16，文件数量也增加了16倍。<br>拿文件数量换了内存空间。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h3&gt;&lt;p&gt;做了一个有几十亿数据，几千万用户，截止目前，数据刚收集没多久。&lt;br&gt;对内存和cpu的使用率有一点总结。&lt;/p&gt;
+&lt;h3 id=&quot;总结&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="总结" scheme="http://weehaa.top/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>vim配置tab等于4空格</title>
@@ -414,9 +439,9 @@
     
     
     
-      <category term="数学" scheme="http://weehaa.top/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="思考" scheme="http://weehaa.top/tags/%E6%80%9D%E8%80%83/"/>
+    
+      <category term="数学" scheme="http://weehaa.top/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -480,34 +505,6 @@
     <summary type="html">
     
       &lt;p&gt;这是一个临时添加中文或其他字体的方式，永久添加可能会有各种问题，这个是一定有效的。&lt;br&gt;代码：&lt;/p&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import matplotlib  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from matplotlib.font_manager import *  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import matplotlib.pyplot as plt &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;myfont &amp;#x3D; FontProperties(fname&amp;#x3D;&amp;#39;&amp;#x2F;home&amp;#x2F;h&amp;#x2F;Downloads&amp;#x2F;SimHei.ttf&amp;#39;,size&amp;#x3D;10)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;matplotlib.rcParams[&amp;#39;axes.unicode_minus&amp;#39;]&amp;#x3D;False &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;x&amp;#x3D;[*range(10)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y&amp;#x3D;[*range(10,20)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.title(&amp;quot;中国&amp;quot;,fontproperties&amp;#x3D;myfont)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.scatter(x,y)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="python" scheme="http://weehaa.top/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python解包</title>
-    <link href="http://weehaa.top/2020/12/23/python%E8%A7%A3%E5%8C%85/"/>
-    <id>http://weehaa.top/2020/12/23/python解包/</id>
-    <published>2020-12-23T03:16:17.000Z</published>
-    <updated>2020-12-23T03:31:17.197Z</updated>
-    
-    <content type="html"><![CDATA[<p>Python中的解包符号是要配合列表使用的，此外也可以在print里直接使用。</p><p><img src="/2020/12/23/python%E8%A7%A3%E5%8C%85/2020-12-22_15-24.png" alt="pic"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Python中的解包符号是要配合列表使用的，此外也可以在print里直接使用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2020/12/23/python%E8%A7%A3%E5%8C%85/2020-12-22_15-24.png&quot; alt=&quot;pic&quot;&gt;&lt;/p&gt;
-
-      
     
     </summary>
     

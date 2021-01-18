@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[具体工程中cpu、内存使用感受]]></title>
+    <url>%2F2021%2F01%2F14%2F%E5%85%B7%E4%BD%93%E5%B7%A5%E7%A8%8B%E4%B8%ADcpu%E3%80%81%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97%2F</url>
+    <content type="text"><![CDATA[介绍做了一个有几十亿数据，几千万用户，截止目前，数据刚收集没多久。对内存和cpu的使用率有一点总结。 总结就像一般服务器的负载原小于核心数才好一样，内存和cpu是重要资源，随着数据的增长可能大幅增加。在设计算法时，将它们控制在一个较低百分比十分重要。以我处理的数据为例，5个线程一起跑，要处理的每个文件在2G多，还在持续增长。在并发处理时，16G的内存能达到90%，这是非常不好的。经过一些分割处理，将文件减小到原来的1/16，文件数量也增加了16倍。拿文件数量换了内存空间。]]></content>
+      <tags>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vim配置tab等于4空格]]></title>
     <url>%2F2021%2F01%2F14%2Fvim%E9%85%8D%E7%BD%AEtab%E7%AD%89%E4%BA%8E4%E7%A9%BA%E6%A0%BC%2F</url>
     <content type="text"><![CDATA[在/etc/vim/vimrc中添加或修改123456&quot; add tab spaceset ts&#x3D;4set softtabstop&#x3D;4set shiftwidth&#x3D;4set expandtabset autoindent]]></content>
@@ -141,8 +149,8 @@
     <url>%2F2020%2F12%2F26%2F%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83%2F</url>
     <content type="text"><![CDATA[结论只要能建立起大小关系的表达，比如临界关系，哪怕二者是不同范畴的内容，比如距离和角度，我们也可以在坐标轴上得到他们关系的表示，并计算其他方面的关系。关键点是不同范畴内容照样建立坐标系，会得出一些特别的结果，比如以为算不出的结果。 书籍原图]]></content>
       <tags>
-        <tag>数学</tag>
         <tag>思考</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -894,8 +902,8 @@
     <url>%2F2020%2F03%2F20%2Fshell%E7%BC%96%E7%A8%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[定义变量时，变量名不加美元符号；变量名和等号间不能有空格；除了自己赋值，还可以用语句，如：for file in `ls /etc`;使用变量需加美元符，有两种：1$file $&#123;file&#125; 后者方便和其他字符串拼接；变量可以被重新定义或者说赋值，依然不加美元号； 以#开头的行是注释，被忽略；shell里没有多行注释符；对于代码块，可以用花括号括起来定义成函数，不调用时达到注释代码块效果； 只有两种数据类型，数字、字符串；字符串可以单引号、双引号、不引号,单引号内不能有变量、单引号的转义，双引号可以有变量、双引号的转义； 字符串拼接，1$file直接在空间上拼接，1$&#123;file&#125;可以在双引号内拼接； 获取字符串长度：1$&#123;#file&#125; 提取子字符串：1$&#123;#file:1:4&#125;下标从0开始计算，就是第1个到第4个，不是第1个到第三个； linux里的[是可执行程序，位置在1&#x2F;usr&#x2F;bin&#x2F;[所以前后必须有空格； if else:写成一行，有值的都算True1if ps -ef | grep ssh;then echo hello;fi写成脚本1234if ps -ef | grep sshthen echo hellofi其他情况：12345678910111213141516if ps -ef | grep sshthen echo helloelse echo world #else后是不能为空的fiif ps -ef | grep sshthen echo helloelif ps -ef | grep auto echo world #else后是不能为空的else echo greatfi for while:1234for var in item1 item2 ... itemndo commanddone写成一行：1for var in item1 item2 ... itemN; do command1; command2… ;done#命令间要用分号分开，done在最后一个命令之后单起一句，其后加不加分号都可以也可以传统for风格1234567for (( var&#x3D;1;var&lt;5 ;var++))do echo $vardone#单行for (( var&#x3D;1;var&lt;5;var++));do echo $var;done while:1234while conditiondo commanddone无限循环：1234567891011121314151617while :do commanddone或者while truedo commanddone或者for (( ; ;))do commanddone 一个类似与while的until1234util conditiondo commanddone 还有一直case语法了解一下123456789101112131415161718192021222324252627case &quot;$&#123;opt&#125;&quot; in &quot;Install-Puppet-Server&quot; ) install_master $1 exit ;; &quot;Install-Puppet-Client&quot; ) install_client $1 exit ;; &quot;Config-Puppet-Server&quot; ) config_puppet_master exit ;; &quot;Config-Puppet-Client&quot; ) config_puppet_client exit ;; &quot;Exit&quot; ) exit ;; * ) echo &quot;Bad option, please choose again&quot;esac 在bash里source和.是等效的，他们都是读入并执行指定文件12source .&#x2F;function.sh. .&#x2F;function.sh 顺便提一下获取文件绝对路径的方法12&gt;&gt;&gt;readlink -f test.sh&#x2F;home&#x2F;h2&#x2F;test.sh有这样的综合使用分析：readlink -f test.sh 是一个可执行shell语句，效果是获取test.sh的绝对路径要把执行完语句的结果传给变量的话，需要用``将语句括起来，123456789&gt;&gt;&gt;testpath&#x3D;\&#96;readlink -f test.sh\&#96;此时$testpath 的值就是路径字符串，直接运行$testpath 是运行该文件，可能会有权限问题，&gt;&gt;&gt;. $testpath &gt;&gt;&gt;source $testpath 都是执行那个脚本&gt;&gt;&gt;echo $testpath 是打印出路径地址 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>shell</tag>
         <tag>注意事项</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
