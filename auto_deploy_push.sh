@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "vim配置tab等于4空格"
+git commit -m "具体工程中cpu、内存使用感受"
 git push
