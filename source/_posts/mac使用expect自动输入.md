@@ -13,4 +13,4 @@ spawn ssh -p 1*** pi@***.cn
 
 expect "*password:*" { send "J***\r";interact }
 ```
-password:前后星号是统配符，其实位置是隐藏了个人信息。
+password:前后星号是通配符，其后位置是隐藏了个人信息。
