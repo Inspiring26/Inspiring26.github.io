@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[mac使用expect自动输入]]></title>
     <url>%2F2021%2F01%2F28%2Fmac%E4%BD%BF%E7%94%A8expect%E8%87%AA%E5%8A%A8%E8%BE%93%E5%85%A5%2F</url>
-    <content type="text"><![CDATA[说明以ssh登陆自动输入密码为例#1234#!&#x2F;usr&#x2F;bin&#x2F;expectspawn ssh -p 1*** pi@***.cnexpect &quot;*password:*&quot; &#123; send &quot;J***\r&quot;;interact &#125; password:前后星号是统配符，其实位置是隐藏了个人信息。]]></content>
+    <content type="text"><![CDATA[说明以ssh登陆自动输入密码为例#1234#!&#x2F;usr&#x2F;bin&#x2F;expectspawn ssh -p 1*** pi@***.cnexpect &quot;*password:*&quot; &#123; send &quot;J***\r&quot;;interact &#125; password:前后星号是通配符，其后位置是隐藏了个人信息。]]></content>
       <tags>
         <tag>方法</tag>
         <tag>Mac</tag>
@@ -86,8 +86,8 @@
     <content type="text"><![CDATA[指令123root@h2-B85M-D2V-SI:~# nvidia-smi -q | grep Product Product Name : GeForce RTX 2070 SUPER Product Brand : GeForce]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>linux</tag>
         <tag>ubuntu</tag>
+        <tag>linux</tag>
         <tag>nvidia</tag>
       </tags>
   </entry>
@@ -106,8 +106,8 @@
     <content type="text"><![CDATA[前言我的150Mbs的RT3070l无线网卡，通过create_ap创建的热点下载速度在500-700k，而且首次打开网页很慢。今天集中解决一下这个问题。create_ap仓库已经停止维护，在其页面上推荐了一个图形界面的分支。名字叫linux-wifi-hotspot。也可以叫 WiFi hotspot(linux搜索里显示的)，也可以叫 wihotspot (终端启动的指令)。下载、安装后，网络上也没找到详细的介绍。下面介绍下界面各个功能的含义，及对应效果。 界面 功能SSID 热点的名字Password 密码Open 选中则不使用密码WiFi interfaces 建立热点的无线网卡Internet interfaces 机器上联网的网卡Frequency band 根据无线网卡功能选，5G快距离近Hidden 隐藏网络Use psk 加密的一个选项，可不勾Set mac 只有设置的mac才能连接No virt 不使用虚拟化接口功能，经过测试，不选网速更快Channel 取值范围在1-11，我的只有在7及以下才可使用，越大网速越快Mac Filter 添加mac的设备无法连接80211n 80211ac ac比n更快，支持ac就选ac 效果下载局域网网盘文件：在安卓iqoo z1下可以达到4.2M/s在iPhone12下可以3.6M/s]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>linux</tag>
         <tag>ubuntu</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -115,8 +115,8 @@
     <url>%2F2020%2F12%2F30%2Fwhich%E5%92%8Cwhereis%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[示例12345h@h-B360M-D2VX-SI:~$ cxfixbash: cxfix: command not foundh@h-B360M-D2VX-SI:~$ which cxfixh@h-B360M-D2VX-SI:~$ whereis cxfixcxfix: &#x2F;opt&#x2F;cxoffice&#x2F;bin&#x2F;cxfix 总结都是查找可执行文件，简单说，whereis查询更广，which查询默认的几个位置。]]></content>
       <tags>
-        <tag>总结</tag>
         <tag>linux</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -589,8 +589,8 @@
     <content type="text"><![CDATA[linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：1234567891011121314while truedo thetime&#x3D;$(date &quot;+%M&quot;) thetime2&#x3D;&#96;expr $thetime + 10&#96; remainder&#x3D;$(($thetime2%5)) if [ $remainder &#x3D; &#39;0&#39; ] then cd ~&#x2F;blog;sh gitpull.sh date sleep 60s else sleep 60s fidoneshell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。上面使用expr的方式是可行的。 需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>linux</tag>
         <tag>ubuntu</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -645,8 +645,8 @@
     <content type="text"><![CDATA[ubuntu安装node参考连接：https://github.com/nodesource/distributions/blob/master/README.md指令：1234567# Using Ubuntucurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -sudo apt-get install -y nodejs# Using Debian, as rootcurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -apt-get install -y nodejs 查看版本12node -vnpm -v 安装hexo1npm install -g hexo-cli 查看hexo自带功能1hexo 可能会没有server参数 新建文章12hexo n alitsetvim source&#x2F;_posts&#x2F;alitest.md 逐步部署查找问题123hexo cleanhexo generatehexo deploy 处理ERROR Deployer not found: git 错误1npm install --save hexo-deployer-git 配置git邮箱和用户名信息12git config --global user.email 1xxxx@qq.comgit config --global user.name wxxx 尝试部署1sd deploy.sh 查看hexo功能此时可能出现server参数了1hexo 启动服务到默认端口或指定端口123hexo server或hexo server -p 80 更多hexo信息参考：https://hexo.io/zh-cn/docs/server.html 后台运行1setsid hexo server -p 80]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>hexo</tag>
         <tag>ubuntu</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -946,8 +946,8 @@
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1201,8 +1201,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1605,8 +1605,8 @@
     <url>%2F2019%2F10%2F10%2F%E4%B8%BApytorch%E5%AE%89%E8%A3%85nvidia%E7%9A%84apex%E5%8A%A0%E9%80%9F%2F</url>
     <content type="text"><![CDATA[三个指令，不需要配置环境变量123$ git clone https:&#x2F;&#x2F;github.com&#x2F;NVIDIA&#x2F;apex$ cd apex$ pip3 install -v --no-cache-dir --global-option&#x3D;&quot;--cpp_ext&quot; --global-option&#x3D;&quot;--cuda_ext&quot; .&#x2F;]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>nvidia</tag>
+        <tag>pytorch</tag>
       </tags>
   </entry>
   <entry>
@@ -1658,8 +1658,8 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
-        <tag>docker</tag>
         <tag>nvidia</tag>
+        <tag>docker</tag>
         <tag>cuda</tag>
       </tags>
   </entry>
