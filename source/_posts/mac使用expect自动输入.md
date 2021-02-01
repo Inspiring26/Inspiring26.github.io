@@ -6,7 +6,7 @@ tags: [Mac, 方法]
 ### 说明
 以ssh登陆自动输入密码为例
 
-###
+### 代码
 ```
 #!/usr/bin/expect
 spawn ssh -p 1*** pi@***.cn
