@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-02-01T05:41:44.203Z</updated>
+  <updated>2021-02-04T07:03:30.228Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python跳出if语句</title>
+    <link href="http://weehaa.top/2021/02/04/python%E8%B7%B3%E5%87%BAif%E8%AF%AD%E5%8F%A5/"/>
+    <id>http://weehaa.top/2021/02/04/python跳出if语句/</id>
+    <published>2021-02-04T06:39:00.000Z</published>
+    <updated>2021-02-04T07:03:30.228Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>喜欢在循环、函数里使用多个单行的if判断，如果true直接跳出。<br>类似常用的传值类型判断。<br>类似以下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func(a):</span><br><span class="line">    if a&#x3D;&#x3D;&quot;&quot;:print(&quot;empty value&quot;);return</span><br><span class="line">    if a%10&#x3D;&#x3D;0:print(&quot;err vaule&quot;);return</span><br><span class="line"></span><br><span class="line">for i in range(100):</span><br><span class="line">    if key1 not in dict1:print(&quot;err key&quot;);continue</span><br><span class="line">    if dict1[key1]&#x3D;&#x3D;&quot;&quot;:print(&quot;empty value&quot;);continue</span><br></pre></td></tr></table></figure><br>这种句式的好处是逻辑非常清晰。</p><a id="more"></a><p>但是有时要在if里嵌套if，因为它不是函数也不是循环，就无法正常退出。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if 存在文件a:</span><br><span class="line">    if 存在a文件昨天日期的备份：结束</span><br><span class="line">    备份a并加上昨天的日期</span><br></pre></td></tr></table></figure></p><p>当然可以用if…else解决，但是结构就不那么清晰</p><h3 id="我的多此一举的解决方法"><a href="#我的多此一举的解决方法" class="headerlink" title="我的多此一举的解决方法"></a>我的多此一举的解决方法</h3><p>为了达到我的逐行判断、逻辑清晰的目的，我决定这么使用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1):</span><br><span class="line">    if 不存在a：print(&quot;不存在a&quot;);continue</span><br><span class="line">    if 存在a文件昨天日期的备份:continue</span><br><span class="line">    备份a并加上昨天的日期</span><br></pre></td></tr></table></figure></p><p>整体结构很简单。<br>相当于在备份a前加了两个判断。</p><p>我讨厌大规模的for循环、嵌套for循环，但却喜欢1的for循环。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;喜欢在循环、函数里使用多个单行的if判断，如果true直接跳出。&lt;br&gt;类似常用的传值类型判断。&lt;br&gt;类似以下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def func(a):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if a&amp;#x3D;&amp;#x3D;&amp;quot;&amp;quot;:print(&amp;quot;empty value&amp;quot;);return&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if a%10&amp;#x3D;&amp;#x3D;0:print(&amp;quot;err vaule&amp;quot;);return&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;for i in range(100):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if key1 not in dict1:print(&amp;quot;err key&amp;quot;);continue&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if dict1[key1]&amp;#x3D;&amp;#x3D;&amp;quot;&amp;quot;:print(&amp;quot;empty value&amp;quot;);continue&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;这种句式的好处是逻辑非常清晰。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="python" scheme="http://weehaa.top/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>mac使用expect自动输入</title>
@@ -264,11 +287,11 @@
     
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
+      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
+    
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
       <category term="nvidia" scheme="http://weehaa.top/tags/nvidia/"/>
-    
-      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
     
   </entry>
   
@@ -317,9 +340,9 @@
     
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
+    
+      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
   </entry>
   
@@ -490,29 +513,6 @@
       <category term="python" scheme="http://weehaa.top/tags/python/"/>
     
       <category term="echarts" scheme="http://weehaa.top/tags/echarts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shell快速计算加减乘除</title>
-    <link href="http://weehaa.top/2020/12/24/shell%E5%BF%AB%E9%80%9F%E8%AE%A1%E7%AE%97%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/"/>
-    <id>http://weehaa.top/2020/12/24/shell快速计算加减乘除/</id>
-    <published>2020-12-24T02:54:41.000Z</published>
-    <updated>2020-12-24T02:56:37.567Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h@h-B360M-D2VX-SI:~&#x2F;Github&#x2F;blog&#x2F;source&#x2F;_posts$ &#96;expr 1 + 1&#96;</span><br><span class="line">bash: 2: command not found</span><br><span class="line">h@h-B360M-D2VX-SI:~&#x2F;Github&#x2F;blog&#x2F;source&#x2F;_posts$ $((1+1))</span><br><span class="line">bash: 2: command not found</span><br></pre></td></tr></table></figure><a id="more"></a><p>需要注意的是，使用第一种方法符号和数字间必须要加空格。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;h@h-B360M-D2VX-SI:~&amp;#x2F;Github&amp;#x2F;blog&amp;#x2F;source&amp;#x2F;_posts$ &amp;#96;expr 1 + 1&amp;#96;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bash: 2: command not found&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;h@h-B360M-D2VX-SI:~&amp;#x2F;Github&amp;#x2F;blog&amp;#x2F;source&amp;#x2F;_posts$ $((1+1))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bash: 2: command not found&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="shell" scheme="http://weehaa.top/tags/shell/"/>
     
   </entry>
   

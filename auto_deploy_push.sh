@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "mac使用expect自动输入2"
+git commit -m "python跳出if语句"
 git push
