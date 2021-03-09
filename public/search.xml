@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[清空文件的几种方法]]></title>
+    <url>%2F2021%2F03%2F09%2F%E6%B8%85%E7%A9%BA%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[重定向方式123456# 1.&gt; test.txt# 2.: &gt; test.txt# 3.true &gt; test.txt 使用工具指令12345678910# 4.cat &#x2F;dev&#x2F;null &gt; test.txt# 5.cp &#x2F;dev&#x2F;null test.txt# 6.dd if&#x3D;&#x2F;dev&#x2F;null of&#x3D;test.txt# 7.echo -n &quot;&quot; &gt; test.txt # -n是为了是不显示空白行# 8.echo -n &gt; test.txt]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python跳出if语句]]></title>
     <url>%2F2021%2F02%2F04%2Fpython%E8%B7%B3%E5%87%BAif%E8%AF%AD%E5%8F%A5%2F</url>
     <content type="text"><![CDATA[前言喜欢在循环、函数里使用多个单行的if判断，如果true直接跳出。类似常用的传值类型判断。类似以下：1234567def func(a): if a&#x3D;&#x3D;&quot;&quot;:print(&quot;empty value&quot;);return if a%10&#x3D;&#x3D;0:print(&quot;err vaule&quot;);returnfor i in range(100): if key1 not in dict1:print(&quot;err key&quot;);continue if dict1[key1]&#x3D;&#x3D;&quot;&quot;:print(&quot;empty value&quot;);continue这种句式的好处是逻辑非常清晰。 但是有时要在if里嵌套if，因为它不是函数也不是循环，就无法正常退出。例如：123if 存在文件a: if 存在a文件昨天日期的备份：结束 备份a并加上昨天的日期 当然可以用if…else解决，但是结构就不那么清晰 我的多此一举的解决方法为了达到我的逐行判断、逻辑清晰的目的，我决定这么使用:1234for i in range(1): if 不存在a：print(&quot;不存在a&quot;);continue if 存在a文件昨天日期的备份:continue 备份a并加上昨天的日期 整体结构很简单。相当于在备份a前加了两个判断。 我讨厌大规模的for循环、嵌套for循环，但却喜欢1的for循环。]]></content>
@@ -167,8 +176,8 @@
     <url>%2F2020%2F12%2F26%2F%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83%2F</url>
     <content type="text"><![CDATA[结论只要能建立起大小关系的表达，比如临界关系，哪怕二者是不同范畴的内容，比如距离和角度，我们也可以在坐标轴上得到他们关系的表示，并计算其他方面的关系。关键点是不同范畴内容照样建立坐标系，会得出一些特别的结果，比如以为算不出的结果。 书籍原图]]></content>
       <tags>
-        <tag>思考</tag>
         <tag>数学</tag>
+        <tag>思考</tag>
       </tags>
   </entry>
   <entry>
