@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-03-09T03:30:57.815Z</updated>
+  <updated>2021-03-24T05:24:47.232Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python生成随机字符串</title>
+    <link href="http://weehaa.top/2021/03/24/python%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>http://weehaa.top/2021/03/24/python生成随机字符串/</id>
+    <published>2021-03-24T05:16:42.000Z</published>
+    <updated>2021-03-24T05:24:47.232Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>1.大小写字母<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import random, string</span><br><span class="line">&gt;&gt;&gt; &quot;&quot;.join(random.sample(string.ascii_letters,9))</span><br><span class="line">&#39;HkJdpZclC&#39;</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>2.大小字母+数字（字母开头）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import random, string</span><br><span class="line">&gt;&gt;&gt; &quot;&quot;.join(random.sample(string.ascii_letters,1)+random.sample(string.ascii_letters+string.digits,9))</span><br><span class="line">&#39;CX41uNHykR&#39;</span><br></pre></td></tr></table></figure></p><h3 id="元素拆解"><a href="#元素拆解" class="headerlink" title="元素拆解"></a>元素拆解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; string.ascii_letters</span><br><span class="line">&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><br><span class="line">&gt;&gt;&gt; string.digits</span><br><span class="line">&#39;0123456789&#39;</span><br><span class="line">&gt;&gt;&gt; random.sample(&#39;123456789&#39;, 4)</span><br><span class="line">[&#39;7&#39;, &#39;8&#39;, &#39;5&#39;, &#39;4&#39;]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h3&gt;&lt;p&gt;1.大小写字母&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt; import random, string&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &amp;quot;&amp;quot;.join(random.sample(string.ascii_letters,9))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#39;HkJdpZclC&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="python" scheme="http://weehaa.top/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>清空文件的几种方法</title>
@@ -36,9 +59,9 @@
     
     
     
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -182,9 +205,9 @@
     
     
     
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -231,9 +254,9 @@
     
     
     
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="python" scheme="http://weehaa.top/tags/python/"/>
     
@@ -260,9 +283,9 @@
     
     
     
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -311,13 +334,13 @@
     
     
     
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
     
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
       <category term="nvidia" scheme="http://weehaa.top/tags/nvidia/"/>
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -364,11 +387,11 @@
     
     
     
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
     
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -389,9 +412,9 @@
     
     
     
-      <category term="总结" scheme="http://weehaa.top/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
+    
+      <category term="总结" scheme="http://weehaa.top/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -491,29 +514,6 @@
     
     
       <category term="记录" scheme="http://weehaa.top/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于布丰问题的思考</title>
-    <link href="http://weehaa.top/2020/12/26/%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83/"/>
-    <id>http://weehaa.top/2020/12/26/关于布丰问题的思考/</id>
-    <published>2020-12-26T12:04:05.000Z</published>
-    <updated>2020-12-28T03:26:45.773Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>只要能建立起大小关系的表达，比如临界关系，哪怕二者是不同范畴的内容，比如距离和角度，我们也可以在坐标轴上得到他们关系的表示，并计算其他方面的关系。</p><p>关键点是不同范畴内容照样建立坐标系，会得出一些特别的结果，比如以为算不出的结果。</p><a id="more"></a><h3 id="书籍原图"><a href="#书籍原图" class="headerlink" title="书籍原图"></a>书籍原图</h3><p><img src="/2020/12/26/%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83/Screenshot_20201226_194440.jpg" alt><br><img src="/2020/12/26/%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83/Screenshot_20201226_194517.jpg" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h3&gt;&lt;p&gt;只要能建立起大小关系的表达，比如临界关系，哪怕二者是不同范畴的内容，比如距离和角度，我们也可以在坐标轴上得到他们关系的表示，并计算其他方面的关系。&lt;/p&gt;&lt;p&gt;关键点是不同范畴内容照样建立坐标系，会得出一些特别的结果，比如以为算不出的结果。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="数学" scheme="http://weehaa.top/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="思考" scheme="http://weehaa.top/tags/%E6%80%9D%E8%80%83/"/>
     
   </entry>
   
