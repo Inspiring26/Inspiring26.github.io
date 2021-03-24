@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "清空文件的几种方"
+git commit -m "python生成随机字符串"
 git push
