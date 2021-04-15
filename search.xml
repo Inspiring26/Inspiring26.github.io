@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pytorch自定义损失函数]]></title>
+    <url>%2F2021%2F04%2F15%2Fpytorch%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[在深度学习中有时需要使用自定义损失函数，或者为了更好的理解各个环节而使用自定义损失函数。在pytorch中自定义损失函数实现的比较简单，就像实现一个小型网络一样。代码123456789101112class LossFunc(nn.Module): def __init__(self): super(LossFunc, self).__init__() def forward(self, prelist, ylist): dif&#x3D;torch.abs(prelist-ylist) coef&#x3D;ylist.clone() coef[coef&gt;&#x3D;0.5]&#x3D;2 coef[coef&lt;0.5]&#x3D;1 dif&#x3D;torch.mul(dif,coef) return torch.sum(dif)&#x2F;&#x2F;ylist.size()[0]mylossfunc&#x3D;LossFunc()mylossfunc&#x3D;mylossfunc.cuda() 这是一个自己写的 均差，相当于均方误差没有求平方。写的时候注意尽量求平均的，不要导致返回的结果过大，可以类比着已有的损失函数，做部分修改。]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>pytorch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jupyter日常测性能]]></title>
+    <url>%2F2021%2F04%2F15%2Fjupyter%E6%97%A5%E5%B8%B8%E6%B5%8B%E6%80%A7%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[在jupyter中日常测试不同表达方式的执行效率，进而做取舍时，直接新开一行以1%%timeit开头即可 示例12way1&#x3D;LossFunc()way1&#x3D;way1.cuda() 12%%timeittmp&#x3D;way1(torch.rand(10000,1),torch.rand(10000,1))]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python生成随机字符串]]></title>
     <url>%2F2021%2F03%2F24%2Fpython%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
     <content type="text"><![CDATA[方法1.大小写字母123&gt;&gt;&gt; import random, string&gt;&gt;&gt; &quot;&quot;.join(random.sample(string.ascii_letters,9))&#39;HkJdpZclC&#39; 2.大小字母+数字（字母开头）123&gt;&gt;&gt; import random, string&gt;&gt;&gt; &quot;&quot;.join(random.sample(string.ascii_letters,1)+random.sample(string.ascii_letters+string.digits,9))&#39;CX41uNHykR&#39; 元素拆解123456&gt;&gt;&gt; string.ascii_letters&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;&gt;&gt;&gt; string.digits&#39;0123456789&#39;&gt;&gt;&gt; random.sample(&#39;123456789&#39;, 4)[&#39;7&#39;, &#39;8&#39;, &#39;5&#39;, &#39;4&#39;]]]></content>
@@ -14,8 +32,8 @@
     <url>%2F2021%2F03%2F09%2F%E6%B8%85%E7%A9%BA%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[重定向方式123456# 1.&gt; test.txt# 2.: &gt; test.txt# 3.true &gt; test.txt 使用工具指令12345678910# 4.cat &#x2F;dev&#x2F;null &gt; test.txt# 5.cp &#x2F;dev&#x2F;null test.txt# 6.dd if&#x3D;&#x2F;dev&#x2F;null of&#x3D;test.txt# 7.echo -n &quot;&quot; &gt; test.txt # -n是为了是不显示空白行# 8.echo -n &gt; test.txt]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -67,8 +85,8 @@
     <url>%2F2021%2F01%2F13%2Fubuntu%E5%BC%80%E6%9C%BA%E6%89%A7%E8%A1%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E8%84%9A%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[准备工作切换到root。没有的文件自己创建新的。创建或修改rc-local.servicevim /etc/systemd/system/rc-local.service1234567891011121314[Unit] Description&#x3D;&#x2F;etc&#x2F;rc.local Compatibility ConditionPathExists&#x3D;&#x2F;etc&#x2F;rc.local [Service] Type&#x3D;forking ExecStart&#x3D;&#x2F;etc&#x2F;rc.local start TimeoutSec&#x3D;0 StandardOutput&#x3D;tty RemainAfterExit&#x3D;yes SysVStartPriority&#x3D;99 [Install]WantedBy&#x3D;multi-user.target 穿件或修改对应的rc.localvim /etc/rc.local 1234567891011121314151617#!&#x2F;bin&#x2F;sh -e ## rc.local# This script is executed at the end of each multiuser runlevel.# Make sure that the script will &quot;exit 0&quot; on success or any other # value on error. # In order to enable or disable this script just change the execution bits. # By default this script does nothing. #start scriptcd &#x2F;home&#x2F;h2&#x2F;stat\_datapython3 switchControl.py &gt;&gt; control.log &amp;#end scriptexit 0 加权限1chmod +x &#x2F;etc&#x2F;rc.local 开启服务1systemctl enable rc-local 运行1systemctl start rc-local.service 查看当前运行状态1systemctl status rc-local.service 总结从上面配置可以看出，/etc/systemd/system/下的服务名可以随意设定。里面对应的local文件路径要写对。然后看开启服务、运行服务、查看状态即可。]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -85,8 +103,8 @@
     <url>%2F2021%2F01%2F13%2Flinux%E4%B8%8Bpython%E5%A4%8D%E5%88%B6%E5%86%85%E5%AE%B9%E5%88%B0%E7%B2%98%E8%B4%B4%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[安装pyperclip库1pip3 install pyperclip 安装xclip1sudo apt install xclip 和粘贴板交互12345import pyperclip# 复制到粘贴板pyperclip.copy(&#39;test&#39;)# 从粘贴板复制pyperclip.paste()]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -95,8 +113,8 @@
     <url>%2F2021%2F01%2F11%2Fubuntu%E9%87%8D%E5%A4%8D%E8%BE%93%E5%AF%86%E7%A0%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[起因今天在使用xstart时导致，xUbuntu重启后循环跳出输密码界面，无法进入桌面。 解决方法ctrl + alt + F1进入终端删除用户主目录下的.Xauthority 原因每次用户登录的时候都要读取对应.Xauthority的信息，我之前的操作导致其权限发生变化，这点在删除时就可以看到。删除后重启正常进入桌面。]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -112,10 +130,10 @@
     <url>%2F2021%2F01%2F07%2FUbuntu%E6%9F%A5%E7%9C%8B%E6%98%BE%E5%8D%A1%E5%85%B7%E4%BD%93%E5%9E%8B%E5%8F%B7%2F</url>
     <content type="text"><![CDATA[指令123root@h2-B85M-D2V-SI:~# nvidia-smi -q | grep Product Product Name : GeForce RTX 2070 SUPER Product Brand : GeForce]]></content>
       <tags>
+        <tag>方法</tag>
         <tag>ubuntu</tag>
         <tag>linux</tag>
         <tag>nvidia</tag>
-        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -132,9 +150,9 @@
     <url>%2F2020%2F12%2F30%2Flinux%E5%88%9B%E5%BB%BA%E7%83%AD%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D%2F</url>
     <content type="text"><![CDATA[前言我的150Mbs的RT3070l无线网卡，通过create_ap创建的热点下载速度在500-700k，而且首次打开网页很慢。今天集中解决一下这个问题。create_ap仓库已经停止维护，在其页面上推荐了一个图形界面的分支。名字叫linux-wifi-hotspot。也可以叫 WiFi hotspot(linux搜索里显示的)，也可以叫 wihotspot (终端启动的指令)。下载、安装后，网络上也没找到详细的介绍。下面介绍下界面各个功能的含义，及对应效果。 界面 功能SSID 热点的名字Password 密码Open 选中则不使用密码WiFi interfaces 建立热点的无线网卡Internet interfaces 机器上联网的网卡Frequency band 根据无线网卡功能选，5G快距离近Hidden 隐藏网络Use psk 加密的一个选项，可不勾Set mac 只有设置的mac才能连接No virt 不使用虚拟化接口功能，经过测试，不选网速更快Channel 取值范围在1-11，我的只有在7及以下才可使用，越大网速越快Mac Filter 添加mac的设备无法连接80211n 80211ac ac比n更快，支持ac就选ac 效果下载局域网网盘文件：在安卓iqoo z1下可以达到4.2M/s在iPhone12下可以3.6M/s]]></content>
       <tags>
+        <tag>方法</tag>
         <tag>ubuntu</tag>
         <tag>linux</tag>
-        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -142,8 +160,8 @@
     <url>%2F2020%2F12%2F30%2Fwhich%E5%92%8Cwhereis%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[示例12345h@h-B360M-D2VX-SI:~$ cxfixbash: cxfix: command not foundh@h-B360M-D2VX-SI:~$ which cxfixh@h-B360M-D2VX-SI:~$ whereis cxfixcxfix: &#x2F;opt&#x2F;cxoffice&#x2F;bin&#x2F;cxfix 总结都是查找可执行文件，简单说，whereis查询更广，which查询默认的几个位置。]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>总结</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -250,8 +268,8 @@
     <url>%2F2020%2F12%2F23%2Fpytorch%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>记录</tag>
+        <tag>pytorch</tag>
       </tags>
   </entry>
   <entry>
@@ -259,8 +277,8 @@
     <url>%2F2020%2F12%2F16%2FUbuntu%E9%87%8D%E5%90%AF%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95%2F</url>
     <content type="text"><![CDATA[退出直接右上角或者其他显示图标的位置退出 打开alt + f2搜fcitx运行即可 网上很多方法不可用，这个有效]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -277,8 +295,8 @@
     <url>%2F2020%2F12%2F16%2Fnetwork-DISABLED-description-Wireless-interface%2F</url>
     <content type="text"><![CDATA[linux打开无线网卡查看123456789101112131415161718192021222324252627h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ lshw -C networkWARNING: you should run this program as super-user. *-network description: Ethernet interface product: RTL8111&#x2F;8168&#x2F;8411 PCI Express Gigabit Ethernet Controller vendor: Realtek Semiconductor Co., Ltd. physical id: 0 bus info: pci@0000:02:00.0 logical name: enp2s0 version: 16 serial: e0:d5:5e:ca:e7:d7 size: 100Mbit&#x2F;s capacity: 1Gbit&#x2F;s width: 64 bits clock: 33MHz capabilities: bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation configuration: autonegotiation&#x3D;on broadcast&#x3D;yes driver&#x3D;r8169 duplex&#x3D;full firmware&#x3D;rtl8168h-2_0.0.2 02&#x2F;26&#x2F;15 ip&#x3D;192.168.2.38 latency&#x3D;0 link&#x3D;yes multicast&#x3D;yes port&#x3D;MII speed&#x3D;100Mbit&#x2F;s resources: irq:16 ioport:3000(size&#x3D;256) memory:a5204000-a5204fff memory:a5200000-a5203fff *-network DISABLED description: Wireless interface physical id: 1 bus info: usb@1:3 logical name: wlx983f9f1816c5 serial: 98:3f:9f:18:16:c5 capabilities: ethernet physical wireless configuration: broadcast&#x3D;yes driver&#x3D;rt2800usb driverversion&#x3D;5.4.0-54-generic firmware&#x3D;N&#x2F;A link&#x3D;no multicast&#x3D;yes wireless&#x3D;IEEE 802.11WARNING: output may be incomplete or inaccurate, you should run this program as super-user. 找到名字后开启1sudo ifconfig wlx983f9f1816c5 up 再查看，已经开启123456789101112131415161718192021222324252627h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ lshw -C networkWARNING: you should run this program as super-user. *-network description: Ethernet interface product: RTL8111&#x2F;8168&#x2F;8411 PCI Express Gigabit Ethernet Controller vendor: Realtek Semiconductor Co., Ltd. physical id: 0 bus info: pci@0000:02:00.0 logical name: enp2s0 version: 16 serial: e0:d5:5e:ca:e7:d7 size: 100Mbit&#x2F;s capacity: 1Gbit&#x2F;s width: 64 bits clock: 33MHz capabilities: bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation configuration: autonegotiation&#x3D;on broadcast&#x3D;yes driver&#x3D;r8169 duplex&#x3D;full firmware&#x3D;rtl8168h-2_0.0.2 02&#x2F;26&#x2F;15 ip&#x3D;192.168.2.38 latency&#x3D;0 link&#x3D;yes multicast&#x3D;yes port&#x3D;MII speed&#x3D;100Mbit&#x2F;s resources: irq:16 ioport:3000(size&#x3D;256) memory:a5204000-a5204fff memory:a5200000-a5203fff *-network description: Wireless interface physical id: 1 bus info: usb@1:3 logical name: wlx983f9f1816c5 serial: 98:3f:9f:18:16:c5 capabilities: ethernet physical wireless configuration: broadcast&#x3D;yes driver&#x3D;rt2800usb driverversion&#x3D;5.4.0-54-generic firmware&#x3D;0.36 link&#x3D;no multicast&#x3D;yes wireless&#x3D;IEEE 802.11WARNING: output may be incomplete or inaccurate, you should run this program as super-user. 查看网络信息12345678910111213141516171819202122232425h@h-B360M-D2VX-SI:~&#x2F;Downloads&#x2F;wicd$ ifconfigenp2s0: flags&#x3D;4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500 inet 192.168.2.38 netmask 255.255.252.0 broadcast 192.168.3.255 inet6 fe80::9a45:2081:a371:efdd prefixlen 64 scopeid 0x20&lt;link&gt; ether e0:d5:5e:ca:e7:d7 txqueuelen 1000 (Ethernet) RX packets 54246037 bytes 22551243144 (22.5 GB) RX errors 0 dropped 4864651 overruns 0 frame 0 TX packets 10198222 bytes 2698013990 (2.6 GB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0lo: flags&#x3D;73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536 inet 127.0.0.1 netmask 255.0.0.0 inet6 ::1 prefixlen 128 scopeid 0x10&lt;host&gt; loop txqueuelen 1000 (Local Loopback) RX packets 1215066 bytes 663870515 (663.8 MB) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 1215066 bytes 663870515 (663.8 MB) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0wlx983f9f1816c5: flags&#x3D;4099&lt;UP,BROADCAST,MULTICAST&gt; mtu 1500 ether 98:3f:9f:18:16:c5 txqueuelen 1000 (Ethernet) RX packets 0 bytes 0 (0.0 B) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 0 bytes 0 (0.0 B) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 已经开启，接下来就可以配合create_ap创建热点]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -286,8 +304,8 @@
     <url>%2F2020%2F12%2F16%2Fcreate-ap%E9%85%8D%E7%BD%AE%E7%83%AD%E7%82%B9%E5%8F%8A%E9%9A%8F%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%2F</url>
     <content type="text"><![CDATA[配置1sudo vim &#x2F;etc&#x2F;create_ap.conf修改1234WIFI_IFACE&#x3D;wlx983f9f1816c5INTERNET_IFACE&#x3D;enp2s0SSID&#x3D;hhhPASSPHRASE&#x3D;****#密码 开启、关闭、开机启动123sudo systemctl start create_ap # 开启热点sudo systemctl stop create_ap # 关闭热点sudo systemctl enable create_ap.service # 开机启动 12h@h-B360M-D2VX-SI:~&#x2F;Github&#x2F;blog$ sudo systemctl enable create_ap.serviceCreated symlink &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;multi-user.target.wants&#x2F;create_ap.service → &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;create_ap.service.]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -295,8 +313,8 @@
     <url>%2F2020%2F12%2F16%2Fcreate-ap-Failed-to-initialize-lock%2F</url>
     <content type="text"><![CDATA[123456# 查看ls &#x2F;tmp&#x2F;create_ap.all.lockcat &#x2F;tmp&#x2F;create_ap.all.lock# 删除rm &#x2F;tmp&#x2F;create_ap.all.lock 再使用create_ap创建就可以了]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -346,8 +364,8 @@
     <url>%2F2020%2F11%2F25%2Fword%E3%80%81excel%E7%AD%89office%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%8F%90%E5%8F%96%E5%8F%8A%E9%A2%84%E8%A7%88%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[预览预览而不下载的方法就是，转换为pdf，点击时将pdf不作为附件。这时就会新打开一个预览页面。提取在windows服务器上，以前使用的时office自带的接口进行转换，转换后用pdfminer提取内容作为简介。部署到linux系统上可以使用libreoffice转换。但是转换后再用pdfminer提取会出现同一个字的大量重复。 linux下用wps转换不成，突然想到的一个效果很好的方法分析问题：之所以出现pdfminer提取乱码，是因为用的不是word转换的。解决方法：上传的是pdf格式的，一般是别人用word转换好的，直接提取不会出现什么问题，那种确实不能提取的除非ocr识别，可以不管。上传的是word、excel、ppt等格式的，可以将转换展示和内容提取分开。转换展示，即使用libreoffice转换为pdf后展示。内容提取可以将文件转换成txt文件,word里有一个另存为txt的选项，这样就可以非常完整的提取到word的内容。 总结原路几乎走不通的问题，换个思路就完整高效的解决了。遇到问题了，唯有转化、转化、转化，这也是我从《数学之美》里获得的收获。]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -355,8 +373,8 @@
     <url>%2F2020%2F11%2F25%2Fvim%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[定位12G&#x2F;1G&#x2F;gg 最后一行&#x2F;第一行&#x2F;第一行w&#x2F;b 下一个单词&#x2F;前一个单词编辑/插入12i&#x2F;I&#x2F;a&#x2F;A 光标字符前插入&#x2F;行首插入&#x2F;光标之后插入&#x2F;行尾插入$&#x2F;^ 仅移动光标不编辑的行尾&#x2F;行首 删除/复制/粘贴123dd&#x2F;ndd 删除当前行&#x2F;删除当前行开始的n行yy&#x2F;nyy 复制当前行&#x2F;复制当前行开始的n行p 粘贴 查找1&#x2F;word 斜杠加单词就开始查找，回车后n下一个，N反方向下一个 替换12345678910:%s&#x2F;word1&#x2F;word2&#x2F;gc :s 当前行:%s 全文:6,10s 6到10行:.,+2s 当前行加后面两行常用的是:%s :s不加后面的&#x2F;g表示只替换后面的一个这个位置可以有g(全部)、i(大小写不敏感)、I（大小写敏感）、c（需要确认） 定位或查找后新开一行1o&#x2F;O o在下面开一行&#x2F;O在上面开一行 查看具体指令的文档12:help word 查询指令用法:q 返回之前编辑的文件 plan接下来一个月把编辑器转到vim。]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -364,8 +382,8 @@
     <url>%2F2020%2F11%2F23%2Flinux%E5%B0%86%E5%86%85%E5%AE%B9%E7%A7%BB%E5%87%BA%E4%BA%A4%E6%8D%A2%E5%8C%BA%E6%88%96%E5%BC%80%E5%85%B3%E4%BA%A4%E6%8D%A2%E5%8C%BA%2F</url>
     <content type="text"><![CDATA[123456789# 查看交换区文件➜ h2 swaponNAME TYPE SIZE USED PRIO&#x2F;swapfile file 2G 729.6M -2# 关闭所有的➜ h2 swapoff -a# 挂载指定的交换文件➜ h2 swapon &#x2F;swapfile ➜ h2]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -373,8 +391,8 @@
     <url>%2F2020%2F11%2F19%2F%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%AAshell%2F</url>
     <content type="text"><![CDATA[查看是bash还是zsh等1echo $0]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -382,8 +400,8 @@
     <url>%2F2020%2F11%2F19%2Flinux%E5%8D%B8%E8%BD%BDoh-my-zsh%2F</url>
     <content type="text"><![CDATA[卸载12345678➜ ~ uninstall_oh_my_zshAre you sure you want to remove Oh My Zsh? [y&#x2F;N] yRemoving ~&#x2F;.oh-my-zshLooking for original zsh config...Switching your shell back to &#39;&#x2F;bin&#x2F;bash&#39;:Password: Thanks for trying out Oh My Zsh. It&#39;s been uninstalled.Don&#39;t forget to restart your terminal! 切换or not1sudo chsh -s &#x2F;bin&#x2F;bash]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -459,8 +477,8 @@
     <url>%2F2020%2F09%2F03%2Foh-my-zsh%E4%B8%8B%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%98%AF%E4%B8%8D%E6%98%AFroot%E6%9D%83%E9%99%90%2F</url>
     <content type="text"><![CDATA[123456➜ ~ whoamih➜ ~ sudo su[sudo] password for h: h-B360M-D2VX-SI# whoamiroot]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -505,8 +523,8 @@
     <url>%2F2020%2F07%2F24%2Fubuntu%E5%8D%87%E7%BA%A7cuda%E3%80%81cudnn%2F</url>
     <content type="text"><![CDATA[升级python大版本后，需要重新安装多个库，包括pytorch相关的库。1.查看已有的cuda1ls &#x2F;usr&#x2F;local&#x2F;cuda*cuda是带版本号cuda的软链2.使用bin目录下自带脚本卸载 1sudo &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;bin&#x2F;uninstall_*.pl 3.删除剩余文件12ls &#x2F;usr&#x2F;local&#x2F;cuda*sudo rm -rf &#x2F;usr&#x2F;local&#x2F;cuda* 4.下载对应版本cuda、cudnn，注意是对应不是最新123456# cuda toolkit 下载run文件https:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-toolkit-archive# cuDNNhttps:&#x2F;&#x2F;developer.nvidia.com&#x2F;rdp&#x2F;cudnn-archive# 同时参考pytorch的版本要求https:&#x2F;&#x2F;pytorch.org&#x2F;get-started&#x2F;locally&#x2F; 5.安装cuda12# 通常除了驱动都安装sudo sh cuda_*_linux.run 6.修改环境变量12345# vim ~&#x2F;.bashrcexport LD_LIBRARY_PATH&#x3D;$LD_LIBRARY_PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;cuda&#x2F;binexport CUDA_HOME&#x3D;$CUDA_HOME:&#x2F;usr&#x2F;local&#x2F;cuda 有软链直接修改成cuda就可以了，不用加版本号 7.升级cudnn12345678910tar -zxvf cudnn*.tgzsudo cp include&#x2F;cudnn.h &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;include&#x2F;sudo cp lib64&#x2F;lib* &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64&#x2F;# 在新文件夹建立软链cd &#x2F;usr&#x2F;local&#x2F;cuda&#x2F;lib64&#x2F;sudo chmod +r libcudnn.so.7.0.5sudo ln -sf libcudnn.so.7.0.5 libcudnn.so.7 sudo ln -sf libcudnn.so.7 libcudnn.so sudo ldconfig 8.OVER]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
+        <tag>ubuntu</tag>
         <tag>cuda</tag>
         <tag>cudnn</tag>
         <tag>升级</tag>
@@ -517,8 +535,8 @@
     <url>%2F2020%2F07%2F23%2Fubuntu%E5%8D%87%E7%BA%A7python%E7%89%88%E6%9C%AC%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[本方法使用的是apt安装1.搜索ppa,找到可用的源2.在launchpad.net里搜索python33.建议找到一个叫Jonathon F的用户，他编译的包比较可靠。可以进入他的主页找到他发布的python的各个版本。4.以python3.8为例，打开对应页面5.里面有这样的添加ppa的指令12sudo add-apt-repository ppa:jonathonf&#x2F;python-3.8sudo apt-get update 6.添加、更新完后安装1sudo apt install python3.8 7.查看目前有的python版本12345678910$ ls &#x2F;usr&#x2F;bin&#x2F;pytho*&#x2F;usr&#x2F;bin&#x2F;python &#x2F;usr&#x2F;bin&#x2F;python3.6&#x2F;usr&#x2F;bin&#x2F;python2 &#x2F;usr&#x2F;bin&#x2F;python3.6-config&#x2F;usr&#x2F;bin&#x2F;python2.7 &#x2F;usr&#x2F;bin&#x2F;python3.6m&#x2F;usr&#x2F;bin&#x2F;python2.7-config &#x2F;usr&#x2F;bin&#x2F;python3.6m-config&#x2F;usr&#x2F;bin&#x2F;python2-config &#x2F;usr&#x2F;bin&#x2F;python3.8&#x2F;usr&#x2F;bin&#x2F;python2-jsonschema &#x2F;usr&#x2F;bin&#x2F;python3-config&#x2F;usr&#x2F;bin&#x2F;python2-pbr &#x2F;usr&#x2F;bin&#x2F;python3m&#x2F;usr&#x2F;bin&#x2F;python2-wsdump &#x2F;usr&#x2F;bin&#x2F;python3m-config&#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;usr&#x2F;bin&#x2F;python-config 8.删除老版本1sudo rm &#x2F;usr&#x2F;bin&#x2F;python3.6 9.删除原来的软链接1sudo rm &#x2F;usr&#x2F;bin&#x2F;python3 10.创建新的软链接1sudo ln -s &#x2F;usr&#x2F;bin&#x2F;python3.8 &#x2F;usr&#x2F;bin&#x2F;python3 11.可能需要重新安装pip12wget https:&#x2F;&#x2F;bootstrap.pypa.io&#x2F;get-pip.py --no-check-certificatesudo python3 get-pip.py 12.pip3 list 会发现有很多库消失了，需要重新安装，且还在的很多需要安装cp38版。OVER]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
+        <tag>ubuntu</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -536,8 +554,8 @@
     <url>%2F2020%2F07%2F15%2Fubuntu%E6%A1%8C%E9%9D%A2%E5%8D%A1%E4%BD%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[alt + ctrl + f1登录(login)sudo lightdm restart 测试中，原来打开的窗口都还在。]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -545,8 +563,8 @@
     <url>%2F2020%2F06%2F28%2F%E5%85%B3%E4%BA%8Eunity%E7%9A%84git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F</url>
     <content type="text"><![CDATA[unity版本控制，只需对Assets和ProjectSettings做git控制就可以了并且，不用担心，只包含这两个文件夹的工程也可以被unity hub添加为项目的，它会自己补上其他的。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -580,8 +598,8 @@
     <url>%2F2020%2F06%2F09%2Flinux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%2F</url>
     <content type="text"><![CDATA[仅内核版本1uname -a 内核版本、gcc版本12345cat &#x2F;proc&#x2F;version&#96;&#96;&#96; 命令很简单，可以记住### 查看系统版本代号 lsb_release -a```也很简单要记住]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>方法</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -589,8 +607,8 @@
     <url>%2F2020%2F06%2F09%2Fubuntu%E4%B8%8B%E5%8D%87%E7%BA%A7git%2F</url>
     <content type="text"><![CDATA[123sudo add-apt-repository ppa:git-core&#x2F;ppasudo apt updatesudo apt install git]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -606,8 +624,8 @@
     <url>%2F2020%2F06%2F01%2Funity%E7%9A%84inspector%E9%9D%A2%E6%9D%BF%E5%80%BC%E4%B8%8D%E9%9A%8F%E8%84%9A%E6%9C%AC%E6%94%B9%E5%8F%98%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[unity脚本声明的一些public变量，一旦挂到游戏体上以后，在脚本修改这些值的时候，inspector面板里并不修改。你可以这么理解它的机制：你写一个脚本后你可以把它挂在多个游戏体上，你可以为每个脚本拉上当前所在的游戏体，你也可以对每个游戏体进行编号，这些都是可以直接在inspector界面拉到脚本上或写到脚本上的。unity为了实现让你随便拉游戏体的功能，在inspector面板上暴露出来的变量都是和这个游戏体绑定的，不是原来的脚本简单复制。 所以：不需要单独赋值的变量一律使用private，需要被其他脚本引用的变量，为它创建一个方法，直接返回该变量。即：除非单独一个脚本在多出使用，且分别赋值给变量，否则一律使用声明为私有变量。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -615,9 +633,9 @@
     <url>%2F2020%2F05%2F29%2Flinux%E4%B8%8B%E8%87%AA%E5%86%99%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
     <content type="text"><![CDATA[linux下可以方便的自写定时器脚本。常用的是每60秒判断一下时间。以每5分钟git pull一次为例。需要计算分钟数对5的余数为0.但是可能会出现一个03%5的情况，这时候脚本计算会出错。可以通过对分钟值加10来避免。简单的脚本如下：1234567891011121314while truedo thetime&#x3D;$(date &quot;+%M&quot;) thetime2&#x3D;&#96;expr $thetime + 10&#96; remainder&#x3D;$(($thetime2%5)) if [ $remainder &#x3D; &#39;0&#39; ] then cd ~&#x2F;blog;sh gitpull.sh date sleep 60s else sleep 60s fidoneshell脚本中以0开头的数字如08，和其他数字相加的时候往往会出现问题，需要先自己在终端下实验成功。上面使用expr的方式是可行的。 需要注意的是，如果脚本语法有不严谨的地方，计算出错会导致整个脚本终止掉，这就是有时莫名停止的原因]]></content>
       <tags>
+        <tag>方法</tag>
         <tag>ubuntu</tag>
         <tag>linux</tag>
-        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -625,8 +643,8 @@
     <url>%2F2020%2F05%2F28%2Funity%E5%AE%89%E5%8D%93%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D%2F</url>
     <content type="text"><![CDATA[这里以u2d为例：在开发的时候选一个16/9的分辨率，比如667/375。在画布中设置好分辨率375/667。在Game窗口可以选择多种分辨率比例进行测试。有些分辨率是2:1的，这时候在不改变画布大小的情况下，将背景图片拉伸或放一张更长的图片就可以实现对2:1分辨率的简单适配。比如可以将处于底层的背景图片的宽/高修改为375/867，这样就可以实现对页面的简单适配，解决屏幕上下部分出现空白的问题。 当然还可以更好的适配，比如先获取设备的分辨率，然后按比例确定上下端元素的位置，比如一些位移和释放技能的位置。代码：123# 在默认using UnityEngine;的情况下Screen.heightScreen.width]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
         <tag>Android</tag>
       </tags>
   </entry>
@@ -644,8 +662,8 @@
     <url>%2F2020%2F05%2F21%2Funity%E6%97%A0%E6%B3%95%E8%B0%83%E6%95%B4%E6%B8%B8%E6%88%8F%E4%BD%93%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0%2F</url>
     <content type="text"><![CDATA[在测试粒子系统的时候遇到无法调整游戏体位置的情况，即使将位置的数值更改了，游戏体还在原来的位置。 排查后发现是因为把其父游戏体的规模缩小为0了，位置是修改了但是在Scene窗口是看不出来变化的。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -653,8 +671,8 @@
     <url>%2F2020%2F05%2F21%2Funity%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88%2F</url>
     <content type="text"><![CDATA[控制方向默认是发散的，把Rect Transform里的Rotation为（90，0，0），方向就是朝下。控制喷射粒子的长度逐渐调整粒子系统主面版的Start Lifetime数值，可以看到火焰长度的变化 控制粒子体积变化激活Size over Lifetime，点击面板上方打开编辑器，即可调整体积百分比随时间变化 调整粒子的频率或者说间隔激活Emission，调整单位时间生成粒子的数量RateOverTime即可]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -662,8 +680,8 @@
     <url>%2F2020%2F05%2F20%2Funity%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F%E5%8F%98%E5%8C%96%E5%90%8E%E6%95%B4%E4%BD%93%E5%81%8F%E7%A7%BB%E7%9A%84%E5%8E%9F%E6%9D%A5%E4%BD%8D%E7%BD%AE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[感觉上是锚点相关的内容。实际上可以通过子游戏体轻松实现。在子游戏体里微调位置，同时父游戏体还是原来的逻辑，不用修改脚本里的对应内容。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -671,9 +689,9 @@
     <url>%2F2020%2F05%2F20%2Fubuntu18-04%E9%83%A8%E7%BD%B2hexo%2F</url>
     <content type="text"><![CDATA[ubuntu安装node参考连接：https://github.com/nodesource/distributions/blob/master/README.md指令：1234567# Using Ubuntucurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -sudo apt-get install -y nodejs# Using Debian, as rootcurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -apt-get install -y nodejs 查看版本12node -vnpm -v 安装hexo1npm install -g hexo-cli 查看hexo自带功能1hexo 可能会没有server参数 新建文章12hexo n alitsetvim source&#x2F;_posts&#x2F;alitest.md 逐步部署查找问题123hexo cleanhexo generatehexo deploy 处理ERROR Deployer not found: git 错误1npm install --save hexo-deployer-git 配置git邮箱和用户名信息12git config --global user.email 1xxxx@qq.comgit config --global user.name wxxx 尝试部署1sd deploy.sh 查看hexo功能此时可能出现server参数了1hexo 启动服务到默认端口或指定端口123hexo server或hexo server -p 80 更多hexo信息参考：https://hexo.io/zh-cn/docs/server.html 后台运行1setsid hexo server -p 80]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>方法</tag>
         <tag>hexo</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -681,8 +699,8 @@
     <url>%2F2020%2F05%2F14%2Funity%E7%9A%84PlayerPrefs%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[以整形为例，不管是GetInt()还是SetInt(),其中的默认参数并不是如果没有这个key值将这个数值赋给它，而是返回这个数值作为替代。 网上有的文章说的，用它们的第二个参数来初始化是不对的。但是有一个方法可以初始化：先查找有没有这个key值，没有则给它赋值，有则不再赋值，这样可以达到初始化的效果。代码如下：1234&#x2F;&#x2F; 初始化if(!PlayerPrefs.HasKey(energy))&#123; PlayerPrefs.SetInt(&quot;energy&quot;, 30)&#125;]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -690,8 +708,8 @@
     <url>%2F2020%2F05%2F14%2Funity%E5%8F%91%E5%B8%83webgl%E5%92%8Candroid%E4%B8%8D%E8%83%BD%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E5%8E%9F%E5%9B%A0%2F</url>
     <content type="text"><![CDATA[所有的这些原因，无法进入游戏、无法打开成功/失败结束页面等主要是因为调用和litjson相关的函数了。使用这种需要引入dll的方法，一定要注意查清楚在各个平台的打包问题。所以要左多平台发布，尤其是有webgl，尽量使用unity自带的工具实现。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -699,8 +717,8 @@
     <url>%2F2020%2F05%2F14%2Funity2D%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D%2F</url>
     <content type="text"><![CDATA[假如你以375667的分辨率做的游戏，现在要适配1080\1920分辨率的机器（这个分辨率是目前比较主流的分辨率）。不用一个个元素的修改，也有一个前提，如果想图不糊，你是把1080*1920的图放在了375*667的框里，这样放大才不糊。 具体扩大分辨率的方法是：在Canvas的Canvas Scaler 里将mode选择Scale with Screen，第二行的默认分辨率写成你实际开发过程中的分辨率，本例中是375*667。然后去game窗口将比例调成16:9(9:16)或其他分辨率，就可以看到真实的显示效果。 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -708,8 +726,8 @@
     <url>%2F2020%2F05%2F12%2Funity%E8%84%9A%E6%9C%AC%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E6%97%A0%E6%95%88%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[unity中修改脚本数据后经常会发现运行时并没有使用修改后的数据，尤其是数组数据等。这时需要在脚本对应的inspector里点击齿轮，选择reset，此后就会使用脚本里的数据。需要经常对比二者数据是否一致，所以较好的方法是将数据初始化在Start()函数里。例如：12345public int[] arrSong &#x3D; new int[115];Start()&#123; arrSong &#x3D; new int[115]&#123;,,,,&#125;;&#125; 老博客地址：https://www.jianshu.com/u/1c73a3a8ae2d新博客地址：https://inspiring26.github.io/]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -764,8 +782,8 @@
     <url>%2F2020%2F04%2F22%2FThe-type-or-namespace-name-Text-could-not-be-found%2F</url>
     <content type="text"><![CDATA[这个问题的原因很可能是没有声明对应的namespaces，在unity中使用UI构建物体，修改或调用其自带的脚本如Text等是需要先1using UnityEngine.UI;]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -773,8 +791,8 @@
     <url>%2F2020%2F04%2F17%2Funity%E7%9A%84webgl%E6%96%87%E4%BB%B6%E5%A4%B9%E9%83%A8%E7%BD%B2%E5%88%B0Apache%E7%9A%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%2F</url>
     <content type="text"><![CDATA[在网上找了半天就没有一个把unity发布为webgl，并部署到Apache的详细方法。所以自己写一个发布为webgl在unity窗口file-&gt;build setting-&gt;选中webgl；至少选中一个场景；webgl右侧什么都不选；然后build and run； 编译结束会在本地浏览器打开网页，要保证这一步哪呢个通说明游戏没问题。 部署到Apache安装apache以ubuntu下为例：123456789101112131415161718192021222324apache2 -version &#x2F;&#x2F;验证有没有sudo apt updatesudo apt install apache2apache2 -version &#x2F;&#x2F;验证是否安装成功&#x2F;&#x2F;配置UFW防火墙sudo ufw app list&#x2F;&#x2F;包含以下信息ApacheApache FullApache SecureCUPSOpenSSHsudo ufw allow &#39;Apache&#39;&#x2F;&#x2F;验证Apache服务是否正在运行。&#x2F;&#x2F;其实我在这一项有些功能没有正常运行，但是并没影响后面webgl的运行sudo systemctl status apache2&#x2F;&#x2F;可以查看本地ip 方便复制使用hostname -I在浏览器里打开，可以看到apache的默认页面；找到www/html信息的位置；以管理员权限修改index.html文件名；以管理员权限将webgl的Build、TemplateData、index.html文件复制到/var/www/html/下1sudo cp -r .&#x2F;* &#x2F;var&#x2F;www&#x2F;html&#x2F; 打开localhost]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
         <tag>Apache</tag>
       </tags>
   </entry>
@@ -783,8 +801,8 @@
     <url>%2F2020%2F04%2F17%2Funity-c-%E6%95%B0%E7%BB%84%E8%A3%85%E5%8F%98%E9%87%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[一开始想详细写，后因全栈开发较忙，搁置了一段时间，现简单描述一下方法一使用打印功能擦看出对应的类型AudioClip、Rigidbody2D等直接用他们申明数组，多维的用下面之类的格式1public Rigidbody2D[,] R2D &#x3D; new Rigidbody2D[10,27]; 注意不能对太底层的申明，因为那就是深拷贝了，无法达到引用的目的深浅拷贝可以看这里 方法二使用object声明，之后再对数组进行转型，如下1newlsit &#x3D; (AudioClip[])someList;]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -792,8 +810,8 @@
     <url>%2F2020%2F04%2F17%2Funity2D%E6%9C%9D%E5%90%91%E7%9B%AE%E6%A0%87%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[以火箭始终朝向砖块为例123Vector3 dir &#x3D; brickList[target%10].transform.position - rocket.transform.position;float angle &#x3D; Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;rocket.transform.rotation &#x3D; Quaternion.AngleAxis(270+angle, Vector3.forward); Mathf.Atan2反正弦函数，输入两个参数：y轴长度、x轴长度如Mathf.Atan2(1,1)的值为0.7853982，约是3.14除以4。 Mathf.Rad2Deg弧度到度的转化常量，等于360/（PI*2）还有一个相反的函数Mathf.Deg2Rad Quaternion.AngleAxisQuaternion是unity中的四元数，123456&#x2F;&#x2F;transform沿y轴旋转30度 transform.rotation &#x3D; Quaternion.AngleAxis(30, Vector3.up); &#x2F;&#x2F;transform沿z轴旋转30度 transform.rotation &#x3D; Quaternion.AngleAxis(30, Vector3.forward); &#x2F;&#x2F;transform沿x轴旋转30度 transform.rotation &#x3D; Quaternion.AngleAxis(30, Vector3.left);]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -801,8 +819,8 @@
     <url>%2F2020%2F04%2F15%2Funity%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E5%8F%8A%E6%9B%BF%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%BB%84%E4%BB%B6%E4%B8%8A%E7%9A%84%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[音乐读取我这里是通过c#的object和unity的GameObject分别读取，然后贴在GameObject的组件的clip上，之后可以直接对组件调用Play()、Pause()、Stop()方法，和对loop之类的参数赋值。代码：123456789101112131415private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;;private object objs;private GameObject GObject;public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num]); GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; (AudioClip)objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true;&#125;void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;);&#125;可以提前加载的尽量方Start()里加载，示例中也可以提前加载成数组，但是考虑到内存资源的的占用使用的逐个加载。以上使用了c#自带方法，提供了一种理解角度，更符合unity语法的方法如下： 读取（unity风格）(主流方法）代码：1234567891011121314private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; GObject.GetComponent&lt;AudioSource&gt;().clip &#x3D; objs; GObject.GetComponent&lt;AudioSource&gt;().Play(); GObject.GetComponent&lt;AudioSource&gt;().loop &#x3D; true; &#125; void Start()&#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); &#125;使用1Resources.Load(路径, typeof(目标格式)) as 目标格式;形式读取。 更简洁的写法1234567891011121314151617181920private string[] songList &#x3D; &#123;&quot;fade_cut&quot;,&quot;Flirting_With_June_cut&quot;,&quot;lzttdmg_cut&quot;,&quot;Ocean_cut&quot;,&quot;Relax_cut&quot;&#125;; private AudioClip objs; private GameObject GObject; private AudioSource audioSource; public void LoadMusic(int num)&#123; objs &#x3D; Resources.Load(songList[num], typeof(AudioClip)) as AudioClip; audioSource.clip &#x3D; objs; audioSource.Play(); audioSource.loop &#x3D; true; &#125; void Start() &#123; GObject &#x3D; GameObject.Find(&quot;SelectionPage&quot;); Debug.Log(GObject.GetComponent&lt;AudioSource&gt;()); &#x2F;&#x2F; 查看要用变量指代的具体是什么类型 audioSource &#x3D; GObject.GetComponent&lt;AudioSource&gt;(); LoadMusic(0); &#x2F;&#x2F; 打开游戏就播放 &#125; 可以更进一步用变量替代重复的调用语句，如1GObject.GetComponent&lt;AudioSource&gt;()具体声明为什么格式，可以先打印看一下。另外开场就进行的操作，如播放音乐，可以放在Start()里。 注意需要注意的是要播放音乐，必须先把音乐组件放在某个游戏体上，不能凭空播放音乐。 图片读取读取系统自带的图像组件，必须使用1using UnityEngine.UI;否则会找不到Image。 代码：12345678910111213141516171819private Image icon;public Sprite sp1,sp2;public void ChangeThePicture()&#123; if(this.GetComponent&lt;Scrollbar&gt;().value &lt; 0.5)&#123; icon.sprite &#x3D; sp1; &#125;else&#123; icon.sprite &#x3D; sp2; &#125; &#125; &#x2F;&#x2F; Start is called before the first frame update void Start() &#123; icon &#x3D; this.GetComponent&lt;Image&gt;(); sp1 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;矩形 3943 拷贝&quot;, typeof(Sprite)) as Sprite; sp2 &#x3D; Resources.Load(&quot;Pictures&#x2F;SettingPage&#x2F;bg_kaiguan&quot;, typeof(Sprite)) as Sprite; &#125; 总结图片挂的是sprite，音乐挂的是clip，都不是检视窗口内左侧的对应名字。出于节省资源的考虑，可以把sp1、sp2这种多次使用的图片在父物体里以public方式加载，在当前脚本里调用即可，不在当前脚本加载是为了保持脚本重复利用。于是另一个结论，重复利用的脚本不加载资源。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
         <tag>总结</tag>
       </tags>
   </entry>
@@ -811,8 +829,8 @@
     <url>%2F2020%2F04%2F15%2Funity%E8%84%9A%E6%9C%AC%E9%87%8C%E7%9A%84this%E5%92%8C%E8%8E%B7%E5%8F%96Scrollbar%E9%87%8C%E7%9A%84%E6%BB%91%E5%8A%A8%E5%80%BC%2F</url>
     <content type="text"><![CDATA[在脚本里使用this替代GameObject.Find(“”)，可以让一个脚本在多个相似功能的游戏体上使用，this指挂载的那个游戏体。通过1this.GetComponent&lt;Scrollbar&gt;().value 就可以获得Scrollbar的滑动值。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -829,8 +847,8 @@
     <url>%2F2020%2F04%2F14%2Funity%E5%BC%95%E7%94%A8%E6%B8%B8%E6%88%8F%E4%BD%93%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[第一种是在脚本的类里方法外public声明，挂载后拉上去，好处是可以处理未激活的游戏体，一次声明多次使用。第二种是使用1GameObject.Find(&quot;Bricks1&quot;)只要名字不重复，随时可以使用，但是每次使用都要Find效率略低，不能Find未激活的游戏体。并且要注意游戏体是否被其他程序设置为未激活了，比如你前一步程序把它的父物体设置未激活了就会导致找不到实体。 GameObject.Find() 有很多缺陷，不能引用各种未激活的游戏体，比如开始游戏要激活某个游戏体就不能用它。只要是经历过未激活状态的就不能再用它激活。不想大量提前声明，使用GameObject.Find()而又不导致无法引用错误的方法是，将2D、3D物体的scale分别变为（0，0，1）和（0，0，0）。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -838,8 +856,8 @@
     <url>%2F2020%2F04%2F13%2Funity%E7%9A%84GameObject%2F</url>
     <content type="text"><![CDATA[1GameObject.Find(&quot;Bricks1&quot;).GetComponent&lt;MakeBricksMove&gt;().enabled&#x3D;true; 可以调用很多游戏体，但是不能调用没激活的游戏体。要调用没预先没激活的游戏体，需要用public声明引用。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -847,8 +865,8 @@
     <url>%2F2020%2F04%2F13%2Funity%E7%9A%84Image%E9%80%8F%E6%98%8E%E5%BA%A6%2F</url>
     <content type="text"><![CDATA[unity UI的Image，如果设置为透明只需在颜色里调整A值就可以了。A值代表的是不透明度，越大越不透明。但是当值为0和1或255和254时是很不同的，代表了一种开关。要使背景全透，就要设置为1，不能设置为0。除此外，可以加上不同的颜色形成不同颜色的遮罩。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -856,8 +874,8 @@
     <url>%2F2020%2F04%2F13%2Funity%E8%AE%BE%E7%BD%AE%E6%B8%B8%E6%88%8F%E6%9A%82%E5%81%9C%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF%2F</url>
     <content type="text"><![CDATA[添加一个全屏Image将颜色修改为黑色，如090919将A值调到200，代表不透明程度这样就建立了一个继续显示游戏内容的暂停界面]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -865,8 +883,8 @@
     <url>%2F2020%2F04%2F08%2Funity%E5%88%9B%E5%BB%BA%E6%BB%91%E5%8A%A8%E6%8B%89%E8%BF%91%E7%9A%84%E9%80%89%E5%85%B3%E7%95%8C%E9%9D%A2%2F</url>
     <content type="text"><![CDATA[通过修改要显示的关卡图片的大小和位置，就能实现一种类似初代iphone滑动选择专辑的界面。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -874,8 +892,8 @@
     <url>%2F2020%2F04%2F08%2Funity%E5%88%9B%E5%BB%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1%2F</url>
     <content type="text"><![CDATA[在遮挡图片同级创建一个scrollbar，调整他的位置及滑动方向，一般选第三个bottom to top，然后在遮蔽图片的scroll rect组件中有一个vertical Scrollbar区域来添加竖向滑动。 结构：— 背景图片— — 遮蔽图片— — — 要显示的内容— — Scrollbar]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -883,8 +901,8 @@
     <url>%2F2020%2F04%2F03%2Funity%E5%88%87%E6%8D%A2%E5%9C%BA%E6%99%AF%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[目前了解到的切换场景、页面的方法是创建多个场景进行跳转创建两个空场景n1、n2同时加载n1、n2，在file-&gt;build setting里添加两个场景，使编号分别为0、1，关闭设置窗口。单独打开n1，让n2不加载或者移除n2 在层级窗口，创建UI-&gt;Button 在项目窗口创建c sharp文件，命名为Jump，如下图编辑此文件。 将Jump拉到Canvas的检视窗口，为什么要拉到这里，是因为下一步添加脚本不能直接拉C sharp文件，需要拉一个游戏体。这一步可以理解为安置，下一步理解为引用。 选中Button游戏体，在检视窗口的button脚本下按加号，将Canvas游戏体拉到runtime only下，在runtime only右选择Jump.OnLoginButtonClick 加载n2，卸载n1，创建Image，拉一张图片到检视窗口的下图位置，图片要先处理为精灵，调整长宽。 保存场景，加载n1，卸载n2，paly，成功。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -892,8 +910,8 @@
     <url>%2F2020%2F04%2F03%2Funity%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%EF%BC%8C%E6%96%B9%E6%B3%95%E4%BA%8C%2F</url>
     <content type="text"><![CDATA[首先在画布游戏体里创建一个rawImage。解释一下：为什么要在画布游戏体里创建？因为画可以理解成一个容器，其他ui元素都填充到该容器中。如果你直接创建rawImage，系统会自动创建一个canvas，并把rawImage放在canvas下。当然你也可以先船舰canvas，再选中它创建rawImage，效果是一样的。 另外，你加到canvas的组件并不会直接显示，而是在rawImage中设置的窗口里显示。你把video palyer挂到canvas或rawImage上都可以，但显示窗口由rawImage决定。 「只有放在画布下的子物体才参与ui的渲染。」 在画布中将宽、高调整为500、500，在Raw Image（script）里将新建的材质拉进去。 材质随意新建一个就可以。 将Video player组件添加到canvas或rawImage，感觉添加到后者更合理，将视频和材质都拉到对应的位置，渲染模式设置为rander texture。 播放即可看到效果，视频、声音都有。]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -901,9 +919,9 @@
     <url>%2F2020%2F04%2F03%2Fubuntu%E4%B8%8B%E5%BE%80unity%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[直接添加mp4等文件失败的原因是unity需要使用quicktime player作为视频的播放器。mac自带，windows可以安装，linux不好处理。 解决方法用ffmpeg将视频转换成unity自身支持的ogv格式。指令：1ffmpeg -i video.mp4 vode.ogv再次导入即可成功。]]></content>
       <tags>
-        <tag>ubuntu</tag>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -911,8 +929,8 @@
     <url>%2F2020%2F04%2F03%2Funity%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%2F</url>
     <content type="text"><![CDATA[1.在层级窗口创建空白游戏体2.游戏体的检视窗口添加video player组件3.video player 组件里源选择“video clip”，视频拉如下面的位置，渲染模式选择“camera far plane”，把层级窗口的主摄像机拉到下面位置。 4.播放，即可看到加入的视频]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>unity</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -972,8 +990,8 @@
     <url>%2F2020%2F03%2F16%2F%E5%B0%86nvidia%E6%B7%BB%E5%8A%A0%E5%88%B0runtime%2F</url>
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
-        <tag>nvidia</tag>
         <tag>方法</tag>
+        <tag>nvidia</tag>
         <tag>docker</tag>
       </tags>
   </entry>
@@ -1632,8 +1650,8 @@
     <url>%2F2019%2F10%2F10%2F%E4%B8%BApytorch%E5%AE%89%E8%A3%85nvidia%E7%9A%84apex%E5%8A%A0%E9%80%9F%2F</url>
     <content type="text"><![CDATA[三个指令，不需要配置环境变量123$ git clone https:&#x2F;&#x2F;github.com&#x2F;NVIDIA&#x2F;apex$ cd apex$ pip3 install -v --no-cache-dir --global-option&#x3D;&quot;--cpp_ext&quot; --global-option&#x3D;&quot;--cuda_ext&quot; .&#x2F;]]></content>
       <tags>
-        <tag>nvidia</tag>
         <tag>pytorch</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -1686,8 +1704,8 @@
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
         <tag>nvidia</tag>
-        <tag>cuda</tag>
         <tag>docker</tag>
+        <tag>cuda</tag>
       </tags>
   </entry>
   <entry>
