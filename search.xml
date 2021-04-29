@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python3列表、元组、字典序列化反序列化]]></title>
+    <url>%2F2021%2F04%2F29%2Fpython3%E5%88%97%E8%A1%A8%E3%80%81%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[序列化，反序列化分别使用json.dumps()、json.loads()。列表：序列化后是str，反序列化是list元组：序列化后是str，反序列化是list字典：序列化后是str，反序列化是dict 示例123456789101112131415161718192021&gt;&gt;&gt; import json&gt;&gt;&gt; tmp&#x3D;[1,2,3]&gt;&gt;&gt; jtmp&#x3D;json.dumps(tmp)&gt;&gt;&gt; type(jtmp)&lt;class &#39;str&#39;&gt;&gt;&gt;&gt; type(json.loads(jtmp))&lt;class &#39;list&#39;&gt;&gt;&gt;&gt; &gt;&gt;&gt; tmp&#x3D;(1,2,3)&gt;&gt;&gt; jtmp&#x3D;json.dumps(tmp)&gt;&gt;&gt; type(jtmp)&lt;class &#39;str&#39;&gt;&gt;&gt;&gt; type(json.loads(jtmp))&lt;class &#39;list&#39;&gt;&gt;&gt;&gt; &gt;&gt;&gt; tmp&#x3D;&#123;1:1,2:2&#125;&gt;&gt;&gt; jtmp&#x3D;json.dumps(tmp)&gt;&gt;&gt; type(jtmp)&lt;class &#39;str&#39;&gt;&gt;&gt;&gt; type(json.loads(jtmp))&lt;class &#39;dict&#39;&gt;]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[pytorch自定义损失函数]]></title>
     <url>%2F2021%2F04%2F15%2Fpytorch%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%2F</url>
     <content type="text"><![CDATA[在深度学习中有时需要使用自定义损失函数，或者为了更好的理解各个环节而使用自定义损失函数。在pytorch中自定义损失函数实现的比较简单，就像实现一个小型网络一样。代码123456789101112class LossFunc(nn.Module): def __init__(self): super(LossFunc, self).__init__() def forward(self, prelist, ylist): dif&#x3D;torch.abs(prelist-ylist) coef&#x3D;ylist.clone() coef[coef&gt;&#x3D;0.5]&#x3D;2 coef[coef&lt;0.5]&#x3D;1 dif&#x3D;torch.mul(dif,coef) return torch.sum(dif)&#x2F;&#x2F;ylist.size()[0]mylossfunc&#x3D;LossFunc()mylossfunc&#x3D;mylossfunc.cuda() 这是一个自己写的 均差，相当于均方误差没有求平方。写的时候注意尽量求平均的，不要导致返回的结果过大，可以类比着已有的损失函数，做部分修改。]]></content>
@@ -268,8 +277,8 @@
     <url>%2F2020%2F12%2F23%2Fpytorch%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[]]></content>
       <tags>
-        <tag>记录</tag>
         <tag>pytorch</tag>
+        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -1704,8 +1713,8 @@
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
         <tag>nvidia</tag>
-        <tag>docker</tag>
         <tag>cuda</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
