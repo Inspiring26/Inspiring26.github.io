@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "pytorch自定义损失函数等"
+git commit -m "python 序列化反序列化"
 git push
