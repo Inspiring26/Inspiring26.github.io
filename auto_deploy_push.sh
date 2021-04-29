@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "python 序列化反序列化"
+git commit -m "git本地commit后补充内容"
 git push
