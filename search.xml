@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python昨天]]></title>
+    <url>%2F2021%2F05%2F11%2Fpython%E6%98%A8%E5%A4%A9%2F</url>
+    <content type="text"><![CDATA[python获取昨天日期12345&gt;&gt;&gt; import datetime&gt;&gt;&gt; datetime.date.today() + datetime.timedelta(-1)datetime.date(2021, 5, 10)&gt;&gt;&gt; (datetime.date.today() + datetime.timedelta(-1)).strftime(&quot;%Y%m%d&quot;)&#39;20210510&#39;]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git本地commit后补充内容]]></title>
     <url>%2F2021%2F04%2F29%2Fgit%E6%9C%AC%E5%9C%B0commit%E5%90%8E%E8%A1%A5%E5%85%85%E5%86%85%E5%AE%B9%2F</url>
     <content type="text"><![CDATA[经常会出现提交后又做了新的修改，又不想把新修改作为新commit的情况。可以先直接修改文件。修改后，1git reset --soft HEAD^这时修改的文件都还在，也就是说对本地文件没做任何修改，把指针后移了一位。然后将要git add的文件，如果本地已经删除的文件还要再git rm一次将暂存区的文件删除（此时本地已经删除过了，暂存区要像上次提交一样再删除一次）。这时可以使用之前的commit文本再commit一次了。 这样就实现了，做小修改还维持原来的commit。]]></content>
@@ -178,8 +187,8 @@
     <url>%2F2020%2F12%2F30%2Fwhich%E5%92%8Cwhereis%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[示例12345h@h-B360M-D2VX-SI:~$ cxfixbash: cxfix: command not foundh@h-B360M-D2VX-SI:~$ which cxfixh@h-B360M-D2VX-SI:~$ whereis cxfixcxfix: &#x2F;opt&#x2F;cxoffice&#x2F;bin&#x2F;cxfix 总结都是查找可执行文件，简单说，whereis查询更广，which查询默认的几个位置。]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>总结</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -708,8 +717,8 @@
     <content type="text"><![CDATA[ubuntu安装node参考连接：https://github.com/nodesource/distributions/blob/master/README.md指令：1234567# Using Ubuntucurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -sudo apt-get install -y nodejs# Using Debian, as rootcurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -apt-get install -y nodejs 查看版本12node -vnpm -v 安装hexo1npm install -g hexo-cli 查看hexo自带功能1hexo 可能会没有server参数 新建文章12hexo n alitsetvim source&#x2F;_posts&#x2F;alitest.md 逐步部署查找问题123hexo cleanhexo generatehexo deploy 处理ERROR Deployer not found: git 错误1npm install --save hexo-deployer-git 配置git邮箱和用户名信息12git config --global user.email 1xxxx@qq.comgit config --global user.name wxxx 尝试部署1sd deploy.sh 查看hexo功能此时可能出现server参数了1hexo 启动服务到默认端口或指定端口123hexo server或hexo server -p 80 更多hexo信息参考：https://hexo.io/zh-cn/docs/server.html 后台运行1setsid hexo server -p 80]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>ubuntu</tag>
         <tag>hexo</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
