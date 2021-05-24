@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[安装nodejs、npm、hexo]]></title>
+    <url>%2F2021%2F05%2F24%2F%E5%AE%89%E8%A3%85nodejs%E3%80%81npm%E3%80%81hexo%2F</url>
+    <content type="text"><![CDATA[去nodejs官方网站下载安装包官方地址比如下载Linux Binaries (x64)版参考下载页面下的链接安装比如参考名为Installing Node.js via binary archive的链接安装流程页面 修改VERSION为下载安装包版本后，按1、2、3、4步骤完成nodejs、npm安装1234567891011121314151617181.Unzip the binary archive to any directory you wanna install Node, I use &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs VERSION&#x3D;v10.15.0 DISTRO&#x3D;linux-x64 sudo mkdir -p &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs 2.Set the environment variable ~&#x2F;.profile, add below to the end# NodejsVERSION&#x3D;v10.15.0DISTRO&#x3D;linux-x64export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs&#x2F;node-$VERSION-$DISTRO&#x2F;bin:$PATH3.Refresh profile. ~&#x2F;.profile4.Test installation using$ node -v$ npm version$ npx -v 安装hexo1npm install -g hexo-cli 之后执行hexo，显示正常即完成安装。]]></content>
+      <tags>
+        <tag>方法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python昨天]]></title>
     <url>%2F2021%2F05%2F11%2Fpython%E6%98%A8%E5%A4%A9%2F</url>
     <content type="text"><![CDATA[python获取昨天日期12345&gt;&gt;&gt; import datetime&gt;&gt;&gt; datetime.date.today() + datetime.timedelta(-1)datetime.date(2021, 5, 10)&gt;&gt;&gt; (datetime.date.today() + datetime.timedelta(-1)).strftime(&quot;%Y%m%d&quot;)&#39;20210510&#39;]]></content>
@@ -187,8 +195,8 @@
     <url>%2F2020%2F12%2F30%2Fwhich%E5%92%8Cwhereis%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[示例12345h@h-B360M-D2VX-SI:~$ cxfixbash: cxfix: command not foundh@h-B360M-D2VX-SI:~$ which cxfixh@h-B360M-D2VX-SI:~$ whereis cxfixcxfix: &#x2F;opt&#x2F;cxoffice&#x2F;bin&#x2F;cxfix 总结都是查找可执行文件，简单说，whereis查询更广，which查询默认的几个位置。]]></content>
       <tags>
-        <tag>总结</tag>
         <tag>linux</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -230,8 +238,8 @@
     <url>%2F2020%2F12%2F26%2F%E5%85%B3%E4%BA%8E%E5%B8%83%E4%B8%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%80%9D%E8%80%83%2F</url>
     <content type="text"><![CDATA[结论只要能建立起大小关系的表达，比如临界关系，哪怕二者是不同范畴的内容，比如距离和角度，我们也可以在坐标轴上得到他们关系的表示，并计算其他方面的关系。关键点是不同范畴内容照样建立坐标系，会得出一些特别的结果，比如以为算不出的结果。 书籍原图]]></content>
       <tags>
-        <tag>数学</tag>
         <tag>思考</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -295,8 +303,8 @@
     <url>%2F2020%2F12%2F23%2Fpytorch%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[]]></content>
       <tags>
-        <tag>记录</tag>
         <tag>pytorch</tag>
+        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -717,8 +725,8 @@
     <content type="text"><![CDATA[ubuntu安装node参考连接：https://github.com/nodesource/distributions/blob/master/README.md指令：1234567# Using Ubuntucurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | sudo -E bash -sudo apt-get install -y nodejs# Using Debian, as rootcurl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_12.x | bash -apt-get install -y nodejs 查看版本12node -vnpm -v 安装hexo1npm install -g hexo-cli 查看hexo自带功能1hexo 可能会没有server参数 新建文章12hexo n alitsetvim source&#x2F;_posts&#x2F;alitest.md 逐步部署查找问题123hexo cleanhexo generatehexo deploy 处理ERROR Deployer not found: git 错误1npm install --save hexo-deployer-git 配置git邮箱和用户名信息12git config --global user.email 1xxxx@qq.comgit config --global user.name wxxx 尝试部署1sd deploy.sh 查看hexo功能此时可能出现server参数了1hexo 启动服务到默认端口或指定端口123hexo server或hexo server -p 80 更多hexo信息参考：https://hexo.io/zh-cn/docs/server.html 后台运行1setsid hexo server -p 80]]></content>
       <tags>
         <tag>方法</tag>
-        <tag>hexo</tag>
         <tag>ubuntu</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>

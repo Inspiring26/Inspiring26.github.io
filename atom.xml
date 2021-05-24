@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-05-11T03:44:21.570Z</updated>
+  <updated>2021-05-24T10:15:20.011Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装nodejs、npm、hexo</title>
+    <link href="http://weehaa.top/2021/05/24/%E5%AE%89%E8%A3%85nodejs%E3%80%81npm%E3%80%81hexo/"/>
+    <id>http://weehaa.top/2021/05/24/安装nodejs、npm、hexo/</id>
+    <published>2021-05-24T10:07:25.000Z</published>
+    <updated>2021-05-24T10:15:20.011Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="去nodejs官方网站下载安装包"><a href="#去nodejs官方网站下载安装包" class="headerlink" title="去nodejs官方网站下载安装包"></a>去nodejs官方网站下载安装包</h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官方地址</a><br>比如下载Linux Binaries (x64)版</p><h3 id="参考下载页面下的链接安装"><a href="#参考下载页面下的链接安装" class="headerlink" title="参考下载页面下的链接安装"></a>参考下载页面下的链接安装</h3><p>比如参考名为Installing Node.js via binary archive的链接<br><a href="https://github.com/nodejs/help/wiki/Installation" target="_blank" rel="noopener">安装流程页面</a></p><a id="more"></a><p>修改VERSION为下载安装包版本后，按1、2、3、4步骤完成nodejs、npm安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1.Unzip the binary archive to any directory you wanna install Node, I use &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs</span><br><span class="line"> VERSION&#x3D;v10.15.0</span><br><span class="line"> DISTRO&#x3D;linux-x64</span><br><span class="line"> sudo mkdir -p &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs</span><br><span class="line"> sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs </span><br><span class="line">2.Set the environment variable ~&#x2F;.profile, add below to the end</span><br><span class="line"># Nodejs</span><br><span class="line">VERSION&#x3D;v10.15.0</span><br><span class="line">DISTRO&#x3D;linux-x64</span><br><span class="line">export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs&#x2F;node-$VERSION-$DISTRO&#x2F;bin:$PATH</span><br><span class="line">3.Refresh profile</span><br><span class="line">. ~&#x2F;.profile</span><br><span class="line">4.Test installation using</span><br><span class="line">$ node -v</span><br><span class="line"></span><br><span class="line">$ npm version</span><br><span class="line"></span><br><span class="line">$ npx -v</span><br></pre></td></tr></table></figure></p><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>之后执行hexo，显示正常即完成安装。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;去nodejs官方网站下载安装包&quot;&gt;&lt;a href=&quot;#去nodejs官方网站下载安装包&quot; class=&quot;headerlink&quot; title=&quot;去nodejs官方网站下载安装包&quot;&gt;&lt;/a&gt;去nodejs官方网站下载安装包&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/download/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方地址&lt;/a&gt;&lt;br&gt;比如下载Linux Binaries (x64)版&lt;/p&gt;&lt;h3 id=&quot;参考下载页面下的链接安装&quot;&gt;&lt;a href=&quot;#参考下载页面下的链接安装&quot; class=&quot;headerlink&quot; title=&quot;参考下载页面下的链接安装&quot;&gt;&lt;/a&gt;参考下载页面下的链接安装&lt;/h3&gt;&lt;p&gt;比如参考名为Installing Node.js via binary archive的链接&lt;br&gt;&lt;a href=&quot;https://github.com/nodejs/help/wiki/Installation&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;安装流程页面&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>python昨天</title>
@@ -488,31 +509,6 @@
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="cuda" scheme="http://weehaa.top/tags/cuda/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux创建热点及相关程序功能介绍</title>
-    <link href="http://weehaa.top/2020/12/30/linux%E5%88%9B%E5%BB%BA%E7%83%AD%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://weehaa.top/2020/12/30/linux创建热点及相关程序功能介绍/</id>
-    <published>2020-12-30T09:50:49.000Z</published>
-    <updated>2020-12-31T01:11:19.105Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我的150Mbs的RT3070l无线网卡，通过create_ap创建的热点下载速度在500-700k，而且首次打开网页很慢。<br>今天集中解决一下这个问题。<br>create_ap仓库已经停止维护，在其页面上推荐了一个图形界面的分支。<br>名字叫<a href="https://github.com/lakinduakash/linux-wifi-hotspot" target="_blank" rel="noopener">linux-wifi-hotspot</a>。<br>也可以叫 WiFi hotspot(linux搜索里显示的)，<br>也可以叫 wihotspot (终端启动的指令)。<br>下载、安装后，网络上也没找到详细的介绍。<br>下面介绍下界面各个功能的含义，及对应效果。</p><a id="more"></a><h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><p><img src="/2020/12/30/linux%E5%88%9B%E5%BB%BA%E7%83%AD%E7%82%B9%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/2020-12-30_17-49.png" alt="2020-12-30\_17-49.png"></p><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>SSID 热点的名字<br>Password 密码<br>Open 选中则不使用密码<br>WiFi interfaces 建立热点的无线网卡<br>Internet interfaces 机器上联网的网卡<br>Frequency band 根据无线网卡功能选，5G快距离近<br>Hidden 隐藏网络<br>Use psk 加密的一个选项，可不勾<br>Set mac 只有设置的mac才能连接<br>No virt 不使用虚拟化接口功能，经过测试，不选网速更快<br>Channel 取值范围在1-11，我的只有在7及以下才可使用，越大网速越快<br>Mac Filter 添加mac的设备无法连接<br>80211n 80211ac ac比n更快，支持ac就选ac</p><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>下载局域网网盘文件：<br>在安卓iqoo z1下可以达到4.2M/s<br>在iPhone12下可以3.6M/s</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;我的150Mbs的RT3070l无线网卡，通过create_ap创建的热点下载速度在500-700k，而且首次打开网页很慢。&lt;br&gt;今天集中解决一下这个问题。&lt;br&gt;create_ap仓库已经停止维护，在其页面上推荐了一个图形界面的分支。&lt;br&gt;名字叫&lt;a href=&quot;https://github.com/lakinduakash/linux-wifi-hotspot&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;linux-wifi-hotspot&lt;/a&gt;。&lt;br&gt;也可以叫 WiFi hotspot(linux搜索里显示的)，&lt;br&gt;也可以叫 wihotspot (终端启动的指令)。&lt;br&gt;下载、安装后，网络上也没找到详细的介绍。&lt;br&gt;下面介绍下界面各个功能的含义，及对应效果。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
-    
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
   </entry>
   
