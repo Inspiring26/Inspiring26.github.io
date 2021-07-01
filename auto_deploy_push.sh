@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "swiftui的state"
+git commit -m "inux创建-desktop程序"
 git push
