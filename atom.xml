@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-05-27T06:35:15.252Z</updated>
+  <updated>2021-07-02T08:26:38.864Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>docker启动容器就运行</title>
+    <link href="http://weehaa.top/2021/07/02/docker%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%E5%B0%B1%E8%BF%90%E8%A1%8C/"/>
+    <id>http://weehaa.top/2021/07/02/docker启动容器就运行/</id>
+    <published>2021-07-02T08:20:02.000Z</published>
+    <updated>2021-07-02T08:26:38.864Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -dit -p 4001:8080 hexoblog:v1.0</span><br></pre></td></tr></table></figure><br>就创建容器并运行blog服务</p><h3 id="CMD方式"><a href="#CMD方式" class="headerlink" title="CMD方式"></a>CMD方式</h3><p>Dockerfile里的CMD指令是会被docker run后面加的指令覆盖的。<br>并且，多个CMD只会执行最后一个。<br>使用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CMD [&quot;hexo&quot;, &quot;s&quot;, &quot;-p&quot;, &quot;8080&quot;, &quot;&amp;&quot;]</span><br></pre></td></tr></table></figure><br>正常，启动就运行。</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CMD hexo s -p 8080 &amp;</span><br></pre></td></tr></table></figure><p>这种直接写shell语句是无法正常运行的。</p><h3 id="ENTRYPOINT方式"><a href="#ENTRYPOINT方式" class="headerlink" title="ENTRYPOINT方式"></a>ENTRYPOINT方式</h3><p>ENTRYPOINT是一种不会被docker run 后面指令覆盖的方式。<br>使用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENTRYPOINT [&quot;hexo&quot;, &quot;s&quot;, &quot;-p&quot;, &quot;8080&quot;, &quot;&amp;&quot;]</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h3&gt;&lt;p&gt;执行&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -dit -p 4001:8080 hexoblog:v1.0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;就创建容器并运行blog服务&lt;/p&gt;&lt;h3 id=&quot;CMD方式&quot;&gt;&lt;a href=&quot;#CMD方式&quot; class=&quot;headerlink&quot; title=&quot;CMD方式&quot;&gt;&lt;/a&gt;CMD方式&lt;/h3&gt;&lt;p&gt;Dockerfile里的CMD指令是会被docker run后面加的指令覆盖的。&lt;br&gt;并且，多个CMD只会执行最后一个。&lt;br&gt;使用方式：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;CMD [&amp;quot;hexo&amp;quot;, &amp;quot;s&amp;quot;, &amp;quot;-p&amp;quot;, &amp;quot;8080&amp;quot;, &amp;quot;&amp;amp;&amp;quot;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;正常，启动就运行。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux创建.desktop程序</title>
+    <link href="http://weehaa.top/2021/07/01/linux%E5%88%9B%E5%BB%BA-desktop%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://weehaa.top/2021/07/01/linux创建-desktop程序/</id>
+    <published>2021-07-01T18:03:24.000Z</published>
+    <updated>2021-07-02T02:05:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-确定程序可以双击执行"><a href="#1-确定程序可以双击执行" class="headerlink" title="1.确定程序可以双击执行"></a>1.确定程序可以双击执行</h3><h3 id="2-创建-desktop文件"><a href="#2-创建-desktop文件" class="headerlink" title="2.创建.desktop文件"></a>2.创建.desktop文件</h3><p>主要是填写文件位置和添加图片</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Encoding&#x3D;UTF-8</span><br><span class="line">Version&#x3D;1.0</span><br><span class="line">Type&#x3D;Application</span><br><span class="line">Terminal&#x3D;false</span><br><span class="line">Exec&#x3D;&#x2F;home&#x2F;h&#x2F;下载&#x2F;VNC-Viewer-6.21.406-Linux-x64&#x2F;vncviewer</span><br><span class="line">Name&#x3D;vnc view</span><br><span class="line">Icon&#x3D;&#x2F;home&#x2F;h&#x2F;下载&#x2F;VNC-Viewer-6.21.406-Linux-x64&#x2F;icons&#x2F;vncviewer48x48.png</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="3-复制到-usr-share-applications"><a href="#3-复制到-usr-share-applications" class="headerlink" title="3.复制到/usr/share/applications"></a>3.复制到/usr/share/applications</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp vncview.desktop &#x2F;usr&#x2F;share&#x2F;applications&#x2F;</span><br></pre></td></tr></table></figure><h3 id="4-至此可以在系统里搜到app"><a href="#4-至此可以在系统里搜到app" class="headerlink" title="4.至此可以在系统里搜到app"></a>4.至此可以在系统里搜到app</h3><p>over</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-确定程序可以双击执行&quot;&gt;&lt;a href=&quot;#1-确定程序可以双击执行&quot; class=&quot;headerlink&quot; title=&quot;1.确定程序可以双击执行&quot;&gt;&lt;/a&gt;1.确定程序可以双击执行&lt;/h3&gt;&lt;h3 id=&quot;2-创建-desktop文件&quot;&gt;&lt;a href=&quot;#2-创建-desktop文件&quot; class=&quot;headerlink&quot; title=&quot;2.创建.desktop文件&quot;&gt;&lt;/a&gt;2.创建.desktop文件&lt;/h3&gt;&lt;p&gt;主要是填写文件位置和添加图片&lt;/p&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[Desktop Entry]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Encoding&amp;#x3D;UTF-8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Version&amp;#x3D;1.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Type&amp;#x3D;Application&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Terminal&amp;#x3D;false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Exec&amp;#x3D;&amp;#x2F;home&amp;#x2F;h&amp;#x2F;下载&amp;#x2F;VNC-Viewer-6.21.406-Linux-x64&amp;#x2F;vncviewer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Name&amp;#x3D;vnc view&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Icon&amp;#x3D;&amp;#x2F;home&amp;#x2F;h&amp;#x2F;下载&amp;#x2F;VNC-Viewer-6.21.406-Linux-x64&amp;#x2F;icons&amp;#x2F;vncviewer48x48.png&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
+    
+      <category term="manjaro" scheme="http://weehaa.top/tags/manjaro/"/>
+    
+  </entry>
+  
+  <entry>
     <title>swiftui的state</title>
     <link href="http://weehaa.top/2021/05/27/swiftui%E7%9A%84state/"/>
     <id>http://weehaa.top/2021/05/27/swiftui的state/</id>
-    <published>2021-05-27T03:13:11.000Z</published>
-    <updated>2021-05-27T06:35:15.252Z</updated>
+    <published>2021-05-27T11:13:11.000Z</published>
+    <updated>2021-05-27T06:35:15.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="主要用途"><a href="#主要用途" class="headerlink" title="主要用途"></a>主要用途</h3><p>1.进行私有状态管理<br>2.驱动view的显示<br>当@state 声明的值发生变化时，它所在的struct下的body会重新求值，body里使用的其他View会重新创建。从而使body包含的内容被重新渲染了一遍。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import SwiftUI</span><br><span class="line"></span><br><span class="line">struct DetailView:View &#123;</span><br><span class="line">    let number:Int</span><br><span class="line">    var body: some View&#123;</span><br><span class="line">        Text(&quot;The Value: \(number)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct AddOneView: View &#123;</span><br><span class="line">    @State private var value &#x3D; 0</span><br><span class="line">    var body: some View &#123;</span><br><span class="line">        VStack(alignment: .center) &#123;</span><br><span class="line">&#x2F;&#x2F;            Text(&quot;The Value: \(value)&quot;)</span><br><span class="line">            DetailView(number:value)</span><br><span class="line">            Button(&quot;+1&quot;)&#123;</span><br><span class="line">                value +&#x3D; 1</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct AddOneView_Previews: PreviewProvider &#123;</span><br><span class="line">    static var previews: some View &#123;</span><br><span class="line">        AddOneView()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -46,8 +94,8 @@
     <title>安装nodejs、npm、hexo</title>
     <link href="http://weehaa.top/2021/05/24/%E5%AE%89%E8%A3%85nodejs%E3%80%81npm%E3%80%81hexo/"/>
     <id>http://weehaa.top/2021/05/24/安装nodejs、npm、hexo/</id>
-    <published>2021-05-24T10:07:25.000Z</published>
-    <updated>2021-05-24T10:15:20.011Z</updated>
+    <published>2021-05-24T18:07:25.000Z</published>
+    <updated>2021-05-24T10:15:20.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="去nodejs官方网站下载安装包"><a href="#去nodejs官方网站下载安装包" class="headerlink" title="去nodejs官方网站下载安装包"></a>去nodejs官方网站下载安装包</h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官方地址</a><br>比如下载Linux Binaries (x64)版</p><h3 id="参考下载页面下的链接安装"><a href="#参考下载页面下的链接安装" class="headerlink" title="参考下载页面下的链接安装"></a>参考下载页面下的链接安装</h3><p>比如参考名为Installing Node.js via binary archive的链接<br><a href="https://github.com/nodejs/help/wiki/Installation" target="_blank" rel="noopener">安装流程页面</a></p><a id="more"></a><p>修改VERSION为下载安装包版本后，按1、2、3、4步骤完成nodejs、npm安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1.Unzip the binary archive to any directory you wanna install Node, I use &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs</span><br><span class="line"> VERSION&#x3D;v10.15.0</span><br><span class="line"> DISTRO&#x3D;linux-x64</span><br><span class="line"> sudo mkdir -p &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs</span><br><span class="line"> sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C &#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs </span><br><span class="line">2.Set the environment variable ~&#x2F;.profile, add below to the end</span><br><span class="line"># Nodejs</span><br><span class="line">VERSION&#x3D;v10.15.0</span><br><span class="line">DISTRO&#x3D;linux-x64</span><br><span class="line">export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs&#x2F;node-$VERSION-$DISTRO&#x2F;bin:$PATH</span><br><span class="line">3.Refresh profile</span><br><span class="line">. ~&#x2F;.profile</span><br><span class="line">4.Test installation using</span><br><span class="line">$ node -v</span><br><span class="line"></span><br><span class="line">$ npm version</span><br><span class="line"></span><br><span class="line">$ npx -v</span><br></pre></td></tr></table></figure></p><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>之后执行hexo，显示正常即完成安装。</p>]]></content>
     
@@ -67,8 +115,8 @@
     <title>python昨天</title>
     <link href="http://weehaa.top/2021/05/11/python%E6%98%A8%E5%A4%A9/"/>
     <id>http://weehaa.top/2021/05/11/python昨天/</id>
-    <published>2021-05-11T03:42:57.000Z</published>
-    <updated>2021-05-11T03:44:21.570Z</updated>
+    <published>2021-05-11T11:42:57.000Z</published>
+    <updated>2021-05-11T03:44:21.000Z</updated>
     
     <content type="html"><![CDATA[<p>python获取昨天日期<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import datetime</span><br><span class="line">&gt;&gt;&gt; datetime.date.today() + datetime.timedelta(-1)</span><br><span class="line">datetime.date(2021, 5, 10)</span><br><span class="line">&gt;&gt;&gt; (datetime.date.today() + datetime.timedelta(-1)).strftime(&quot;%Y%m%d&quot;)</span><br><span class="line">&#39;20210510&#39;</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -93,8 +141,8 @@
     <title>git本地commit后补充内容</title>
     <link href="http://weehaa.top/2021/04/29/git%E6%9C%AC%E5%9C%B0commit%E5%90%8E%E8%A1%A5%E5%85%85%E5%86%85%E5%AE%B9/"/>
     <id>http://weehaa.top/2021/04/29/git本地commit后补充内容/</id>
-    <published>2021-04-29T05:29:54.000Z</published>
-    <updated>2021-04-29T05:38:34.501Z</updated>
+    <published>2021-04-29T13:29:54.000Z</published>
+    <updated>2021-04-29T05:38:34.000Z</updated>
     
     <content type="html"><![CDATA[<p>经常会出现提交后又做了新的修改，又不想把新修改作为新commit的情况。<br>可以先直接修改文件。<br>修改后，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure><br>这时修改的文件都还在，也就是说对本地文件没做任何修改，把指针后移了一位。<br>然后将要git add的文件，如果本地已经删除的文件还要再git rm一次将暂存区的文件删除（此时本地已经删除过了，暂存区要像上次提交一样再删除一次）。<br>这时可以使用之前的commit文本再commit一次了。</p><a id="more"></a><p>这样就实现了，做小修改还维持原来的commit。</p>]]></content>
     
@@ -116,8 +164,8 @@
     <title>python3列表、元组、字典序列化反序列化</title>
     <link href="http://weehaa.top/2021/04/29/python3%E5%88%97%E8%A1%A8%E3%80%81%E5%85%83%E7%BB%84%E3%80%81%E5%AD%97%E5%85%B8%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
     <id>http://weehaa.top/2021/04/29/python3列表、元组、字典序列化反序列化/</id>
-    <published>2021-04-29T03:32:32.000Z</published>
-    <updated>2021-04-29T03:41:36.627Z</updated>
+    <published>2021-04-29T11:32:32.000Z</published>
+    <updated>2021-04-29T03:41:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>序列化，反序列化分别使用json.dumps()、json.loads()。</p><p>列表：序列化后是str，反序列化是list<br>元组：序列化后是str，反序列化是list<br>字典：序列化后是str，反序列化是dict</p><a id="more"></a><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import json</span><br><span class="line">&gt;&gt;&gt; tmp&#x3D;[1,2,3]</span><br><span class="line">&gt;&gt;&gt; jtmp&#x3D;json.dumps(tmp)</span><br><span class="line">&gt;&gt;&gt; type(jtmp)</span><br><span class="line">&lt;class &#39;str&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; type(json.loads(jtmp))</span><br><span class="line">&lt;class &#39;list&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; </span><br><span class="line">&gt;&gt;&gt; tmp&#x3D;(1,2,3)</span><br><span class="line">&gt;&gt;&gt; jtmp&#x3D;json.dumps(tmp)</span><br><span class="line">&gt;&gt;&gt; type(jtmp)</span><br><span class="line">&lt;class &#39;str&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; type(json.loads(jtmp))</span><br><span class="line">&lt;class &#39;list&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; </span><br><span class="line">&gt;&gt;&gt; tmp&#x3D;&#123;1:1,2:2&#125;</span><br><span class="line">&gt;&gt;&gt; jtmp&#x3D;json.dumps(tmp)</span><br><span class="line">&gt;&gt;&gt; type(jtmp)</span><br><span class="line">&lt;class &#39;str&#39;&gt;</span><br><span class="line">&gt;&gt;&gt; type(json.loads(jtmp))</span><br><span class="line">&lt;class &#39;dict&#39;&gt;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -139,8 +187,8 @@
     <title>pytorch自定义损失函数</title>
     <link href="http://weehaa.top/2021/04/15/pytorch%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
     <id>http://weehaa.top/2021/04/15/pytorch自定义损失函数/</id>
-    <published>2021-04-15T08:40:39.000Z</published>
-    <updated>2021-04-15T10:31:01.447Z</updated>
+    <published>2021-04-15T16:40:39.000Z</published>
+    <updated>2021-04-15T10:31:01.000Z</updated>
     
     <content type="html"><![CDATA[<p>在深度学习中有时需要使用自定义损失函数，或者为了更好的理解各个环节而使用自定义损失函数。<br>在pytorch中自定义损失函数实现的比较简单，就像实现一个小型网络一样。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class LossFunc(nn.Module):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        super(LossFunc, self).__init__()        </span><br><span class="line">    def forward(self, prelist, ylist):</span><br><span class="line">        dif&#x3D;torch.abs(prelist-ylist)</span><br><span class="line">        coef&#x3D;ylist.clone()</span><br><span class="line">        coef[coef&gt;&#x3D;0.5]&#x3D;2</span><br><span class="line">        coef[coef&lt;0.5]&#x3D;1</span><br><span class="line">        dif&#x3D;torch.mul(dif,coef)       </span><br><span class="line">        return torch.sum(dif)&#x2F;&#x2F;ylist.size()[0]</span><br><span class="line">mylossfunc&#x3D;LossFunc()</span><br><span class="line">mylossfunc&#x3D;mylossfunc.cuda()</span><br></pre></td></tr></table></figure><a id="more"></a><p>这是一个自己写的 均差，相当于均方误差没有求平方。<br>写的时候注意尽量求平均的，不要导致返回的结果过大，可以类比着已有的损失函数，做部分修改。</p>]]></content>
     
@@ -162,8 +210,8 @@
     <title>jupyter日常测性能</title>
     <link href="http://weehaa.top/2021/04/15/jupyter%E6%97%A5%E5%B8%B8%E6%B5%8B%E6%80%A7%E8%83%BD/"/>
     <id>http://weehaa.top/2021/04/15/jupyter日常测性能/</id>
-    <published>2021-04-15T08:15:17.000Z</published>
-    <updated>2021-04-15T08:28:43.599Z</updated>
+    <published>2021-04-15T16:15:17.000Z</published>
+    <updated>2021-04-15T08:28:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>在jupyter中日常测试不同表达方式的执行效率，进而做取舍时，直接新开一行以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%%timeit</span><br></pre></td></tr></table></figure><br>开头即可</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">way1&#x3D;LossFunc()</span><br><span class="line">way1&#x3D;way1.cuda()</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%%timeit</span><br><span class="line">tmp&#x3D;way1(torch.rand(10000,1),torch.rand(10000,1))</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -188,8 +236,8 @@
     <title>python生成随机字符串</title>
     <link href="http://weehaa.top/2021/03/24/python%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     <id>http://weehaa.top/2021/03/24/python生成随机字符串/</id>
-    <published>2021-03-24T05:16:42.000Z</published>
-    <updated>2021-03-24T05:24:47.232Z</updated>
+    <published>2021-03-24T13:16:42.000Z</published>
+    <updated>2021-03-24T05:24:47.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>1.大小写字母<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import random, string</span><br><span class="line">&gt;&gt;&gt; &quot;&quot;.join(random.sample(string.ascii_letters,9))</span><br><span class="line">&#39;HkJdpZclC&#39;</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>2.大小字母+数字（字母开头）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import random, string</span><br><span class="line">&gt;&gt;&gt; &quot;&quot;.join(random.sample(string.ascii_letters,1)+random.sample(string.ascii_letters+string.digits,9))</span><br><span class="line">&#39;CX41uNHykR&#39;</span><br></pre></td></tr></table></figure></p><h3 id="元素拆解"><a href="#元素拆解" class="headerlink" title="元素拆解"></a>元素拆解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; string.ascii_letters</span><br><span class="line">&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><br><span class="line">&gt;&gt;&gt; string.digits</span><br><span class="line">&#39;0123456789&#39;</span><br><span class="line">&gt;&gt;&gt; random.sample(&#39;123456789&#39;, 4)</span><br><span class="line">[&#39;7&#39;, &#39;8&#39;, &#39;5&#39;, &#39;4&#39;]</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -211,8 +259,8 @@
     <title>清空文件的几种方法</title>
     <link href="http://weehaa.top/2021/03/09/%E6%B8%85%E7%A9%BA%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
     <id>http://weehaa.top/2021/03/09/清空文件的几种方法/</id>
-    <published>2021-03-09T03:25:59.000Z</published>
-    <updated>2021-03-09T03:30:57.815Z</updated>
+    <published>2021-03-09T11:25:59.000Z</published>
+    <updated>2021-03-09T03:30:57.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="重定向方式"><a href="#重定向方式" class="headerlink" title="重定向方式"></a>重定向方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 1.</span><br><span class="line">&gt; test.txt</span><br><span class="line"># 2.</span><br><span class="line">: &gt; test.txt</span><br><span class="line"># 3.</span><br><span class="line">true &gt; test.txt</span><br></pre></td></tr></table></figure><h3 id="使用工具指令"><a href="#使用工具指令" class="headerlink" title="使用工具指令"></a>使用工具指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 4.</span><br><span class="line">cat &#x2F;dev&#x2F;null &gt; test.txt</span><br><span class="line"># 5.</span><br><span class="line">cp &#x2F;dev&#x2F;null test.txt</span><br><span class="line"># 6.</span><br><span class="line">dd if&#x3D;&#x2F;dev&#x2F;null of&#x3D;test.txt</span><br><span class="line"># 7.</span><br><span class="line">echo -n &quot;&quot; &gt; test.txt # -n是为了是不显示空白行</span><br><span class="line"># 8.</span><br><span class="line">echo -n &gt; test.txt</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -227,9 +275,9 @@
     
     
     
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
   </entry>
   
@@ -237,8 +285,8 @@
     <title>python跳出if语句</title>
     <link href="http://weehaa.top/2021/02/04/python%E8%B7%B3%E5%87%BAif%E8%AF%AD%E5%8F%A5/"/>
     <id>http://weehaa.top/2021/02/04/python跳出if语句/</id>
-    <published>2021-02-04T06:39:00.000Z</published>
-    <updated>2021-02-04T07:03:30.228Z</updated>
+    <published>2021-02-04T14:39:00.000Z</published>
+    <updated>2021-02-04T07:03:30.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>喜欢在循环、函数里使用多个单行的if判断，如果true直接跳出。<br>类似常用的传值类型判断。<br>类似以下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func(a):</span><br><span class="line">    if a&#x3D;&#x3D;&quot;&quot;:print(&quot;empty value&quot;);return</span><br><span class="line">    if a%10&#x3D;&#x3D;0:print(&quot;err vaule&quot;);return</span><br><span class="line"></span><br><span class="line">for i in range(100):</span><br><span class="line">    if key1 not in dict1:print(&quot;err key&quot;);continue</span><br><span class="line">    if dict1[key1]&#x3D;&#x3D;&quot;&quot;:print(&quot;empty value&quot;);continue</span><br></pre></td></tr></table></figure><br>这种句式的好处是逻辑非常清晰。</p><a id="more"></a><p>但是有时要在if里嵌套if，因为它不是函数也不是循环，就无法正常退出。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if 存在文件a:</span><br><span class="line">    if 存在a文件昨天日期的备份：结束</span><br><span class="line">    备份a并加上昨天的日期</span><br></pre></td></tr></table></figure></p><p>当然可以用if…else解决，但是结构就不那么清晰</p><h3 id="我的多此一举的解决方法"><a href="#我的多此一举的解决方法" class="headerlink" title="我的多此一举的解决方法"></a>我的多此一举的解决方法</h3><p>为了达到我的逐行判断、逻辑清晰的目的，我决定这么使用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1):</span><br><span class="line">    if 不存在a：print(&quot;不存在a&quot;);continue</span><br><span class="line">    if 存在a文件昨天日期的备份:continue</span><br><span class="line">    备份a并加上昨天的日期</span><br></pre></td></tr></table></figure></p><p>整体结构很简单。<br>相当于在备份a前加了两个判断。</p><p>我讨厌大规模的for循环、嵌套for循环，但却喜欢1的for循环。</p>]]></content>
     
@@ -260,8 +308,8 @@
     <title>mac使用expect自动输入</title>
     <link href="http://weehaa.top/2021/01/28/mac%E4%BD%BF%E7%94%A8expect%E8%87%AA%E5%8A%A8%E8%BE%93%E5%85%A5/"/>
     <id>http://weehaa.top/2021/01/28/mac使用expect自动输入/</id>
-    <published>2021-01-28T09:41:42.000Z</published>
-    <updated>2021-02-01T05:41:44.203Z</updated>
+    <published>2021-01-28T17:41:42.000Z</published>
+    <updated>2021-02-01T05:41:44.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>以ssh登陆自动输入密码为例</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;expect</span><br><span class="line">spawn ssh -p 1*** pi@***.cn</span><br><span class="line"></span><br><span class="line">expect &quot;*password:*&quot; &#123; send &quot;J***\r&quot;;interact &#125;</span><br></pre></td></tr></table></figure><a id="more"></a><p>password:前后星号是通配符，其后位置是隐藏了个人信息。</p>]]></content>
     
@@ -283,8 +331,8 @@
     <title>具体工程中cpu、内存使用感受</title>
     <link href="http://weehaa.top/2021/01/14/%E5%85%B7%E4%BD%93%E5%B7%A5%E7%A8%8B%E4%B8%ADcpu%E3%80%81%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97/"/>
     <id>http://weehaa.top/2021/01/14/具体工程中cpu、内存使用感受/</id>
-    <published>2021-01-14T07:04:09.000Z</published>
-    <updated>2021-01-18T08:30:05.378Z</updated>
+    <published>2021-01-14T15:04:09.000Z</published>
+    <updated>2021-01-18T08:30:05.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>做了一个有几十亿数据，几千万用户，截止目前，数据刚收集没多久。<br>对内存和cpu的使用率有一点总结。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>就像一般服务器的负载原小于核心数才好一样，内存和cpu是重要资源，随着数据的增长可能大幅增加。<br>在设计算法时，将它们控制在一个较低百分比十分重要。<br>以我处理的数据为例，5个线程一起跑，要处理的每个文件在2G多，还在持续增长。<br>在并发处理时，16G的内存能达到90%，这是非常不好的。<br>经过一些分割处理，将文件减小到原来的1/16，文件数量也增加了16倍。<br>拿文件数量换了内存空间。</p>]]></content>
     
@@ -308,8 +356,8 @@
     <title>vim配置tab等于4空格</title>
     <link href="http://weehaa.top/2021/01/14/vim%E9%85%8D%E7%BD%AEtab%E7%AD%89%E4%BA%8E4%E7%A9%BA%E6%A0%BC/"/>
     <id>http://weehaa.top/2021/01/14/vim配置tab等于4空格/</id>
-    <published>2021-01-14T03:27:09.000Z</published>
-    <updated>2021-01-14T03:29:14.708Z</updated>
+    <published>2021-01-14T11:27:09.000Z</published>
+    <updated>2021-01-14T03:29:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>在/etc/vim/vimrc中添加或修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot; add tab space</span><br><span class="line">set ts&#x3D;4</span><br><span class="line">set softtabstop&#x3D;4</span><br><span class="line">set shiftwidth&#x3D;4</span><br><span class="line">set expandtab</span><br><span class="line">set autoindent</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -334,8 +382,8 @@
     <title>golang统一处理err</title>
     <link href="http://weehaa.top/2021/01/14/golang%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86err/"/>
     <id>http://weehaa.top/2021/01/14/golang统一处理err/</id>
-    <published>2021-01-14T02:50:46.000Z</published>
-    <updated>2021-01-14T02:58:43.962Z</updated>
+    <published>2021-01-14T10:50:46.000Z</published>
+    <updated>2021-01-14T02:58:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>程序写完，一堆nil看着难受，以后统一这么写吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func FuckErr(err error)&#123;</span><br><span class="line">    if err!&#x3D;nil&#123;</span><br><span class="line">        panic(err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -360,8 +408,8 @@
     <title>ubuntu开机执行自定义脚本</title>
     <link href="http://weehaa.top/2021/01/13/ubuntu%E5%BC%80%E6%9C%BA%E6%89%A7%E8%A1%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E8%84%9A%E6%9C%AC/"/>
     <id>http://weehaa.top/2021/01/13/ubuntu开机执行自定义脚本/</id>
-    <published>2021-01-13T10:02:01.000Z</published>
-    <updated>2021-01-13T10:14:42.931Z</updated>
+    <published>2021-01-13T18:02:01.000Z</published>
+    <updated>2021-01-13T10:14:42.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>切换到root。<br>没有的文件自己创建新的。</p><h3 id="创建或修改rc-local-service"><a href="#创建或修改rc-local-service" class="headerlink" title="创建或修改rc-local.service"></a>创建或修改rc-local.service</h3><p>vim /etc/systemd/system/rc-local.service</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit] </span><br><span class="line">Description&#x3D;&#x2F;etc&#x2F;rc.local Compatibility </span><br><span class="line">ConditionPathExists&#x3D;&#x2F;etc&#x2F;rc.local </span><br><span class="line"></span><br><span class="line">[Service] </span><br><span class="line">Type&#x3D;forking </span><br><span class="line">ExecStart&#x3D;&#x2F;etc&#x2F;rc.local start </span><br><span class="line">TimeoutSec&#x3D;0 </span><br><span class="line">StandardOutput&#x3D;tty </span><br><span class="line">RemainAfterExit&#x3D;yes </span><br><span class="line">SysVStartPriority&#x3D;99 </span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="穿件或修改对应的rc-local"><a href="#穿件或修改对应的rc-local" class="headerlink" title="穿件或修改对应的rc.local"></a>穿件或修改对应的rc.local</h3><p>vim  /etc/rc.local</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh -e </span><br><span class="line">## rc.local</span><br><span class="line"></span><br><span class="line"># This script is executed at the end of each multiuser runlevel.</span><br><span class="line"># Make sure that the script will &quot;exit 0&quot; on success or any other </span><br><span class="line"># value on error. </span><br><span class="line"># In order to enable or disable this script just change the execution  bits. </span><br><span class="line"># By default this script does nothing. </span><br><span class="line"></span><br><span class="line">#start script</span><br><span class="line"></span><br><span class="line">cd &#x2F;home&#x2F;h2&#x2F;stat\_data</span><br><span class="line">python3 switchControl.py &gt;&gt; control.log &amp;</span><br><span class="line"></span><br><span class="line">#end script</span><br><span class="line"></span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure><h3 id="加权限"><a href="#加权限" class="headerlink" title="加权限"></a>加权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x &#x2F;etc&#x2F;rc.local</span><br></pre></td></tr></table></figure><h3 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable rc-local</span><br></pre></td></tr></table></figure><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start rc-local.service</span><br></pre></td></tr></table></figure><h3 id="查看当前运行状态"><a href="#查看当前运行状态" class="headerlink" title="查看当前运行状态"></a>查看当前运行状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status rc-local.service</span><br></pre></td></tr></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>从上面配置可以看出，/etc/systemd/system/下的服务名可以随意设定。<br>里面对应的local文件路径要写对。<br>然后看开启服务、运行服务、查看状态即可。</p>]]></content>
     
@@ -373,9 +421,9 @@
     
     
     
-      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
     
   </entry>
   
@@ -383,8 +431,8 @@
     <title>golang多线程简单逻辑</title>
     <link href="http://weehaa.top/2021/01/13/golang%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AE%80%E5%8D%95%E9%80%BB%E8%BE%91/"/>
     <id>http://weehaa.top/2021/01/13/golang多线程简单逻辑/</id>
-    <published>2021-01-13T08:58:11.000Z</published>
-    <updated>2021-01-13T09:38:06.004Z</updated>
+    <published>2021-01-13T16:58:11.000Z</published>
+    <updated>2021-01-13T09:38:06.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>实现指定个核心最大化使用，比如核心总数减一。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line">import (</span><br><span class="line">    &quot;runtime&quot;</span><br><span class="line">    &quot;sync&quot;</span><br><span class="line">)</span><br><span class="line">var (</span><br><span class="line">    cpunum &#x3D; runtime.NumCPU()-1</span><br><span class="line">)</span><br><span class="line">func main()&#123;</span><br><span class="line">    ch :&#x3D; make(chan string)</span><br><span class="line">    runtime.GOMAXPROCS(cpunum)</span><br><span class="line">    wg :&#x3D; sync.WaitGroup&#123;&#125;</span><br><span class="line"></span><br><span class="line">    for i :&#x3D; 0; i &lt; cpunum; i++&#123;</span><br><span class="line">        go WgReadLogs(ch, &amp;wg)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    wg.Add(2)</span><br><span class="line">    ch &lt;- &quot;.&#x2F;health&#x2F;stat1.rec&quot;</span><br><span class="line">    ch &lt;- &quot;.&#x2F;report&#x2F;stat2.rec&quot;</span><br><span class="line">    wg.Wait()</span><br><span class="line">    close(ch)</span><br><span class="line">&#125;</span><br><span class="line">func WgReadLogs(ch chan string,wg *sync.WaitGroup)&#123;</span><br><span class="line">    for true&#123;</span><br><span class="line">tmp,ok :&#x3D; &lt;-ch</span><br><span class="line">if !ok&#123;</span><br><span class="line">    break</span><br><span class="line">&#125;</span><br><span class="line">ReadLogs(tmp)</span><br><span class="line">wg.Done()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">func ReadLogs(logname string)&#123;</span><br><span class="line">    fmt.Println(logname)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import (</span><br><span class="line">    &quot;runtime&quot;</span><br><span class="line">    &quot;sync&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>必要的库。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var (</span><br><span class="line">    cpunum &#x3D; runtime.NumCPU()-1</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>要使用的cpu数量，建议不全使用。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ch :&#x3D; make(chan string)</span><br><span class="line">runtime.GOMAXPROCS(cpunum)</span><br><span class="line">wg :&#x3D; sync.WaitGroup&#123;&#125;</span><br></pre></td></tr></table></figure><p>建立管道。<br>声明使用的cpu数。<br>建立互斥关系，本例中主要为了实现所有线程执行完后再执行后续程序。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for i :&#x3D; 0; i &lt; cpunum; i++&#123;</span><br><span class="line">    go WgReadLogs(ch, &amp;wg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>创建cpu数减1个线程</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wg.Add(2)</span><br><span class="line">ch &lt;- &quot;.&#x2F;health&#x2F;stat1.rec&quot;</span><br><span class="line">ch &lt;- &quot;.&#x2F;report&#x2F;stat2.rec&quot;</span><br><span class="line">wg.Wait()</span><br><span class="line">close(ch)</span><br></pre></td></tr></table></figure><p>后面每个任务结束时要done一个wg，这里根据具体情况加，是循环就在每个循环里加，保证后面能全部done即可。<br>没有缓冲的、阻塞式的往管道传递字符串。<br>Wait是等所有线程都执行完，即增加的数字被全done掉。<br>关闭管道。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">func WgReadLogs(ch chan string,wg *sync.WaitGroup)&#123;</span><br><span class="line">    for true&#123;</span><br><span class="line">        tmp,ok :&#x3D; &lt;-ch</span><br><span class="line">        if !ok&#123;</span><br><span class="line">            break</span><br><span class="line">        &#125;</span><br><span class="line">        ReadLogs(tmp)</span><br><span class="line">        wg.Done()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>假设已有的函数是ReadLogs，在它的基础上加个Wg加函数名的新函数，我觉得这种方式不改变原有的，比较舒服。<br>大意是：循环从管道读取字符串，读不到了就跳出循环。<br>每个ReadLogs()之后加一个wg.Done()，相当于计数减一。</p><p>ReadLogs()就是要执行的任务，不再解释。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>就是开指定个线程。<br>管道阻塞传值。<br>wg同步。<br>WgReadLogs循环接收。</p>]]></content>
     
@@ -406,8 +454,8 @@
     <title>linux下python复制内容到粘贴板</title>
     <link href="http://weehaa.top/2021/01/13/linux%E4%B8%8Bpython%E5%A4%8D%E5%88%B6%E5%86%85%E5%AE%B9%E5%88%B0%E7%B2%98%E8%B4%B4%E6%9D%BF/"/>
     <id>http://weehaa.top/2021/01/13/linux下python复制内容到粘贴板/</id>
-    <published>2021-01-13T08:52:19.000Z</published>
-    <updated>2021-01-13T08:55:41.671Z</updated>
+    <published>2021-01-13T16:52:19.000Z</published>
+    <updated>2021-01-13T08:55:41.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="安装pyperclip库"><a href="#安装pyperclip库" class="headerlink" title="安装pyperclip库"></a>安装pyperclip库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install pyperclip</span><br></pre></td></tr></table></figure><h3 id="安装xclip"><a href="#安装xclip" class="headerlink" title="安装xclip"></a>安装xclip</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install xclip</span><br></pre></td></tr></table></figure><h3 id="和粘贴板交互"><a href="#和粘贴板交互" class="headerlink" title="和粘贴板交互"></a>和粘贴板交互</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import pyperclip</span><br><span class="line"># 复制到粘贴板</span><br><span class="line">pyperclip.copy(&#39;test&#39;)</span><br><span class="line"># 从粘贴板复制</span><br><span class="line">pyperclip.paste()</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -422,9 +470,9 @@
     
     
     
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
       <category term="python" scheme="http://weehaa.top/tags/python/"/>
     
@@ -434,8 +482,8 @@
     <title>ubuntu重复输密码进不了系统解决方法</title>
     <link href="http://weehaa.top/2021/01/11/ubuntu%E9%87%8D%E5%A4%8D%E8%BE%93%E5%AF%86%E7%A0%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
     <id>http://weehaa.top/2021/01/11/ubuntu重复输密码进不了系统解决方法/</id>
-    <published>2021-01-11T09:33:57.000Z</published>
-    <updated>2021-01-11T09:39:39.105Z</updated>
+    <published>2021-01-11T17:33:57.000Z</published>
+    <updated>2021-01-11T09:39:39.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天在使用xstart时导致，xUbuntu重启后循环跳出输密码界面，无法进入桌面。</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>ctrl + alt + F1进入终端<br>删除用户主目录下的.Xauthority</p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>每次用户登录的时候都要读取对应.Xauthority的信息，<br>我之前的操作导致其权限发生变化，这点在删除时就可以看到。<br>删除后重启正常进入桌面。</p>]]></content>
     
@@ -451,64 +499,9 @@
     
     
     
-      <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
-  </entry>
-  
-  <entry>
-    <title>点对点&amp;心跳机制</title>
-    <link href="http://weehaa.top/2021/01/08/%E7%82%B9%E5%AF%B9%E7%82%B9-%E5%BF%83%E8%B7%B3%E6%9C%BA%E5%88%B6/"/>
-    <id>http://weehaa.top/2021/01/08/点对点-心跳机制/</id>
-    <published>2021-01-08T03:04:21.000Z</published>
-    <updated>2021-01-08T03:09:06.018Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><p>相对于点对点传输，心跳机制是一种更好实现的近似替代。</p><h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>心跳机制，优点是稳定好实现，缺点是没点对点快，对带宽对服务器性能都有要求。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以后的开发中，心跳可以作为基础，快速实现。点对点作为升级功能，但使用时优先级更高的功能。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;对比&quot;&gt;&lt;a href=&quot;#对比&quot; class=&quot;headerlink&quot; title=&quot;对比&quot;&gt;&lt;/a&gt;对比&lt;/h3&gt;&lt;p&gt;相对于点对点传输，心跳机制是一种更好实现的近似替代。&lt;/p&gt;
-&lt;h3 id=&quot;优缺点&quot;&gt;&lt;a href=&quot;#优缺点&quot; class=&quot;head
-      
-    
-    </summary>
-    
-    
-    
-      <category term="思考" scheme="http://weehaa.top/tags/%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu查看显卡具体型号</title>
-    <link href="http://weehaa.top/2021/01/07/Ubuntu%E6%9F%A5%E7%9C%8B%E6%98%BE%E5%8D%A1%E5%85%B7%E4%BD%93%E5%9E%8B%E5%8F%B7/"/>
-    <id>http://weehaa.top/2021/01/07/Ubuntu查看显卡具体型号/</id>
-    <published>2021-01-07T07:37:57.000Z</published>
-    <updated>2021-01-07T07:39:22.194Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@h2-B85M-D2V-SI:~# nvidia-smi -q | grep Product</span><br><span class="line">    Product Name                    : GeForce RTX 2070 SUPER</span><br><span class="line">    Product Brand                   : GeForce</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;指令&quot;&gt;&lt;a href=&quot;#指令&quot; class=&quot;headerlink&quot; title=&quot;指令&quot;&gt;&lt;/a&gt;指令&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
-      
-    
-    </summary>
-    
-    
-    
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
-    
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
-      <category term="nvidia" scheme="http://weehaa.top/tags/nvidia/"/>
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
