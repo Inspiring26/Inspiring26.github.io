@@ -23,4 +23,5 @@ Icon=/home/h/下载/VNC-Viewer-6.21.406-Linux-x64/icons/vncviewer48x48.png
 sudo cp vncview.desktop /usr/share/applications/
 ```
 ### 4.至此可以在系统里搜到app
+over
 
