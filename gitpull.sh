@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /root/blog
+cd /blog
 /usr/bin/git pull
 

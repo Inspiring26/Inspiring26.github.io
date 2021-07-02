@@ -5,7 +5,7 @@ do
 	remainder=$(($thetime2%5))
 	if [ $remainder = '0' ]
 	then
-		cd ~/blog;sh gitpull.sh
+		cd /blog;sh gitpull.sh
 		date
 		sleep 60s
 	else
