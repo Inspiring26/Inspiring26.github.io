@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "服务器上部署hexo镜像或者个人其他镜像"
+git commit -m "python判断当前是否在jupyter里"
 git push

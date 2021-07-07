@@ -1,1 +1,1 @@
-hexo n 服务器上部署hexo镜像或者个人其他镜像
+hexo n python判断是不是在jupyter中
