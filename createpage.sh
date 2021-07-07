@@ -1,1 +1,1 @@
-hexo n python判断是不是在jupyter中
+hexo n Dockerfile几个技巧
