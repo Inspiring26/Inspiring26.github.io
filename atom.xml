@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-07-07T08:54:15.010Z</updated>
+  <updated>2021-07-07T09:01:40.756Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dockerfile几个技巧</title>
+    <link href="http://weehaa.top/2021/07/07/Dockerfile%E5%87%A0%E4%B8%AA%E6%8A%80%E5%B7%A7/"/>
+    <id>http://weehaa.top/2021/07/07/Dockerfile几个技巧/</id>
+    <published>2021-07-07T08:59:52.000Z</published>
+    <updated>2021-07-07T09:01:40.756Z</updated>
+    
+    <content type="html"><![CDATA[<p>在用Dockerfile构建镜像时，有以下几个技巧</p><h4 id="先只写到copy字段，然后进去逐步运行，可运行后再在Dockerfile里写"><a href="#先只写到copy字段，然后进去逐步运行，可运行后再在Dockerfile里写" class="headerlink" title="先只写到copy字段，然后进去逐步运行，可运行后再在Dockerfile里写"></a>先只写到copy字段，然后进去逐步运行，可运行后再在Dockerfile里写</h4><h4 id="有错误的镜像，直接将版本号递增，等最终完成后在一次性清理"><a href="#有错误的镜像，直接将版本号递增，等最终完成后在一次性清理" class="headerlink" title="有错误的镜像，直接将版本号递增，等最终完成后在一次性清理"></a>有错误的镜像，直接将版本号递增，等最终完成后在一次性清理</h4><h4 id="在每个项目目录里可以建一个Dockerfile文件夹，打包后到其他地方解压就可以build并运行，可以把run指令写在Dockerfile文件注释里"><a href="#在每个项目目录里可以建一个Dockerfile文件夹，打包后到其他地方解压就可以build并运行，可以把run指令写在Dockerfile文件注释里" class="headerlink" title="在每个项目目录里可以建一个Dockerfile文件夹，打包后到其他地方解压就可以build并运行，可以把run指令写在Dockerfile文件注释里"></a>在每个项目目录里可以建一个Dockerfile文件夹，打包后到其他地方解压就可以build并运行，可以把run指令写在Dockerfile文件注释里</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在用Dockerfile构建镜像时，有以下几个技巧&lt;/p&gt;
+&lt;h4 id=&quot;先只写到copy字段，然后进去逐步运行，可运行后再在Dockerfile里写&quot;&gt;&lt;a href=&quot;#先只写到copy字段，然后进去逐步运行，可运行后再在Dockerfile里写&quot; class=&quot;he
+      
+    
+    </summary>
+    
+    
+    
+      <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
+    
+      <category term="经验" scheme="http://weehaa.top/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>python判断是不是在jupyter中</title>
@@ -59,11 +86,11 @@
     
     
     
+      <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
+    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="hexo" scheme="http://weehaa.top/tags/hexo/"/>
-    
-      <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
     
       <category term="部署" scheme="http://weehaa.top/tags/%E9%83%A8%E7%BD%B2/"/>
     
@@ -86,9 +113,9 @@
     
     
     
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
       <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -477,29 +504,6 @@
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="ubuntu" scheme="http://weehaa.top/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang多线程简单逻辑</title>
-    <link href="http://weehaa.top/2021/01/13/golang%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AE%80%E5%8D%95%E9%80%BB%E8%BE%91/"/>
-    <id>http://weehaa.top/2021/01/13/golang多线程简单逻辑/</id>
-    <published>2021-01-13T16:58:11.000Z</published>
-    <updated>2021-01-13T09:38:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>实现指定个核心最大化使用，比如核心总数减一。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line">import (</span><br><span class="line">    &quot;runtime&quot;</span><br><span class="line">    &quot;sync&quot;</span><br><span class="line">)</span><br><span class="line">var (</span><br><span class="line">    cpunum &#x3D; runtime.NumCPU()-1</span><br><span class="line">)</span><br><span class="line">func main()&#123;</span><br><span class="line">    ch :&#x3D; make(chan string)</span><br><span class="line">    runtime.GOMAXPROCS(cpunum)</span><br><span class="line">    wg :&#x3D; sync.WaitGroup&#123;&#125;</span><br><span class="line"></span><br><span class="line">    for i :&#x3D; 0; i &lt; cpunum; i++&#123;</span><br><span class="line">        go WgReadLogs(ch, &amp;wg)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    wg.Add(2)</span><br><span class="line">    ch &lt;- &quot;.&#x2F;health&#x2F;stat1.rec&quot;</span><br><span class="line">    ch &lt;- &quot;.&#x2F;report&#x2F;stat2.rec&quot;</span><br><span class="line">    wg.Wait()</span><br><span class="line">    close(ch)</span><br><span class="line">&#125;</span><br><span class="line">func WgReadLogs(ch chan string,wg *sync.WaitGroup)&#123;</span><br><span class="line">    for true&#123;</span><br><span class="line">tmp,ok :&#x3D; &lt;-ch</span><br><span class="line">if !ok&#123;</span><br><span class="line">    break</span><br><span class="line">&#125;</span><br><span class="line">ReadLogs(tmp)</span><br><span class="line">wg.Done()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">func ReadLogs(logname string)&#123;</span><br><span class="line">    fmt.Println(logname)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import (</span><br><span class="line">    &quot;runtime&quot;</span><br><span class="line">    &quot;sync&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>必要的库。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var (</span><br><span class="line">    cpunum &#x3D; runtime.NumCPU()-1</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>要使用的cpu数量，建议不全使用。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ch :&#x3D; make(chan string)</span><br><span class="line">runtime.GOMAXPROCS(cpunum)</span><br><span class="line">wg :&#x3D; sync.WaitGroup&#123;&#125;</span><br></pre></td></tr></table></figure><p>建立管道。<br>声明使用的cpu数。<br>建立互斥关系，本例中主要为了实现所有线程执行完后再执行后续程序。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for i :&#x3D; 0; i &lt; cpunum; i++&#123;</span><br><span class="line">    go WgReadLogs(ch, &amp;wg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>创建cpu数减1个线程</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wg.Add(2)</span><br><span class="line">ch &lt;- &quot;.&#x2F;health&#x2F;stat1.rec&quot;</span><br><span class="line">ch &lt;- &quot;.&#x2F;report&#x2F;stat2.rec&quot;</span><br><span class="line">wg.Wait()</span><br><span class="line">close(ch)</span><br></pre></td></tr></table></figure><p>后面每个任务结束时要done一个wg，这里根据具体情况加，是循环就在每个循环里加，保证后面能全部done即可。<br>没有缓冲的、阻塞式的往管道传递字符串。<br>Wait是等所有线程都执行完，即增加的数字被全done掉。<br>关闭管道。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">func WgReadLogs(ch chan string,wg *sync.WaitGroup)&#123;</span><br><span class="line">    for true&#123;</span><br><span class="line">        tmp,ok :&#x3D; &lt;-ch</span><br><span class="line">        if !ok&#123;</span><br><span class="line">            break</span><br><span class="line">        &#125;</span><br><span class="line">        ReadLogs(tmp)</span><br><span class="line">        wg.Done()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>假设已有的函数是ReadLogs，在它的基础上加个Wg加函数名的新函数，我觉得这种方式不改变原有的，比较舒服。<br>大意是：循环从管道读取字符串，读不到了就跳出循环。<br>每个ReadLogs()之后加一个wg.Done()，相当于计数减一。</p><p>ReadLogs()就是要执行的任务，不再解释。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>就是开指定个线程。<br>管道阻塞传值。<br>wg同步。<br>WgReadLogs循环接收。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h3&gt;&lt;p&gt;实现指定个核心最大化使用，比如核心总数减一。&lt;/p&gt;&lt;h3 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;package main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;runtime&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;sync&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    cpunum &amp;#x3D; runtime.NumCPU()-1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;func main()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ch :&amp;#x3D; make(chan string)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    runtime.GOMAXPROCS(cpunum)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    wg :&amp;#x3D; sync.WaitGroup&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    for i :&amp;#x3D; 0; i &amp;lt; cpunum; i++&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        go WgReadLogs(ch, &amp;amp;wg)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    wg.Add(2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ch &amp;lt;- &amp;quot;.&amp;#x2F;health&amp;#x2F;stat1.rec&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ch &amp;lt;- &amp;quot;.&amp;#x2F;report&amp;#x2F;stat2.rec&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    wg.Wait()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    close(ch)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;func WgReadLogs(ch chan string,wg *sync.WaitGroup)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    for true&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	tmp,ok :&amp;#x3D; &amp;lt;-ch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	if !ok&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    break&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	ReadLogs(tmp)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	wg.Done()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;func ReadLogs(logname string)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fmt.Println(logname)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="总结" scheme="http://weehaa.top/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="golang" scheme="http://weehaa.top/tags/golang/"/>
     
   </entry>
   

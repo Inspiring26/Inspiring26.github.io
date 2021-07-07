@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Dockerfile几个技巧]]></title>
+    <url>%2F2021%2F07%2F07%2FDockerfile%E5%87%A0%E4%B8%AA%E6%8A%80%E5%B7%A7%2F</url>
+    <content type="text"><![CDATA[在用Dockerfile构建镜像时，有以下几个技巧 先只写到copy字段，然后进去逐步运行，可运行后再在Dockerfile里写有错误的镜像，直接将版本号递增，等最终完成后在一次性清理在每个项目目录里可以建一个Dockerfile文件夹，打包后到其他地方解压就可以build并运行，可以把run指令写在Dockerfile文件注释里]]></content>
+      <tags>
+        <tag>docker</tag>
+        <tag>经验</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python判断是不是在jupyter中]]></title>
     <url>%2F2021%2F07%2F07%2Fpython%E5%88%A4%E6%96%AD%E6%98%AF%E4%B8%8D%E6%98%AF%E5%9C%A8jupyter%E4%B8%AD%2F</url>
     <content type="text"><![CDATA[在jupyter中判断1234import osos.environ[&#39;_&#39;]&#39;&#x2F;usr&#x2F;bin&#x2F;jupyter&#39;在终端交互环境判断123&gt;&gt;&gt; import os&gt;&gt;&gt; os.environ[&#39;_&#39;]&#39;&#x2F;usr&#x2F;bin&#x2F;python3&#39; 为了使在jupyter里写的程序方便导出来，可以这样12345import osif &quot;jupyter&quot; in os.environ[&#39;_&#39;]: from tqdm.notebook import tqdmelse: from tqdm import tqdm]]></content>
@@ -14,9 +23,9 @@
     <url>%2F2021%2F07%2F02%2F%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E9%95%9C%E5%83%8F%E6%88%96%E8%80%85%E4%B8%AA%E4%BA%BA%E5%85%B6%E4%BB%96%E9%95%9C%E5%83%8F%2F</url>
     <content type="text"><![CDATA[写在开始前这不是理想的方法，理想的方法是使用私有镜像仓库push pull,并且docker提供的有部署私有仓库的镜像叫registry。这是本地创建镜像的记录。 步骤1234567如果把文件夹及Dockerfile复制到服务器上sudo docker build -t hexoblog:v1.0 .docker run -dit -p 4000:8080 hexoblog:v1.0ssh-keygen -t rsacat &#x2F;root&#x2F;.ssh&#x2F;id_rsa.pub添加到githubsetsid sh autoPull.sh]]></content>
       <tags>
+        <tag>docker</tag>
         <tag>方法</tag>
         <tag>hexo</tag>
-        <tag>docker</tag>
         <tag>部署</tag>
       </tags>
   </entry>
@@ -25,8 +34,8 @@
     <url>%2F2021%2F07%2F02%2Fdocker%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%E5%B0%B1%E8%BF%90%E8%A1%8C%2F</url>
     <content type="text"><![CDATA[目标执行1docker run -dit -p 4001:8080 hexoblog:v1.0就创建容器并运行blog服务CMD方式Dockerfile里的CMD指令是会被docker run后面加的指令覆盖的。并且，多个CMD只会执行最后一个。使用方式：1CMD [&quot;hexo&quot;, &quot;s&quot;, &quot;-p&quot;, &quot;8080&quot;, &quot;&amp;&quot;]正常，启动就运行。 1CMD hexo s -p 8080 &amp; 这种直接写shell语句是无法正常运行的。 ENTRYPOINT方式ENTRYPOINT是一种不会被docker run 后面指令覆盖的方式。使用方式：1ENTRYPOINT [&quot;hexo&quot;, &quot;s&quot;, &quot;-p&quot;, &quot;8080&quot;, &quot;&amp;&quot;]]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>docker</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -1073,9 +1082,9 @@
     <url>%2F2020%2F03%2F16%2F%E5%B0%86nvidia%E6%B7%BB%E5%8A%A0%E5%88%B0runtime%2F</url>
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
+        <tag>docker</tag>
         <tag>方法</tag>
         <tag>nvidia</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1329,8 +1338,8 @@
     <url>%2F2019%2F10%2F30%2F%E5%AE%89%E8%A3%85nvidia-docker%2F</url>
     <content type="text"><![CDATA[1234567sudo sudistribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.listapt-get update &amp;&amp; apt-get install -y nvidia-container-toolkitsystemctl restart docker 以上是在ubuntu18.04，外部已配好cuda环境。]]></content>
       <tags>
-        <tag>nvidia</tag>
         <tag>docker</tag>
+        <tag>nvidia</tag>
       </tags>
   </entry>
   <entry>
@@ -1380,8 +1389,8 @@
     <url>%2F2019%2F10%2F28%2F%E9%85%8D%E7%BD%AEtornado-pytorch%E7%9A%84docker%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[拉去指定docker镜像（目前pytorch支持到pytorch1.3，python3.7）1docker pull python:3.7运行容器1docker run -dit python:3.7进入容器 123docker ps#59fe58579fd2 python:3.7 &quot;bash&quot; 35 minutes ago docker exec -it 59fe bash 配置环境12345python -V#Python 3.7.5pip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple torch&#x3D;&#x3D;1.3.0+cpu torchvision&#x3D;&#x3D;0.4.1+cpu -f https:&#x2F;&#x2F;download.pytorch.org&#x2F;whl&#x2F;torch_stable.htmlpip3 instll -i https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple tornado redis pillow efficientnet_pytorch 此外，py文件中torch.load()要添加1,map_location&#x3D;torch.device(&#39;cpu&#39;)从而运行在cpu环境下。 安装redis数据库apt不能用临时源，且为了安装最新版本，从源文件编译安装12345wget -c http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-5.0.5.tar.gztar xzf redis-5.0.5.tar.gzcd redis-5.0.5make 启动redis123cd src&#x2F;nohup .&#x2F;redis-server &amp;.&#x2F;redis-cli]]></content>
       <tags>
-        <tag>pytorch</tag>
         <tag>docker</tag>
+        <tag>pytorch</tag>
         <tag>redis</tag>
         <tag>tornado</tag>
       </tags>
@@ -1786,9 +1795,9 @@
     <url>%2F2019%2F10%2F09%2Fdocker-runtime-nvidia%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[https://github.com/NVIDIA/nvidia-docker 打开以上链接安装一下以下指令1234567891011121314151617# Add the package repositories$ distribution&#x3D;$(. &#x2F;etc&#x2F;os-release;echo $ID$VERSION_ID)$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;gpgkey | sudo apt-key add -$ curl -s -L https:&#x2F;&#x2F;nvidia.github.io&#x2F;nvidia-docker&#x2F;$distribution&#x2F;nvidia-docker.list | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;nvidia-docker.list$ sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit$ sudo systemctl restart docker# On debian based distributions: Ubuntu &#x2F; Debian$ sudo apt-get update$ sudo apt-get --only-upgrade install docker-ce nvidia-docker2$ sudo systemctl restart docker# All of the following options will continue working#$ docker run --gpus all nvidia&#x2F;cuda:9.0-base nvidia-smi$ docker run --runtime nvidia nvidia&#x2F;cuda:9.0-base nvidia-smi]]></content>
       <tags>
+        <tag>docker</tag>
         <tag>nvidia</tag>
         <tag>cuda</tag>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
