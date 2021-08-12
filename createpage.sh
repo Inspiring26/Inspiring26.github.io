@@ -1,1 +1,1 @@
-hexo n pandas使用匿名函数处理多列时需要加axis=1
+hexo n archlinux或manjaro安装keepass中文及解决乱码问题
