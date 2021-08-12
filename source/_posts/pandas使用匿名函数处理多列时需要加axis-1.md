@@ -17,3 +17,7 @@ tmpDF["custom"]=tmpDF["event_kv_json"].apply(lambda x: json.dumps({_:json.loads(
 ```
 tmpdf2["umid_diff2"]=tmpdf2[["point","umid_diff"]].apply(lambda x:True if x["point"]=="s" else x["umid_diff"]  ,axis=1)
 ```
+也可以用apply来创建新的确定列
+```
+df['a']=df.apply(lambda x:"", axis=1)
+```
