@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[pandas使用匿名函数处理多列时需要加axis=1]]></title>
     <url>%2F2021%2F08%2F12%2Fpandas%E4%BD%BF%E7%94%A8%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86%E5%A4%9A%E5%88%97%E6%97%B6%E9%9C%80%E8%A6%81%E5%8A%A0axis-1%2F</url>
-    <content type="text"><![CDATA[pandas在结合多列数据产生新列时，匿名函数的传入参数还是一个，表达式中要使用时需要加上指定字段，当传如的多于一列时需要加axis。只有一列时可加可不加。12for k in title_dict: tmpDF[k.replace(&quot;$$&quot;,&quot;json&quot;)]&#x3D;tmpDF[&quot;event_kv_json&quot;].apply(lambda x:json.loads(x).get(k,&quot;&quot;)) 1tmpDF[&quot;custom&quot;]&#x3D;tmpDF[&quot;event_kv_json&quot;].apply(lambda x: json.dumps(&#123;_:json.loads(x)[_] for _ in json.loads(x) if not _.startswith(&quot;$$&quot;)&#125;)) 1tmpdf2[&quot;umid_diff2&quot;]&#x3D;tmpdf2[[&quot;point&quot;,&quot;umid_diff&quot;]].apply(lambda x:True if x[&quot;point&quot;]&#x3D;&#x3D;&quot;s&quot; else x[&quot;umid_diff&quot;] ,axis&#x3D;1)]]></content>
+    <content type="text"><![CDATA[pandas在结合多列数据产生新列时，匿名函数的传入参数还是一个，表达式中要使用时需要加上指定字段，当传如的多于一列时需要加axis。只有一列时可加可不加。12for k in title_dict: tmpDF[k.replace(&quot;$$&quot;,&quot;json&quot;)]&#x3D;tmpDF[&quot;event_kv_json&quot;].apply(lambda x:json.loads(x).get(k,&quot;&quot;)) 1tmpDF[&quot;custom&quot;]&#x3D;tmpDF[&quot;event_kv_json&quot;].apply(lambda x: json.dumps(&#123;_:json.loads(x)[_] for _ in json.loads(x) if not _.startswith(&quot;$$&quot;)&#125;)) 1tmpdf2[&quot;umid_diff2&quot;]&#x3D;tmpdf2[[&quot;point&quot;,&quot;umid_diff&quot;]].apply(lambda x:True if x[&quot;point&quot;]&#x3D;&#x3D;&quot;s&quot; else x[&quot;umid_diff&quot;] ,axis&#x3D;1) 也可以用apply来创建新的确定列1df[&#39;a&#39;]&#x3D;df.apply(lambda x:&quot;&quot;, axis&#x3D;1)]]></content>
       <tags>
         <tag>方法</tag>
         <tag>python</tag>
@@ -41,8 +41,8 @@
     <url>%2F2021%2F07%2F02%2F%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E9%95%9C%E5%83%8F%E6%88%96%E8%80%85%E4%B8%AA%E4%BA%BA%E5%85%B6%E4%BB%96%E9%95%9C%E5%83%8F%2F</url>
     <content type="text"><![CDATA[写在开始前这不是理想的方法，理想的方法是使用私有镜像仓库push pull,并且docker提供的有部署私有仓库的镜像叫registry。这是本地创建镜像的记录。 步骤1234567如果把文件夹及Dockerfile复制到服务器上sudo docker build -t hexoblog:v1.0 .docker run -dit -p 4000:8080 hexoblog:v1.0ssh-keygen -t rsacat &#x2F;root&#x2F;.ssh&#x2F;id_rsa.pub添加到githubsetsid sh autoPull.sh]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>docker</tag>
+        <tag>方法</tag>
         <tag>hexo</tag>
         <tag>部署</tag>
       </tags>
@@ -52,8 +52,8 @@
     <url>%2F2021%2F07%2F02%2Fdocker%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%E5%B0%B1%E8%BF%90%E8%A1%8C%2F</url>
     <content type="text"><![CDATA[目标执行1docker run -dit -p 4001:8080 hexoblog:v1.0就创建容器并运行blog服务CMD方式Dockerfile里的CMD指令是会被docker run后面加的指令覆盖的。并且，多个CMD只会执行最后一个。使用方式：1CMD [&quot;hexo&quot;, &quot;s&quot;, &quot;-p&quot;, &quot;8080&quot;, &quot;&amp;&quot;]正常，启动就运行。 1CMD hexo s -p 8080 &amp; 这种直接写shell语句是无法正常运行的。 ENTRYPOINT方式ENTRYPOINT是一种不会被docker run 后面指令覆盖的方式。使用方式：1ENTRYPOINT [&quot;hexo&quot;, &quot;s&quot;, &quot;-p&quot;, &quot;8080&quot;, &quot;&amp;&quot;]]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>docker</tag>
+        <tag>方法</tag>
       </tags>
   </entry>
   <entry>
@@ -1100,8 +1100,8 @@
     <url>%2F2020%2F03%2F16%2F%E5%B0%86nvidia%E6%B7%BB%E5%8A%A0%E5%88%B0runtime%2F</url>
     <content type="text"><![CDATA[要使docker容器能调用本地的gpu,有三种种方法。一是，安装nvidia-docker，该方法已被官方舍弃，地址为https://github.com/NVIDIA/nvidia-docker#upgrading-with-nvidia-docker2-deprecated二是，安装nvidia-container-toolkit，后添加—gpus参数来使用，地址为:安装https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster使用https://github.com/NVIDIA/nvidia-docker#usage三是，安装nvidia-container-runtime，在首次运行时添加—runtime=nvidia参数，后续启动、结束都不需要再加。安装使用流程为：1234567891011121314apt-get install nvidia-container-runtimetee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF&#123; &quot;runtimes&quot;: &#123; &quot;nvidia&quot;: &#123; &quot;path&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;nvidia-container-runtime&quot;, &quot;runtimeArgs&quot;: [] &#125; &#125;&#125;EOFdocker run --runtime&#x3D;nvidia --rm nvidia&#x2F;cuda nvidia-smi #正常就可以了]]></content>
       <tags>
-        <tag>方法</tag>
         <tag>docker</tag>
+        <tag>方法</tag>
         <tag>nvidia</tag>
       </tags>
   </entry>
