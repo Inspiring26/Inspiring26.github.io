@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://weehaa.top/"/>
-  <updated>2021-07-19T10:07:00.937Z</updated>
+  <updated>2021-08-12T03:12:38.959Z</updated>
   <id>http://weehaa.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pandas使用匿名函数处理多列时需要加axis=1</title>
+    <link href="http://weehaa.top/2021/08/12/pandas%E4%BD%BF%E7%94%A8%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86%E5%A4%9A%E5%88%97%E6%97%B6%E9%9C%80%E8%A6%81%E5%8A%A0axis-1/"/>
+    <id>http://weehaa.top/2021/08/12/pandas使用匿名函数处理多列时需要加axis-1/</id>
+    <published>2021-08-12T03:07:23.000Z</published>
+    <updated>2021-08-12T03:12:38.959Z</updated>
+    
+    <content type="html"><![CDATA[<p>pandas在结合多列数据产生新列时，匿名函数的传入参数还是一个，表达式中要使用时需要加上指定字段，当传如的多于一列时需要加axis。<br>只有一列时可加可不加。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for k in title_dict:</span><br><span class="line">    tmpDF[k.replace(&quot;$$&quot;,&quot;json&quot;)]&#x3D;tmpDF[&quot;event_kv_json&quot;].apply(lambda x:json.loads(x).get(k,&quot;&quot;))</span><br></pre></td></tr></table></figure></p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmpDF[&quot;custom&quot;]&#x3D;tmpDF[&quot;event_kv_json&quot;].apply(lambda x: json.dumps(&#123;_:json.loads(x)[_] for _ in json.loads(x) if not _.startswith(&quot;$$&quot;)&#125;))</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmpdf2[&quot;umid_diff2&quot;]&#x3D;tmpdf2[[&quot;point&quot;,&quot;umid_diff&quot;]].apply(lambda x:True if x[&quot;point&quot;]&#x3D;&#x3D;&quot;s&quot; else x[&quot;umid_diff&quot;]  ,axis&#x3D;1)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;pandas在结合多列数据产生新列时，匿名函数的传入参数还是一个，表达式中要使用时需要加上指定字段，当传如的多于一列时需要加axis。&lt;br&gt;只有一列时可加可不加。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;for k in title_dict:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    tmpDF[k.replace(&amp;quot;$$&amp;quot;,&amp;quot;json&amp;quot;)]&amp;#x3D;tmpDF[&amp;quot;event_kv_json&amp;quot;].apply(lambda x:json.loads(x).get(k,&amp;quot;&amp;quot;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="python" scheme="http://weehaa.top/tags/python/"/>
+    
+      <category term="pandas" scheme="http://weehaa.top/tags/pandas/"/>
+    
+  </entry>
   
   <entry>
     <title>几个终端下可用的查询外网ip方式</title>
@@ -110,9 +135,9 @@
     
     
     
-      <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
     
       <category term="hexo" scheme="http://weehaa.top/tags/hexo/"/>
     
@@ -137,9 +162,9 @@
     
     
     
-      <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="docker" scheme="http://weehaa.top/tags/docker/"/>
     
   </entry>
   
@@ -160,9 +185,9 @@
     
     
     
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
       <category term="manjaro" scheme="http://weehaa.top/tags/manjaro/"/>
     
@@ -379,9 +404,9 @@
     
     
     
-      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
-    
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="linux" scheme="http://weehaa.top/tags/linux/"/>
     
   </entry>
   
@@ -479,32 +504,6 @@
       <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
     
       <category term="vim" scheme="http://weehaa.top/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>golang统一处理err</title>
-    <link href="http://weehaa.top/2021/01/14/golang%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86err/"/>
-    <id>http://weehaa.top/2021/01/14/golang统一处理err/</id>
-    <published>2021-01-14T10:50:46.000Z</published>
-    <updated>2021-01-14T02:58:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>程序写完，一堆nil看着难受，以后统一这么写吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func FuckErr(err error)&#123;</span><br><span class="line">    if err!&#x3D;nil&#123;</span><br><span class="line">        panic(err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;程序写完，一堆nil看着难受，以后统一这么写吧&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=
-      
-    
-    </summary>
-    
-    
-    
-      <category term="方法" scheme="http://weehaa.top/tags/%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="golang" scheme="http://weehaa.top/tags/golang/"/>
     
   </entry>
   

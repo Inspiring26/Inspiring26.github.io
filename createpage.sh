@@ -1,1 +1,1 @@
-hexo n 几个终端下可用的查询外网ip方式
+hexo n pandas使用匿名函数处理多列时需要加axis=1
