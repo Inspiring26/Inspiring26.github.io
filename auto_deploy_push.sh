@@ -1,4 +1,4 @@
 sh deploy.sh
 git add -A
-git commit -m "mac下安装nodejs虚拟环境"
+git commit -m "m1的MacBook京东读书cpu占用过高"
 git push
