@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解决m1的MacBook京东读书cpu占用过高的可能方法]]></title>
+    <url>%2F2021%2F11%2F11%2F%E8%A7%A3%E5%86%B3m1%E7%9A%84MacBook%E4%BA%AC%E4%B8%9C%E8%AF%BB%E4%B9%A6cpu%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E7%9A%84%E5%8F%AF%E8%83%BD%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[写在最前在m1系列MacBook上运行iPad版京东读书会存在cpu长期使用率在200%的情况。从评论区发现，这个问题存在很长时间了，最近更新也没有修复这个问题(20211111)。我在使用中发现综合使用后一些方法可以使cpu占用下降到正常水平，因为是综合尝试，所以尚不清楚是哪个步骤在起作用。以下是过程及分析。 退出app，不强制退出后台程序，让程序自己退出1.测试了几次，退出app后，等待后台程序自动退出，再次打开app不做操作，cpu占用正常。2.占用正常后打开书籍，cpu占用不会突变。 打开软件后先不打开书籍，停留在书架页面或者在书城找书，等待占用降低如果上面步骤不能解决，可以尝试这个方式。]]></content>
+      <tags>
+        <tag>方法</tag>
+        <tag>m1</tag>
+        <tag>Macbook</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[macbook下conda创建nodejs虚拟环境]]></title>
+    <url>%2F2021%2F11%2F09%2Fmacbook%E4%B8%8Bconda%E5%88%9B%E5%BB%BAnodejs%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[搜索nodejs及查看版本1conda search nodejs创建虚拟环境12# 可以用等号指定版本conda create -n mynode nodejs激活环境1conda activate mynode 安装hexo12npm install -g hexo-clihexo hexo运行出错后，根据提示123rm -rf node_modules &amp;&amp; npm install --forcehexohexo shexo s正常运行即可 退出虚拟环境、查看虚拟环境列表、1234conda deactivateconda info --envs# 或 conda info -econda remove -n 虚拟环境名 --all]]></content>
+      <tags>
+        <tag>记录</tag>
+        <tag>方法</tag>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[archlinux或manjaro安装keepass中文及解决乱码问题]]></title>
     <url>%2F2021%2F08%2F12%2Farchlinux%E6%88%96manjaro%E5%AE%89%E8%A3%85keepass%E4%B8%AD%E6%96%87%E5%8F%8A%E8%A7%A3%E5%86%B3%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[yay安装1yay -S keepass-zh-cn 解决中文乱码问题Tools -&gt; Options -&gt; Interface -&gt; 最后去掉Force using system font (Unix only)]]></content>
